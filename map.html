@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>全体マップ</title>
+<style type="text/css">
+div#right { 
+text-align: right; 
+} 
+body{
+color: #000000;
+background-color: #f8dce0;
+background-image: url("kajuen_ringo.png");
+background-size:cover;
+}
+
+
+body
+    {
+     margin:0px;          /* ページ全体のmargin */
+     padding:0px;         /* ページ全体のpadding */
+     text-align:center;   /* 下記のautoに未対応用のセンタリング */
+    }
+table
+    {
+        width:1300px;         /* 幅を決定する */
+        height:600px;         /* 高さを決定する*/
+        border:2px solid #000;
+    }
+td
+    {
+        border:1px solid #000;
+        width:33%;
+    }
+
+#main
+    {
+     margin-left:auto;    /* 左側マージンを自動的に空ける */
+     margin-right:auto;   /* 右側マージンを自動的に空ける */
+     margin-top:180px;     /*上側マージンを300px空ける*/
+     text-align:left;     /* 中身を左側表示に戻す */
+     width:1300px;         /* 幅を決定する */
+     height:600px;          /*高さを決定する*/
+     border:1px solid #000;
+    }
+
+input[type="button"] {
+	width: 120px;
+	background-color: #ffa530;
+	border: solid 2px #ffffff;
+	border-radius: 8px;
+	color: #ffffff;
+	display: block;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+    margin-top: 8px;
+	margin-left: auto;
+    margin-right: 8px;
+	padding: 10px;
+}
+    #senkan_kunsho {
+        
+    }
+
+</style>
+<script>
+  //  var num = 1;
+  //  if(num == 0){
+  //      document.getElementById("senkan_kunsho").style.visibility="visible";
+  //  }else{
+        document.getElementById("senkan_kunsho").style.visibility="hidden";
+  //  }
+    
+</script>
+</head>
+<header>
+    <div class="button"><a href="">
+        </a>
+        </div>
+</header>
+<body>
+    <div id="right"> 
+        <input type="button" value="全データ消す">
+    </div>
+    <div id="main">
+        <div>
+            <table cellpadding="0" cellspacing="30"><tbody>
+                <tr>
+                    <td>
+                        <img src="rinngo-illust4.png" width="200px" height="200"/>
+                        <img id="senkan_kunsho" src="test.png">
+                    </td>
+                    <td>
+                        <img src="rinngo-illust4.png" width="200" height="200"/>
+                    </td>
+                    <td>
+                        <img src="rinngo-illust4.png" width="200" height="200"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="rinngo-illust4.png" width="200" height="200"/>
+                    </td>
+                    <td>
+                        <img src="rinngo-illust4.png" width="200" height="200"/>
+                    </td>
+                    <td>
+                        <img src="rinngo-illust4.png" width="200" height="200"/>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+    </div>
+</body>
+</html>
