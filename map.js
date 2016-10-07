@@ -21,9 +21,19 @@ function localdelete(){
 //クリア済みのものに画像を表示
 function cleardisp(){
     //クリア済みかの判定
-    if(senkan_1==true){
+    if(senkan_1){
         //指定位置に画像の表示
+            document.getElementById("senkan_kunsho").style.visibility="visible";
+        }else{
+            document.getElementById("senkan_kunsho").style.visibility="hidden";
+        }
     }
-}
+//meintest
+localget();
+cleardisp();
+senkan_1=false;
+localput();
+document.write("OKaaaa");
+
 //モータルウィンドウの表示機能
 //難しいのであと回し
