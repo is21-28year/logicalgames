@@ -13,7 +13,6 @@ background-color: #f8dce0;
 background-image: url("kajuen_ringo.png");
 background-size:cover;
 }
-/*testdata*/
 
 body
     {
@@ -23,13 +22,13 @@ body
     }
 table
     {
-        width:1300px;         /* 幅を決定する */
-        height:600px;         /* 高さを決定する*/
-        border:2px solid #000;
+        width:1400px;         /* 幅を決定する */
+        height:00px;         /* 高さを決定する*/
+        border:transparent 2px solid;
     }
 td
     {
-        border:1px solid #000;
+        border:transparent 5px solid;
         width:33%;
     }
 
@@ -37,21 +36,24 @@ td
     {
      margin-left:auto;    /* 左側マージンを自動的に空ける */
      margin-right:auto;   /* 右側マージンを自動的に空ける */
-     margin-top:180px;     /*上側マージンを300px空ける*/
+     margin-top:80px;     /*上側マージンを200px空ける*/
      text-align:left;     /* 中身を左側表示に戻す */
      width:1300px;         /* 幅を決定する */
      height:600px;          /*高さを決定する*/
-     border:1px solid #000;
+     border:transparent 1px solid;
     }
 
-input[type="button"] {
-	width: 120px;
+input[type="button"] 
+    {
+	width: 180px;
+    height: 60px;
 	background-color: #ffa530;
 	border: solid 2px #ffffff;
 	border-radius: 8px;
+    box-shadow: 0 3px 0 rgba(136,136,136,1);    /*ボタンの影*/
 	color: #ffffff;
 	display: block;
-	font-size: 18px;
+	font-size: 25px;
 	font-weight: bold;
 	text-align: center;
 	text-decoration: none;
@@ -60,37 +62,60 @@ input[type="button"] {
     margin-right: 8px;
 	padding: 10px;
 }
-    #senkan_kunsho {
-        
-    }
+
+input[type="button"]:hover
+    {
+    box-shadow: none;
+    transform: translate3d(0, 3px, 0);
+    width: 180px;
+    height: 600x;
+	background-color: #DC7D01;
+	border: solid 2px #ffffff;
+	border-radius: 8px;
+	color: #ffffff;
+	display: block;
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+    margin-top: 8px;
+	margin-left: auto;
+    margin-right: 8px;
+	padding: 10px;
+}
+
+input[type="button"]:focus{
+    outline:none;
+}
+
+@media (max-width: 1301px){
+    #main
+        {
+            width:80%;
+        }
+
+        table
+        {
+            width:100%;
+        }
+
+}
 
 </style>
-<script>
-    var num = 1;
-    if(num == 0){
-        document.getElementById("senkan_kunsho").style.visibility="visible";
-    }else{
-        document.getElementById("senkan_kunsho").style.visibility="hidden";
-    }
-    
-</script>
 </head>
 <header>
-    <div class="button"><a href="">
-        </a>
-        </div>
-</header>
-<body>
-    <div id="right"> 
+     <div id="right"> 
         <input type="button" value="全データ消す">
     </div>
+    
+</header>
+<body>
     <div id="main">
         <div>
             <table cellpadding="0" cellspacing="30"><tbody>
                 <tr>
                     <td>
                         <img src="rinngo-illust4.png" width="200px" height="200"/>
-                        <img id="senkan_kunsho" src="test.png">
                     </td>
                     <td>
                         <img src="rinngo-illust4.png" width="200" height="200"/>
