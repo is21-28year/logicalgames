@@ -1,29 +1,121 @@
 //マップページJS機能
 //初期変数宣言
-var senkan_1="";
-//test用localstorage使用の判定
-if (!window.localStorage) {
-    alert("お使いのブラウザはlocalstorageに対応してません。");
-}
+//戦艦ゲーム変数
+    var senkan_1=false;
+    var senkan_2=false;
+    var senkan_3=false;
+//わらしべ長者変数
+    var warashibe_1=false;
+    var warashibe_2=false;
+    var warashibe_3=false;
+//リンゴ拾い変数
+    var ringo_1=false;
+    var ringo_2=false;
+    var ringo_3=false;
+//宝探し変数
+    var takara_1=false;
+    var takara_2=false;
+    var takara_3=false;
+//船渡し変数
+    var funawatashi_1=false;
+    var funawatashi_2=false;
+    var funawatashi_3=false;
+//回転命令変数
+    var kaiten_1=false;
+    var kaiten_2=false;
+    var kaiten_3=false;
+
 //localstorageからデータを取得
 function localget(){
     //戦艦問題クリアフラグ取得
     senkan_1=window.localStorage.getItem("senkan_1");
+    senkan_2=window.localStorage.getItem("senkan_2");
+    senkan_3=window.localStorage.getItem("senkan_3");
+     //わらしべ長者問題クリアフラグ取得
+    warashibe_1=window.localStorage.getItem("warashibe_1");
+    warashibe_2=window.localStorage.getItem("warashibe_2");
+    warashibe_3=window.localStorage.getItem("warashibe_3");
+     //戦艦問題クリアフラグ取得
+    ringo_1=window.localStorage.getItem("ringo_1");
+    ringo_2=window.localStorage.getItem("ringo_2");
+    ringo_3=window.localStorage.getItem("ringo_3");
+     //戦艦問題クリアフラグ取得
+    takara_1=window.localStorage.getItem("takara_1");
+    takara_2=window.localStorage.getItem("takara_2");
+    takara_3=window.localStorage.getItem("takara_3");
+     //戦艦問題クリアフラグ取得
+    funawatashi_1=window.localStorage.getItem("funawatashi_1");
+    funawatashi_2=window.localStorage.getItem("funawatashi_2");
+    funawatashi_3=window.localStorage.getItem("funawatashi_3");
+     //戦艦問題クリアフラグ取得
+    kaiten_1=window.localStorage.getItem("kaiten_1");
+    kaiten_2=window.localStorage.getItem("kaiten_2");
+    kaiten_3=window.localStorage.getItem("kaiten_3");
+    alert(senkan_1);
 }
 //localstorageにデータを挿入
 function  localput(){
-    window.localStorage.setItem("senkan_1",senkan_1);
+    //戦艦クリアフラグput
+    window.localStorage.senkan_1=senkan_1;
+    window.localStorage.setItem("senkan_2",senkan_2);
+    window.localStorage.setItem("senkan_3",senkan_3); 
+    //わらしべクリアフラグput
+    window.localStorage.setItem("warashibe_1",warashibe_1);
+    window.localStorage.setItem("warashibe_2",warashibe_2);
+    window.localStorage.setItem("warashibe_3",warashibe_3); 
+    //りんごクリアフラグput
+    window.localStorage.setItem("ringo_1",ringo_1);
+    window.localStorage.setItem("ringo_2",ringo_2);
+    window.localStorage.setItem("ringo_3",ringo_3); 
+    //宝クリアフラグput
+    window.localStorage.setItem("takara_1",takara_1);
+    window.localStorage.setItem("takara_2",takara_2);
+    window.localStorage.setItem("takara_3",takara_3); 
+    //船渡しクリアフラグput
+    window.localStorage.setItem("funawatashi_1",funawatashi_1);
+    window.localStorage.setItem("funawatashi_2",funawatashi_2);
+    window.localStorage.setItem("funawatashi_3",funawatashi_3); 
+    //回転クリアフラグput
+    window.localStorage.setItem("kaiten_1",kaiten_1);
+    window.localStorage.setItem("kaiten_2",kaiten_2);
+    window.localStorage.setItem("kaiten_3",kaiten_3); 
+    alert(senkan_1);
 }
 //localstorageの全データを削除
 function localdelete(){
+    //戦艦ゲームフラグ削除
     window.localStorage.removeItem("senkan_1");
+    window.localStorage.removeItem("senkan_2");
+    window.localStorage.removeItem("senkan_3");
+     //わらしべ長者ゲームフラグ削除
+    window.localStorage.removeItem("warashibe_1");
+    window.localStorage.removeItem("warashibe_2");
+    window.localStorage.removeItem("warashibe_3");
+     //戦艦ゲームフラグ削除
+    window.localStorage.removeItem("ringo_1");
+    window.localStorage.removeItem("ringo_2");
+    window.localStorage.removeItem("ringo_3");
+     //戦艦ゲームフラグ削除
+    window.localStorage.removeItem("takara_1");
+    window.localStorage.removeItem("takara_2");
+    window.localStorage.removeItem("takara_3");
+     //戦艦ゲームフラグ削除
+    window.localStorage.removeItem("funawatashi_1");
+    window.localStorage.removeItem("funawatashi_2");
+    window.localStorage.removeItem("funawatashi_3");
+     //戦艦ゲームフラグ削除
+    window.localStorage.removeItem("kaiten_1");
+    window.localStorage.removeItem("kaiten_2");
+    window.localStorage.removeItem("kaiten_3");
+    //項目追記必要部分
+    //チュートリアルフラグ削除
+    alert("sakujyo");
 }
 //クリア済みのものに画像を表示
 function cleardisp(){
     //クリア済みかの判定
     if(senkan_1==true){
         //指定位置に画像の表示
-            document.write("OKaaaa");
             document.getElementById("senkan_kunsho").style.visibility="visible";
         }else{
             document.getElementById("senkan_kunsho").style.visibility="hidden";
@@ -59,7 +151,6 @@ function modal(){
 
                 //[#modal-overlay]を削除する
                 $('#modal-overlay').remove() ;
-
             } ) ;
 
         } ) ;
@@ -92,11 +183,10 @@ function modal(){
 }
 
 //meintest
+//test用localstorage使用の判定
+if (!window.localStorage) {
+    alert("お使いのブラウザはlocalstorageに対応してません。");
+}
 localget();
 cleardisp();
-senkan_1=false;
 localput();
-document.write("OKaaaa");
-
-//モータルウィンドウの表示機能
-//難しいのであと回し
