@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>横浜システム科-YSE-</title>
+<title>難易度選択</title>
 <link rel="stylesheet" href="style.css">
 </head> 
 
@@ -12,9 +12,19 @@
         <INPUT type="Button" value="戻る" name="botan4" style="WIDTH: 100px; HEIGHT: 40px">
     </header>
     <div id="g">
-        <div id="box1">
+        <div style=" position: absolute; top: 350px; left:5%;">
             <a href="">
             <article id="a">
+            <CENTER>
+            <p>遊び方</p>
+            </CENTER>
+            </article>
+            </a>
+        </div>
+
+        <div style=" position: absolute; top: 350px; left:30%;">
+            <a href="">
+            <article id="b">
             <CENTER>
             <p>やさしい</p>
             </CENTER>
@@ -22,9 +32,9 @@
             </a>
         </div>
 
-        <div id="box2">
+        <div style=" position: absolute; top: 350px; left:55%;">
             <a href="">
-            <article id="b">
+            <article id="c">
             <CENTER>
             <p>ふつう</p>
             </CENTER>
@@ -32,9 +42,9 @@
             </a>
         </div>
 
-        <div id="box3">
+        <div style=" position: absolute; top: 350px; left:80%;">
             <a href="">
-            <article id="c">
+            <article id="d">
             <CENTER>
             <p>むずかしい</p>
             </CENTER>
@@ -47,16 +57,17 @@
 
 </html>
 
+
+
+
 <style>
+
 @import url(https://fonts.googleapis.com/css?family=Asap);
 
 body	{font-family:'メイリオ','Hiragino kaku gothic Pro',sans-serif;
 	background-color: #edede3;
 	margin: 0;
 	background-image: url(img/bg.gif)}
-
-
-
 
 
 p	{line-height:1.5;
@@ -72,21 +83,38 @@ header	{font-family:'Asap',sans-serif;
 	padding:6px}
 
 
+div     {border-radius: 30px;
+        width: 300px;
+	    height: 100px}
+
+#a	{box-shadow: 5px 5px;
+    border-radius: 30px;
+    min-height: 100%;
+    padding:50px 15px;
+    background-color: #ffd900}
+
+#b	{box-shadow: 5px 5px;
+    border-radius: 30px;
+    min-height: 100%;
+    padding:50px 15px;
+    background-color: #3eb370}
+
+#c	{box-shadow: 5px 5px;
+    border-radius: 30px;
+    min-height: 100%;
+    padding:50px 15px;
+    background-color: #f08300}
+
+#d	{box-shadow: 5px 5px;
+    border-radius: 30px;
+    min-height: 100%;
+    padding:50px 15px;
+    background-color: #674196}
 
 
-#a	{background-color: #3eb370}
-
-#b	{background-color: #f08300}
-
-#c	{background-color: #674196}
-
-#g	{margin: auto;
-	width:1800px}
 
 
 button	{margin-left:350px}
-
-
 
 a	{color: #0000FF}
 
@@ -94,22 +122,4 @@ a:visited	{color: #000000}
 
 a:hover	{color: #FF0000}
 
-
-
-
-
-
-
-#box1	{line-height: 400px;
-	float: left;
-	width: 35%}
-
-#box2	{line-height: 400px;
-	float: left;
-	width: 30%}
-
-#box3	{line-height: 400px;
-	float: right;
-	width: 400px;
-	height:100px;}
 </style>
