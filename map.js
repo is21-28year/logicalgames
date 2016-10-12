@@ -112,14 +112,15 @@ function localdelete(){
     alert("sakujyo");
 }
 //クリア済みのものに画像を表示
-function cleardisp(){
+function cleardisp(clearflag){
     //クリア済みかの判定
-    if(senkan_1==true){
+    if(clearflag==true){
         //指定位置に画像の表示
-            document.getElementById("senkan_kunsho").style.visibility="visible";
-        }else{
-            document.getElementById("senkan_kunsho").style.visibility="hidden";
-        }
+        //画像の範囲元がhtmlに表示するため解決する
+            var image_disp = document.getElementById("senkan_kunsho");
+            image_disp.src="senkan.png";
+            image_disp.onload();
+        }   
     }
 //モーダルダイアログの表示
 function modal(){
@@ -188,5 +189,5 @@ if (!window.localStorage) {
     alert("お使いのブラウザはlocalstorageに対応してません。");
 }
 localget();
-cleardisp();
+cleardisp(senkan_1);
 localput();
