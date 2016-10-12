@@ -11,7 +11,7 @@ text-align: right;
 } 
 body{
 color: #000000;
-background-color: #f8dce0;
+background-color: #6ccc6a;
 background-image: url("kajuen_ringo.png");
 background-size:cover;
 }
@@ -26,7 +26,7 @@ table
     {
         width:1300px;         /* 幅を決定する */
         height:600px;         /* 高さを決定する*/
-        border:2px solid #000;
+        border:1px solid #000;
     }
 td
     {
@@ -46,13 +46,15 @@ td
     }
 
 input[type="button"] {
-	width: 120px;
+	width: 180px;
+    height: 60px;
 	background-color: #ffa530;
 	border: solid 2px #ffffff;
 	border-radius: 8px;
+    box-shadow: 0 3px 0 rgba(136,136,136,1);    /*ボタンの影*/
 	color: #ffffff;
 	display: block;
-	font-size: 18px;
+	font-size: 25px;
 	font-weight: bold;
 	text-align: center;
 	text-decoration: none;
@@ -61,6 +63,33 @@ input[type="button"] {
     margin-right: 8px;
 	padding: 10px;
 }
+
+input[type="button"]:hover   /*ボタンの沈む動作*/
+    {
+    box-shadow: none;
+    transform: translate3d(0, 3px, 0);
+    width: 180px;
+    height: 600x;
+	background-color: #DC7D01;
+	border: solid 2px #dedede;
+	border-radius: 8px;
+	color: #dedede;
+	display: block;
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+    margin-top: 8px;
+	margin-left: auto;
+    margin-right: 8px;
+	padding: 10px;
+}
+
+input[type="button"]:focus
+    {
+    outline:none;
+}
+
     #senkan_kunsho {
         width:100px;
         height:100px;
@@ -98,6 +127,19 @@ input[type="button"] {
 .button-link:hover {
 	cursor: pointer ;
 	color: #f00 ;
+}
+
+@media (max-width: 1301px){
+    #main
+        {
+            width:80%;
+        }
+
+        table
+        {
+            width:100%;
+        }
+
 }
 
 </style>
