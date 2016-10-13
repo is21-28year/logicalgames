@@ -1,4 +1,4 @@
-var tutorial_view/*=false*/;
+var tutorial_view;
 function localget(){
     //チュートリアル閲覧フラグ取得
     tutorial_view=window.localStorage.getItem("tutorial_view");
@@ -7,6 +7,12 @@ function localget(){
 function  localput(){
     //チュートリアル閲覧フラグput
     window.localStorage.tutorial_view=("tutorial_view",tutorial_view);
+}
+//localstorageの全データを削除（デバッグ用）
+function localdelete(){
+    //チュートリアル閲覧フラグ削除
+    window.localStorage.removeItem("tutorial_view");
+    alert("削除しました");
 }
 //モーダルダイアログの表示
 function modal(){

@@ -43,12 +43,15 @@
 </head> 
 
 <body>
+    <!-- デバッグ用 表示したくなければコメントアウトしてください -->
+        <input type="button" onclick="localdelete()" value="フラグ削除">
+
     <!-- ここからモーダルウィンドウ -->
     <div id="modal-content">
 	    <!-- モーダルウィンドウのコンテンツ開始 -->
 	    <p>モーダルウィンドウのコンテンツをHTMLで自由に編集することができます。画像や、動画埋め込みなど、お好きなものを入れて下さい。</p>
 	    <p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
-	    <input type="button" id="modal-close" value="閉じる" onclick="localdelete()">
+	    <input type="button" id="modal-close" value="閉じる">
 	    <!-- モーダルウィンドウのコンテンツ終了 -->
     </div>
 
