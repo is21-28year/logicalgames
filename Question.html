@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <title>問題ページ</title>
     <style>
+    body	
+    {
+        font-family:'メイリオ','Hiragino kaku gothic Pro',sans-serif;
+        background-color: #edede3;
+        margin: 0;
+    }
+
+    
     input[type="button"]:hover   /*ボタンの沈む動作*/
     {
         box-shadow: none;
@@ -19,25 +27,103 @@
         font-weight: bold;
         text-align: center;
         text-decoration: none;
-        margin-top: 8px;
+        /*margin-top: 8px;*/
         margin-left: auto;
         margin-right: 8px;
-        padding: 10px;
     }   
+    input[type="button"] {
+	width: 180px;
+    height: 60px;
+	background-color: #ffa530;
+	border: solid 2px #ffffff;
+	border-radius: 8px;
+    box-shadow: 0 3px 0 rgba(136,136,136,1);    /*ボタンの影*/
+	color: #ffffff;
+	display: block;
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+    /*margin-top: 8px;*/
+	margin-left: auto;
+    margin-right: 8px;
+}
+    input[type="button"]:focus
+    {
+    outline:none;
+    }
+    .hidari{
+        float:left;
+    }
+    
+    /*ここまでボタン関係*/
+    /*ここからheader*/
+    header	{
+        /*追記*/
+        height:10vh;
+        margin:0;
+        padding:0;
+        /*ここまで*/
+    font-family:'Asap',sans-serif;
+	font-size:36px;
+	background-color:#0095d9;
+	color:#0072c8;
+	-webkit-box-shadow:0 2px 7px #aaaaaa;
+	box-shabox:0 2px 7px #aaaaaa;}
+    /*ここからdivの範囲分け*/
+    .clam_left
+    {
+        margin:0;
+        float:left;
+        width:30vw;
+        height:90vh;
+        border-right:solid 2px #000;
+    }
+    .clam_right
+    {
+        margin:0;
+        float:right;
+        width:68vw;
+        height:90vh;
+    }
+    div
+    {
+        margin:0;
+        padding:0;
+        border-collapse:collapse;
 
+    }
+    #buncho
+    {
+        width:30vw;
+        height:30vh;
+        position : relative ;
+    }
+    #reset
+    {
+        border-top:solid 2px #000;
+        width:30vw;
+        height:50vh;
+        position : absolute ;
+        bottom : 0 ;
+    }
     </style>
 </head>
 <body>
     <header>
         <!--前の画面へ戻るb端-->
-        <input type="button" value="前ページへ戻る">
+        <input type="button" class="hidari" value="前ページへ戻る">
         <input type="button" value="ヒント">
     </header>
+    <div class="clam_left">
     <!--問題文章div-->
-    <div></div>
+    <div id="bunsho"><h1>問題文章</h1></div>
     <!--リセットボタン配置-->
-    <div></div>
+    <div id="reset"><h1>risetボタン</h1></div>
+    </div>
+    <div class="clam_right">
     <!--問題動作div-->
-    <div></div>
+    <h1>問題</h1>
+    </div>
 </body>
 </html>
