@@ -138,9 +138,15 @@ p {
             width:100%;
         }
 
-}
-
 /*勲章の場所*/
+/*後々tdの大きさを変更*/
+.migiue {
+    position: relative;
+}
+#senkan_kunsho {  position: absolute;
+ top: 0px;
+ right: 0px;
+ }
 </style>
 </head>
 <header>
@@ -152,10 +158,10 @@ p {
 <!-- ここからモーダルウィンドウ -->
 <div id="modal-content">
 	<!-- モーダルウィンドウのコンテンツ開始 -->
-	<p>モーダルウィンドウのコンテンツをHTMLで自由に編集することができます。画像や、動画埋め込みなど、お好きなものを入れて下さい。</p>
-	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
-    <input type="button" id="modal-close" class="bjbtn" value="消す" onclick="localdelete()">
-	<input type="button" class="bkbtn" value="閉じる" onclick="localdelete()">	
+	<p>いままでの問題のきろくが無くなりますが</p>
+	<p>本当によろしいですか?</p>
+    <input type="button" id="modal-close" class="bjbtn" value="Yes" onclick="localdelete()">
+	<input type="button" class="bkbtn" value="No" onclick="localdelete()">	
     <!-- モーダルウィンドウのコンテンツ終了 -->
 </div>
 
@@ -166,7 +172,7 @@ p {
         <div>
             <table cellpadding="0" cellspacing="30"><tbody>
                 <tr>
-                    <td>
+                    <td class="migiue">
                         <img src="rinngo-illust4.png" width="200px" height="200"/>
                         <div><img id="senkan_kunsho" src="senkan.png"></div>
                     </td>
