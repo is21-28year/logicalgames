@@ -56,7 +56,7 @@ function localget(){
 //localstorageにデータを挿入
 function  localput(){
     //戦艦クリアフラグput
-    window.localStorage.senkan_1=senkan_1;
+    window.localStorage.setItem("senkan_1",senkan_1);
     window.localStorage.setItem("senkan_2",senkan_2);
     window.localStorage.setItem("senkan_3",senkan_3); 
     //わらしべクリアフラグput
@@ -116,11 +116,10 @@ function cleardisp(clearflag){
     //クリア済みかの判定
     if(clearflag==true){
         //指定位置に画像の表示
-        //画像の範囲元がhtmlに表示するため解決する
-            var image_disp = document.getElementById("senkan_kunsho");
-            image_disp.src="senkan.png";
-            image_disp.onload();
-        }   
+            document.getElementById("senkan_kunsho").style.visibility="visible";
+        }else{
+            document.getElementById("senkan_kunsho").style.visibility="hidden";
+        } 
     }
 //モーダルダイアログの表示
 function modal(){
@@ -189,5 +188,4 @@ if (!window.localStorage) {
     alert("お使いのブラウザはlocalstorageに対応してません。");
 }
 localget();
-cleardisp(senkan_1);
 localput();
