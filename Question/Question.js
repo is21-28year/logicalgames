@@ -1,6 +1,24 @@
-//モーダルウィンドウの表示
-function modal(){
-        $(function(){
+//モーダルダイアログの表示
+function modal(modal_content){
+    //モーダルダイアログに表示させる内容
+    switch (modal_content){
+        case 0:
+            document.getElementById("modal-content").innerHTML="<p>問題文</p>";
+            document.getElementById("modal-content").innerHTML+="<input type='button' id='modal-close' value='閉じる'>";
+            break;
+        case 1:
+            document.getElementById("modal-content").innerHTML="<p>ヒント</p>";
+            document.getElementById("modal-content").innerHTML+="<input type='button' id='modal-close' value='閉じる'>";
+            break;
+        case 2:
+            document.getElementById("modal-content").innerHTML="<p>ゲームクリア</p>";
+            document.getElementById("modal-content").innerHTML+="<input type='button' id='modal-close' value='閉じる'>";
+            break;
+        case 3:
+            document.getElementById("modal-content").innerHTML="<p>ゲームオーバー</p>";
+            document.getElementById("modal-content").innerHTML+="<input type='button' id='modal-close' value='閉じる'>";
+    }
+    $(function(){
 
     //モーダルウィンドウを出現させるクリックイベント
     $(function(){
@@ -58,3 +76,12 @@ function modal(){
 
     } ) ;
 }
+
+//meintest
+//test用localstorage使用の判定
+if (!window.localStorage) {
+    alert("お使いのブラウザはlocalstorageに対応してません。");
+}
+localget();
+cleardisp(senkan_1);
+localput();
