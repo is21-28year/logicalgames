@@ -119,15 +119,6 @@ input[type="button"]:focus
 	background-color: rgba( 0,0,0, 0.75 ) ;
 }
 
-.button-link {
-	color: #00f ;
-	text-decoration: underline ;
-}
- 
-.button-link:hover {
-	cursor: pointer ;
-	color: #f00 ;
-}
 
 @media (max-width: 1301px){
     #main
@@ -142,6 +133,7 @@ input[type="button"]:focus
 
 }
 
+/*勲章の場所*/
 </style>
 </head>
 <header>
@@ -149,7 +141,7 @@ input[type="button"]:focus
         </a>
         </div>
 </header>
-<body onload="cleardisp()">
+<body onload="cleardisp(true)">
 <!-- ここからモーダルウィンドウ -->
 <div id="modal-content">
 	<!-- モーダルウィンドウのコンテンツ開始 -->
@@ -168,7 +160,7 @@ input[type="button"]:focus
                 <tr>
                     <td>
                         <img src="rinngo-illust4.png" width="200px" height="200"/>
-                        <div><img id="senkan_kunsho"></div>
+                        <div><img id="senkan_kunsho" src="senkan.png"></div>
                     </td>
                     <td>
                         <img src="rinngo-illust4.png" width="200" height="200"/>
