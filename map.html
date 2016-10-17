@@ -26,11 +26,9 @@ table
     {
         width:1300px;         /* 幅を決定する */
         height:600px;         /* 高さを決定する*/
-        border:1px solid #000;
     }
 td
     {
-        border:1px solid #000;
         width:33%;
     }
 
@@ -42,7 +40,6 @@ td
      text-align:left;     /* 中身を左側表示に戻す */
      width:1300px;         /* 幅を決定する */
      height:600px;          /*高さを決定する*/
-     border:1px solid #000;
     }
 
 input[type="button"] {
@@ -91,11 +88,6 @@ input[type="button"]:focus
 .bjbtn {
     float: left;
 }
-
-    #senkan_kunsho {
-        width:100px;
-        height:100px;
-    }
 /* ここまでデモページ用のコード */
 
 p {
@@ -138,14 +130,21 @@ p {
             width:100%;
         }
 
+}
+
 /*勲章の場所*/
 /*後々tdの大きさを変更*/
 .migiue {
     position: relative;
 }
-#senkan_kunsho {  position: absolute;
- top: 0px;
- right: 0px;
+
+
+#senkan,#kaiten,#funawatashi,#ringo,#warashibe,#takara {  
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width:100px;
+    height:100px;
  }
 </style>
 </head>
@@ -154,14 +153,14 @@ p {
         </a>
         </div>
 </header>
-<body onload="cleardisp(true)">
+<body onload="cleardisp()">
 <!-- ここからモーダルウィンドウ -->
 <div id="modal-content">
 	<!-- モーダルウィンドウのコンテンツ開始 -->
-	<p>いままでの問題のきろくが無くなりますが</p>
-	<p>本当によろしいですか?</p>
-    <input type="button" id="modal-close" class="bjbtn" value="はい" onclick="localdelete()">
-	<input type="button" class="bkbtn" value="いいえ" onclick="localdelete()">	
+	<p>モーダルウィンドウのコンテンツをHTMLで自由に編集することができます。画像や、動画埋め込みなど、お好きなものを入れて下さい。</p>
+	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
+    <input type="button" id="modal-close" class="bjbtn" value="消す" onclick="localdelete()">
+	<input type="button" id="modal-close" class="bkbtn" value="閉じる">	
     <!-- モーダルウィンドウのコンテンツ終了 -->
 </div>
 
@@ -174,24 +173,29 @@ p {
                 <tr>
                     <td class="migiue">
                         <img src="rinngo-illust4.png" width="200px" height="200"/>
-                        <div><img id="senkan_kunsho" src="senkan.png"></div>
+                        <div><img id="senkan" src="oukan.png"></div>
                     </td>
-                    <td>
+                    <td class="migiue">
                         <img src="rinngo-illust4.png" width="200" height="200"/>
+                        <div><img id="kaiten" src="oukan.png"></div>
                     </td>
-                    <td>
+                    <td class="migiue">
                         <img src="rinngo-illust4.png" width="200" height="200"/>
+                        <div><img id="funawatashi" src="oukan.png"></div>
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td class="migiue">
                         <img src="rinngo-illust4.png" width="200" height="200"/>
+                        <div><img id="ringo" src="oukan.png"></div>
                     </td>
-                    <td>
+                    <td class="migiue">
                         <img src="rinngo-illust4.png" width="200" height="200"/>
+                        <div><img id="warashibe" src="oukan.png"></div>
                     </td>
-                    <td>
+                    <td class="migiue">
                         <img src="rinngo-illust4.png" width="200" height="200"/>
+                        <div><img id="takara" src="oukan.png"></div>
                     </td>
                 </tr>
             </tbody></table>

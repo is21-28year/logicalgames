@@ -112,15 +112,31 @@ function localdelete(){
     alert("sakujyo");
 }
 //クリア済みのものに画像を表示
-function cleardisp(clearflag){
+function clearhantei(clear1,clear2,clear3,id){
     //クリア済みかの判定
-    if(clearflag==true){
+    if(clear11=true && clear2==true && clear3==true){
         //指定位置に画像の表示
-            document.getElementById("senkan_kunsho").style.visibility="visible";
+            document.getElementById(id).style.visibility="visible";
         }else{
-            document.getElementById("senkan_kunsho").style.visibility="hidden";
+            document.getElementById(id).style.visibility="hidden";
         } 
     }
+//全問題クリア済み画像表示
+function cleardisp(){
+    //戦艦クリア表示
+    clearhantei(senkan_1,senkan_2,senkan_3,"senkan");
+    //回転クリア表示
+    clearhantei(kaiten_1,kaiten_2,kaiten_3,"kaiten");
+    //船渡しクリア表示
+    clearhantei(funawatashi_1,funawatashi_2,funawatashi_3,"funawatashi");
+    //リンゴクリア表示
+    clearhantei(ringo_1,ringo_2,ringo_3,"ringo");
+    //わらしべクリア表示
+    clearhantei(warashibe_1,warashibe_2,warashibe_3,"warashibe");
+    //宝クリア表示
+    clearhantei(takara_1,takara_2,takara_3,"takara");
+
+}
 //モーダルダイアログの表示
 function modal(){
         $(function(){
@@ -188,4 +204,7 @@ if (!window.localStorage) {
     alert("お使いのブラウザはlocalstorageに対応してません。");
 }
 localget();
+senkan_1=true;
+senkan_2=true;
+senkan_3=true;
 localput();
