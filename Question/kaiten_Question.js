@@ -1,3 +1,31 @@
+//回転速度を一定に修正する
+//候補秒刊に複数回行う
+//ふつうにずっと回す
+function imgkaiten(){
+    //旧コード一応残す
+    /*$(function(){
+    // ボタンをクリックした時
+        // degという変数を0から360まで3秒かけて変化させる。
+        $({deg:0}).animate({deg:360}, {
+            duration:3000,
+            // 途中経過
+            progress:function() {
+                $('img.img').css({
+                    transform:'rotate(' + this.deg + 'deg)'
+                });
+            },
+        });
+    });*/
+    //回転される部分　プラグイン使用している
+    var angle = 0;
+    setInterval(function(){
+        angle+=5;
+    $("img.img").rotate(angle);
+    },50);
+}
+
+
+
 //モーダルダイアログの表示
 function modal(modal_content){
     //モーダルダイアログに表示させる内容
@@ -78,10 +106,3 @@ function modal(modal_content){
 }
 
 //meintest
-//test用localstorage使用の判定
-if (!window.localStorage) {
-    alert("お使いのブラウザはlocalstorageに対応してません。");
-}
-localget();
-cleardisp(senkan_1);
-localput();
