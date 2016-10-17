@@ -1,9 +1,9 @@
 //マップページJS機能
 //初期変数宣言
 //戦艦ゲーム変数
-    var senkan_1=false;
-    var senkan_2=false;
-    var senkan_3=false;
+    var senkan_1=true;
+    var senkan_2=true;
+    var senkan_3=true;
 //わらしべ長者変数
     var warashibe_1=false;
     var warashibe_2=false;
@@ -51,9 +51,14 @@ function localget(){
     kaiten_1=window.localStorage.getItem("kaiten_1");
     kaiten_2=window.localStorage.getItem("kaiten_2");
     kaiten_3=window.localStorage.getItem("kaiten_3");
-    alert(senkan_1);
 }
 //localstorageにデータを挿入
+
+
+                            //ハッシュ化が必要
+
+
+
 function  localput(){
     //戦艦クリアフラグput
     window.localStorage.setItem("senkan_1",senkan_1);
@@ -79,7 +84,6 @@ function  localput(){
     window.localStorage.setItem("kaiten_1",kaiten_1);
     window.localStorage.setItem("kaiten_2",kaiten_2);
     window.localStorage.setItem("kaiten_3",kaiten_3); 
-    alert(senkan_1);
 }
 //localstorageの全データを削除
 function localdelete(){
@@ -108,10 +112,9 @@ function localdelete(){
     window.localStorage.removeItem("kaiten_2");
     window.localStorage.removeItem("kaiten_3");
     //項目追記必要部分
-    //チュートリアルフラグ削除
-    alert("sakujyo");
 }
 //クリア済みのものに画像を表示
+//要修正画像がちらちらする
 function clearhantei(clear1,clear2,clear3,id){
     //クリア済みかの判定
     if(clear11=true && clear2==true && clear3==true){
@@ -197,14 +200,3 @@ function modal(){
 
     } ) ;
 }
-
-//meintest
-//test用localstorage使用の判定
-if (!window.localStorage) {
-    alert("お使いのブラウザはlocalstorageに対応してません。");
-}
-localget();
-senkan_1=true;
-senkan_2=true;
-senkan_3=true;
-localput();
