@@ -20,7 +20,7 @@ function imgkaiten(){
     var angle = 0;
     setInterval(function(){
         angle+=5;
-    $("img.img").rotate(angle);
+    $("#kaiten").rotate(angle);
     },50);
 }
 
@@ -40,7 +40,7 @@ function modal(modal_content){
             break;
         case 2:
             document.getElementById("modal-content").innerHTML="<p>ゲームクリア</p>";
-            document.getElementById("modal-content").innerHTML+="<input type='button' id='modal-close' value='閉じる'>";
+            document.getElementById("modal-content").innerHTML+="<input type='button' value='マップへ戻る' onclick='location.href='"+"../map.html'"+"'>";
             break;
         case 3:
             document.getElementById("modal-content").innerHTML="<p>ゲームオーバー</p>";
