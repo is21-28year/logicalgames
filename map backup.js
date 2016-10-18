@@ -119,9 +119,9 @@ function clearhantei(clear1,clear2,clear3,id){
     //クリア済みかの判定
     if(clear11=true && clear2==true && clear3==true){
         //指定位置に画像の表示
-            document.getElementById(id).innerHTML="<img src='gazo/oukan.png' width='100px' height='100'>";
+            document.getElementById(id).style.visibility="visible";
         }else{
-            document.getElementById(id).innerHTML="";
+            document.getElementById(id).style.visibility="hidden";
         } 
     }
 //全問題クリア済み画像表示
