@@ -31,20 +31,21 @@ function modal(modal_content){
     //モーダルダイアログに表示させる内容
     switch (modal_content){
         case 0:
-            document.getElementById("modal-content").innerHTML="<p>問題文</p>";
-            document.getElementById("modal-content").innerHTML+="<input type='button' id='modal-close' value='閉じる'>";
+            document.getElementById("modal-content").innerHTML="<p>違うものを探そう</p>";
+            document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' value='閉じる'></div>";
             break;
         case 1:
-            document.getElementById("modal-content").innerHTML="<p>ヒント</p>";
-            document.getElementById("modal-content").innerHTML+="<input type='button' id='modal-close' value='閉じる'>";
+            document.getElementById("modal-content").innerHTML="<p>回る絵をゆっくり見てみつけよう</p>";
+            document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' value='閉じる'></div>";
             break;
         case 2:
-            document.getElementById("modal-content").innerHTML="<p>ゲームクリア</p>";
-            document.getElementById("modal-content").innerHTML+="<input type='button' value='マップへ戻る' onclick='location.href='"+"../map.html'"+"'>";
+            window.localStorage.setItem("kaiten_3",true);
+            document.getElementById("modal-content").innerHTML="<p>おめでとう！ステージクリア！</p>";
+            document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' value='マップへ戻る' onclick='mapjump()'></div>";
             break;
         case 3:
-            document.getElementById("modal-content").innerHTML="<p>ゲームオーバー</p>";
-            document.getElementById("modal-content").innerHTML+="<input type='button' id='modal-close' value='閉じる'>";
+            document.getElementById("modal-content").innerHTML="<p>ちがうよ。ゆっくり見てさがそう。</p>";
+            document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' value='閉じる'></div>";
     }
     $(function(){
 
@@ -104,5 +105,12 @@ function modal(modal_content){
 
     } ) ;
 }
-
-//meintest
+function mapjump(){
+    window.location.href = '../map.html';
+}
+/*
+function  localput(){
+    //回転クリアフラグput
+    window.localStorage.setItem("kaiten_3",true); 
+}
+*/

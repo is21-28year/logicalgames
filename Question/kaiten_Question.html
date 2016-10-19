@@ -98,6 +98,21 @@
         border-collapse:collapse;
 
     }
+    p{
+        font-size:18px;
+    }
+    #modal-content p{
+        text-align:center;
+        font-size:36px;
+    }
+    .center input{
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .center input:hover{
+        margin-left:auto;
+        margin-right:auto;
+    }
     #buncho
     {
         width:30vw;
@@ -165,7 +180,7 @@
     
     </style>
 </head>
-<body onload="imgkaiten()">
+<body onload="imgkaiten();modal(0)">
     <!-- ここからモーダルウィンドウ -->
     <div id="modal-content">
 	    <!-- モーダルウィンドウのコンテンツ開始 -->
@@ -175,12 +190,15 @@
 
     <header>
         <!--前の画面へ戻るボタン-->
-        <input type="button" class="hidari" value="前ページへ戻る">
+        <input type="button" class="hidari" value="前ページへ戻る" onclick="location.href='../map.html'">
         <input type="button" class="migi" value="ヒント" onclick="modal(1)">
     </header>
     <div class="clam_left">
     <!--問題文章div-->
-    <div id="bunsho"><h1>問題文章</h1></div>
+    <div id="bunsho">
+        <h1>問題文章</h1>
+        <p>違うものを探そう</p>    
+    </div>
     
     <!--リセットボタン配置-->
     
