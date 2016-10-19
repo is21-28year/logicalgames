@@ -112,7 +112,7 @@ function modal(modal_content){
     } ) ;
 }
 function mapjump(){
-    window.location.href = '../map.html';
+    window.location.href = 'map.html';
 }
 /*
 function  localput(){
