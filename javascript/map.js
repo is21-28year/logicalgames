@@ -119,7 +119,7 @@ function clearhantei(clear1,clear2,clear3,id){
     //クリア済みかの判定
     if(clear11=true && clear2==true && clear3==true){
         //指定位置に画像の表示
-            document.getElementById(id).innerHTML="<img src='gazo/oukan.png' width='100px' height='100'>";
+            document.getElementById(id).innerHTML="<img src='../image/oukan.png' width='100px' height='100'>";
         }else{
             document.getElementById(id).innerHTML="";
         } 
