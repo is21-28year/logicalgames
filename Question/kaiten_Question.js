@@ -23,7 +23,7 @@ function imgkaiten(){
     $("#kaiten").rotate(angle);
     },50);
 }
-
+var modal_content;
 
 
 //モーダルダイアログの表示
@@ -45,7 +45,7 @@ function modal(modal_content){
             break;
         case 3:
             document.getElementById("modal-content").innerHTML="<p>ちがうよ。ゆっくり見てさがそう。</p>";
-            document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' value='閉じる'></div>";
+            document.getElementById("modal-content").innerHTML+="<div><input type='button' class='leftbtn' value='マップへ戻る' onclick='mapjump()'><input type='button' class='rightbtn' id='modal-close' value='やり直す'></div>";
     }
     $(function(){
 
@@ -67,19 +67,25 @@ function modal(modal_content){
         //コンテンツをフェードインする
         $( "#modal-content" ).fadeIn( "slow" ) ;
 
-        //[#modal-overlay]、または[#modal-close]をクリックしたら…
-        $( "#modal-overlay,#modal-close" ).unbind().click( function(){
+        if(modal_content == 2){
+            //クリックしても閉じない
+            
+        }else{
+            //[#modal-overlay]、または[#modal-close]をクリックしたら…
+            $( "#modal-overlay,#modal-close" ).unbind().click( function(){
 
-            //[#modal-content]と[#modal-overlay]をフェードアウトした後に…
-            $( "#modal-content,#modal-overlay" ).fadeOut( "slow" , function(){
+                //[#modal-content]と[#modal-overlay]をフェードアウトした後に…
+                $( "#modal-content,#modal-overlay" ).fadeOut( "slow" , function(){
 
-                //[#modal-overlay]を削除する
-                $('#modal-overlay').remove() ;
+                    //[#modal-overlay]を削除する
+                    $('#modal-overlay').remove() ;
+                } ) ;
+
             } ) ;
-
-        } ) ;
+        }
 
     } ) ;
+    
 
     //リサイズされたら、センタリングをする関数[centeringModalSyncer()]を実行する
     $( window ).resize( centeringModalSyncer ) ;

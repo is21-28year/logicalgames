@@ -106,12 +106,25 @@
         font-size:36px;
     }
     .center input{
-        margin-left:auto;
-        margin-right:auto;
+        position: absolute;
+        right:0;
+        left:0;
+        bottom:30px;
+        margin:0 auto;
     }
     .center input:hover{
-        margin-left:auto;
-        margin-right:auto;
+        margin:0 auto;
+    }
+    .leftbtn,.rightbtn{
+        bottom:30px;
+    }
+    .leftbtn{
+        position: absolute;
+        left:20%;
+    }
+    .rightbtn{
+        position: absolute;
+        right:20%;
     }
     #buncho
     {
@@ -190,7 +203,7 @@
 
     <header>
         <!--前の画面へ戻るボタン-->
-        <input type="button" class="hidari" value="前ページへ戻る" onclick="location.href='../map.html'">
+        <input type="button" class="hidari" value="前ページへ戻る" onclick="location.href='../Difficulty.html'">
         <input type="button" class="migi" value="ヒント" onclick="modal(1)">
     </header>
     <div class="clam_left">
