@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <title>問題ページ 回転命令</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script type="text/javascript" src="../javascript/jQueryRotate.js"></script>
-    <script type="text/javascript" src="../javascript/kaiten_Question.js"></script>
+    <script type="text/javascript" src="../javascript/senkan_Question.js"></script>
     <style>
     body	
     {
@@ -103,6 +102,9 @@
     }
     h1{
         margin:0;
+    }
+    #qtit{
+        padding-top:10px;
     }
     #modal-content p{
         text-align:center;
@@ -216,7 +218,7 @@
 
     </style>
 </head>
-<body>
+<body onload="modal(0)">
     <!-- ここからモーダルウィンドウ -->
     <div id="modal-content">
 	    <!-- モーダルウィンドウのコンテンツ開始 -->
@@ -226,10 +228,10 @@
 
     <header>
         <!--前の画面へ戻るボタン-->
-        <input type="button" class="hidari" value="前ページへ戻る">
-        <input type="button" class="migi" value="ヒント">
+        <input type="button" class="hidari" value="前ページへ戻る" onclick="location.href='Difficulty_senkan.html'">
+        <input type="button" class="migi" value="ヒント" onclick="modal(1)">
         
-        <h1>海賊ゲーム</h1>
+        <h1 id="qtit">海賊ゲーム</h1>
     </header>
     <div class="clam_left">
     <!--問題文章div-->
