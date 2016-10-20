@@ -1,9 +1,9 @@
 //マップページJS機能
 //初期変数宣言
 //戦艦ゲーム変数
-    var senkan_1=true;
-    var senkan_2=true;
-    var senkan_3=true;
+    var senkan_1=false;
+    var senkan_2=false;
+    var senkan_3=false;
 //わらしべ長者変数
     var warashibe_1=false;
     var warashibe_2=false;
