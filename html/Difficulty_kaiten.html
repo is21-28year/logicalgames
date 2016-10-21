@@ -2,20 +2,60 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>回転命令-難易度選択</title>
-<link rel="stylesheet" href="style.css">
+<title>難易度選択</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="../javascript/Difficulty.js"></script>
+<style type="text/css">
+#modal-content {
+	width: 80% ;
+    height:80%;
+	margin: 0 ;
+	padding: 10px 20px ;
+	border: 2px solid #aaa ;
+	background: #fff ;          /*背景は白に、そこに注意（警告）マーク（ぼやけ）を入れたいんですが…*/
+	position: fixed ;
+	display: none ;
+	z-index: 2 ;
+}
+  
+#modal-overlay {
+	z-index: 1 ;
+	display: none ;
+	position: fixed ;
+	top: 0 ;
+	left: 0 ;
+	width: 100% ;
+	height: 120% ;
+	background-color: rgba( 0,0,0, 0.75 ) ;
+}
+
+.bkbtn{
+        position: absolute;
+        right:45%;
+        bottom:30px;
+        margin:0 auto;
+    }
+</style>
 </head> 
 
-<body>
+<body onload="cleardisp()">
+
 
     <header>
-        <input type="button" class="hidari" value="前ページへ戻る" onclick="location.href='../html/map.html'">
+        <input type="button" class="hidari" value="前ページへ戻る">
     </header>
-    
+<div id="modal-content">
+	<!-- モーダルウィンドウのコンテンツ開始 -->
+	<p></p>
+	<input type="button" id="modal-close" class="bkbtn" value="閉じる">	
+    <!-- モーダルウィンドウのコンテンツ終了 -->
+</div>
+
+
     <div id="g">
         <div style=" position: absolute; top: 350px; left:5%;">
             <a href="">
-            <article id="a">
+            <article id="a" onclick="modal()">
             <CENTER>
             <p>遊び方</p>
             </CENTER>
@@ -24,7 +64,7 @@
         </div>
 
         <div style=" position: absolute; top: 350px; left:30%;">
-            <a href="../html/kaiten_Question.html">
+            <a href="">
             <article id="b">
             <CENTER>
             <p>やさしい</p>
@@ -34,7 +74,7 @@
         </div>
 
         <div style=" position: absolute; top: 350px; left:55%;">
-            <a href="../html/kaiten_Question.html">
+            <a href="">
             <article id="c">
             <CENTER>
             <p>ふつう</p>
@@ -166,3 +206,5 @@ a:visited	{color: #000000}
 a:hover	{color: #FFFFFF}
 
 </style>
+
+
