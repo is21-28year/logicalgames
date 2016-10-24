@@ -3,53 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <title>船渡し-難易度選択</title>
-<link rel="stylesheet" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="../javascript/Difficulty.js"></script>
+<style type="text/css">
+#modal-content {
+	width: 80% ;
+    height:80%;
+	margin: 0 ;
+	padding: 10px 20px ;
+	border: 2px solid #aaa ;
+	background: #fff ;          /*背景は白に、そこに注意（警告）マーク（ぼやけ）を入れたいんですが…*/
+	position: fixed ;
+	display: none ;
+	z-index: 2 ;
+}
+  
+#modal-overlay {
+	z-index: 1 ;
+	display: none ;
+	position: fixed ;
+	top: 0 ;
+	left: 0 ;
+	width: 100% ;
+	height: 120% ;
+	background-color: rgba( 0,0,0, 0.75 ) ;
+}
+</style>
 </head> 
 
-<body>
+<body onload="cleardisp()">
+
 
     <header>
-        <input type="button" class="hidari" value="前ページへ戻る">
+        <a href="map.html">
+            <input type="button" class="hidari" value="前ページへ戻る">
+        </a>
     </header>
-    
+<div id="modal-content">
+	<!-- モーダルウィンドウのコンテンツ開始 -->
+	<p>いままでの問題のきろくがなくなってしまいますが</p>
+	<p>本当に消してもよろしいでしょうか?</p>
+	<input type="button" id="modal-close" class="bkbtn" value="閉じる">	
+    <!-- モーダルウィンドウのコンテンツ終了 -->
+</div>
+
+
     <div id="g">
         <div style=" position: absolute; top: 350px; left:5%;">
-            <a href="">
-            <article id="a">
-            <CENTER>
-            <p>遊び方</p>
-            </CENTER>
-            </article>
-            </a>
+            <input type="button" value="あそびかた" onclick="modal()" id="a" class="difficlty_box">
         </div>
 
         <div style=" position: absolute; top: 350px; left:30%;">
-            <a href="">
-            <article id="b">
-            <CENTER>
-            <p>やさしい</p>
-            </CENTER>
-            </article>
+            <a href="funawatashi_Question.html">
+            <input type="button" value="やさしい" id="b" class="difficlty_box">
             </a>
         </div>
 
         <div style=" position: absolute; top: 350px; left:55%;">
-            <a href="">
-            <article id="c">
-            <CENTER>
-            <p>ふつう</p>
-            </CENTER>
-            </article>
+            <a href="funawatashi_Question.html">
+            <input type="button" value="ふつう" id="c" class="difficlty_box">
             </a>
         </div>
 
         <div style=" position: absolute; top: 350px; left:80%;">
-            <a href="">
-            <article id="d">
-            <CENTER>
-            <p>むずかしい</p>
-            </CENTER>
-            </article>
+            <a href="funawatashi_Question.html">
+            <input type="button" value="むずかしい" id="d" class="difficlty_box">
             </a>
         </div> 
     </div>
@@ -81,25 +99,25 @@ div     {border-radius: 30px;
         width: 300px;
 	    height: 100px}
 
-#a	{box-shadow: 5px 5px;
+#a	{
     border-radius: 30px;
     min-height: 100%;
     padding:50px 15px;
     background-color: #ffd900}
 
-#b	{box-shadow: 5px 5px;
+#b	{
     border-radius: 30px;
     min-height: 100%;
     padding:50px 15px;
     background-color: #3eb370}
 
-#c	{box-shadow: 5px 5px;
+#c	{
     border-radius: 30px;
     min-height: 100%;
     padding:50px 15px;
     background-color: #f08300}
 
-#d	{box-shadow: 5px 5px;
+#d	{
     border-radius: 30px;
     min-height: 100%;
     padding:50px 15px;
@@ -159,10 +177,18 @@ div     {border-radius: 30px;
 
 button	{margin-left:350px}
 
-a	{color: #0000FF}
+a	{style:none;
+     text-decoration: none;}
 
 a:visited	{color: #000000}
 
 a:hover	{color: #FFFFFF}
 
+/*難易度ページ中央のボックスサイズ変更用*/
+ input[type="button"].difficlty_box{
+    width:15vw;
+    height:20vh;
+}
 </style>
+
+
