@@ -126,11 +126,15 @@
         position: absolute;
         right:20%;
     }
-    #buncho
+    #bunsho
     {
         width:30vw;
-        height:30vh;
+        height:40vh;
         position : relative ;
+    }
+    #bunsho h1
+    {
+        margin:0px ;
     }
     #reset
     {
@@ -190,7 +194,7 @@
     #sentaku img:hover{
         background-color:#aaa;
     }
-    #b{Background-color:#fff;}
+    .b{Background-color:#fff;}
     </style>
 </head>
 <body onload="imgkaiten();modal(0)">
@@ -206,9 +210,9 @@
         <input type="button" class="hidari" value="もどる" onclick="location.href='Difficulty_kaiten.html'">
         <input type="button" class="migi" value="ヒント" onclick="modal(1)">
     </header>
-    <div class="clam_left" id="b">
+    <div class="clam_left">
     <!--問題文章div-->
-    <div id="bunsho">
+    <div id="bunsho" class="b">
         <h1><ruby><rb>問題文章</rb><rp>(</rp><rt>もんだいぶんしょう</rt><rp>)</rp></ruby></h1>
         <p><ruby><rb>違うものを探そう</rb><rp>(</rp><rt>ちが　　　　さが　　</rt><rp>)</rp></ruby></p>    
     </div>
