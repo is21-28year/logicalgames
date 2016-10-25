@@ -31,21 +31,22 @@ function modal(modal_content){
     //モーダルダイアログに表示させる内容
     switch (modal_content){
         case 0:
-            document.getElementById("modal-content").innerHTML="<p>違うものを探そう</p>";
-            document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' value='閉じる'></div>";
+            /*styleタグ画面上のどこに置くかを指定している*/ 
+            document.getElementById("modal-content").innerHTML="<p style='margin-top:220px;'><ruby><rb>真</rb><rt>ま</rt></ruby>ん<ruby><rb>中</rb><rt>なか</rt></ruby>で<ruby><rb>回</rb><rt>まわ</rt></ruby>っている<ruby><rb>形</rb><rt>かたち</rt></ruby>と<br><ruby><rb>同</rb><rt>おな</rt></ruby>じものを<ruby><rb>探</rb><rt>さが</rt></ruby>そう</p>";
+            document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' value='とじる'></div>";
             break;
         case 1:
-            document.getElementById("modal-content").innerHTML="<p>回る絵をゆっくり見てみつけよう</p>";
-            document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' value='閉じる'></div>";
+            document.getElementById("modal-content").innerHTML="<p style='margin-top:220px;'><ruby><rb> 回る絵をゆっくり見てみつけよう</rb><rp>(</rp><rt>まわ え　　　　　み　　　　　　</rt><rp>)</rp></ruby></p>";
+            document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' value='とじる'></div>";
             break;
         case 2:
             window.localStorage.setItem("kaiten_3",true);
-            document.getElementById("modal-content").innerHTML="<p>おめでとう！ステージクリア！</p>";
-            document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' value='マップへ戻る' onclick='mapjump()'></div>";
+            document.getElementById("modal-content").innerHTML="<p style='margin-top:220px;'>おめでとう！ステージクリア！</p>";
+            document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' value='マップへもどる' onclick='mapjump()'></div>";
             break;
         case 3:
-            document.getElementById("modal-content").innerHTML="<p>ちがうよ。ゆっくり見てさがそう。</p>";
-            document.getElementById("modal-content").innerHTML+="<div><input type='button' class='leftbtn' value='マップへ戻る' onclick='mapjump()'><input type='button' class='rightbtn' id='modal-close' value='やり直す'></div>";
+            document.getElementById("modal-content").innerHTML="<p style='margin-top:220px;'>ちがうよ。ゆっくり<ruby><rb>見</rb><rt>み</rt>てさがそう。</p>";
+            document.getElementById("modal-content").innerHTML+="<div><input type='button' class='leftbtn' value='マップへもどる' onclick='mapjump()'><input type='button' class='rightbtn' id='modal-close' value='やりなおす'></div>";
     }
     $(function(){
 

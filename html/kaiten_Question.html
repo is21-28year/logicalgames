@@ -29,7 +29,7 @@
         font-weight: bold;
         text-align: center;
         text-decoration: none;
-        margin-top: 15px;
+        margin-top: 8px;
         margin-left: 8px;
         margin-right: 8px;
     }   
@@ -46,7 +46,7 @@
 	font-weight: bold;
 	text-align: center;
 	text-decoration: none;
-    margin-top: 15px;
+    margin-top: 8px;
 	margin-left: 8px;
     margin-right: 8px;
 }
@@ -105,6 +105,7 @@
         text-align:center;
         font-size:36px;
     }
+    /*モーダルウィンドウの中央配置*/
     .center input{
         position: absolute;
         right:0;
@@ -174,8 +175,8 @@
         margin-left: auto;
     }
     #border{
-        width:350px;
-        height:320px;
+        width:300px;
+        height:250px;
         padding:10px;
         border:2px solid #000;
         border-radius:10px;
@@ -195,6 +196,14 @@
         background-color:#aaa;
     }
     .b{Background-color:#fff;}
+    /*ヘッダー内のh1タイトル*/
+    h1#hed{
+        margin:0;
+        float:left;
+        font-size:60px;
+        color:#fff;
+        margin-top:8px;
+    }
     </style>
 </head>
 <body onload="imgkaiten();modal(0)">
@@ -208,13 +217,14 @@
     <header>
         <!--前の画面へ戻るボタン-->
         <input type="button" class="hidari" value="もどる" onclick="location.href='Difficulty_kaiten.html'">
+        <h1 id="hed">回転命令</h1>
         <input type="button" class="migi" value="ヒント" onclick="modal(1)">
     </header>
     <div class="clam_left">
     <!--問題文章div-->
     <div id="bunsho" class="b">
         <h1><ruby><rb>問題文章</rb><rp>(</rp><rt>もんだいぶんしょう</rt><rp>)</rp></ruby></h1>
-        <p><ruby><rb>違うものを探そう</rb><rp>(</rp><rt>ちが　　　　さが　　</rt><rp>)</rp></ruby></p>    
+        <p><ruby><rb>真</rb><rt>ま</rt></ruby>ん<ruby><rb>中</rb><rt>なか</rt></ruby>で<ruby><rb>回</rb><rt>まわ</rt></ruby>っている<ruby><rb>形</rb><rt>かたち</rt></ruby>と<br><ruby><rb>同</rb><rt>おな</rt></ruby>じものを<ruby><rb>探</rb><rt>さが</rt></ruby>そう</p>  
     </div>
     
     <!--リセットボタン配置-->
@@ -229,11 +239,11 @@
     <div class="clam_right">
         <!--問題動作div-->
         <h1><ruby><rb>問題</rb><rp>(</rp><rt>もんだい</rt><rp>)</rp></ruby></h1>
-        <div id="border"><img src="../image/Puzzle_3.1.png" alt="" id="kaiten" width="300px"></div>
+        <div id="border"><img src="../image/Puzzle_3.1.png" alt="" id="kaiten" width="230px"></div>
         <div id="sentaku">
-            <img src="../image/Puzzle_3.1.png" alt="" width="200px" onclick="modal(2)">
-            <img src="../image/Puzzle_3.2.png" alt="" width="200px" onclick="modal(3)">
-            <img src="../image/Puzzle_3.3.png" alt="" width="200px" onclick="modal(3)">
+            <img src="../image/Puzzle_3.1.png" alt="" width="180px" onclick="modal(2)">
+            <img src="../image/Puzzle_3.2.png" alt="" width="180px" onclick="modal(3)">
+            <img src="../image/Puzzle_3.3.png" alt="" width="180px" onclick="modal(3)">
         </div>
         <!-- デバッグ用 -->
         <!--
