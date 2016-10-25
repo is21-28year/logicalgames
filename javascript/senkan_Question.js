@@ -1,51 +1,67 @@
-//回転速度を一定に修正する
-//候補秒刊に複数回行う
-//ふつうにずっと回す
-function imgkaiten(){
-    //旧コード一応残す
-    /*$(function(){
-    // ボタンをクリックした時
-        // degという変数を0から360まで3秒かけて変化させる。
-        $({deg:0}).animate({deg:360}, {
-            duration:3000,
-            // 途中経過
-            progress:function() {
-                $('img.img').css({
-                    transform:'rotate(' + this.deg + 'deg)'
-                });
-            },
-        });
-    });*/
-    //回転される部分　プラグイン使用している
-    var angle = 0;
-    setInterval(function(){
-        angle+=5;
-    $("#kaiten").rotate(angle);
-    },50);
+var ship_ans = 2;
+var ship_zan = 8;
+var ship_flag = [0,0,0,0,0,0,0,0,0]
+
+function senkan_hantei(click_num){
+    //クリック済かどうかの判定
+    if(ship_flag[click_num] == 1){
+        //クリック済なら何もしない
+    }else{
+        ship_flag[click_num] = 1;
+        //船爆破
+        document.getElementById("ship"+click_num).src="../image/oukan.png";
+        setTimeout(function(){
+            document.getElementById("ship"+click_num).src="../image/Puzzle_3.1.png";
+        },500);
+        //弾数減らす
+        ship_zan += -1;
+        tama();
+        //弾数0以下なら
+        if(ship_ans == click_num){
+            //ゲームクリア
+            modal(2);
+        }else{
+            if(ship_zan < 1){
+                //ゲームオーバー
+                modal(3);
+            }
+        }
+    }
 }
-var modal_content;
+function tama(){
+    document.getElementById("zan_tama").innerHTML=ship_zan;
+}
+function reset(){
+    ship_zan = 8;
+    tama();
+    ship_flag = [0,0,0,0,0,0,0,0,0];
+    for(var i=0;i<9;i++){
+        document.getElementById("ship"+i).src="../image/senkan_teki.png";
+    }
+}
+function animation(num){
+    document.getElementById("ship"+num).src="../image/Puzzle_3.1.png";
+}
 
-
-//モーダルダイアログの表示
 function modal(modal_content){
     //モーダルダイアログに表示させる内容
     switch (modal_content){
         case 0:
-            document.getElementById("modal-content").innerHTML="<p>違うものを探そう</p>";
+            document.getElementById("modal-content").innerHTML="<p></p>";
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' value='閉じる'></div>";
             break;
         case 1:
-            document.getElementById("modal-content").innerHTML="<p>回る絵をゆっくり見てみつけよう</p>";
+            document.getElementById("modal-content").innerHTML="<p></p>";
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' value='閉じる'></div>";
             break;
         case 2:
-            window.localStorage.setItem("kaiten_3",true);
+            //window.localStorage.setItem("senkan_3",true);
             document.getElementById("modal-content").innerHTML="<p>おめでとう！ステージクリア！</p>";
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' value='マップへ戻る' onclick='mapjump()'></div>";
             break;
         case 3:
-            document.getElementById("modal-content").innerHTML="<p>ちがうよ。ゆっくり見てさがそう。</p>";
-            document.getElementById("modal-content").innerHTML+="<div><input type='button' class='leftbtn' value='マップへ戻る' onclick='mapjump()'><input type='button' class='rightbtn' id='modal-close' value='やり直す'></div>";
+            document.getElementById("modal-content").innerHTML="<p>ゲームオーバー</p>";
+            document.getElementById("modal-content").innerHTML+="<div><input type='button' class='leftbtn' value='マップへ戻る' onclick='mapjump()'><input type='button' class='rightbtn' id='modal-close' value='やり直す' onclick='reset()'></div>";
     }
     $(function(){
 
@@ -114,9 +130,3 @@ function modal(modal_content){
 function mapjump(){
     window.location.href = 'map.html';
 }
-/*
-function  localput(){
-    //回転クリアフラグput
-    window.localStorage.setItem("kaiten_3",true); 
-}
-*/
