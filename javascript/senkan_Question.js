@@ -9,7 +9,7 @@ function senkan_hantei(click_num){
     }else{
         ship_flag[click_num] = 1;
         //船爆破
-        document.getElementById("ship"+click_num).src="../image/oukan.png";
+        document.getElementById("ship"+click_num).src="../image/explosion.png";
         setTimeout(function(){
             document.getElementById("ship"+click_num).src="../image/Puzzle_3.1.png";
         },500);
