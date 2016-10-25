@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>船渡し-難易度選択</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script type="text/javascript" src="../javascript/Difficulty.js"></script>
+<script type="text/javascript" src="../javascript/Difficulty_funawatashi.js"></script>
 <style type="text/css">
 #modal-content {
 	width: 80% ;
@@ -28,6 +28,7 @@
 	height: 120% ;
 	background-color: rgba( 0,0,0, 0.75 ) ;
 }
+
 </style>
 </head> 
 
@@ -35,10 +36,10 @@
 
 
     <header>
-        <a href="map.html">
-            <input type="button" class="hidari" value="前ページへ戻る">
-        </a>
+            <input type="button" class="hidari" value="前ページへ戻る" onclick="mapjump()">
+            <h1 id="hed">船渡し難易度</h1>
     </header>
+
 <div id="modal-content">
 	<!-- モーダルウィンドウのコンテンツ開始 -->
 	<p>いままでの問題のきろくがなくなってしまいますが</p>
@@ -47,28 +48,26 @@
     <!-- モーダルウィンドウのコンテンツ終了 -->
 </div>
 
-
+    <!--
+        a,b,c,d=ボタンの色付よう
+        difficlty_box=ボタンの形の変更
+        diffchange=難易度をセッションで渡す＆リンク移動
+    -->
     <div id="g">
         <div style=" position: absolute; top: 350px; left:5%;">
             <input type="button" value="あそびかた" onclick="modal()" id="a" class="difficlty_box">
         </div>
 
         <div style=" position: absolute; top: 350px; left:30%;">
-            <a href="funawatashi_Question.html">
-            <input type="button" value="やさしい" id="b" class="difficlty_box">
-            </a>
+            <input type="button" value="やさしい" id="b" class="difficlty_box" onclick="diffchange('easy')">
         </div>
 
         <div style=" position: absolute; top: 350px; left:55%;">
-            <a href="funawatashi_Question.html">
-            <input type="button" value="ふつう" id="c" class="difficlty_box">
-            </a>
+            <input type="button" value="ふつう" id="c" class="difficlty_box" onclick="diffchange('normal')">
         </div>
 
         <div style=" position: absolute; top: 350px; left:80%;">
-            <a href="funawatashi_Question.html">
-            <input type="button" value="むずかしい" id="d" class="difficlty_box">
-            </a>
+            <input type="button" value="むずかしい" id="d" class="difficlty_box" onclick="diffchange('diffculty')">
         </div> 
     </div>
 
@@ -95,7 +94,7 @@ p	{line-height:1.5;
 
 
 
-div     {border-radius: 30px;
+div     {
         width: 300px;
 	    height: 100px}
 
@@ -189,6 +188,18 @@ a:hover	{color: #FFFFFF}
     width:15vw;
     height:20vh;
 }
+
+/*ヘッダー内のh1タイトル*/
+    h1#hed{
+        margin:0;
+        float:left;
+        font-size:60px;
+        color:#fff;
+    }
+    /*ヘッダーボタン配置*/
+    .hidari{
+        float:left;
+    }
 </style>
 
 

@@ -74,6 +74,20 @@ function modal(){
 
     } ) ;
 }
+
+//難易度にセッションのデータを送るオンクリックイベント
+//引数で難易度+問題種類を取得
+function diffchange(ques_diff){
+    //難易度の設定問題ページphpで判定を作る
+    window.sessionStorage.setItem('ques_diff',ques_diff);
+    window.location.href = 'funawatashi_Question.html';
+}
+//マップへ戻る
+function mapjump(){
+    window.location.href = 'map.html';
+}
+
+//表示判定
 localget();
 if(funawatashi_tutorial != "true"){
     modal();
