@@ -39,9 +39,6 @@ function reset(){
         document.getElementById("ship"+i).src="../image/senkan_teki.png";
     }
 }
-function animation(num){
-    document.getElementById("ship"+num).src="../image/Puzzle_3.1.png";
-}
 
 function modal(modal_content){
     //モーダルダイアログに表示させる内容
