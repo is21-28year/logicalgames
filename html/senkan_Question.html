@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>問題ページ 回転命令</title>
+    <title>問題ページ 海賊ゲーム</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript" src="../javascript/senkan_Question.js"></script>
     <style>
@@ -215,10 +215,17 @@
     li img{
         width:125px;
     }
+    #zan_tama{
+        font-size:72px;
+        padding:50px;
+        position:absolute;
+        right:0;
+        bottom:0;
+    }
 
     </style>
 </head>
-<body onload="modal(0)">
+<body onload="modal(0),tama()">
     <!-- ここからモーダルウィンドウ -->
     <div id="modal-content">
 	    <!-- モーダルウィンドウのコンテンツ開始 -->
@@ -243,7 +250,7 @@
     <!--リセットボタン配置-->
     
     <div id="reset">
-        <input type="button" class="migi" value="リセット">
+        <input type="button" class="migi" value="リセット" onclick="reset()">
     </div>
     
     </div>
@@ -251,18 +258,19 @@
         <!--問題動作div-->
         <h1>問題</h1>
         <ul id="wrap">
-    <li class="box1"><a href="senkan_Question.html"><img src="../image/senkan_teki.png"></a></li>
-    <li class="box1"><img src="../image/senkan_teki.png"></li>
-    <li class="box1"><img src="../image/senkan_teki.png"></li>
-    <li class="box1"><img src="../image/senkan_teki.png"></li>
-    <li class="box1"><img src="../image/senkan_teki.png"></li>
+    <li class="box1"><a href="#" onclick="senkan_hantei(0)"><img id="ship0" src="../image/senkan_teki.png"></a></li>
+    <li class="box1"><a href="#" onclick="senkan_hantei(1)"><img id="ship1" src="../image/senkan_teki.png"></a></li>
+    <li class="box1"><a href="#" onclick="senkan_hantei(2)"><img id="ship2" src="../image/senkan_teki.png"></a></li>
+    <li class="box1"><a href="#" onclick="senkan_hantei(3)"><img id="ship3" src="../image/senkan_teki.png"></a></li>
+    <li class="box1"><a href="#" onclick="senkan_hantei(4)"><img id="ship4" src="../image/senkan_teki.png"></a></li>
 </ul>
 <ul id="wrap">
-    <li class="box2"><img src="../image/senkan_teki.png"></li>
-    <li class="box2"><img src="../image/senkan_teki.png"></li>
-    <li class="box2"><img src="../image/senkan_teki.png"></li>
-    <li class="box2"><img src="../image/senkan_teki.png"></li>
+    <li class="box2"><a href="#" onclick="senkan_hantei(5)"><img id="ship5" src="../image/senkan_teki.png"></a></li>
+    <li class="box2"><a href="#" onclick="senkan_hantei(6)"><img id="ship6" src="../image/senkan_teki.png"></a></li>
+    <li class="box2"><a href="#" onclick="senkan_hantei(7)"><img id="ship7" src="../image/senkan_teki.png"></a></li>
+    <li class="box2"><a href="#" onclick="senkan_hantei(8)"><img id="ship8" src="../image/senkan_teki.png"></a></li>
 </ul>
+        <div id="zan_tama"></div>
     </div>
 </body>
 </html>
