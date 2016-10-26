@@ -222,6 +222,7 @@
         right:0;
         bottom:0;
     }
+    .b{background-color:#fff;}
 
     </style>
 </head>
@@ -235,16 +236,16 @@
 
     <header>
         <!--前の画面へ戻るボタン-->
-        <input type="button" class="hidari" value="前ページへ戻る" onclick="location.href='Difficulty_senkan.html'">
+        <input type="button" class="hidari" value="もどる" onclick="location.href='Difficulty_senkan.html'">
         <input type="button" class="migi" value="ヒント" onclick="modal(1)">
         
         <h1 id="qtit">海賊ゲーム</h1>
     </header>
     <div class="clam_left">
     <!--問題文章div-->
-    <div id="bunsho">
-        <h1>問題文章</h1>
-        <p></p>    
+    <div id="bunsho" class="b">
+        <h1><ruby><rb>問題文章</rb><rp>(</rp><rt>もんだいぶんしょう</rt><rp>)</rp></ruby></h1>
+        <p><ruby><rb>違うものを探そう</rb><rp>(</rp><rt>ちが　　　　さが　　</rt><rp>)</rp></ruby></p>    
     </div>
     
     <!--リセットボタン配置-->

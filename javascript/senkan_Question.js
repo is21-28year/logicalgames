@@ -44,15 +44,15 @@ function modal(modal_content){
     //モーダルダイアログに表示させる内容
     switch (modal_content){
         case 0:
-            document.getElementById("modal-content").innerHTML="<p></p>";
+            document.getElementById("modal-content").innerHTML="<p>敵のおやだまをたおそう！</p>";
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' value='閉じる'></div>";
             break;
         case 1:
-            document.getElementById("modal-content").innerHTML="<p></p>";
+            document.getElementById("modal-content").innerHTML="<p>ふねの色に注目しよう！（仮）</p>";
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' value='閉じる'></div>";
             break;
         case 2:
-            //window.localStorage.setItem("senkan_3",true);
+            window.localStorage.setItem("senkan_3",true);
             document.getElementById("modal-content").innerHTML="<p>おめでとう！ステージクリア！</p>";
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' value='マップへ戻る' onclick='mapjump()'></div>";
             break;
