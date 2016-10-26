@@ -1,10 +1,18 @@
 /*変数の初期宣言+初回かどうかのフラグ*/ 
     var funawatashi_tutorial;
-
+    /*画像常時のための変数*/
+    var clear_1=true;/*test*/
+    var clear_2;
+    var clear_3; 
+    
 //ローカルデータの取得よう
     function localget(){
         //チュートリアル閲覧フラグ取得
         funawatashi_tutorial=window.localStorage.getItem("funawatashi_tutorial");
+        //船渡し各問題クリアフラグ取得
+        /*テスト用clear_1=window.localStorage.getItem("funawatashi_1");*/
+        clear_2=window.localStorage.getItem("funawatashi_2");
+        clear_3=window.localStorage.getItem("funawatashi_3");
 }   
 
 //localstorageにデータを挿入
@@ -94,19 +102,44 @@ function tutorialhantei(){
     funawatashi_tutorial = "true";
 }
 }
+/*画像表示部分*/ 
+function clearhantei(clear,id){
+    //クリア済みかの判定
+    if(clear==true){
+        //指定位置に画像の表示
+        document.getElementById(id).innerHTML="<img src='../image/oukan.png' class='clearimage'>";
+    }else{
+        document.getElementById(id).innerHTML="";
+    } 
+}
+
+//全問題クリア済み画像表示
+function cleardisp(){
+    //クリア画像表示１
+    clearhantei(clear_1,"clear1");
+    //クリア画像表示2
+    clearhantei(clear_2,"clear2");
+    //クリア画像表示3
+    clearhantei(clear_3,"clear3");
+}
+
+/*test*/
+function localdelete(){
+    window.localStorage.removeItem("funawatashi_tutorial");
+} 
+
 //メイン動作部分に変更
 function main(){
     localget();
+    cleardisp();
     tutorialhantei();
     localput();
 }
-
-
-
 
 /*更新日：10/26
 　function meinを追加
 　ページを起動した際に動く関数をまとめたもの以後別ページにも共通
 　動画表示判定をfunction tutorialhanteiに変更
 　モーダルウィンドウのボタン配置変更
+　画像表示function追加clearhantei cleardisp
   */ 
