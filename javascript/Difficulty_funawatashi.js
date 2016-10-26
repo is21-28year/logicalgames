@@ -1,19 +1,18 @@
-var funawatashi_tutorial;
-function localget(){
-    //チュートリアル閲覧フラグ取得
-    funawatashi_tutorial=window.localStorage.getItem("funawatashi_tutorial");
-}
+/*変数の初期宣言+初回かどうかのフラグ*/ 
+    var funawatashi_tutorial;
+
+//ローカルデータの取得よう
+    function localget(){
+        //チュートリアル閲覧フラグ取得
+        funawatashi_tutorial=window.localStorage.getItem("funawatashi_tutorial");
+}   
+
 //localstorageにデータを挿入
-function  localput(){
-    //チュートリアル閲覧フラグput
-    window.localStorage.funawatashi_tutorial=("funawatashi_tutorial",funawatashi_tutorial);
+    function  localput(){
+        //チュートリアル閲覧フラグput
+        window.localStorage.funawatashi_tutorial=("funawatashi_tutorial",funawatashi_tutorial);
 }
-//localstorageの全データを削除（デバッグ用）
-function localdelete(){
-    //チュートリアル閲覧フラグ削除
-    window.localStorage.removeItem("funawatashi_tutorial");
-    alert("削除しました");
-}
+
 //モーダルダイアログの表示
 function modal(){
         $(function(){
@@ -82,15 +81,32 @@ function diffchange(ques_diff){
     window.sessionStorage.setItem('ques_diff',ques_diff);
     window.location.href = 'funawatashi_Question.html';
 }
-//マップへ戻る
+
+//リンクを移動するよう
 function mapjump(){
     window.location.href = 'map.html';
 }
 
-//表示判定
-localget();
-if(funawatashi_tutorial != "true"){
+//遊び方動画の初回用判定
+function tutorialhantei(){
+    if(funawatashi_tutorial != "true"){
     modal();
     funawatashi_tutorial = "true";
 }
-localput();
+}
+//メイン動作部分に変更
+function main(){
+    localget();
+    tutorialhantei();
+    localput();
+}
+
+
+
+
+/*更新日：10/26
+　function meinを追加
+　ページを起動した際に動く関数をまとめたもの以後別ページにも共通
+　動画表示判定をfunction tutorialhanteiに変更
+　モーダルウィンドウのボタン配置変更
+  */ 

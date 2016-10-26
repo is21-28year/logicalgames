@@ -24,26 +24,18 @@ body
      text-align:center;   /* 下記のautoに未対応用のセンタリング */
 	 background-image : url(../image/map_demo.png);
     }
-table
-    {
+/*中央iconのまとめ*/
+    #main
+        {
+        margin:0px;
+        margin-left:auto;    /* 左側マージンを自動的に空ける */
+        margin-right:auto;   /* 右側マージンを自動的に空ける */
+        margin-top:80px;     /*上側マージンを300px空ける*/
+        text-align:left;     /* 中身を左側表示に戻す */
         width:1300px;         /* 幅を決定する */
-        height:600px;         /* 高さを決定する*/
-    }
-td
-    {
-        width:33%;
-    }
-
-#main
-    {
-     margin:0px;
-     margin-left:auto;    /* 左側マージンを自動的に空ける */
-     margin-right:auto;   /* 右側マージンを自動的に空ける */
-     margin-top:80px;     /*上側マージンを300px空ける*/
-     text-align:left;     /* 中身を左側表示に戻す */
-     width:1300px;         /* 幅を決定する */
-     height:600px;          /*高さを決定する*/
-    }
+        height:500px;          /*高さを決定する*/
+        }
+/*中央iconのまとめ*/
 /*共通ボタンのデザイン部分*/
     input[type="button"] {
         width: 180px;
@@ -66,7 +58,7 @@ td
         box-shadow: none;
         transform: translate3d(0, 3px, 0);
         width: 180px;
-        height: 600x;
+        height: 60x;
         background-color: #DC7D01;
         border: solid 2px #dedede;
         border-radius: 8px;
@@ -163,7 +155,12 @@ p {
 /*アイコンの位置を動かす部分*/
     .iconmigi{
         float:right;
+    }
+    #ue{
         
+    }
+    #sita{
+        bottom:0;
     }
 /*アイコンの位置を動かす部分*/
 
@@ -192,37 +189,23 @@ p {
         <input type="button" class="delbtn" value="全データ消す" onclick="modal()">
     </div>
     <div id="main">
-        <div>
-            <table cellpadding="0" cellspacing="30"><tbody>
-                <tr>
-                    <td class="migiue">
-                        <a href="../html/Difficulty_senkan.html"><img src="../image/icon_senkan.png" width="200px" height="200"/></a>
-                        <div id="senkan"></div>
-                    </td>
-                    <td class="migiue">
-                        <a href="../html/Difficulty_kaiten.html"><img src="../image/icon_kaiten.png" width="200" height="200"/></a>
-                        <div id="kaiten"></div>
-                    </td>
-                    <td class="migiue">
-                        <a href="../html/Difficulty_funawatashi.html"><img src="../image/icon_funawatashi.png" width="200" height="200" /></a>
-                        <div id="funawatashi"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="migiue">
-                        <a href="../html/Difficulty_ringo.html"><img src="../image/icon_ringo.png" width="200" height="200"/></a>
-                        <div id="ringo"></div>
-                    </td>
-                    <td class="migiue">
-                        <a href="../html/Difficulty_warashibe.html"><img src="../image/icon_warashibe.png" width="200" height="200"/></a>
-                        <div id="warashibe"></div>
-                    </td>
-                    <td class="migiue">
-                        <a href="../html/Difficulty_takara.html"><img src="../image/icon_takara.png" width="200" height="200" class="iconmigi"></a>
-                        <div id="takara"></div>
-                    </td>
-                </tr>
-            </tbody></table>
+        <div id="ue">
+            <a href="../html/Difficulty_senkan.html"><img src="../image/icon_senkan.png" width="200px" height="200"/></a>
+            <div id="senkan"></div>
+            <a href="../html/Difficulty_kaiten.html"><img src="../image/icon_kaiten.png" width="200" height="200"/></a>
+            <div id="kaiten"></div>
+            <a href="../html/Difficulty_funawatashi.html"><img src="../image/icon_funawatashi.png" width="200" height="200" /></a>
+            <div id="funawatashi"></div>
+        </div>
+        <div id="sita">
+            <a href="../html/Difficulty_ringo.html"><img src="../image/icon_ringo.png" width="200" height="200"/></a>
+            <div id="ringo"></div>
+
+            <a href="../html/Difficulty_warashibe.html"><img src="../image/icon_warashibe.png" width="200" height="200"/></a>
+            <div id="warashibe"></div>
+
+            <a href="../html/Difficulty_takara.html"><img src="../image/icon_takara.png" width="200" height="200"></a>
+            <div id="takara"></div>
         </div>
     </div>
 </body>
@@ -230,7 +213,4 @@ p {
 <!--更新日：10/26
 　　変更内容：bodyの表示がスクロール上だけにならなかったため
     テーブル位置を上の方へ移動
-    icon位置の調整
-    追記：tableを使用していると縦への移動がしづらいため
-    tableの廃止+div&idを検討しております
-    また背景の島のサイズをもう少し大きくする方がやりやすいため検討します-->
+    icon位置の調整-->
