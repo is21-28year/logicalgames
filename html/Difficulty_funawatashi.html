@@ -84,8 +84,8 @@ p	{line-height:1.5;
 /*ヘッダーデザイン（サイズや色など）*/
 /*ボタン用共通デザイン*/
     input[type="button"] {
-	width: 180px;
-    height: 60px;
+	width: 10vw;
+    height: 6vh;
 	background-color: #ffa530;
 	border: solid 2px #ffffff;
 	border-radius: 8px;
@@ -99,6 +99,7 @@ p	{line-height:1.5;
     margin-top;
 	margin-left: 8px;
     margin-right: 8px;
+    font-size: 50px;
 }
 
    input[type="button"]:hover   /*ボタンの沈む動作*/
@@ -195,21 +196,21 @@ p	{line-height:1.5;
         diffchange=難易度をセッションで渡す＆リンク移動
     -->
     <div id="g">
-        <div style=" position: absolute; top: 350px; left:5%;">
+        <div style=" position: absolute; top: 42vh; left:5%;">
             <input type="button" value="あそびかた" onclick="modal()" id="a" class="difficlty_box">
         </div>
 
-        <div style=" position: absolute; top: 350px; left:30%;">
+        <div style=" position: absolute; top: 42vh; left:30%;">
             <div id="clear1"></div>
             <input type="button" value="やさしい" id="b" class="difficlty_box" onclick="diffchange('easy')">
         </div>
 
-        <div style=" position: absolute; top: 350px; left:55%;">
+        <div style=" position: absolute; top: 42vh; left:55%;">
             <div id="clear2"></div>
             <input type="button" value="ふつう" id="c" class="difficlty_box" onclick="diffchange('normal')">
         </div>
 
-        <div style=" position: absolute; top: 350px; left:80%;">
+        <div style=" position: absolute; top: 42vh; left:80%;">
             <div id="clear3"></div>
             <input type="button" value="むずかしい" id="d" class="difficlty_box" onclick="diffchange('diffculty')">
         </div> 
