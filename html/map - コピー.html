@@ -35,6 +35,24 @@ body
         width:1300px;         /* 幅を決定する */
         height:500px;          /*高さを決定する*/
         }
+/*アイコンの位置を動かす部分*/
+    .iconmigi{
+        float:right;
+    }
+    #ue{
+        width:60vw;
+        height:30vh;
+        top:0;
+        margin:0px;
+    }
+    #sita{
+        width:60vw;
+        height:30vh;
+        bottom:0;
+        margin:0px;
+    }
+/*アイコンの位置を動かす部分*/
+
 /*中央iconのまとめ*/
 /*共通ボタンのデザイン部分*/
     input[type="button"] {
@@ -134,7 +152,7 @@ p {
 /*勲章の場所*/
 /*後々tdの大きさを変更*/
     .migiue {
-        position: relative;
+        float:right;
     }
 
     #senkan,#kaiten,#funawatashi,#ringo,#warashibe,#takara {  
@@ -152,17 +170,6 @@ p {
     filter: alpha(opacity=70);
     -ms-filter: "alpha(opacity=70)";
     }
-/*アイコンの位置を動かす部分*/
-    .iconmigi{
-        float:right;
-    }
-    #ue{
-        
-    }
-    #sita{
-        bottom:0;
-    }
-/*アイコンの位置を動かす部分*/
 
 
 
@@ -204,7 +211,7 @@ p {
             <a href="../html/Difficulty_warashibe.html"><img src="../image/icon_warashibe.png" width="200" height="200"/></a>
             <div id="warashibe"></div>
 
-            <a href="../html/Difficulty_takara.html"><img src="../image/icon_takara.png" width="200" height="200"></a>
+            <a href="../html/Difficulty_takara.html"><img src="../image/icon_takara.png" style="width:15vw; height:26vh;" class="migiue"/></a>
             <div id="takara"></div>
         </div>
     </div>
