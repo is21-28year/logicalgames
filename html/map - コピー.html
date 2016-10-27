@@ -12,17 +12,13 @@
     text-align: right; 
     } 
 /*ボタン画面右上表示用*/
-body{
-background-image: url("kajuen_ringo.png");
-background-size:cover;
-}
-
 body
     {
      margin:0px;          /* ページ全体のmargin */
      padding:0px;         /* ページ全体のpadding */
      text-align:center;   /* 下記のautoに未対応用のセンタリング */
 	 background-image : url(../image/map_demo.png);
+     background-size:100vw 100vh;
     }
 /*中央iconのまとめ*/
     #main
@@ -30,26 +26,34 @@ body
         margin:0px;
         margin-left:auto;    /* 左側マージンを自動的に空ける */
         margin-right:auto;   /* 右側マージンを自動的に空ける */
-        margin-top:80px;     /*上側マージンを300px空ける*/
+        margin-top:17vh;     /*上側マージンを300px空ける*/
         text-align:left;     /* 中身を左側表示に戻す */
-        width:1300px;         /* 幅を決定する */
-        height:500px;          /*高さを決定する*/
+        width:80vw;         /* 幅を決定する */
+        height:50vh;          /*高さを決定する*/
         }
 /*アイコンの位置を動かす部分*/
     .iconmigi{
         float:right;
     }
+    .icon{
+        width:15vw;
+        height:20vh;
+        margin:0;
+        position: relative;
+        float:left;
+    }
     #ue{
-        width:60vw;
+        width:68vw;
         height:30vh;
         top:0;
         margin:0px;
     }
     #sita{
-        width:60vw;
+        width:80vw;
         height:30vh;
         bottom:0;
-        margin:0px;
+        margin:0;
+        border:0;
     }
 /*アイコンの位置を動かす部分*/
 
@@ -141,11 +145,6 @@ p {
             width:80%;
         }
 
-        table
-        {
-            width:100%;
-        }
-
 }
 
 
@@ -153,14 +152,15 @@ p {
 /*後々tdの大きさを変更*/
     .migiue {
         float:right;
+        position: relative;
     }
 
     #senkan,#kaiten,#funawatashi,#ringo,#warashibe,#takara {  
         position: absolute;
         top: 0px;
-        right:170px;
-        width:100px;
-        height:100px;
+        right:0;
+        width:10vw;
+        height:6vh;
     }
  /*勲章の場所*/
 
@@ -193,26 +193,36 @@ p {
 </div>
 
     <div id="right"> 
-        <input type="button" class="delbtn" value="全データ消す" onclick="modal()">
+        <input type="button" class="delbtn" value="データをけす" onclick="modal()">
     </div>
     <div id="main">
         <div id="ue">
-            <a href="../html/Difficulty_senkan.html"><img src="../image/icon_senkan.png" width="200px" height="200"/></a>
-            <div id="senkan"></div>
-            <a href="../html/Difficulty_kaiten.html"><img src="../image/icon_kaiten.png" width="200" height="200"/></a>
-            <div id="kaiten"></div>
-            <a href="../html/Difficulty_funawatashi.html"><img src="../image/icon_funawatashi.png" width="200" height="200" /></a>
-            <div id="funawatashi"></div>
+            <div class="icon" style="float:left;">
+                <a href="../html/Difficulty_senkan.html"><img src="../image/icon_senkan.png" style="width:15vw; height:25vh;"/></a>
+                <div id="senkan"></div>
+            </div>
+            <div class="icon" style="margin-left:15vw;">
+                <a href="../html/Difficulty_kaiten.html"><img src="../image/icon_kaiten.png" style="width:15vw; height:25vh;"/></a>
+                <div id="kaiten"></div>
+            </div>
+            <div class="icon" style="float:right; margin-top:12vh; margin-right:1vw;">
+                <a href="../html/Difficulty_funawatashi.html"><img src="../image/icon_funawatashi.png" style="width:15vw; height:25vh;"/></a>
+                <div id="funawatashi"></div>
+            </div>
         </div>
         <div id="sita">
-            <a href="../html/Difficulty_ringo.html"><img src="../image/icon_ringo.png" width="200" height="200"/></a>
-            <div id="ringo"></div>
-
-            <a href="../html/Difficulty_warashibe.html"><img src="../image/icon_warashibe.png" width="200" height="200"/></a>
-            <div id="warashibe"></div>
-
-            <a href="../html/Difficulty_takara.html"><img src="../image/icon_takara.png" style="width:15vw; height:26vh;" class="migiue"/></a>
-            <div id="takara"></div>
+            <div class="icon" style="float:left; margin-left:5vw;">
+                <a href="../html/Difficulty_ringo.html"><img src="../image/icon_ringo.png" style="width:15vw; height:25vh;"/></a>
+                <div id="ringo"></div>
+            </div>
+            <div class="icon" style="margin-left:17vw;">
+                <a href="../html/Difficulty_warashibe.html"><img src="../image/icon_warashibe.png" style="width:15vw; height:25vh;"/></a>
+                <div id="warashibe"></div>
+            </div>
+            <div class="icon" style="float:right;">
+                <a href="../html/Difficulty_takara.html"><img src="../image/icon_takara.png" style="width:15vw; height:25vh;></a>
+                <div id="takara"></div>
+            </div>
         </div>
     </div>
 </body>
