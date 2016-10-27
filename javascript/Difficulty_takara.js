@@ -1,19 +1,26 @@
-var takara_tutorial;
-function localget(){
-    //チュートリアル閲覧フラグ取得
-    takara_tutorial=window.localStorage.getItem("takara_tutorial");
-}
+/*変数の初期宣言+初回かどうかのフラグ*/ 
+    var takara_tutorial;
+    /*画像常時のための変数*/
+    var clear_1=true;/*test*/
+    var clear_2;
+    var clear_3; 
+    
+//ローカルデータの取得よう
+    function localget(){
+        //チュートリアル閲覧フラグ取得
+        takara_tutorial=window.localStorage.getItem("takara_tutorial");
+        //船渡し各問題クリアフラグ取得
+        /*テスト用clear_1=window.localStorage.getItem("takara_1");*/
+        clear_2=window.localStorage.getItem("takara_2");
+        clear_3=window.localStorage.getItem("takara_3");
+}   
+
 //localstorageにデータを挿入
-function  localput(){
-    //チュートリアル閲覧フラグput
-    window.localStorage.takara_tutorial=("takara_tutorial",takara_tutorial);
+    function  localput(){
+        //チュートリアル閲覧フラグput
+        window.localStorage.takara_tutorial=("takara_tutorial",takara_tutorial);
 }
-//localstorageの全データを削除（デバッグ用）
-function localdelete(){
-    //チュートリアル閲覧フラグ削除
-    window.localStorage.removeItem("takara_tutorial");
-    alert("削除しました");
-}
+
 //モーダルダイアログの表示
 function modal(){
         $(function(){
@@ -74,9 +81,65 @@ function modal(){
 
     } ) ;
 }
-localget();
-if(takara_tutorial != "true"){
+
+//難易度にセッションのデータを送るオンクリックイベント
+//引数で難易度+問題種類を取得
+function diffchange(ques_diff){
+    //難易度の設定問題ページphpで判定を作る
+    window.sessionStorage.setItem('ques_diff',ques_diff);
+    window.location.href = 'takara_Question.html';
+}
+
+//リンクを移動するよう
+function mapjump(){
+    window.location.href = 'map.html';
+}
+
+//遊び方動画の初回用判定
+function tutorialhantei(){
+    if(takara_tutorial != "true"){
     modal();
     takara_tutorial = "true";
 }
-localput();
+}
+/*画像表示部分*/ 
+function clearhantei(clear,id){
+    //クリア済みかの判定
+    if(clear==true){
+        //指定位置に画像の表示
+        document.getElementById(id).innerHTML="<img style='position:relative;z-index: 2;' src='../image/oukan.png' class='clearimage'>";
+    }else{
+        document.getElementById(id).innerHTML="";
+    } 
+}
+
+//全問題クリア済み画像表示
+function cleardisp(){
+    //クリア画像表示１
+    clearhantei(clear_1,"clear1");
+    //クリア画像表示2
+    clearhantei(clear_2,"clear2");
+    //クリア画像表示3
+    clearhantei(clear_3,"clear3");
+}
+
+/*test*/
+function localdelete(){
+    window.localStorage.removeItem("takara_tutorial");
+} 
+
+//メイン動作部分に変更
+function main(){
+    localget();
+    cleardisp();
+    tutorialhantei();
+    localput();
+}
+
+/*更新日：10/26
+　function meinを追加
+　ページを起動した際に動く関数をまとめたもの以後別ページにも共通
+　動画表示判定をfunction tutorialhanteiに変更
+　モーダルウィンドウのボタン配置変更
+　画像表示function追加clearhantei cleardisp
+  */ 
