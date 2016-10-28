@@ -12,13 +12,13 @@
         background-color: #edede3;
         margin: 0;
     }
-    
+/*ボタン共通基本デザイン部分*/
     input[type="button"]:hover   /*ボタンの沈む動作*/
     {
         box-shadow: none;
         transform: translate3d(0, 3px, 0);
-        width: 180px;
-        height: 600x;
+        width: 10vw;
+        height: 6vh;
         background-color: #DC7D01;
         border: solid 2px #dedede;
         border-radius: 8px;
@@ -28,13 +28,13 @@
         font-weight: bold;
         text-align: center;
         text-decoration: none;
-        margin-top: 15px;
+        margin-top: 8px;
         margin-left: 8px;
         margin-right: 8px;
     }   
     input[type="button"] {
-	width: 180px;
-    height: 60px;
+	width: 10vw;
+    height: 6vh;
 	background-color: #ffa530;
 	border: solid 2px #ffffff;
 	border-radius: 8px;
@@ -45,7 +45,7 @@
 	font-weight: bold;
 	text-align: center;
 	text-decoration: none;
-    margin-top: 15px;
+    margin-top: 8px;
 	margin-left: 8px;
     margin-right: 8px;
 }
@@ -53,6 +53,7 @@
     {
     outline:none;
     }
+/*ボタン共通基本デザイン部分*/
     .hidari{
         float:left;
     }
@@ -197,7 +198,8 @@
     }
     
     #wrap{
-        width:100%;
+        width:65vw;
+        height:10vw;
         display:flex;
         justify-content: center;
         padding:0;list-style: none;
@@ -223,7 +225,17 @@
         bottom:0;
     }
     .b{background-color:#fff;}
-
+#bunsho
+    {
+        width:30vw;
+        height:40vh;
+        position : relative ;
+    }
+img[id^="ship"]
+	{
+	width:8vw;
+	height:21vh;
+	}
     </style>
 </head>
 <body onload="modal(0),tama()">
