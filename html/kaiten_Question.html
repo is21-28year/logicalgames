@@ -14,16 +14,33 @@
         margin: 0;
     }
 /*ボタン共通基本デザイン部分*/
-    input[type="button"]:hover   /*ボタンの沈む動作*/
-    {
-        box-shadow: none;
-        transform: translate3d(0, 3px, 0);
+        input[type="button"]:hover   /*ボタンの沈む動作*/
+        {
+            box-shadow: none;
+            transform: translate3d(0, 3px, 0);
+            width: 10vw;
+            height: 6vh;
+            background-color: #DC7D01;
+            border: solid 2px #dedede;
+            border-radius: 8px;
+            color: #dedede;
+            display: block;
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 8px;
+            margin-left: 8px;
+            margin-right: 8px;
+        }   
+        input[type="button"] {
         width: 10vw;
         height: 6vh;
-        background-color: #DC7D01;
-        border: solid 2px #dedede;
+        background-color: #ffa530;
+        border: solid 2px #ffffff;
         border-radius: 8px;
-        color: #dedede;
+        box-shadow: 0 3px 0 rgba(136,136,136,1);    /*ボタンの影*/
+        color: #ffffff;
         display: block;
         font-size: 25px;
         font-weight: bold;
@@ -32,28 +49,11 @@
         margin-top: 8px;
         margin-left: 8px;
         margin-right: 8px;
-    }   
-    input[type="button"] {
-	width: 10vw;
-    height: 6vh;
-	background-color: #ffa530;
-	border: solid 2px #ffffff;
-	border-radius: 8px;
-    box-shadow: 0 3px 0 rgba(136,136,136,1);    /*ボタンの影*/
-	color: #ffffff;
-	display: block;
-	font-size: 25px;
-	font-weight: bold;
-	text-align: center;
-	text-decoration: none;
-    margin-top: 8px;
-	margin-left: 8px;
-    margin-right: 8px;
-}
-    input[type="button"]:focus
-    {
-    outline:none;
     }
+        input[type="button"]:focus
+        {
+        outline:none;
+        }
 /*ボタン共通基本デザイン部分*/
     .hidari{
         float:left;
@@ -62,7 +62,7 @@
         float:right;
     }
     
-    /*ここまでボタン関係*/
+/*ここまでボタン関係*/
     /*ここからheader*/
     header	{
         /*追記*/
@@ -76,21 +76,25 @@
 	color:#0072c8;
 	-webkit-box-shadow:0 2px 7px #aaaaaa;
 	box-shadowbox:0 2px 7px #aaaaaa;}
-    /*ここからdivの範囲分け*/
+/*ここからdivの範囲分け*/
     .clam_left
     {
+        padding:0;
         margin:0;
         float:left;
         width:30vw;
         height:90vh;
-        border-right:solid 0.3vw #000;
+        border-right:solid 0.1vw #000;
     }
     .clam_right
     {
+        padding:0;
         margin:0;
         float:right;
-        width:66vw;
+        width:68.9vw;
         height:90vh;
+        background-image: url("../image/kaiten_haikei.png");
+        background-size:100% 100%;
     }
     div
     {
@@ -170,12 +174,12 @@
 	    background-color: rgba( 0,0,0, 0.75 ) ;
     }
     #kaiten {
-        margin-top:30px;
+        margin-top:5vh;
         display: block;
         margin-right:auto;
         margin-left: auto;
     }
-    #border{
+    /*#border{
         width:300px;
         height:250px;
         padding:10px;
@@ -183,7 +187,7 @@
         border-radius:10px;
         margin-right:auto;
         margin-left: auto;
-    }
+    }*/
     #sentaku{
         width:60vw;
         margin:auto;
@@ -205,7 +209,7 @@
         float:left;
         font-size:60px;
         color:#fff;
-        margin-top:8px;
+        margin-top:2vh;
     }
     @media screen and (max-width:1500px){
         #kaiten {
@@ -230,14 +234,14 @@
     <header>
         <!--前の画面へ戻るボタン-->
         <input type="button" class="hidari" value="もどる" onclick="location.href='Difficulty_kaiten.html'">
-        <h1 id="hed">回転命令</h1>
+        <img style="width:12vw; height:8vh;" src="../image/kaiten_title.png" alt="">
         <input type="button" class="migi" value="ヒント" onclick="modal(1)">
     </header>
     <div class="clam_left">
     <!--問題文章div-->
     <div id="bunsho" class="b">
-    <img src="../image/M_T.png">
-    <img src="../image/B_K.png">
+    <img style="width:15vw; height:10vh;" src="../image/M_T.png">
+    <img style="width:25vw; height:15vh;" src="../image/kaiten_bunsho.png">
     </div>
     
     <!--リセットボタン配置-->
@@ -251,12 +255,12 @@
     </div>
     <div class="clam_right">
         <!--問題動作div-->
-        <h1><ruby><rb>問題</rb><rp>(</rp><rt>もんだい</rt><rp>)</rp></ruby></h1>
-        <div id="border"><img src="../image/Puzzle_3.1.png" alt="" id="kaiten" width="230px"></div>
+        <!--<h1><ruby><rb>問題</rb><rp>(</rp><rt>もんだい</rt><rp>)</rp></ruby></h1>-->
+        <div id="border"><img style="width:13.5vw; height:24vh;" src="../image/Puzzle_3.1.png" alt="" id="kaiten"></div>
         <div id="sentaku">
-            <img src="../image/Puzzle_3.1.png" alt="" width="180px" onclick="modal(2)">
-            <img src="../image/Puzzle_3.2.png" alt="" width="180px" onclick="modal(3)">
-            <img src="../image/Puzzle_3.3.png" alt="" width="180px" onclick="modal(3)">
+            <img style="width:9vw; height:16vh;" src="../image/Puzzle_3.1.png" alt="" onclick="modal(2)">
+            <img style="width:9vw; height:16vh;" src="../image/Puzzle_3.2.png" alt="" onclick="modal(3)">
+            <img style="width:9vw; height:16vh;" src="../image/Puzzle_3.3.png" alt="" onclick="modal(3)">
         </div>
         <!-- デバッグ用 -->
         <!--
