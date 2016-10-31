@@ -91,6 +91,12 @@ body
         {
         outline:none;
     }
+input[type="button"]#del{
+            background-image: url("../image/B_M.png");
+            background-size:8vw 4vh;
+            background-repeat:no-repeat;
+            background-position:center;
+        }
 /*共通ボタンのデザイン部分*/
 /*全データ削除ボタン配置*/
     .delbtn{
@@ -195,7 +201,7 @@ p {
 </div>
 
     <div id="right"> 
-        <input type="button" class="delbtn" value="データをけす" onclick="modal()">
+        <input type="button" class="delbtn" id="del" onclick="modal()">
     </div>
     <div id="main">
         <div id="ue">
