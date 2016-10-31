@@ -54,6 +54,13 @@
         {
         outline:none;
         }
+        input[type="button"]#modoru{
+            background-image: url("../image/button_modoru.png");
+            background-size:8vw 3vw;
+            background-repeat:no-repeat;
+            text-align:center;
+            background-position:2vh 2vw;
+        }
 /*ボタン共通基本デザイン部分*/
     .hidari{
         float:left;
@@ -91,7 +98,7 @@
         padding:0;
         margin:0;
         float:right;
-        width:68.9vw;
+        width:69vw;
         height:90vh;
         background-image: url("../image/kaiten_haikei.png");
         background-size:100% 100%;
@@ -232,7 +239,7 @@
 
     <header>
         <!--前の画面へ戻るボタン-->
-        <input type="button" class="hidari" value="もどる" onclick="location.href='Difficulty_kaiten.html'">
+        <input type="button" class="hidari" style="width:12vw; height:8vh;" onclick="location.href='Difficulty_kaiten.html'" id="modoru">
         <img style="width:12vw; height:8vh;" src="../image/kaiten_title.png" alt="">
         <input type="button" class="migi" value="ヒント" onclick="modal(1)">
     </header>
