@@ -32,21 +32,21 @@ function modal(modal_content){
     switch (modal_content){
         case 0:
             /*styleタグ画面上のどこに置くかを指定している*/ 
-            document.getElementById("modal-content").innerHTML="<p style='margin-top:25vh;'><img src='../image/B_K2.png'></p>";
+            document.getElementById("modal-content").innerHTML="<p style='margin-top:25vh;'><img src='../image/B_K2.png' style='width:40vw; height:25vh;'></p>";
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' class='tojiru'></div>";
             break;
         case 1:
-            document.getElementById("modal-content").innerHTML="<p style='margin-top:25vh;'><img src='../image/H_K.png'></p>";
+            document.getElementById("modal-content").innerHTML="<p style='margin-top:25vh;'><img src='../image/H_K.png' style='width:40vw; height:25vh;'></p>";
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' class='tojiru'></div>";
             break;
         case 2:
             window.localStorage.setItem("kaiten_3",true);
-            document.getElementById("modal-content").innerHTML="<p style='margin-top:25vh;'><img src='../image/kaiten_clear.png'></p>";
-            document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' class='modoru' onclick='mapjump()'></div>";
+            document.getElementById("modal-content").innerHTML="<p style='margin-top:25vh;'><img src='../image/kaiten_clear.png' style='width:35vw; height:12.5vh;'></p>";
+            document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' class='mapback' onclick='mapjump()'></div>";
             break;
         case 3:
-            document.getElementById("modal-content").innerHTML="<p style='margin-top:25vh;'><img src='../image/kaiten_gameover.png'></p>";
-            document.getElementById("modal-content").innerHTML+="<div><input type='button' class='leftbtn modoru'  onclick='mapjump()'><input type='button' class='rightbtn yarinaosi' id='modal-close'></div>";
+            document.getElementById("modal-content").innerHTML="<p style='margin-top:25vh;'><img src='../image/kaiten_gameover.png' style='width:35vw; height:12.5vh;'></p>";
+            document.getElementById("modal-content").innerHTML+="<div><input type='button' class='leftbtn mapback'  onclick='mapjump()'><input type='button' class='rightbtn yarinaosi' id='modal-close'></div>";
     }
     $(function(){
 
