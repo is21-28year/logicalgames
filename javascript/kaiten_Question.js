@@ -32,7 +32,7 @@ function modal(modal_content){
     switch (modal_content){
         case 0:
             /*styleタグ画面上のどこに置くかを指定している*/ 
-            document.getElementById("modal-content").innerHTML="<p style='margin-top:220px;'><ruby><rb>真</rb><rt>ま</rt></ruby>ん<ruby><rb>中</rb><rt>なか</rt></ruby>で<ruby><rb>回</rb><rt>まわ</rt></ruby>っている<ruby><rb>形</rb><rt>かたち</rt></ruby>と<br><ruby><rb>同</rb><rt>おな</rt></ruby>じものを<ruby><rb>探</rb><rt>さが</rt></ruby>そう</p>";
+            document.getElementById("modal-content").innerHTML="<p style='margin-top:25vh;'><img src='../image/B_K2.png'>";
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' value='とじる'></div>";
             break;
         case 1:
