@@ -36,7 +36,7 @@ function modal(modal_content){
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' value='とじる'></div>";
             break;
         case 1:
-            document.getElementById("modal-content").innerHTML="<p style='margin-top:220px;'><ruby><rb> 回る絵をゆっくり見てみつけよう</rb><rp>(</rp><rt>まわ え　　　　　み　　　　　　</rt><rp>)</rp></ruby></p>";
+            document.getElementById("modal-content").innerHTML="<p style='margin-top:25vh;'><img src='../image/H_K.png'>";
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' value='とじる'></div>";
             break;
         case 2:
