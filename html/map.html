@@ -12,42 +12,56 @@
     text-align: right; 
     } 
 /*ボタン画面右上表示用*/
-body{
-background-image: url("kajuen_ringo.png");
-background-size:cover;
-}
-
 body
     {
      margin:0px;          /* ページ全体のmargin */
      padding:0px;         /* ページ全体のpadding */
      text-align:center;   /* 下記のautoに未対応用のセンタリング */
 	 background-image : url(../image/map_demo.png);
+     background-size:100vw 100vh;
     }
-table
-    {
-        width:1300px;         /* 幅を決定する */
-        height:600px;         /* 高さを決定する*/
+/*中央iconのまとめ*/
+    #main
+        {
+        margin:0px;
+        margin-left:auto;    /* 左側マージンを自動的に空ける */
+        margin-right:auto;   /* 右側マージンを自動的に空ける */
+        margin-top:17vh;     /*上側マージンを300px空ける*/
+        text-align:left;     /* 中身を左側表示に戻す */
+        width:80vw;         /* 幅を決定する */
+        height:50vh;          /*高さを決定する*/
+        }
+/*アイコンの位置を動かす部分*/
+    .iconmigi{
+        float:right;
     }
-td
-    {
-        width:33%;
+    .icon{
+        width:15vw;
+        height:20vh;
+        margin:0;
+        position: relative;
+        float:left;
     }
+    #ue{
+        width:68vw;
+        height:30vh;
+        top:0;
+        margin:0px;
+    }
+    #sita{
+        width:80vw;
+        height:30vh;
+        bottom:0;
+        margin:0;
+        border:0;
+    }
+/*アイコンの位置を動かす部分*/
 
-#main
-    {
-     margin:0px;
-     margin-left:auto;    /* 左側マージンを自動的に空ける */
-     margin-right:auto;   /* 右側マージンを自動的に空ける */
-     margin-top:80px;     /*上側マージンを300px空ける*/
-     text-align:left;     /* 中身を左側表示に戻す */
-     width:1300px;         /* 幅を決定する */
-     height:600px;          /*高さを決定する*/
-    }
+/*中央iconのまとめ*/
 /*共通ボタンのデザイン部分*/
     input[type="button"] {
-        width: 180px;
-        height: 60px;
+        width: 180vw;
+        height: 60vh;
         background-color: #ffa530;
         border: solid 2px #ffffff;
         border-radius: 8px;
@@ -65,8 +79,8 @@ td
         {
         box-shadow: none;
         transform: translate3d(0, 3px, 0);
-        width: 180px;
-        height: 600x;
+        width: 180vw;
+        height: 60vh;
         background-color: #DC7D01;
         border: solid 2px #dedede;
         border-radius: 8px;
@@ -88,10 +102,12 @@ td
 /*モーダルウィンドウ上のボタン配置*/
     .bkbtn {
         float: right;
+        bottom:30;
     }
 
     .bjbtn {
         float: left;
+        bottom:30;
     }
 /*モーダルウィンドウ上のボタン配置*/
 /* ここまでデモページ用のコード */
@@ -131,26 +147,22 @@ p {
             width:80%;
         }
 
-        table
-        {
-            width:100%;
-        }
-
 }
 
 
 /*勲章の場所*/
 /*後々tdの大きさを変更*/
     .migiue {
+        float:right;
         position: relative;
     }
 
     #senkan,#kaiten,#funawatashi,#ringo,#warashibe,#takara {  
         position: absolute;
         top: 0px;
-        right:170px;
-        width:100px;
-        height:100px;
+        right:0;
+        width:10vw;
+        height:6vh;
     }
  /*勲章の場所*/
 
@@ -160,12 +172,6 @@ p {
     filter: alpha(opacity=70);
     -ms-filter: "alpha(opacity=70)";
     }
-/*アイコンの位置を動かす部分*/
-    .iconmigi{
-        float:right;
-        
-    }
-/*アイコンの位置を動かす部分*/
 
 
 
@@ -189,40 +195,36 @@ p {
 </div>
 
     <div id="right"> 
-        <input type="button" class="delbtn" value="全データ消す" onclick="modal()">
+        <input type="button" class="delbtn" value="データをけす" onclick="modal()">
     </div>
     <div id="main">
-        <div>
-            <table cellpadding="0" cellspacing="30"><tbody>
-                <tr>
-                    <td class="migiue">
-                        <a href="../html/Difficulty_senkan.html"><img src="../image/icon_senkan.png" width="200px" height="200"/></a>
-                        <div id="senkan"></div>
-                    </td>
-                    <td class="migiue">
-                        <a href="../html/Difficulty_kaiten.html"><img src="../image/icon_kaiten.png" width="200" height="200"/></a>
-                        <div id="kaiten"></div>
-                    </td>
-                    <td class="migiue">
-                        <a href="../html/Difficulty_funawatashi.html"><img src="../image/icon_funawatashi.png" width="200" height="200" /></a>
-                        <div id="funawatashi"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="migiue">
-                        <a href="../html/Difficulty_ringo.html"><img src="../image/icon_ringo.png" width="200" height="200"/></a>
-                        <div id="ringo"></div>
-                    </td>
-                    <td class="migiue">
-                        <a href="../html/Difficulty_warashibe.html"><img src="../image/icon_warashibe.png" width="200" height="200"/></a>
-                        <div id="warashibe"></div>
-                    </td>
-                    <td class="migiue">
-                        <a href="../html/Difficulty_takara.html"><img src="../image/icon_takara.png" width="200" height="200" class="iconmigi"></a>
-                        <div id="takara"></div>
-                    </td>
-                </tr>
-            </tbody></table>
+        <div id="ue">
+            <div class="icon" style="float:left;">
+                <a href="../html/Difficulty_senkan.html"><img src="../image/icon_senkan.png" style="width:15vw; height:25vh;"/></a>
+                <div id="senkan"></div>
+            </div>
+            <div class="icon" style="margin-left:15vw;">
+                <a href="../html/Difficulty_kaiten.html"><img src="../image/icon_kaiten.png" style="width:15vw; height:25vh;"/></a>
+                <div id="kaiten"></div>
+            </div>
+            <div class="icon" style="float:right; margin-top:12vh; margin-right:1vw;">
+                <a href="../html/Difficulty_funawatashi.html"><img src="../image/icon_funawatashi.png" style="width:15vw; height:25vh;"/></a>
+                <div id="funawatashi"></div>
+            </div>
+        </div>
+        <div id="sita">
+            <div class="icon" style="float:left; margin-left:5vw;">
+                <a href="../html/Difficulty_ringo.html"><img src="../image/icon_ringo.png" style="width:15vw; height:25vh;"/></a>
+                <div id="ringo"></div>
+            </div>
+            <div class="icon" style="margin-left:17vw;">
+                <a href="../html/Difficulty_warashibe.html"><img src="../image/icon_warashibe.png" style="width:15vw; height:25vh;"/></a>
+                <div id="warashibe"></div>
+            </div>
+            <div class="icon" style="float:right;">
+                <a href="../html/Difficulty_takara.html"><img src="../image/icon_takara.png" style="width:15vw; height:25vh;></a>
+                <div id="takara"></div>
+            </div>
         </div>
     </div>
 </body>
@@ -230,7 +232,4 @@ p {
 <!--更新日：10/26
 　　変更内容：bodyの表示がスクロール上だけにならなかったため
     テーブル位置を上の方へ移動
-    icon位置の調整
-    追記：tableを使用していると縦への移動がしづらいため
-    tableの廃止+div&idを検討しております
-    また背景の島のサイズをもう少し大きくする方がやりやすいため検討します-->
+    icon位置の調整-->
