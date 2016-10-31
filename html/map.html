@@ -97,6 +97,28 @@ input[type="button"]#del{
             background-repeat:no-repeat;
             background-position:center;
         }
+input[type="button"].bkbtn{
+            background-image: url("../image/B_C_M.png");
+            background-size:8vw 4vh;
+            background-repeat:no-repeat;
+            background-position:center;
+            position: absolute;
+        right:0;
+        left:40vw;
+        bottom:5vh;
+        margin:0 auto;
+        }
+input[type="button"].bjbtn{
+            background-image: url("../image/B_M.png");
+            background-size:8vw 4vh;
+            background-repeat:no-repeat;
+            background-position:center;
+            position: absolute;
+        right:40vw;
+        left:0;
+        bottom:5vh;
+        margin:0 auto;
+            }
 /*共通ボタンのデザイン部分*/
 /*全データ削除ボタン配置*/
     .delbtn{
@@ -195,8 +217,8 @@ p {
 	<!-- モーダルウィンドウのコンテンツ開始 -->
 	<p>いままでの問題のきろくがなくなってしまいますが</p>
 	<p>本当に消してもよろしいでしょうか?</p>
-    <input type="button" id="modal-close" class="bjbtn" value="消す" onclick="localdelete()">
-	<input type="button" id="modal-close" class="bkbtn" value="閉じる">	
+    <input type="button" id="modal-close" class="bjbtn" onclick="localdelete()">
+	<input type="button" id="modal-close" class="bkbtn">	
     <!-- モーダルウィンドウのコンテンツ終了 -->
 </div>
 
