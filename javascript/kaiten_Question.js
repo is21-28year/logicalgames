@@ -33,11 +33,11 @@ function modal(modal_content){
         case 0:
             /*styleタグ画面上のどこに置くかを指定している*/ 
             document.getElementById("modal-content").innerHTML="<p style='margin-top:25vh;'><img src='../image/B_K2.png'>";
-            document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' id='tojiru'></div>";
+            document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' class='tojiru'></div>";
             break;
         case 1:
             document.getElementById("modal-content").innerHTML="<p style='margin-top:25vh;'><img src='../image/H_K.png'>";
-            document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' id='tojiru'></div>";
+            document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' class='tojiru'></div>";
             break;
         case 2:
             window.localStorage.setItem("kaiten_3",true);
