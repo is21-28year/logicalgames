@@ -32,20 +32,20 @@ function modal(modal_content){
     switch (modal_content){
         case 0:
             /*styleタグ画面上のどこに置くかを指定している*/ 
-            document.getElementById("modal-content").innerHTML="<p style='margin-top:25vh;'><img src='../image/B_K2.png'>";
+            document.getElementById("modal-content").innerHTML="<p style='margin-top:25vh;'><img src='../image/B_K2.png'></p>";
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' value='とじる'></div>";
             break;
         case 1:
-            document.getElementById("modal-content").innerHTML="<p style='margin-top:25vh;'><img src='../image/H_K.png'>";
+            document.getElementById("modal-content").innerHTML="<p style='margin-top:25vh;'><img src='../image/H_K.png'></p>";
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' value='とじる'></div>";
             break;
         case 2:
             window.localStorage.setItem("kaiten_3",true);
-            document.getElementById("modal-content").innerHTML="<p style='margin-top:220px;'>おめでとう！ステージクリア！</p>";
+            document.getElementById("modal-content").innerHTML="<p style='margin-top:25vh;'><img src='../image/B_K2.png'></p>";
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' value='マップへもどる' onclick='mapjump()'></div>";
             break;
         case 3:
-            document.getElementById("modal-content").innerHTML="<p style='margin-top:220px;'>ちがうよ。ゆっくり<ruby><rb>見</rb><rt>み</rt>てさがそう。</p>";
+            document.getElementById("modal-content").innerHTML="<p style='margin-top:25vh;'><img src='../image/B_K2.png'></p>";
             document.getElementById("modal-content").innerHTML+="<div><input type='button' class='leftbtn' value='マップへもどる' onclick='mapjump()'><input type='button' class='rightbtn' id='modal-close' value='やりなおす'></div>";
     }
     $(function(){
