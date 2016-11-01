@@ -28,44 +28,50 @@
 	height: 120% ;
 	background-color: rgba( 0,0,0, 0.75 ) ;
 }
-
 body	{
 	background-color: #edede3;
 	margin: 0;
 	background-image: url(img/bg.gif);
     }
-
-
 p	{line-height:1.5;
 	font-size: 40px}
-
-
-
-
 /*ボタン事の各配色部分*/
     #a	{
         border-radius: 30px;
         min-height: 100%;
         padding:50px 15px;
-        background-color: #ffd900}
-
+        background-color: #ffd900;
+        background-image: url("../image/dif_button1.png");
+        background-size:8vw 4vh;
+        background-repeat:no-repeat;
+        background-position:center;}
     #b	{
         border-radius: 30px;
         min-height: 100%;
         padding:50px 15px;
-        background-color: #3eb370}
-
+        background-color: #3eb370;
+        background-image: url("../image/dif_button2.png");
+        background-size:8vw 4vh;
+        background-repeat:no-repeat;
+        background-position:center;}
     #c	{
         border-radius: 30px;
         min-height: 100%;
         padding:50px 15px;
-        background-color: #f08300}
-
+        background-color: #f08300;
+        background-image: url("../image/dif_button3.png");
+        background-size:8vw 4vh;
+        background-repeat:no-repeat;
+        background-position:center;}
     #d	{
         border-radius: 30px;
         min-height: 100%;
         padding:50px 15px;
-        background-color: #cc6699}
+        background-color: #cc6699;
+        background-image: url("../image/dif_button4.png");
+        background-size:8vw 4vh;
+        background-repeat:no-repeat;
+        background-position:center;}
 /*ボタン事の各配色部分*/
 /*ヘッダーデザイン（サイズや色など）*/
     header	{
@@ -101,13 +107,12 @@ p	{line-height:1.5;
     margin-right: 8px;
     font-size: 50px;
 }
-
    input[type="button"]:hover   /*ボタンの沈む動作*/
     {
         box-shadow: none;
         transform: translate3d(0, 3px, 0);
         width: 10vw;
-    height: 6vh;
+        height: 6vh;
         background-color: #DC7D01;
         border: solid 2px #dedede;
         border-radius: 8px;
@@ -123,14 +128,18 @@ p	{line-height:1.5;
         position:relative;
         z-index:1;
     } 
+    input[type="button"]#back{
+            background-image: url("../image/button_modoru.png");
+            background-size:8vw 4vh;
+            background-repeat:no-repeat;
+            background-position:center;
+        }
 /*ボタン用共通デザイン*/
 /*中央ボタンの配置用のちのち均等割り付けに変更*/
     button	{margin-left:350px}
 /*中央ボタンの配置用のちのち均等割り付けに変更*/
-
 /*a link関連　onclick実装により削除*/
 /*a link関連　onclick実装により削除*/
-
 /*難易度ページ中央のボックスサイズ変更用*/
     input[type="button"].difficlty_box{
         width:15vw;
@@ -157,6 +166,10 @@ p	{line-height:1.5;
         left:0;
         bottom:30px;
         margin:0 auto;
+        background-image: url("../image/button_tojiru.png");
+        background-size:8vw 4vh;
+        background-repeat:no-repeat;
+        background-position:center;
     }
     .center input:hover{
         position: absolute;
@@ -182,8 +195,8 @@ p	{line-height:1.5;
 
 <body onload="main()">
     <header>
-            <input type="button" class="hidari" value="もどる" onclick="mapjump()">
-            <h1 id="hed">宝探し難易度</h1>
+            <input type="button" id="back" class="hidari" onclick="mapjump()">
+            <img style="width:12vw; height:8vh; foat:left;" src="../image/takara_title.png" alt="">
     </header>
 
 <div id="modal-content">
@@ -191,7 +204,7 @@ p	{line-height:1.5;
 	<center><h1>宝探し遊び方</h1></center>
     <!--videoタグ実装予定部分-->
     <video src="../movie/テスト.mp4" controls></video>
-	<div class='center'><input type="button" id="modal-close" value="とじる"></div>
+	<div class='center'><input type="button" id="modal-close"></div>
     <!-- モーダルウィンドウのコンテンツ終了 -->
 </div>
 
@@ -202,22 +215,22 @@ p	{line-height:1.5;
     -->
     <div id="g">
         <div style=" position: absolute; top: 42vh; left:5%;">
-            <input type="button" value="あそびかた" onclick="modal()" id="a" class="difficlty_box">
+            <input type="button" onclick="modal()" id="a" class="difficlty_box">
         </div>
 
         <div style=" position: absolute; top: 42vh; left:30%;">
             <div id="clear1"></div>
-            <input type="button" value="やさしい" id="b" class="difficlty_box" onclick="diffchange('easy')">
+            <input type="button" id="b" class="difficlty_box" onclick="diffchange('easy')">
         </div>
 
         <div style=" position: absolute; top: 42vh; left:55%;">
             <div id="clear2"></div>
-            <input type="button" value="ふつう" id="c" class="difficlty_box" onclick="diffchange('normal')">
+            <input type="button" id="c" class="difficlty_box" onclick="diffchange('normal')">
         </div>
 
         <div style=" position: absolute; top: 42vh; left:80%;">
             <div id="clear3"></div>
-            <input type="button" value="むずかしい" id="d" class="difficlty_box" onclick="diffchange('diffculty')">
+            <input type="button" id="d" class="difficlty_box" onclick="diffchange('diffculty')">
         </div> 
     </div>
 
@@ -228,13 +241,11 @@ p	{line-height:1.5;
     現状決まっていないfontの設定を削除
     モーダルウィンドウの中身を変更
     クリア画像表示判定追加
-
     残っている部分
     背景画像を問題事に変更
     test用のコードを削除などでコードを整える
     他の難易度ページこれに準拠して帰る
     画面表示をビューポートに合わせるようにする（vw,vh）
     チュートリアル動画をvideoタグで追加する
-
 -->
 </html>
