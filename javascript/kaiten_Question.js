@@ -24,8 +24,10 @@ function imgkaiten(){
     },50);
 }
 var modal_content;
-
-
+/*クリアフラグ三つ毎*/ 
+function cleartrue(clearnum){
+    window.localStorage.setItem(clearnum,true);
+}
 //モーダルダイアログの表示
 function modal(modal_content){
     //モーダルダイアログに表示させる内容
@@ -40,7 +42,6 @@ function modal(modal_content){
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' class='tojiru'></div>";
             break;
         case 2:
-            window.localStorage.setItem("kaiten_3",true);
             document.getElementById("modal-content").innerHTML="<p style='margin-top:25vh;'><img src='../image/kaiten_clear.png' style='width:40vw; height:8vh;'></p>";
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' class='mapback' onclick='mapjump()'></div>";
             break;
