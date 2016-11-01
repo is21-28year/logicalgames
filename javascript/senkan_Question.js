@@ -39,6 +39,9 @@ function reset(){
         document.getElementById("ship"+i).src="../image/senkan_teki.png";
     }
 }
+function cleartrue(clearnum){
+    window.localStorage.setItem(clearnum,true);
+}
 
 function modal(modal_content){
     //モーダルダイアログに表示させる内容
