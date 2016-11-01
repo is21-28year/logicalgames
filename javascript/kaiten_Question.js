@@ -36,12 +36,12 @@ function modal(modal_content){
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' class='tojiru'></div>";
             break;
         case 1:
-            document.getElementById("modal-content").innerHTML="<p style='margin-top:25vh;'><img src='../image/H_K.png' style='width:40vw; height:25vh;'></p>";
+            document.getElementById("modal-content").innerHTML="<p style='margin-top:25vh;'><img src='../image/H_K.png' style='width:50vw; height:12vh;'></p>";
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' class='tojiru'></div>";
             break;
         case 2:
             window.localStorage.setItem("kaiten_3",true);
-            document.getElementById("modal-content").innerHTML="<p style='margin-top:25vh;'><img src='../image/kaiten_clear.png' style='width:35vw; height:12.5vh;'></p>";
+            document.getElementById("modal-content").innerHTML="<p style='margin-top:25vh;'><img src='../image/kaiten_clear.png' style='width:40vw; height:8vh;'></p>";
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' class='mapback' onclick='mapjump()'></div>";
             break;
         case 3:
