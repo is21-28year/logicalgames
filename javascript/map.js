@@ -112,6 +112,14 @@ function localdelete(){
     window.localStorage.removeItem("kaiten_2");
     window.localStorage.removeItem("kaiten_3");
     //項目追記必要部分
+    //チュートリアル削除
+    window.localStorage.removeItem("funawatashi_tutorial");
+    window.localStorage.removeItem("kaiten_tutorial");
+    window.localStorage.removeItem("ringo_tutorial");
+    window.localStorage.removeItem("senkan_tutorial");
+    window.localStorage.removeItem("takara_tutorial");
+    window.localStorage.removeItem("warashibe_tutorial");
+
 }
 //クリア済みのものに画像を表示
 //要修正画像がちらちらする
