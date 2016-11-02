@@ -69,9 +69,18 @@ function modal(modal_content){
         //コンテンツをフェードインする
         $( "#modal-content" ).fadeIn( "slow" ) ;
 
-        if(modal_content == 2){
+        if(modal_content == 2 || modal_content == 3){
             //クリックしても閉じない
-            
+            $( "#modal-close" ).unbind().click( function(){
+
+                //[#modal-content]と[#modal-overlay]をフェードアウトした後に…
+                $( "#modal-content,#modal-overlay" ).fadeOut( "slow" , function(){
+
+                    //[#modal-overlay]を削除する
+                    $('#modal-overlay').remove() ;
+                } ) ;
+
+            } ) ;
         }else{
             //[#modal-overlay]、または[#modal-close]をクリックしたら…
             $( "#modal-overlay,#modal-close" ).unbind().click( function(){

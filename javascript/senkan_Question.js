@@ -48,20 +48,20 @@ function modal(modal_content){
     switch (modal_content){
         case 0:
             document.getElementById("modal-content").innerHTML="<p style='margin-top:300px;'>敵のおやだまをたおそう！</p>";
-            document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' value='閉じる'></div>";
+            document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' class='tojiru'></div>";
             break;
         case 1:
             document.getElementById("modal-content").innerHTML="<p style='margin-top:300px;'>ふねの色に注目しよう！（仮）</p>";
-            document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' value='閉じる'></div>";
+            document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' class='tojiru'></div>";
             break;
         case 2:
             window.localStorage.setItem("senkan_3",true);
             document.getElementById("modal-content").innerHTML="<p style='margin-top:300px;'>おめでとう！ステージクリア！</p>";
-            document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' value='マップへ戻る' onclick='mapjump()'></div>";
+            document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' class='mapback' onclick='mapjump()'></div>";
             break;
         case 3:
             document.getElementById("modal-content").innerHTML="<p style='margin-top:300px;'>ゲームオーバー</p>";
-            document.getElementById("modal-content").innerHTML+="<div><input type='button' class='leftbtn' value='マップへ戻る' onclick='mapjump()'><input type='button' class='rightbtn' id='modal-close' value='やり直す' onclick='reset()'></div>";
+            document.getElementById("modal-content").innerHTML+="<div><input type='button' class='leftbtn mapback'  onclick='mapjump()'><input type='button' class='rightbtn yarinaosi' onclick='reset()' id='modal-close'></div>";
     }
     $(function(){
 
@@ -83,9 +83,18 @@ function modal(modal_content){
         //コンテンツをフェードインする
         $( "#modal-content" ).fadeIn( "slow" ) ;
 
-        if(modal_content == 2){
+        if(modal_content == 2 || modal_content == 3){
             //クリックしても閉じない
-            
+            $( "#modal-close" ).unbind().click( function(){
+
+                //[#modal-content]と[#modal-overlay]をフェードアウトした後に…
+                $( "#modal-content,#modal-overlay" ).fadeOut( "slow" , function(){
+
+                    //[#modal-overlay]を削除する
+                    $('#modal-overlay').remove() ;
+                } ) ;
+
+            } ) ;
         }else{
             //[#modal-overlay]、または[#modal-close]をクリックしたら…
             $( "#modal-overlay,#modal-close" ).unbind().click( function(){
