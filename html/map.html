@@ -99,14 +99,13 @@ input[type="button"]#del{
         }
 input[type="button"].bkbtn{
             background-image: url("../image/B_C_M.png");
-            background-size:8vw 4vh;
+            background-size:7vw 4vh;
             background-repeat:no-repeat;
             background-position:center;
             position: absolute;
-        right:0;
-        left:40vw;
-        bottom:5vh;
-        margin:0 auto;
+            right:20%;
+            bottom:3vh;
+            margin:0 auto;
         }
 input[type="button"].bjbtn{
             background-image: url("../image/B_M.png");
@@ -114,10 +113,9 @@ input[type="button"].bjbtn{
             background-repeat:no-repeat;
             background-position:center;
             position: absolute;
-        right:40vw;
-        left:0;
-        bottom:5vh;
-        margin:0 auto;
+            left:20%;
+            bottom:3vh;
+            margin:0 auto;
             }
 /*共通ボタンのデザイン部分*/
 /*全データ削除ボタン配置*/
@@ -130,20 +128,15 @@ input[type="button"].bjbtn{
 /*モーダルウィンドウ上のボタン配置*/
     .bkbtn {
         float: right;
-        bottom:30;
+        bottom:3vh;
     }
 
     .bjbtn {
         float: left;
-        bottom:30;
+        bottom:3vh;
     }
 /*モーダルウィンドウ上のボタン配置*/
 /* ここまでデモページ用のコード */
-
-p {
-    color: #ff0000;
-    font-size: 38px;
-}
 
 #modal-content {
 	width: 80% ;
@@ -202,7 +195,7 @@ p {
     }
 
 
-/*画像表示*/
+/*削除モーダル画像表示*/
 #deltext{
     width:50vw;
     height:20vh;
@@ -216,8 +209,8 @@ p {
 <div id="modal-content">
 	<!-- モーダルウィンドウのコンテンツ開始 -->
 	<img src="../image/del_text.png" id="deltext" alt="">
-    <input type="button" id="modal-close" class="bjbtn" onclick="localdelete()">
-	<input type="button" id="modal-close" class="bkbtn">	
+    <div class='center'><input type="button" id="modal-close" class="bjbtn" onclick="localdelete()"></div>
+    <div class='center'><input type="button" id="modal-close" class="bkbtn"></div>
     <!-- モーダルウィンドウのコンテンツ終了 -->
 </div>
 
