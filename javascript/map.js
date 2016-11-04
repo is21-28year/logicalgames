@@ -125,12 +125,12 @@ function localdelete(){
 //要修正画像がちらちらする
 function clearhantei(clear1,clear2,clear3,id){
     //クリア済みかの判定
-//    if(clear1=="true" && clear2=="true" && clear3=="true"){
+    if(clear1=="true" && clear2=="true" && clear3=="true"){
         //指定位置に画像の表示
             document.getElementById(id).innerHTML="<img src='../image/oukan.png' width='100px' height='100'>";
-//        }else{
-//            document.getElementById(id).innerHTML="";
-//        } 
+        }else{
+            document.getElementById(id).innerHTML="";
+        } 
     }
 //全問題クリア済み画像表示
 function cleardisp(){
