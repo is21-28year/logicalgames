@@ -125,12 +125,18 @@ function modal(modal_content){
 function mapjump(){
     window.location.href = 'map.html';
 }
-function  localput(kaiten_3){
+function  localput(kaiten){
                                                     //どの難易度をクリアしたのかの判定をつける
     //回転クリアフラグ
-    window.localStorage.setItem("kaiten_1",kaiten_1);
-    window.localStorage.setItem("kaiten_2",kaiten_2);
-    window.localStorage.setItem("kaiten_3",kaiten_3); 
+    if(kaiten == "kaiten_1"){
+    window.localStorage.setItem("kaiten_1",true);
+    }
+    if(kaiten == "kaiten_2"){
+    window.localStorage.setItem("kaiten_2",true);
+    }
+    if(kaiten == "kaiten_3"){
+    window.localStorage.setItem("kaiten_3",true);
+    } 
 }
 /*
 function  localput(){

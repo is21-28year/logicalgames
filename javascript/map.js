@@ -125,12 +125,12 @@ function localdelete(){
 //要修正画像がちらちらする
 function clearhantei(clear1,clear2,clear3,id){
     //クリア済みかの判定
-    if(clear11=true && clear2==true && clear3==true){
+//    if(clear1=="true" && clear2=="true" && clear3=="true"){
         //指定位置に画像の表示
             document.getElementById(id).innerHTML="<img src='../image/oukan.png' width='100px' height='100'>";
-        }else{
-            document.getElementById(id).innerHTML="";
-        } 
+//        }else{
+//            document.getElementById(id).innerHTML="";
+//        } 
     }
 //全問題クリア済み画像表示
 function cleardisp(){
@@ -208,3 +208,27 @@ function modal(){
 
     } ) ;
 }
+function main(){
+    localget();
+    cleardisp();
+}
+/*
+    var senkan_1=true;
+    var senkan_2=true;
+    var senkan_3=true;
+    var warashibe_1=true;
+    var warashibe_2=true;
+    var warashibe_3=true;
+    var ringo_1=true;
+    var ringo_2=true;
+    var ringo_3=true;
+    var takara_1=true;
+    var takara_2=true;
+    var takara_3=true;
+    var funawatashi_1=true;
+    var funawatashi_2=true;
+    var funawatashi_3=true;
+    var kaiten_1=true;
+    var kaiten_2=true;
+    var kaiten_3=true;
+*/
