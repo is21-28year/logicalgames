@@ -2,12 +2,240 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>問題ページ 回転命令</title>
+    <title>問題ページ 宝探し</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script type="text/javascript" src="../javascript/jQueryRotate.js"></script>
-    <script type="text/javascript" src="../javascript/kaiten_Question.js"></script>
+    <script type="text/javascript" src="../javascript/takara_Question.js"></script>
     <style>
-    body	
+    body
+    {
+        font-family:'メイリオ','Hiragino kaku gothic Pro',sans-serif;
+        background-color: #edede3;
+        margin: 0;
+    }
+　　/*ボタン共通基本デザイン部分*/
+    input[type="button"]:hover   /*ボタンの沈む動作*/
+    {
+        box-shadow: none;
+        transform: translate3d(0, 3px, 0);
+        width: 10vw;
+        height: 6vh;
+        background-color: #DC7D01;
+        border: solid 2px #dedede;
+        border-radius: 8px;
+        color: #dedede;
+        display: block;
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        margin-top: 8px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }   
+    input[type="button"] {
+	width: 10vw;
+    height: 6vh;
+	background-color: #ffa530;
+	border: solid 2px #ffffff;
+	border-radius: 8px;
+    box-shadow: 0 3px 0 rgba(136,136,136,1);    /*ボタンの影*/
+	color: #ffffff;
+	display: block;
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+    margin-top: 8px;
+	margin-left: 8px;
+    margin-right: 8px;
+}
+    input[type="button"]:focus
+    {
+    outline:none;
+    }
+/*ボタン共通基本デザイン部分*/
+    .hidari{
+        float:left;
+    }
+    .migi{
+        float:right;
+    }
+    
+    /*ここまでボタン関係*/
+    /*ここからheader*/
+    header	{
+        /*追記*/
+        height:10vh;
+        margin:0;
+        padding:0;
+        /*ここまで*/
+    font-family:'Asap',sans-serif;
+	font-size:36px;
+	background-color:#0095d9;
+	/*color:#0072c8;*/
+	-webkit-box-shadow:0 2px 7px #aaaaaa;
+	box-shadowbox:0 2px 7px #aaaaaa;}
+    /*ここからdivの範囲分け*/
+    .clam_left
+    {
+        margin:0;
+        float:left;
+        width:30vw;
+        height:90vh;
+        border-right:solid 2px #000;
+    }
+    .clam_right
+    {
+        margin:0;
+        float:right;
+        width:68vw;
+        height:90vh;
+    }
+    div
+    {
+        margin:0;
+        padding:0;
+        border-collapse:collapse;
+
+    }
+    p{
+        font-size:18px;
+    }
+    h1{
+        margin:0;
+    }
+    #qtit{
+        padding-top:10px;
+    }
+    #modal-content p{
+        text-align:center;
+        font-size:36px;
+    }
+    .center input{
+        position: absolute;
+        right:0;
+        left:0;
+        bottom:30px;
+        margin:0 auto;
+    }
+    .center input:hover{
+        margin:0 auto;
+    }
+    .leftbtn,.rightbtn{
+        bottom:30px;
+    }
+    .leftbtn{
+        position: absolute;
+        left:20%;
+    }
+    .rightbtn{
+        position: absolute;
+        right:20%;
+    }
+    #buncho
+    {
+        width:30vw;
+        height:30vh;
+        position : relative ;
+    }
+    #reset
+    {
+        border-top:solid 2px #000;
+        width:30vw;
+        height:50vh;
+        position : absolute ;
+        bottom : 0 ;
+    }
+    /*モーダルウィンドウ*/
+    #modal-content {
+	    width: 80% ;
+        height:80%;
+	    margin: 0 ;
+	    padding: 10px 20px ;
+	    border: 2px solid #aaa ;
+	    background: #fff ;
+	    position: fixed ;
+	    display: none ;
+	    z-index: 2 ;
+    }
+  
+    #modal-overlay {
+	    z-index: 1 ;
+	    display: none ;
+	    position: fixed ;
+	    top: 0 ;
+	    left: 0 ;
+	    width: 100% ;
+	    height: 120% ;
+	    background-color: rgba( 0,0,0, 0.75 ) ;
+    }
+    #kaiten {
+        margin-top:30px;
+        display: block;
+        margin-right:auto;
+        margin-left: auto;
+    }
+    #border{
+        width:350px;
+        height:320px;
+        padding:10px;
+        border:2px solid #000;
+        border-radius:10px;
+        margin-right:auto;
+        margin-left: auto;
+    }
+    #sentaku{
+        text-align:center;
+    }
+    #sentaku img{
+        padding:10px;
+        margin:50px;
+        border:2px solid #000;
+        border-radius:10px;
+    }
+    #sentaku img:hover{
+        background-color:#aaa;
+    }
+    
+    #wrap{
+        width:65vw;
+        height:10vw;
+        display:flex;
+        justify-content: center;
+        padding:0;list-style: none;
+        text-align:center;
+        }
+    .box1{
+        width:calc(100% / 5);
+        margin:2px;
+        }
+    .box2{
+        width:calc(100% / 5);
+        margin:2px;
+        }
+
+    li img{
+        width:125px;
+    }
+    #zan_tama{
+        font-size:72px;
+        padding:50px;
+        position:absolute;
+        right:0;
+        bottom:0;
+    }
+    .b{background-color:#fff;}
+#bunsho
+    {
+        width:30vw;
+        height:40vh;
+        position : relative ;
+    }
+img[id^="ship"]
+	{
+	width:8vw;
+	height:21vh;
+	}    body	
     {
         font-family:'メイリオ','Hiragino kaku gothic Pro',sans-serif;
         background-color: #edede3;
@@ -126,7 +354,7 @@
         float:right;
         width:69.9%;
         height:90vh;
-        background-image: url("../image/kaiten_haikei3.png");
+        background-image: url("../image/senkan_haikei.png");
         background-size:100% 100%;
 
         position:relative;
@@ -156,7 +384,7 @@
         margin:0 auto;
     }
     .leftbtn,.rightbtn{
-        bottom:3vh;
+        bottom:30px;
     }
     .leftbtn{
         position: absolute;
@@ -181,7 +409,6 @@
     {
         margin:0 ;
         border-top:solid 0.3vh #000;
-        width:100%;
         height:49.7vh;
         bottom : 0 ;
     }
@@ -217,14 +444,14 @@
     }
     
     #sentaku{
-        width:55vw;
+        width:60vw;
         height:30vh;
         margin:0 auto;
         text-align:center;
         margin-top:5vh;
 
         position:absolute;
-        bottom:-3%;
+        bottom:5%;
         right:0;
         left:0;
     }
@@ -267,7 +494,7 @@
     }
     </style>
 </head>
-<body onload="imgkaiten();modal(0)">
+<body onload="modal(0),tama()">
     <!-- ここからモーダルウィンドウ -->
     <div id="modal-content">
 	    <!-- モーダルウィンドウのコンテンツ開始 -->
@@ -277,40 +504,40 @@
 
     <header>
         <!--前の画面へ戻るボタン-->
-        <input type="button" class="hidari modoru" onclick="location.href='Difficulty_kaiten.html'">
-        <img style="width:12vw; height:8vh; margin-top:1vh; foat:left;" src="../image/kaiten_title.png" alt="">
+        <input type="button" class="hidari modoru" onclick="location.href='Difficulty_senkan.html'">
+        <img style="width:12vw; height:8vh; margin-top:1vh; foat:left;" src="../image/senkan_title.png" alt="">
         <input type="button" class="migi hint" onclick="modal(1)">
     </header>
     <div class="clam_left">
     <!--問題文章div-->
     <div id="bunsho" class="b">
-    <img style="width:15vw; height:10vh;" src="../image/M_T.png">
-    <img style="width:25vw; height:15vh;" src="../image/kaiten_bunsho.png">
+        <img style="width:15vw; height:10vh;" src="../image/M_T.png">
+    <img style="width:25vw; height:15vh;" src="../image/senkan_bunsho.png">   
     </div>
     
     <!--リセットボタン配置-->
     
     <div id="reset">
-        <!--
-        <input type="button" class="migi" value="リセット">
-        -->
+        <input type="button" class="migi" value="リセット" onclick="reset()">
     </div>
     
     </div>
     <div class="clam_right">
         <!--問題動作div-->
-        <!--<h1><ruby><rb>問題</rb><rp>(</rp><rt>もんだい</rt><rp>)</rp></ruby></h1>-->
-        <div id="border"><img src="../image/Puzzle_b_3.1.png" alt="" id="kaiten"></div>
-        <div id="sentaku">
-            <img src="../image/Puzzle_3.1.png" alt="" onclick="modal(2);cleartrue('kaiten_3')">
-            <img src="../image/Puzzle_3.2.png" alt="" onclick="modal(3)">
-            <img src="../image/Puzzle_3.3.png" alt="" onclick="modal(3)">
-        </div>
-        <!-- デバッグ用 -->
-        <!--
-        <input type="button" value="クリア" onclick="modal(2)">
-        <input type="button" value="ゲームオーバー" onclick="modal(3)">
-        -->
+        <ul id="wrap">
+    <li class="box1"><a href="#" onclick="senkan_hantei(0)"><img id="ship0" src="../image/senkan_teki.png"></a></li>
+    <li class="box1"><a href="#" onclick="senkan_hantei(1)"><img id="ship1" src="../image/senkan_teki.png"></a></li>
+    <li class="box1"><a href="#" onclick="senkan_hantei(2)"><img id="ship2" src="../image/senkan_teki.png"></a></li>
+    <li class="box1"><a href="#" onclick="senkan_hantei(3)"><img id="ship3" src="../image/senkan_teki.png"></a></li>
+    <li class="box1"><a href="#" onclick="senkan_hantei(4)"><img id="ship4" src="../image/senkan_teki.png"></a></li>
+</ul>
+<ul id="wrap">
+    <li class="box2"><a href="#" onclick="senkan_hantei(5)"><img id="ship5" src="../image/senkan_teki.png"></a></li>
+    <li class="box2"><a href="#" onclick="senkan_hantei(6)"><img id="ship6" src="../image/senkan_teki.png"></a></li>
+    <li class="box2"><a href="#" onclick="senkan_hantei(7)"><img id="ship7" src="../image/senkan_teki.png"></a></li>
+    <li class="box2"><a href="#" onclick="senkan_hantei(8)"><img id="ship8" src="../image/senkan_teki.png"></a></li>
+</ul>
+        <div id="zan_tama"></div>
     </div>
 </body>
 </html>

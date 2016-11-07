@@ -87,7 +87,14 @@ function modal(){
 function diffchange(ques_diff){
     //難易度の設定問題ページphpで判定を作る
     window.sessionStorage.setItem('ques_diff',ques_diff);
-    window.location.href = 'kaiten_Question.html';
+    if (ques_diff == "easy"){
+	window.location.href = 'kaiten_Question_easy.html';
+	}else if(ques_diff == "normal"){
+	window.location.href = 'kaiten_Question_normal.html';
+	}else{
+	window.location.href = 'kaiten_Question.html';
+	}
+    
 }
 
 //リンクを移動するよう
