@@ -161,6 +161,26 @@ input[type="button"].bjbtn{
 	background-color: rgba( 0,0,0, 0.75 ) ;
 }
 
+/*view縦横判定共通部分*/
+#viewchange{
+    width: 80% ;
+    height:80%;
+	margin: 0 ;
+	padding: 10px 20px ;
+	border: 2px solid #aaa ;
+	background: #fff ;          /*背景は白に、そこに注意（警告）マーク（ぼやけ）を入れたいんですが…*/
+	position: fixed ;
+	display: none ;
+	z-index: 2 ;
+    text-align:center;
+}
+
+#viewchange img{
+    margin-top:30vh;
+    width:50vw;
+    height:12vh;
+}
+/*view縦横判定共通部分*/
 
 @media (max-width: 1301px){
     #main
@@ -209,12 +229,21 @@ input[type="button"].bjbtn{
 </style>
 </head>
 <body onload="main()">
+
+<link rel="stylesheet" media="all and (orientation:portrait)" href="portrait.css">
+<link rel="stylesheet" media="all and (orientation:landscape)" href="landscape.css">
 <!-- ここからモーダルウィンドウ -->
 <div id="modal-content">
 	<!-- モーダルウィンドウのコンテンツ開始 -->
 	<img src="../image/del_text.png" id="deltext" alt="">
-    <div class='center'><input type="button" id="modal-close" class="bjbtn" onclick="localdelete(),location.reload()"></div>
+    <div class='center'><input type="button" id="modal-close" class="bjbtn" onclick="localdelete(),main()"></div>
     <div class='center'><input type="button" id="modal-close" class="bkbtn"></div>
+    <!-- モーダルウィンドウのコンテンツ終了 -->
+</div>
+<!-- ここからモーダルウィンドウ -->
+<div id="viewchange">
+	<!-- モーダルウィンドウのコンテンツ開始 -->
+	<img src="../image/view_text.png" id="deltext" alt="">
     <!-- モーダルウィンドウのコンテンツ終了 -->
 </div>
 
