@@ -88,11 +88,11 @@ function diffchange(ques_diff){
     //難易度の設定問題ページphpで判定を作る
     window.sessionStorage.setItem('ques_diff',ques_diff);
     if (ques_diff == "easy"){
-	window.location.href = 'kaiten_Question_easy.html';
+	    window.location.href = 'kaiten_Question_easy.html';
 	}else if(ques_diff == "normal"){
-	window.location.href = 'kaiten_Question_normal.html';
+	    window.location.href = 'kaiten_Question_normal.html';
 	}else{
-	window.location.href = 'kaiten_Question.html';
+	    window.location.href = 'kaiten_Question.html';
 	}
     
 }
@@ -114,7 +114,7 @@ function clearhantei(clear,id){
     //クリア済みかの判定
     if(clear=="true"){
         //指定位置に画像の表示
-        document.getElementById(id).innerHTML="<img style='position:relative;z-index: 2;' src='../image/oukan.png' class='clearimage'>";
+        document.getElementById(id).innerHTML="<img style='position:relative;z-index: 2;' src='../image/star.png' class='clearimage'>";
     }else{
         document.getElementById(id).innerHTML="";
     } 
