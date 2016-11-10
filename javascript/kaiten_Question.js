@@ -1,6 +1,8 @@
 //回転速度を一定に修正する
 //候補秒刊に複数回行う
 //ふつうにずっと回す
+
+
 function imgkaiten(){
     //旧コード一応残す
     /*$(function(){
@@ -122,6 +124,13 @@ function modal(modal_content){
 
     } ) ;
 }
+
+//問題のランダム出力
+function questionrand(kakudo){
+    var rand = Math.floor( Math.random() * 4 )*kakudo;
+    $("#sentaku img").rotate(rand);
+}
+
 function mapjump(){
     window.location.href = 'map.html';
 }

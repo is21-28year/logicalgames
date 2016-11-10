@@ -84,7 +84,6 @@
             background-repeat:no-repeat;
             background-position:center;
         }
-
 /*ボタン共通基本デザイン部分*/
     .hidari{
         float:left;
@@ -128,7 +127,6 @@
         height:90vh;
         background-image: url("../image/kaiten_haikei.png");
         background-size:100% 100%;
-
         position:relative;
     }
     div
@@ -208,12 +206,25 @@
 	    height: 120% ;
 	    background-color: rgba( 0,0,0, 0.75 ) ;
     }
+    /*こっから固有*/
+    #border{
+        width:30vw;
+        height:30vh;
+        margin:0 auto;
+        padding:0;
+        position:absolute;
+        right:0;
+        left:0;
+        top:17%;
+        text-align:center;
+    }
+
     #kaiten {
-        width:17%;
-        margin-top:17vh;
-        display: block;
-        margin-right:auto;
-        margin-left: auto;
+        width:auto;
+        height:auto;
+        max-width:60%;
+        max-height:60%;
+        
     }
     
      #sentaku{
@@ -223,25 +234,34 @@
         padding:0;
         text-align:center;
         margin-top:5vh;
-
         position:absolute;
-        bottom:0%;
+        bottom:2%;
         right:0;
         left:0;
+        display:flex;justify-content: center;
+        list-style: none;
     }
     #sentaku img{
-        width:14%;
+        width:auto;
+        height:auto;
+        max-width:85%;
+        max-height:85%;
         padding:1vw 1vh;
-        margin:0 1%;
+        margin:0 2%;
+    }
+     #sentaku div{
+        float:left;
+        width:16%;
+        padding:1vw 1vh;
+        margin:0 2%;
         border:0.1vw solid #000;
         border-radius:10px;
+        margin-top:8vh;
+        text-align:center;
         /*白 半透明*/
-        /*background-color:rgba(255,255,255,0.5);*/
-        /*べっこう飴*/
-        /*background-color:rgba(220,125,1,0.5);*/
         background-color:rgba(150,150,150,0.5);
     }
-    #sentaku img:hover{
+    #sentaku div:hover{
         background-color:rgba(255,255,255,0.75);
     }
     .b{background-color:#fff;}
@@ -268,7 +288,7 @@
     }
     </style>
 </head>
-<body onload="imgkaiten();modal(0)">
+<body onload="imgkaiten();modal(0);questionrand(72)">
     <!-- ここからモーダルウィンドウ -->
     <div id="modal-content">
 	    <!-- モーダルウィンドウのコンテンツ開始 -->
@@ -303,10 +323,19 @@
         <!--<h1><ruby><rb>問題</rb><rp>(</rp><rt>もんだい</rt><rp>)</rp></ruby></h1>-->
         <div id="border"><img src="../image/Puzzle_b_3.1.png" alt="" id="kaiten"></div>
         <div id="sentaku">
-            <img src="../image/Puzzle_3.1.png" alt="" onclick="modal(2);cleartrue('kaiten_3')">
-            <img src="../image/Puzzle_3.2.png" alt="" onclick="modal(3)">
-            <img src="../image/Puzzle_3.3.png" alt="" onclick="modal(3)">
-            <img src="../image/Puzzle_3.3.png" alt="" onclick="modal(3)">
+            <div>
+                <img src="../image/Puzzle_3.1.png" alt="" onclick="modal(2);cleartrue('kaiten_3')">
+            </div>
+            <div>
+                <img src="../image/Puzzle_3.2.png" alt="" onclick="modal(3)">
+            </div>
+            <div>
+                <img src="../image/Puzzle_3.3.png" alt="" onclick="modal(3)">
+            </div>
+            <div>
+                <img src="../image/Puzzle_3.3.png" alt="" onclick="modal(3)">
+            </div>
+
         </div>
         <!-- デバッグ用 -->
         <!--
