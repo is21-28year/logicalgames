@@ -11,7 +11,7 @@ function senkan_hantei(click_num){
         //船爆破
         document.getElementById("ship"+click_num).src="../image/explosion.png";
         setTimeout(function(){
-            document.getElementById("ship"+click_num).src="../image/Puzzle_3.1.png";
+            document.getElementById("ship"+click_num).src="../image/senkan_teki_3.png";
         },500);
         //弾数減らす
         ship_zan += -1;
