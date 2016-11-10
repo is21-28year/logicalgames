@@ -185,13 +185,33 @@ p	{line-height:1.5;
         height:8vh;
     }
 /*クリア画像表示関連*/
+/*view縦横判定共通部分*/
+#viewchange{
+    width: 80% ;
+    height:80%;
+	margin: 0 ;
+	padding: 10px 20px ;
+	border: 2px solid #aaa ;
+	background: #fff ;          /*背景は白に、そこに注意（警告）マーク（ぼやけ）を入れたいんですが…*/
+	position: fixed ;
+	display: none ;
+	z-index: 3 ;
+    text-align:center;
+}
+
+#viewchange img{
+    margin-top:30vh;
+    width:50vw;
+    height:12vh;
+}
+/*view縦横判定共通部分*/
 </style>
 </head> 
 
 <body onload="main()">
     <header>
             <input type="button" id="back" class="hidari" onclick="mapjump()">
-            <img style="width:12vw; height:8vh; margin-top:1vh; foat:left;" src="../image/kaiten_title.png" alt="">
+            <img style="width:12vw; height:8vh; margin-top:1vh; foat:left;vertical-align: top;" src="../image/kaiten_title.png" alt="">
     </header>
 
 <div id="modal-content">
@@ -202,6 +222,11 @@ p	{line-height:1.5;
 	<div class='center'><input type="button" id="modal-close"></div>
     <!-- モーダルウィンドウのコンテンツ終了 -->
 </div>
+    <div id="viewchange">
+        <!-- モーダルウィンドウのコンテンツ開始 -->
+        <img src="../image/view_text.png" id="deltext" alt="">
+        <!-- モーダルウィンドウのコンテンツ終了 -->
+    </div>
 
     <!--
         a,b,c,d=ボタンの色付よう

@@ -85,6 +85,13 @@ input[type="button"].mapback{
     
 /*ここまでボタン関係*/
 /*ここからheader*/
+#title{
+    width:12vw;
+    height:8vh;
+    margin-top:1vh;
+    float:left;
+    vertical-align: top;
+}
 header	{
     /*追記*/
     height:10vh;
@@ -153,6 +160,7 @@ div
     }
     #bunsho
     {
+        background-color:#fff;
         width:100%;
         height:40vh;
         position : relative ;
@@ -202,3 +210,23 @@ div
         color:#fff;
         margin-top:2vh;
     }
+   /*view縦横判定共通部分*/
+#viewchange{
+    width: 80% ;
+    height:80%;
+	margin: 0 ;
+	padding: 10px 20px ;
+	border: 2px solid #aaa ;
+	background: #fff ;          /*背景は白に、そこに注意（警告）マーク（ぼやけ）を入れたいんですが…*/
+	position: fixed ;
+	display: none ;
+	z-index: 2 ;
+    text-align:center;
+}
+
+#viewchange img{
+    margin-top:30vh;
+    width:50vw;
+    height:12vh;
+}
+/*view縦横判定共通部分*/

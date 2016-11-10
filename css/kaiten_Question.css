@@ -1,0 +1,63 @@
+.clam_right{
+        background-image: url("../image/kaiten_haikei.png");
+    }
+    /*こっから固有*/
+    #border{
+        width:18vw;
+        height:30vh;
+        margin:0 auto;
+        padding:0;
+        position:absolute;
+        right:0;
+        left:0;
+        top:15%;
+        text-align:center;
+        vertical-align: middle;
+    }
+
+    #border img{
+        width:auto;
+        height:auto;
+        max-width:50%;
+        max-height:50%;
+        margin-top:20%;
+        
+    }
+    
+     #sentaku{
+        width:50vw;
+        height:28vh;
+        margin:0 auto;
+        padding:0;
+        text-align:center;
+        margin-top:5vh;
+        position:absolute;
+        bottom:2%;
+        right:0;
+        left:0;
+        display:flex;justify-content: center;
+        list-style: none;
+    }
+    #sentaku img{
+        width:auto;
+        height:auto;
+        max-width:85%;
+        max-height:85%;
+        padding:1vw 1vh;
+        margin:auto;
+    }
+     #sentaku div{
+        float:left;
+        width:16%;
+        padding:1vw 1vh;
+        margin:0 2%;
+        border:0.1vw solid #000;
+        border-radius:10px;
+        margin-top:8vh;
+        text-align:center;
+        /*白 半透明*/
+        background-color:rgba(150,150,150,0.5);
+    }
+    #sentaku div:hover{
+        background-color:rgba(255,255,255,0.75);
+    }
