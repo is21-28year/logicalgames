@@ -158,6 +158,7 @@ div
         position: absolute;
         right:20%;
     }
+    /*問題文章関連*/
     #bunsho
     {
         background-color:#fff;
@@ -166,6 +167,11 @@ div
         position : relative ;
         margin:0 ;
     }
+    #M_T{
+        width:5vw;
+        height:5vh;
+    }
+    /*問題文章*/
     #bunsho h1
     {
         margin:0 ;
@@ -227,6 +233,6 @@ div
 #viewchange img{
     margin-top:30vh;
     width:50vw;
-    height:12vh;
+    height:10vh;
 }
 /*view縦横判定共通部分*/
