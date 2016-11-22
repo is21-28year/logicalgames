@@ -1,49 +1,59 @@
-var ship_ans = 0;
-var ship_zan = 0;
-var ship_flag = [0,0,0,0,0,0,0,0,0];
-function senkan_s(seki,zan){//初期
-ship_ans = Math.floor( Math.random() * seki+1 ) ;
-ship_zan = zan;
+var x_z = 0;
+var y_z = 0;
+var k = 0;
+var flag = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+function s(x,y,k_s){//初期
+x_z = Math.floor( Math.random() * x+1 ) ;
+y_z = Math.floor( Math.random() * y+1 ) ;
+k = k_s;
+flag = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 }
 
-function senkan_hantei(click_num){
-    //クリック済かどうかの判定
-    if(ship_flag[click_num] == 1){
-        //クリック済なら何もしない
-    }else{
-        ship_flag[click_num] = 1;
-        //船爆破
-        document.getElementById("ship"+click_num).src="../image/explosion.png";
-        setTimeout(function(){
-        	if(ship_ans <= click_num){
-            document.getElementById("ship"+click_num).src="../image/senkan_teki_3.png";
-            }else{
-            document.getElementById("ship"+click_num).src="../image/senkan_teki_4.png";
-            }
-        },500);
+function hantei(c_x,c_y){
+        function(){
+        if(x_z < c_x){
+        	if(y_z < c_y){
+            	document.getElementById(c_x+"_"+c_y).src="";
+            	}else if(y_z > c_y){
+            	document.getElementById(c_x+"_"+c_y).src="";
+            	}else if(y_z == c_y){
+            	document.getElementById(c_x+"_"+c_y).src="";
+            	}
+        }else if(x_z > c_x){
+        	if(y_z < c_y){
+            	document.getElementById(c_x+"_"+c_y).src="";
+        	if(y_z > c_y){
+            	document.getElementById(c_x+"_"+c_y).src="";
+        	if(y_z == c_y){
+            	document.getElementById(c_x+"_"+c_y).src="";
+            	}
+        }else if(x_z == c_x){
+        	if(y_z < c_y){
+            	document.getElementById(c_x+"_"+c_y).src="";
+        	if(y_z > c_y){
+            	document.getElementById(c_x+"_"+c_y).src="";
+        	if(y_z == c_y){
+            	modal(2);
+            	}
+        }
         //弾数減らす
-        ship_zan += -1;
+        k += -1;
         tama();
         //弾数0以下なら
-        if(ship_ans == click_num){
-            //ゲームクリア
-            modal(2);
-        }else{
-            if(ship_zan < 1){
+            if(k < 1){
                 //ゲームオーバー
                 modal(3);
             }
-        }
     }
 }
 function tama(){
-    document.getElementById("zan_tama").innerHTML=ship_zan;
+    document.getElementById("").innerHTML=k;
 }
 function reset(){
     tama();
-    ship_flag = [0,0,0,0,0,0,0,0,0];
-    for(var i=0;i<9;i++){
-        document.getElementById("ship"+i).src="../image/senkan_teki.png";
+    flag = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+    for(var i=0;i<25;i++){
+        document.getElementById(""+i).src="";
     }
 }
 function cleartrue(clearnum){
@@ -54,11 +64,11 @@ function modal(modal_content){
     //モーダルダイアログに表示させる内容
     switch (modal_content){
         case 0:
-            document.getElementById("modal-content").innerHTML="<p style='margin-top:300px;'>敵のおやだまをたおそう！</p>";
+            document.getElementById("modal-content").innerHTML="<p style='margin-top:300px;'></p>";
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' class='tojiru'></div>";
             break;
         case 1:
-            document.getElementById("modal-content").innerHTML="<p style='margin-top:300px;'>ふねの色に注目しよう！（仮）</p>";
+            document.getElementById("modal-content").innerHTML="<p style='margin-top:300px;'></p>";
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' class='tojiru'></div>";
             break;
         case 2:
