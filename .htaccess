@@ -1,0 +1,3 @@
+<Files "kaiten_Question_easy_p.html">
+AddType application/x-httpd-php .php .html
+</Files>

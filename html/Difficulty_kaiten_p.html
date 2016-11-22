@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>回転命令-難易度選択</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="../javascript/Difficulty_kaiten.js"></script>
+<style type="text/css">
+#modal-content {
+	width: 80% ;
+    height:80%;
+	margin: 0 ;
+	padding: 10px 20px ;
+	border: 2px solid #aaa ;
+	background: #fff ;          /*背景は白に、そこに注意（警告）マーク（ぼやけ）を入れたいんですが…*/
+	position: fixed ;
+	display: none ;
+	z-index: 3 ;
+}
+  
+#modal-overlay {
+	z-index: 1 ;
+	display: none ;
+	position: fixed ;
+	top: 0 ;
+	left: 0 ;
+	width: 100% ;
+	height: 120% ;
+	background-color: rgba( 0,0,0, 0.75 ) ;
+}
+body	{
+	background-color: #edede3;
+	margin: 0;
+	background-image: url(img/bg.gif);
+    }
+p	{line-height:1.5;
+	font-size: 40px}
+/*ボタン事の各配色部分*/
+    #a	{
+        border-radius: 30px;
+        min-height: 100%;
+        padding:50px 15px;
+        background-color: #ffd900;
+        background-image: url("../image/dif_button1.png");
+        background-size:8vw 4vh;
+        background-repeat:no-repeat;
+        background-position:center;}
+    #b	{
+        border-radius: 30px;
+        min-height: 100%;
+        padding:50px 15px;
+        background-color: #3eb370;
+        background-image: url("../image/dif_button2.png");
+        background-size:8vw 4vh;
+        background-repeat:no-repeat;
+        background-position:center;}
+    #c	{
+        border-radius: 30px;
+        min-height: 100%;
+        padding:50px 15px;
+        background-color: #f08300;
+        background-image: url("../image/dif_button3.png");
+        background-size:8vw 4vh;
+        background-repeat:no-repeat;
+        background-position:center;}
+    #d	{
+        border-radius: 30px;
+        min-height: 100%;
+        padding:50px 15px;
+        background-color: #cc6699;
+        background-image: url("../image/dif_button4.png");
+        background-size:8vw 4vh;
+        background-repeat:no-repeat;
+        background-position:center;}
+/*ボタン事の各配色部分*/
+/*ヘッダーデザイン（サイズや色など）*/
+    header	{
+        /*追記*/
+        height:10vh;
+        margin:0;
+        padding:0;
+        /*ここまで*/
+    font-family:'Asap',sans-serif;
+	font-size:36px;
+	background-color:#0095d9;
+	color:#0072c8;
+	-webkit-box-shadow:0 2px 7px #aaaaaa;
+	box-shadowbox:0 2px 7px #aaaaaa;
+    }
+/*ヘッダーデザイン（サイズや色など）*/
+/*ボタン用共通デザイン*/
+    input[type="button"] {
+	width: 10vw;
+    height: 6vh;
+	background-color: #ffa530;
+	border: solid 2px #ffffff;
+	border-radius: 8px;
+    box-shadow: 0 3px 0 rgba(136,136,136,1);    /*ボタンの影*/
+	color: #ffffff;
+	display: block;
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+    margin-top: 2vh;
+    margin-left: 1vw;
+    margin-right: 1vw;;
+    font-size: 50px;
+}
+   input[type="button"]:hover   /*ボタンの沈む動作*/
+    {
+        box-shadow: none;
+        transform: translate3d(0, 3px, 0);
+        width: 10vw;
+        height: 6vh;
+        background-color: #DC7D01;
+        border: solid 2px #dedede;
+        border-radius: 8px;
+        color: #dedede;
+        display: block;
+        font-size: 50px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        margin-top: 2vh;
+        margin-left: 1vw;
+        margin-right: 1vw;;
+        position:relative;
+        z-index:1;
+    } 
+    input[type="button"]#back{
+            background-image: url("../image/button_modoru.png");
+            background-size:7vw 4vh;
+            background-repeat:no-repeat;
+            background-position:center;
+        }
+/*ボタン用共通デザイン*/
+/*難易度ページ中央のボックスサイズ変更用*/
+    input[type="button"].difficlty_box{
+        width:15vw;
+        height:20vh;
+    }
+/*難易度ページ中央のボックスサイズ変更用*/
+/*ヘッダー内のh1ページタイトル*/
+    h1#hed{
+        margin:0;
+        float:left;
+        font-size:60px;
+        color:#fff;
+    }
+/*ヘッダー内のh1ページタイトル*/
+/*ヘッダーボタン配置*/
+    .hidari{
+        float:left;
+    }
+/*ヘッダーボタン配置*/
+/*ダイアログ内ボタン表示*/
+    .center input{
+        position: absolute;
+        right:0;
+        left:0;
+        bottom:3vh;
+        margin:0 auto;
+        background-image: url("../image/button_tojiru.png");
+        background-size:7vw 4vh;
+        background-repeat:no-repeat;
+        background-position:center;
+    }
+    .center input:hover{
+        position: absolute;
+        right:0;
+        left:0;
+        bottom:3vh;
+        margin:0 auto;
+    }
+/*ダイアログ内ボタン表示*/
+/*クリア画像表示関連*/
+    div#clear1,div#clear2,div#clear3{
+        position: absolute;
+        top: -4vh;
+        right:0vw;
+    }
+    img.clearimage{
+        width:4.5vw;
+        height:8vh;
+    }
+/*クリア画像表示関連*/
+/*view縦横判定共通部分*/
+#viewchange{
+    width: 80% ;
+    height:80%;
+	margin: 0 ;
+	padding: 10px 20px ;
+	border: 2px solid #aaa ;
+	background: #fff ;          /*背景は白に、そこに注意（警告）マーク（ぼやけ）を入れたいんですが…*/
+	position: fixed ;
+	display: none ;
+	z-index: 3 ;
+    text-align:center;
+}
+
+#viewchange img{
+    margin-top:30vh;
+    width:50vw;
+    height:12vh;
+}
+/*view縦横判定共通部分*/
+</style>
+</head> 
+
+<body onload="main()">
+    <header>
+            <input type="button" id="back" class="hidari" onclick="mapjump()">
+            <img style="width:12vw; height:8vh; margin-top:1vh; foat:left;vertical-align: top;" src="../image/kaiten_title.png" alt="">
+    </header>
+
+<div id="modal-content">
+	<!-- モーダルウィンドウのコンテンツ開始 -->
+	<center><img style="width:18vw;height:8vh;" src="../image/asobikata.png"></center>
+    <!--videoタグ実装予定部分-->
+    <center><video style="width:40vw;height:60vh;" src="../movie/kaiten_movie.mp4" controls></video></center>
+	<div class='center'><input type="button" id="modal-close"></div>
+    <!-- モーダルウィンドウのコンテンツ終了 -->
+</div>
+    <div id="viewchange">
+        <!-- モーダルウィンドウのコンテンツ開始 -->
+        <img src="../image/view_text.png" id="deltext" alt="">
+        <!-- モーダルウィンドウのコンテンツ終了 -->
+    </div>
+
+    <!--
+        a,b,c,d=ボタンの色付よう
+        difficlty_box=ボタンの形の変更
+        diffchange=難易度をセッションで渡す＆リンク移動
+    -->
+    
+    <div id="g">
+        <div style=" position: absolute; top: 42vh; left:5%;">
+            <input type="button" onclick="modal()" id="a" class="difficlty_box">
+        </div>
+        <form action="kaiten_Question_easy_p.html" method="post" name="frm1">
+        <div style=" position: absolute; top: 42vh; left:30%;">
+            <div id="clear1"></div>
+            <input type="button" id="b" class="difficlty_box" onclick="document.frm1.submit();">
+            <input type="hidden" value="1" name="nanido">
+        </div>
+        </form>
+        <form action="kaiten_Question_easy_p.html" method="post" name="frm2">
+        <div style=" position: absolute; top: 42vh; left:55%;">
+            <div id="clear2"></div>
+            <input type="button" id="c" class="difficlty_box" onclick="document.frm2.submit();">
+            <input type="hidden" value="2" name="nanido">
+        </div>
+        </form>
+        <form action="kaiten_Question_easy_p.html" method="post" name="frm3">
+        <div style=" position: absolute; top: 42vh; left:80%;">
+            <div id="clear3"></div>
+            <input type="button" id="d" class="difficlty_box" onclick="document.frm3.submit();">
+            <input type="hidden" value="3" name="nanido">
+        </div> 
+        </form>
+    </div>
+    
+
+</body>
+
+<!--更新日：10/26
+    変更部分不必要なalink関連のstyleを削除
+    現状決まっていないfontの設定を削除
+    モーダルウィンドウの中身を変更
+    クリア画像表示判定追加
+    残っている部分
+    背景画像を問題事に変更
+    test用のコードを削除などでコードを整える
+    他の難易度ページこれに準拠して帰る
+    画面表示をビューポートに合わせるようにする（vw,vh）
+    チュートリアル動画をvideoタグで追加する
+-->
+</html>
