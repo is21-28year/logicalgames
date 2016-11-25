@@ -12,25 +12,25 @@ flag = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 function hantei(c_x,c_y){
         if(x_z < c_x){
         	if(y_z < c_y){
-            	document.getElementById(c_x+"_"+c_y).src="";
+            	document.getElementById(c_x+"_"+c_y).innerHTML="<img src='../image/hidariue.png'>";
             	}else if(y_z > c_y){
-            	document.getElementById(c_x+"_"+c_y).src="";
+            	document.getElementById(c_x+"_"+c_y).innerHTML="<img src='../image/migiue.png'>";
             	}else if(y_z == c_y){
-            	document.getElementById(c_x+"_"+c_y).src="";
+            	document.getElementById(c_x+"_"+c_y).innerHTML="<img src='../image/ue.png'>";
             	}
         }else if(x_z > c_x){
         	if(y_z < c_y){
-            	document.getElementById(c_x+"_"+c_y).src="";
+            	document.getElementById(c_x+"_"+c_y).innerHTML="<img src='../image/hidarisita.png'>";
         	}else if(y_z > c_y){
-            	document.getElementById(c_x+"_"+c_y).src="";
+            	document.getElementById(c_x+"_"+c_y).innerHTML="<img src='../image/migisita.png'>";
         	}else if(y_z == c_y){
-            	document.getElementById(c_x+"_"+c_y).src="";
+            	document.getElementById(c_x+"_"+c_y).innerHTML="<img src='../image/sita.png'>";
             	}
         }else if(x_z == c_x){
         	if(y_z < c_y){
-            	document.getElementById(c_x+"_"+c_y).src="";
+            	document.getElementById(c_x+"_"+c_y).innerHTML="<img src='../image/hidari.png'>";
         	}else if(y_z > c_y){
-            	document.getElementById(c_x+"_"+c_y).src="";
+            	document.getElementById(c_x+"_"+c_y).innerHTML="<img src='../image/migi.png'>";
         	}else if(y_z == c_y){
             	modal(2);
             	}
