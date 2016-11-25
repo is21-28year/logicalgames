@@ -10,7 +10,6 @@ flag = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 }
 
 function hantei(c_x,c_y){
-        function(){
         if(x_z < c_x){
         	if(y_z < c_y){
             	document.getElementById(c_x+"_"+c_y).src="";
@@ -22,17 +21,17 @@ function hantei(c_x,c_y){
         }else if(x_z > c_x){
         	if(y_z < c_y){
             	document.getElementById(c_x+"_"+c_y).src="";
-        	if(y_z > c_y){
+        	}else if(y_z > c_y){
             	document.getElementById(c_x+"_"+c_y).src="";
-        	if(y_z == c_y){
+        	}else if(y_z == c_y){
             	document.getElementById(c_x+"_"+c_y).src="";
             	}
         }else if(x_z == c_x){
         	if(y_z < c_y){
             	document.getElementById(c_x+"_"+c_y).src="";
-        	if(y_z > c_y){
+        	}else if(y_z > c_y){
             	document.getElementById(c_x+"_"+c_y).src="";
-        	if(y_z == c_y){
+        	}else if(y_z == c_y){
             	modal(2);
             	}
         }
@@ -45,7 +44,6 @@ function hantei(c_x,c_y){
                 modal(3);
             }
     }
-}
 function tama(){
     document.getElementById("").innerHTML=k;
 }
