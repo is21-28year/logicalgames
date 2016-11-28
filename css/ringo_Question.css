@@ -2,4 +2,72 @@
         /*リンゴ背景画像*/
         background-image: url("../image/ringo_haikei_test.png");
     }
-
+/*問題の道などの背景*/
+    #road img{
+        margin:0;
+        padding:0;
+        width:50vw;
+        height:60vh;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        margin: auto;
+        z-index:1;
+    }
+/*問題の道などの背景*/
+/*アルファベットの場所のサイズとレイヤー指定*/
+    #point img{
+        z-index:2;
+        width:10vw;
+        height:10vh;
+    }
+/*アルファベットの場所手動配置部分*/
+/*アルファベットの場所手動配置部分*/
+    #easyA{
+        margin:0;
+        padding:0;
+        top: 30vh;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+    }
+    #easyB{
+        margin:0;
+        padding:0;
+        top: 0;
+        bottom: 30vh;
+        left: 0;
+        right: 0;
+        position: absolute;
+    }
+    #easyC{
+        margin:0;
+        padding:0;
+        top: 0;
+        bottom: 0;
+        left: 30vw;
+        right: 0;
+        position: absolute;
+    }
+    #easyD{
+        margin:0;
+        padding:0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 30vw;
+        position: absolute;
+    }
+    #easyE{
+        margin:0;
+        padding:0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+    }
+/*アルファベットの場所手動配置部分*/
