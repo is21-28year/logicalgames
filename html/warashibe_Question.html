@@ -10,19 +10,36 @@
     <link rel="stylesheet" type="text/css" href="../css/warashibe_Question.css">
     <style>
         .box{
-            width: 1000px;
+            clear:left;
+            border:2px solid red;
+            width: 97%;
         }
         .chara{
             float:left;
-            width: 230px;
+            width: 14vw;
             border:2px solid black;  
         }
         .chara:hover{
             background-color:#aaa;
         }
         .chara img{
-            width:100px;
+            max-width:45%;
         }
+        #gitem,#myitem{
+            float:left;
+            width: 9vw;
+            border:2px solid black; 
+        }
+        #gitem img,#myitem img{
+            max-width:85%;
+        }
+        .chrimg{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        
     </style>
 </head>
 <body onload="viewhantei();viewchange();modal(0);questionrand(72);shuffle();renewal()">
@@ -63,52 +80,21 @@
         <!--問題動作div-->
         <!--<h1><ruby><rb>問題</rb><rp>(</rp><rt>もんだい</rt><rp>)</rp></ruby></h1>-->
         <div class="box">
-            <div id="c0" class="chara" onclick="koukan(0)">
-                <img src="../image/star.png" alt="">
-                <img src="../image/star.png" alt="">
-            <br><img src="../image/star.png" alt="">
-            </div>
-            <div id="c1" class="chara" onclick="koukan(1)">
-                <img src="../image/star.png" alt="">
-                <img src="../image/star.png" alt="">
-                <br><img id="ch" src="../image/star.png" alt="">
-            </div>
-            <div id="c2" class="chara" onclick="koukan(2)">
-                <img src="../image/star.png" alt="">
-                <img src="../image/star.png" alt="">
-                <br><img id="ch" src="../image/star.png" alt="">
-            </div>
-            <div id="c3" class="chara" onclick="koukan(3)">
-                <img src="../image/star.png" alt="">
-                <img src="../image/star.png" alt="">
-                <br><img id="ch" src="../image/star.png" alt="">
-            </div>
+            <div id="gitem"></div>
+            <div id="c0" class="chara" onclick="koukan(0)"></div>
+            <div id="c1" class="chara" onclick="koukan(1)"></div>
+            <div id="c2" class="chara" onclick="koukan(2)"></div>
+            <div id="c3" class="chara" onclick="koukan(3)"></div>
         </div>
         <div class="box">
-            <div id="c4" class="chara" onclick="koukan(4)">
-                <img src="../image/star.png" alt="">
-                <img src="../image/star.png" alt="">
-                <br><img id="ch" src="../image/star.png" alt="">
-            </div>
-            <div id="c5" class="chara" onclick="koukan(5)">
-                <img src="../image/star.png" alt="">
-                <img src="../image/star.png" alt="">
-                <br><img id="ch" src="../image/star.png" alt="">
-            </div>
-            <div id="c6" class="chara" onclick="koukan(6)">
-                <img src="../image/star.png" alt="">
-                <img src="../image/star.png" alt="">
-                <br><img id="ch" src="../image/star.png" alt="">
-            </div>
-            <div id="c7" class="chara" onclick="koukan(7)">
-                <img src="../image/star.png" alt="">
-                <img src="../image/star.png" alt="">
-                <br><img id="ch" src="../image/star.png" alt="">
-            </div>
+            <div id="myitem"></div>
+            <div id="c4" class="chara" onclick="koukan(4)"></div>
+            <div id="c5" class="chara" onclick="koukan(5)"></div>
+            <div id="c6" class="chara" onclick="koukan(6)"></div>
+            <div id="c7" class="chara" onclick="koukan(7)"></div>
         </div>
-        <div id="myitem" style="clear:left;">
-            
-        </div>
+        
+        
 
         <!-- デバッグ用 -->
         <!--
