@@ -1,15 +1,84 @@
 var x_z = 0;
 var y_z = 0;
+var s_x = 0;
+var s_y = 0;
+var s_k = 0;
 var k = 0;
-var flag = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+var flag1 = [0,0,0,0,0];
+var flag2 = [0,0,0,0,0];
+var flag3 = [0,0,0,0,0];
+var flag4 = [0,0,0,0,0];
+var flag5 = [0,0,0,0,0];
+var fl = 0;
 function s(x,y,k_s){//初期
+s_x = x;
+s_y = y;
 x_z = Math.floor( Math.random() * x+1 ) ;
 y_z = Math.floor( Math.random() * y+1 ) ;
 k = k_s;
-flag = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+s_k = k_s;
+tama();
+flag1 = [0,0,0,0,0];
+flag2 = [0,0,0,0,0];
+flag3 = [0,0,0,0,0];
+flag4 = [0,0,0,0,0];
+flag5 = [0,0,0,0,0];
 }
-
 function hantei(c_x,c_y){
+        //弾数減らす
+        k += -1;
+        tama();
+        //弾数0以下なら
+            if(k < 1){
+                //ゲームオーバー
+                modal(3);
+            }
+switch (c_x){
+  case 1:
+    if(flag1[c_y] == 1){
+    fl = 1;
+    }
+    break;
+  case 2:
+    if(flag2[c_y] == 1){
+    fl = 1;
+    }
+    break;
+  case 3:
+    if(flag3[c_y] == 1){
+    fl = 1;
+    }
+    break;
+  case 4:
+    if(flag4[c_y] == 1){
+    fl = 1;
+    }
+    break;
+  case 5:
+    if(flag5[c_y] == 1){
+    fl = 1;
+    }
+    break;
+}
+ if(fl == 1){
+    }else{
+switch (c_x){
+  case 1:
+    flag1[c_y] = 1
+    break;
+  case 2:
+    flag2[c_y] = 1
+    break;
+  case 3:
+    flag3[c_y] = 1
+    break;
+  case 4:
+    flag4[c_y] = 1
+    break;
+  case 5:
+    flag5[c_y] = 1
+    break;
+}
         if(x_z < c_x){
         	if(y_z < c_y){
             	document.getElementById(c_x+"_"+c_y).innerHTML="<img src='../image/hidariue.png'>";
@@ -35,23 +104,25 @@ function hantei(c_x,c_y){
             	modal(2);
             	}
         }
-        //弾数減らす
-        k += -1;
-        tama();
-        //弾数0以下なら
-            if(k < 1){
-                //ゲームオーバー
-                modal(3);
-            }
+        
+
     }
+    fl = 0;
+}
 function tama(){
-    document.getElementById("").innerHTML=k;
+    document.getElementById("kaisuu").innerHTML=k;
 }
 function reset(){
     tama();
-    flag = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-    for(var i=0;i<25;i++){
-        document.getElementById(""+i).src="";
+flag1 = [0,0,0,0,0];
+flag2 = [0,0,0,0,0];
+flag3 = [0,0,0,0,0];
+flag4 = [0,0,0,0,0];
+flag5 = [0,0,0,0,0];
+    for(var i=1;i<6;i++){
+    	for(var d=1;d<6;d++){
+        document.getElementById(i+"_"+d).innerHTML="";
+    	}
     }
 }
 function cleartrue(clearnum){
@@ -76,10 +147,10 @@ function modal(modal_content){
             break;
         case 3:
             document.getElementById("modal-content").innerHTML="<p style='margin-top:300px;'>ゲームオーバー</p>";
-            document.getElementById("modal-content").innerHTML+="<div><input type='button' class='leftbtn mapback'  onclick='mapjump()'><input type='button' class='rightbtn yarinaosi' onclick='reset()' id='modal-close'></div>";
+            document.getElementById("modal-content").innerHTML+="<div><input type='button' class='leftbtn mapback'  onclick='mapjump()'><input type='button' class='rightbtn yarinaosi' onclick='s(s_x,s_y,s_k);reset();' id='modal-close'></div>";
     }
     $(function(){
-
+// onclick='s(s_x,s_y,s_k);reset();' 
     //モーダルウィンドウを出現させるクリックイベント
     $(function(){
 
