@@ -28,19 +28,19 @@
     #easyA{
         margin:0;
         padding:0;
-        top: 30vh;
-        bottom: 0;
+        top: 0;
+        bottom: 30vh;
         left: 0;
-        right: 0;
+        right: 20vw;
         position: absolute;
     }
     #easyB{
         margin:0;
         padding:0;
-        top: 0;
-        bottom: 30vh;
+        top: 30vh;
+        bottom: 0;
         left: 0;
-        right: 0;
+        right: 20vw;
         position: absolute;
     }
     #easyC{
@@ -48,25 +48,36 @@
         padding:0;
         top: 0;
         bottom: 0;
-        left: 30vw;
+        left: 0;
         right: 0;
         position: absolute;
+        
     }
     #easyD{
         margin:0;
         padding:0;
         top: 0;
-        bottom: 0;
-        left: 0;
-        right: 30vw;
+        bottom: 30vh;
+        left: 20vw;
+        right: 0;
         position: absolute;
+        
     }
     #easyE{
         margin:0;
         padding:0;
+        top: 30vh;
+        bottom: 0;
+        left: 20vw;
+        right: 0;
+        position: absolute;
+    }
+    #easyF{
+        margin:0;
+        padding:0;
         top: 0;
         bottom: 0;
-        left: 0;
+        left: 40vw;
         right: 0;
         position: absolute;
     }
