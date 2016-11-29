@@ -9,7 +9,6 @@ var gameflag=true;
 //初期判定
 //リンゴの数、ポイントの数、回数制限の数の指定
 function shoki(ringonum,pointnum){
-    alert("soki");
     ringo =new Array(ringonum);
     point =new Array(pointnum);
     //画像の初期化
@@ -28,81 +27,81 @@ function idou(basho){
      }
      //bashoに今現在の場所がある
      //bashoから判定へ移動判定処理
-     if((ibasho==0 && basho==1) || (ibasho==1 && basho==0)){
-         //間のリンゴの判定
-         if(ringo[0]==true){
-
-         }else{
-             ringo[0]==true;
-         }
-     }else if((ibasho==0 && basho==3) || (ibasho==3 && basho==0)){
-         //間のリンゴの判定
-         if(ringo[1]==true){
-
-         }else{
-             ringo[1]==true;
-         }
-     }else if((ibasho==0 && basho==2) || (ibasho==2 && basho==0)){
-         //間のリンゴの判定
-         if(ringo[2]==true){
-
-         }else{
-             ringo[2]==true;
-         }//左下処理
-     }else if((ibasho==2 && basho==3) || (ibasho==3 && basho==2)){
-         //間のリンゴの判定
-         if(ringo[3]==true){
-
-         }else{
-             ringo[3]==true;
-         }
-     }else if((ibasho==1 && basho==2) || (ibasho==2 && basho==1)){
-         //間のリンゴの判定
-         if(ringo[4]==true){
-
-         }else{
-             ringo[4]==true;
-         }
-     }else if((ibasho==2 && basho==4) || (ibasho==4 && basho==2)){
-         //間のリンゴの判定
-         if(ringo[5]==true){
-
-         }else{
-             ringo[5]==true;
-         }
-     }else if((ibasho==1 && basho==4) || (ibasho==4 && basho==1)){
-         //間のリンゴの判定
-         if(ringo[6]==true){
-
-         }else{
-             ringo[6]==true;
-         }
-     }else if((ibasho==3 && basho==4) || (ibasho==4 && basho==3)){
-         //間のリンゴの判定
-         if(ringo[7]==true){
-
-         }else{
-             ringo[7]==true;
-         }
-     }else if((ibasho==3 && basho==5) || (ibasho==5 && basho==3)){
-         //間のリンゴの判定
-         if(ringo[8]==true){
-
-         }else{
-             ringo[8]==true;
-         }
-     }else if((ibasho==4 && basho==5) || (ibasho==5 && basho==4)){
-         //間のリンゴの判定
-         if(ringo[9]==true){
-
-         }else{
-             ringo[9]==true;
-         }
-     }
      if(ibasho==10){
          //初期位置置き場
          point[basho]=true;
          alert(point);
+     }else{
+         if((ibasho==0 && basho==1) || (ibasho==1 && basho==0)){
+            //間のリンゴの判定
+            if(ringo[0]==true){
+
+            }else{
+                ringo[0]==true;
+            }
+        }else if((ibasho==0 && basho==3) || (ibasho==3 && basho==0)){
+            //間のリンゴの判定
+            if(ringo[1]==true){
+
+            }else{
+                ringo[1]==true;
+            }
+        }else if((ibasho==0 && basho==2) || (ibasho==2 && basho==0)){
+            //間のリンゴの判定
+            if(ringo[2]==true){
+
+            }else{
+                ringo[2]==true;
+            }//左下処理
+        }else if((ibasho==2 && basho==3) || (ibasho==3 && basho==2)){
+            //間のリンゴの判定
+            if(ringo[3]==true){
+
+            }else{
+                ringo[3]==true;
+            }
+        }else if((ibasho==1 && basho==2) || (ibasho==2 && basho==1)){
+            //間のリンゴの判定
+            if(ringo[4]==true){
+
+            }else{
+                ringo[4]==true;
+            }
+        }else if((ibasho==2 && basho==4) || (ibasho==4 && basho==2)){
+            //間のリンゴの判定
+            if(ringo[5]==true){
+
+            }else{
+                ringo[5]==true;
+            }
+        }else if((ibasho==1 && basho==4) || (ibasho==4 && basho==1)){
+            //間のリンゴの判定
+            if(ringo[6]==true){
+
+            }else{
+                ringo[6]==true;
+            }
+        }else if((ibasho==3 && basho==4) || (ibasho==4 && basho==3)){
+            //間のリンゴの判定
+            if(ringo[7]==true){
+
+            }else{
+                ringo[7]==true;
+            }
+        }else if((ibasho==3 && basho==5) || (ibasho==5 && basho==3)){
+            //間のリンゴの判定
+            if(ringo[8]==true){
+
+            }else{
+                ringo[8]==true;
+            }
+        }else if((ibasho==4 && basho==5) || (ibasho==5 && basho==4)){
+            //間のリンゴの判定
+            if(ringo[9]==true){
+
+            }else{
+                ringo[9]==true;
+            }
      }
 }
 //問題移動処理
