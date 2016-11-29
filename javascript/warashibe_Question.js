@@ -1,25 +1,62 @@
 //初期設定
 //場所:0~7
 var place = [0,1,2,3,4,5,6,7];
+function shoki(mode){
+    //自分が持っているアイテム
+    var myitem = 0;
+    //交換済フラグ
+    var done = [0,0,0,0,0,0,0,0];
+    if(mode == "easy"){
+        //キャラクターが持っているアイテム
+        //0~7
+        var haveitem = [1,2,0,3,4,2,6,7];
+        //キャラクターが欲しがっているアイテム
+        //0~7
+        var wantitem =[0,0,2,2,2,4,4,4];
+        //目標のアイテム
+        var gitem = 7;
+    }
+    if(mode == "normal"){
+        //キャラクターが持っているアイテム
+        //0~7
+        var haveitem = [1,2,0,3,4,2,6,7];
+        //キャラクターが欲しがっているアイテム
+        //0~7
+        var wantitem =[0,0,2,2,2,4,4,4];
+        //目標のアイテム
+        var gitem = 7;
+    }
+    if(mode == "hard"){
+        //キャラクターが持っているアイテム
+        //0~7
+        var haveitem = [1,2,0,3,4,2,6,7];
+        //キャラクターが欲しがっているアイテム
+        //0~7
+        var wantitem =[0,0,2,2,2,4,4,4];
+        //目標のアイテム
+        var gitem = 7;
+    }
+    
+}
 //キャラクターが持っているアイテム
 //0~7
-var haveitem = [0,1,2,3,4,5,6,7];
+var haveitem = [1,2,0,3,4,2,6,7];
 //キャラクターが欲しがっているアイテム
 //0~7
-var wantitem =[1,2,3,4,5,6,7,0];
+var wantitem =[0,0,2,2,2,4,4,4];
 //※場所、haveアイテム、wantアイテムは常に同じ組み合わせになる
 //交換済フラグ
 var done = [0,0,0,0,0,0,0,0];
 //表示する画像
 //拡張子抜きの画像名が入る(png)
-var img = ["star","Puzzle_2.1","explosion","senkan_teki","Puzzle_3.1","oukan","pick","Puzzle_1.2","Puzzle_b_1.3"];
+var img = ["burger","chicken","momo","sakana","ame","kani","oniku","orange"];
 //自分が持っているアイテム
 var myitem = 0;
 //目標のアイテム
-var gitem = 1;
+var gitem = 7;
 //キャラの画像
 //拡張子抜きの画像名が入る(png)
-var chrimg = ["cannon_1","cannon_1","cannon_1","cannon_1","cannon_1","cannon_1","cannon_1","cannon_1"];
+var chrimg = ["cat","dog","gagi","girl","okan","ossan","shadow","work"];
 //交換用変数
 var item;
 var tmpA;
@@ -41,7 +78,7 @@ function shuffle(){
         wantitem[t] = wantitem[k];
         wantitem[k] = tmpA;
     }
-    //画像のシャッフル
+    //アイテム画像のシャッフル
     for(var l=7;l>0;l--){
         //0からlまでのl+1個から１つ選択
         var m = Math.floor( Math.random() * (l+1) ) ;
@@ -49,6 +86,15 @@ function shuffle(){
         tmpB = img[m];
         img[m] = img[l];
         img[l] = tmpB;
+    }
+    //キャラクター画像のシャッフル
+    for(var l=7;l>0;l--){
+        //0からlまでのl+1個から１つ選択
+        var m = Math.floor( Math.random() * (l+1) ) ;
+        //選択された要素をl番目の要素と入れ替える
+        tmpB = chrimg[m];
+        chrimg[m] = chrimg[l];
+        chrimg[l] = tmpB;
     }
 }
 
@@ -96,21 +142,26 @@ function renewal(){
     document.getElementById("gitem").innerHTML="<img src='../image/"+img[gitem]+".png'>";
     for(var i=0;i<8;i++){
         //キャラクターが現在持っているアイテム
-        document.getElementById("c"+i).innerHTML="<img src='../image/"+img[haveitem[i]]+".png'>";
+        
         //document.getElementById("c"+i).innerHTML+=haveitem[i];
         //キャラクターが欲しがっているアイテム
         //まだ取得していないなら
         if(done[i] == 0){
-            document.getElementById("c"+i).innerHTML+="<img src='../image/"+img[wantitem[i]]+".png'>";
+            document.getElementById("c"+i).innerHTML="<div class='item'><img class='chitem' src='../image/"+img[haveitem[i]]+".png'><img class='cwitem' src='../image/"+img[wantitem[i]]+".png'></div>";
+            //document.getElementById("c"+i).innerHTML+="<img src='../image/"+img[wantitem[i]]+".png'>";
             //document.getElementById("c"+i).innerHTML+=wantitem[i];
         }else{
-        //持っているなら
-            document.getElementById("c"+i).innerHTML+="交換済";
+            document.getElementById("c"+i).innerHTML="<div class='item'><img class='chitem' src='../image/"+img[haveitem[i]]+".png'></div>";
         }
         //場所
         //document.getElementById("c"+i).innerHTML+="<br>場所";
         //document.getElementById("c"+i).innerHTML+=place[i];
-        document.getElementById("c"+i).innerHTML+="<br><img class='chrimg' src='../image/"+chrimg[i]+".png'>";
+        document.getElementById("c"+i).innerHTML+="";
+        if(done[i] == 0){
+            document.getElementById("c"+i).innerHTML+="<br><img class='chrimg' src='../image/"+chrimg[i]+"_1.png'>";
+        }else{
+            document.getElementById("c"+i).innerHTML+="<br><img class='chrimg' src='../image/"+chrimg[i]+"_2.png'>";
+        }
     }
 }
 
