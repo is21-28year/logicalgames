@@ -1,4 +1,5 @@
 //初期変数宣言
+
 var ringo;
 var point;
 var kaisuu;
@@ -9,120 +10,196 @@ var gameflag=true;
 //初期判定
 //リンゴの数、ポイントの数、回数制限の数の指定
 function shoki(ringonum,pointnum){
+    alert("初期変数セット");
     ringo =new Array(ringonum);
     point =new Array(pointnum);
     //画像の初期化
 }
-//移動判定
-//引数で自分の場所を確認
-function idou(basho){
-    //今のtrueフラグがどこか取得
-    for(var i;i<point.length;i++){
-         //判定エラーでゲームオーバーモーダル+フラグ＝false
-         if(point[i]==true){
-             //ゲームおーばーモーダル
-             ibasho=i;
-             alert(ibasho);
-         }
-     }
-     //bashoに今現在の場所がある
-     //bashoから判定へ移動判定処理
-     if(ibasho==10){
-         //初期位置置き場
-         point[basho]=true;
-         alert(point);
-     }else{
-         if((ibasho==0 && basho==1) || (ibasho==1 && basho==0)){
-            //間のリンゴの判定
-            if(ringo[0]==true){
-
-            }else{
-                ringo[0]==true;
-            }
-        }else if((ibasho==0 && basho==3) || (ibasho==3 && basho==0)){
-            //間のリンゴの判定
-            if(ringo[1]==true){
-
-            }else{
-                ringo[1]==true;
-            }
-        }else if((ibasho==0 && basho==2) || (ibasho==2 && basho==0)){
-            //間のリンゴの判定
-            if(ringo[2]==true){
-
-            }else{
-                ringo[2]==true;
-            }//左下処理
-        }else if((ibasho==2 && basho==3) || (ibasho==3 && basho==2)){
-            //間のリンゴの判定
-            if(ringo[3]==true){
-
-            }else{
-                ringo[3]==true;
-            }
-        }else if((ibasho==1 && basho==2) || (ibasho==2 && basho==1)){
-            //間のリンゴの判定
-            if(ringo[4]==true){
-
-            }else{
-                ringo[4]==true;
-            }
-        }else if((ibasho==2 && basho==4) || (ibasho==4 && basho==2)){
-            //間のリンゴの判定
-            if(ringo[5]==true){
-
-            }else{
-                ringo[5]==true;
-            }
-        }else if((ibasho==1 && basho==4) || (ibasho==4 && basho==1)){
-            //間のリンゴの判定
-            if(ringo[6]==true){
-
-            }else{
-                ringo[6]==true;
-            }
-        }else if((ibasho==3 && basho==4) || (ibasho==4 && basho==3)){
-            //間のリンゴの判定
-            if(ringo[7]==true){
-
-            }else{
-                ringo[7]==true;
-            }
-        }else if((ibasho==3 && basho==5) || (ibasho==5 && basho==3)){
-            //間のリンゴの判定
-            if(ringo[8]==true){
-
-            }else{
-                ringo[8]==true;
-            }
-        }else if((ibasho==4 && basho==5) || (ibasho==5 && basho==4)){
-            //間のリンゴの判定
-            if(ringo[9]==true){
-
-            }else{
-                ringo[9]==true;
-            }
-     }
-}
-//問題移動処理
-function idoushori(basho){
-    point[basho]=true;
-    //アニメーション
-}
-//問題クリア判定
+//問題クリア判定    
  function ans(){
      for(var i in ringo){
          //判定エラーでゲームオーバーモーダル+フラグ＝false
-         if(i==true){
+         if(i==null){
              //ゲームおーばーモーダル
              gameflag=flase;
          }
      }
     //判定通るとゲームクリア表示
     if(gameflag==true){
-
+        modal(1);
+    }else{
+        modal(0);
     }
  }   
+//問題移動処理
+function idoushori(ibasho,basho,ringo){
+    //アニメーション
+    document.getElementById(ringo).style.display="none";
+}
+
+//移動判定
+//引数で自分の場所を確認
+function idou(basho){
+    //今のtrueフラグがどこか取得
+    for(var i=0;i<point.length;i++){
+         //判定エラーでゲームオーバーモーダル+フラグ＝false
+         if(point[i]==true){
+             //ゲームおーばーモーダル
+             ibasho=i;
+         }
+     }
+     //ibashoに今現在の場所がある
+     //bashoから判定へ移動判定処理
+     if(ibasho==10){
+         //初期位置置き場
+         alert("初期値");
+         point[basho]=true;
+     }else{
+        if((ibasho==0 && basho==1) || (ibasho==1 && basho==0)){
+            //間のリンゴの判定
+            if(ringo[0]==true){
+               
+            }else{
+                ringo[0]=true;
+                //pointで場所交換処理を追加
+                point[ibasho]=null;
+                point[basho]=true;
+                idoushori(0,0,"ringo0");
+            }
+        }else if((ibasho==0 && basho==3) || (ibasho==3 && basho==0)){
+            //間のリンゴの判定
+            if(ringo[1]==true){
+
+            }else{
+                ringo[1]=true;
+                //pointで場所交換処理を追加
+                point[ibasho]=null;
+                point[basho]=true;
+                oushori(0,0,"ringo1");
+            }
+        }else if((ibasho==0 && basho==2) || (ibasho==2 && basho==0)){
+            //間のリンゴの判定
+            if(ringo[2]==true){
+
+    //問題移動処理
+            }else{
+                ringo[2]=true;
+                //pointで場所交換処理を追加
+                point[ibasho]=null;
+                point[basho]=true;
+                oushori(0,0,"ringo2");
+            }//左下処理
+        }else if((ibasho==2 && basho==3) || (ibasho==3 && basho==2)){
+            //間のリンゴの判定
+            if(ringo[3]==true){
+
+            }else{
+                ringo[3]=true;
+                //pointで場所交換処理を追加
+                point[ibasho]=null;
+                point[basho]=true;
+                oushori(0,0,"ringo3");
+            }
+        }else if((ibasho==1 && basho==2) || (ibasho==2 && basho==1)){
+            //間のリンゴの判定
+            if(ringo[4]==true){
+
+            }else{
+                ringo[4]=true;
+                //pointで場所交換処理を追加
+                point[ibasho]=null;
+                point[basho]=true;
+                oushori(0,0,"ringo4");
+            }
+        }else if((ibasho==2 && basho==4) || (ibasho==4 && basho==2)){
+            //間のリンゴの判定
+            if(ringo[5]==true){
+
+            }else{
+                ringo[5]=true;
+                //pointで場所交換処理を追加
+                point[ibasho]=null;
+                point[basho]=true;
+                oushori(0,0,"ringo5");
+            }
+        }else if((ibasho==1 && basho==4) || (ibasho==4 && basho==1)){
+            //間のリンゴの判定
+            if(ringo[6]==true){
+
+            }else{
+                ringo[6]=true;
+                //pointで場所交換処理を追加
+                point[ibasho]=null;
+                point[basho]=true;
+                oushori(0,0,"ringo6");
+            }
+        }else if((ibasho==3 && basho==4) || (ibasho==4 && basho==3)){
+            //間のリンゴの判定
+            if(ringo[7]==true){
+
+            }else{
+                ringo[7]=true;
+                //pointで場所交換処理を追加
+                point[ibasho]=null;
+                point[basho]=true;
+                oushori(0,0,"ringo7");
+            }
+        }else if((ibasho==3 && basho==5) || (ibasho==5 && basho==3)){
+            //間のリンゴの判定
+            if(ringo[8]==true){
+
+            }else{
+                ringo[8]=true;
+                //pointで場所交換処理を追加
+                point[ibasho]=null;
+                point[basho]=true;
+                oushori(0,0,"ringo8");
+            }
+        }else if((ibasho==4 && basho==5) || (ibasho==5 && basho==4)){
+            //間のリンゴの判定
+            if(ringo[9]==true){
+
+            }else{
+                ringo[9]=true;
+                //pointで場所交換処理を追加
+                point[ibasho]=null;
+                point[basho]=true;
+                oushori(0,0,"ringo9");
+            }
+        }
+        //アニメーション処理を行う
+        //キャラクター移動とリンゴが消える処理
+        //自分の場所から移動できるかの判定出来ないなら正解判定
+        if(point[0]==true){
+            if(ringo[0]==true && ringo[1]==true && ringo[2]==true){
+                ans();
+            }
+        }else if(point[1]==true){
+            if(ringo[0]==true && ringo[4]==true && ringo[6]==true){
+                ans();
+            }
+        }else  if(point[2]==true){
+            if(ringo[2]==true && ringo[3]==true && ringo[4]==true && ringo[5]==true){
+                ans();
+            }
+        }else  if(point[3]==true){
+            if(ringo[1]==true && ringo[3]==true && ringo[7]==true && ringo [8]==true){
+                ans();
+            }
+        }else  if(point[4]==true){
+            if(ringo[5]==true && ringo[6]==true && ringo[7]==true && ringo [9]==true){
+                ans();
+            }
+        }else  if(point[5]==true){
+            if(ringo[8]==true && ringo[9]==true){
+                ans();
+            }
+        }
+        //test処理
+        alert("場所"+point);
+        alert("取得リンゴ"+ringo);
+     }
+}
 
 /*画面の縦横判定共通部分前頁共通*/
 function viewhantei(){
