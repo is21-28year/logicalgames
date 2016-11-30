@@ -25,14 +25,6 @@ flag4 = [0,0,0,0,0];
 flag5 = [0,0,0,0,0];
 }
 function hantei(c_x,c_y){
-        //弾数減らす
-        k += -1;
-        tama();
-        //弾数0以下なら
-            if(k < 1){
-                //ゲームオーバー
-                modal(3);
-            }
 switch (c_x){
   case 1:
     if(flag1[c_y] == 1){
@@ -62,6 +54,14 @@ switch (c_x){
 }
  if(fl == 1){
     }else{
+            //弾数減らす
+        k += -1;
+        tama();
+        //弾数0以下なら
+            if(k < 1){
+                //ゲームオーバー
+                modal(3);
+            }
 switch (c_x){
   case 1:
     flag1[c_y] = 1
@@ -79,6 +79,12 @@ switch (c_x){
     flag5[c_y] = 1
     break;
 }
+document.getElementById(c_x+"_"+c_y).innerHTML="<img id='ten' src='../image/pick.png'>";
+$("#ten").rotate({
+      duration:1000,
+      angle: 0,
+      animateTo:-100
+      });
         if(x_z < c_x){
         	if(y_z < c_y){
             	document.getElementById(c_x+"_"+c_y).innerHTML="<img src='../image/hidariue.png'>";
