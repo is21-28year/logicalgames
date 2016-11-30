@@ -11,19 +11,14 @@
     <style>
         .box{
             //border:2px solid green;
-            width: 70vw;
-            height: 23vw;
-        }
-        #box2{
-            position:absolute;
-            bottom:2%;
+            width: 100%;
         }
         .chara{
             float:left;
-            width: 13vw;
-            border:0.2vw solid black;
-            border-radius:8px;
-            padding:1vw 1vh;
+            width: 25.5vw;
+            height: 21vw;
+            //border:2px solid black;
+            padding:0;
         }
         .chara:hover{
             background-color:#aaa;
@@ -46,12 +41,7 @@
         #gitem,#myitem{
             float:left;
             width: 9vw;
-            position:relative;
-            top:8vw;
-
-        }
-        #gitem img,#myitem img{
-            width: 8vw;
+            margin-top:8vw;
             border-radius:10px;
             background-color:#fff;
         }
@@ -59,10 +49,10 @@
             border-radius:10px;
             background-color:#fff;
         }
-        #gitem img,.cwitem{
+        #gitem,.cwitem{
             border:0.3vw solid blue;
         }
-        #myitem img,.chitem{
+        #myitem,.chitem{
             border:0.3vw solid red;
         }
         .cgitem{
@@ -74,13 +64,6 @@
             margin-left: auto;
             margin-right: auto;
             max-width:85%;
-        }
-        .arrow{
-            display:block;
-            margin-left:auto;
-            margin-right:auto;
-            position:relative;
-            top:-5vw;
         }
         .chrimg{
             display: block;
@@ -96,7 +79,7 @@
         
     </style>
 </head>
-<body onload="viewhantei();viewchange();modal(0);questionrand(72);shoki('hard');shuffle();renewal()">
+<body onload="viewhantei();viewchange();modal(0);questionrand(72);shoki('easy');shuffle();renewal()">
     <!-- ここからモーダルウィンドウ -->
     <div id="modal-content">
 	    <!-- モーダルウィンドウのコンテンツ開始 -->
@@ -133,19 +116,16 @@
     <div class="clam_right">
         <!--問題動作div-->
         <!--<h1><ruby><rb>問題</rb><rp>(</rp><rt>もんだい</rt><rp>)</rp></ruby></h1>-->
-        <div class="box" id="box1">
+        <div class="box">
             <div id="gitem"></div>
             <div id="c0" class="chara" onclick="koukan(0)"></div>
             <div id="c1" class="chara" onclick="koukan(1)"></div>
+
+        </div>
+        <div class="box">
+            <div id="myitem"></div>
             <div id="c2" class="chara" onclick="koukan(2)"></div>
             <div id="c3" class="chara" onclick="koukan(3)"></div>
-        </div>
-        <div class="box" id="box2">
-            <div id="myitem"></div>
-            <div id="c4" class="chara" onclick="koukan(4)"></div>
-            <div id="c5" class="chara" onclick="koukan(5)"></div>
-            <div id="c6" class="chara" onclick="koukan(6)"></div>
-            <div id="c7" class="chara" onclick="koukan(7)"></div>
         </div>
         
         
