@@ -32,8 +32,27 @@ function shoki(ringonum,pointnum){
     }
  }   
 //問題移動処理
+//難易度難しい完了
 function idoushori(ibasho,basho,ringo){
     //アニメーション
+    $(function() {
+        $('#chara').animate({
+            left: 50
+        }, 3000 );
+        //ここにjQueryのコードを書く
+    });
+    $.when(
+        $.getJSON('a.json'),
+        $.getJSON('b.json')
+    )
+    .done(function(data_a, data_b) {
+        // すべて成功した時の処理
+        console.log(data_a, data_b);
+    })
+    .fail(function() {
+        // エラーがあった時
+        console.log('error');
+    });
     document.getElementById(ringo).style.display="none";
 }
 
@@ -52,10 +71,10 @@ function idou(basho){
      //bashoから判定へ移動判定処理
      if(ibasho==10){
          //初期位置置き場
-         alert("初期値");
+         alert("初期位置");
          point[basho]=true;
      }else{
-        if((ibasho==0 && basho==1) || (ibasho==1 && basho==0)){
+        if(ibasho==0 && basho==1 || ibasho==1 && basho==0){
             //間のリンゴの判定
             if(ringo[0]==true){
                
@@ -66,7 +85,8 @@ function idou(basho){
                 point[basho]=true;
                 idoushori(0,0,"ringo0");
             }
-        }else if((ibasho==0 && basho==3) || (ibasho==3 && basho==0)){
+        }
+        if((ibasho==0 && basho==3) || (ibasho==3 && basho==0)){
             //間のリンゴの判定
             if(ringo[1]==true){
 
@@ -75,9 +95,10 @@ function idou(basho){
                 //pointで場所交換処理を追加
                 point[ibasho]=null;
                 point[basho]=true;
-                oushori(0,0,"ringo1");
+                idoushori(0,0,"ringo1");
             }
-        }else if((ibasho==0 && basho==2) || (ibasho==2 && basho==0)){
+        }
+        if((ibasho==0 && basho==2) || (ibasho==2 && basho==0)){
             //間のリンゴの判定
             if(ringo[2]==true){
 
@@ -87,9 +108,10 @@ function idou(basho){
                 //pointで場所交換処理を追加
                 point[ibasho]=null;
                 point[basho]=true;
-                oushori(0,0,"ringo2");
+                idoushori(0,0,"ringo2");
             }//左下処理
-        }else if((ibasho==2 && basho==3) || (ibasho==3 && basho==2)){
+        }
+        if((ibasho==2 && basho==3) || (ibasho==3 && basho==2)){
             //間のリンゴの判定
             if(ringo[3]==true){
 
@@ -98,9 +120,10 @@ function idou(basho){
                 //pointで場所交換処理を追加
                 point[ibasho]=null;
                 point[basho]=true;
-                oushori(0,0,"ringo3");
+                idoushori(0,0,"ringo3");
             }
-        }else if((ibasho==1 && basho==2) || (ibasho==2 && basho==1)){
+        }
+        if((ibasho==1 && basho==2) || (ibasho==2 && basho==1)){
             //間のリンゴの判定
             if(ringo[4]==true){
 
@@ -109,9 +132,10 @@ function idou(basho){
                 //pointで場所交換処理を追加
                 point[ibasho]=null;
                 point[basho]=true;
-                oushori(0,0,"ringo4");
+                idoushori(0,0,"ringo4");
             }
-        }else if((ibasho==2 && basho==4) || (ibasho==4 && basho==2)){
+        }
+        if((ibasho==2 && basho==4) || (ibasho==4 && basho==2)){
             //間のリンゴの判定
             if(ringo[5]==true){
 
@@ -120,9 +144,10 @@ function idou(basho){
                 //pointで場所交換処理を追加
                 point[ibasho]=null;
                 point[basho]=true;
-                oushori(0,0,"ringo5");
+                idoushori(0,0,"ringo5");
             }
-        }else if((ibasho==1 && basho==4) || (ibasho==4 && basho==1)){
+        }
+        if((ibasho==1 && basho==4) || (ibasho==4 && basho==1)){
             //間のリンゴの判定
             if(ringo[6]==true){
 
@@ -131,9 +156,10 @@ function idou(basho){
                 //pointで場所交換処理を追加
                 point[ibasho]=null;
                 point[basho]=true;
-                oushori(0,0,"ringo6");
+                idoushori(0,0,"ringo6");
             }
-        }else if((ibasho==3 && basho==4) || (ibasho==4 && basho==3)){
+        }
+        if((ibasho==3 && basho==4) || (ibasho==4 && basho==3)){
             //間のリンゴの判定
             if(ringo[7]==true){
 
@@ -142,9 +168,10 @@ function idou(basho){
                 //pointで場所交換処理を追加
                 point[ibasho]=null;
                 point[basho]=true;
-                oushori(0,0,"ringo7");
+                idoushori(0,0,"ringo7");
             }
-        }else if((ibasho==3 && basho==5) || (ibasho==5 && basho==3)){
+        }
+        if((ibasho==3 && basho==5) || (ibasho==5 && basho==3)){
             //間のリンゴの判定
             if(ringo[8]==true){
 
@@ -153,9 +180,10 @@ function idou(basho){
                 //pointで場所交換処理を追加
                 point[ibasho]=null;
                 point[basho]=true;
-                oushori(0,0,"ringo8");
+                idoushori(0,0,"ringo8");
             }
-        }else if((ibasho==4 && basho==5) || (ibasho==5 && basho==4)){
+        }
+        if((ibasho==4 && basho==5) || (ibasho==5 && basho==4)){
             //間のリンゴの判定
             if(ringo[9]==true){
 
@@ -164,7 +192,7 @@ function idou(basho){
                 //pointで場所交換処理を追加
                 point[ibasho]=null;
                 point[basho]=true;
-                oushori(0,0,"ringo9");
+                idoushori(0,0,"ringo9");
             }
         }
         //アニメーション処理を行う

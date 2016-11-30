@@ -85,7 +85,7 @@
 /*アルファベットの場所手動配置部分*/
 /*リンゴ表示サイズや位置の指定*/
     #ringo img{
-        z-index:2;
+        z-index:1;
         width:5vw;
         height:5vh;
     }
@@ -181,3 +181,10 @@
         position: absolute;
     }
 /*リンゴ表示サイズや位置の指定*/
+/*キャラクター表示サイズや位置指定*/
+    img#chara{
+        width:200px;
+        height:200px;
+        z-index:4;
+    }
+/*キャラクター表示サイズや位置指定*/
