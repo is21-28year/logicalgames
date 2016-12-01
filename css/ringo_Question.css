@@ -183,8 +183,14 @@
 /*リンゴ表示サイズや位置の指定*/
 /*キャラクター表示サイズや位置指定*/
     img#chara{
-        width:200px;
-        height:200px;
+        position:absolute;
+        display:none;
+        right:0;
+        bottom:0;
+        left:0;
+        top:0;
+        width:50px;
+        height:100px;
         z-index:4;
     }
 /*キャラクター表示サイズや位置指定*/
