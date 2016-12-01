@@ -36,24 +36,20 @@ function shoki(ringonum,pointnum){
 function idoushori(ibasho,basho,ringo){
     //アニメーション
     $(function() {
-        $('#chara').animate({
-            left: 50
-        }, 3000 );
-        //ここにjQueryのコードを書く
+        $.when(
+            $('#chara').animate({
+                left: 50
+            }, 3000 )
+        )
+        .done(function(data_a, data_b) {
+            // すべて成功した時の処理
+            document.getElementById(ringo).style.display="none";
+        })
+        .fail(function() {
+            // エラーがあった時
+            console.log('error');
+        }); 
     });
-    $.when(
-        $.getJSON('a.json'),
-        $.getJSON('b.json')
-    )
-    .done(function(data_a, data_b) {
-        // すべて成功した時の処理
-        console.log(data_a, data_b);
-    })
-    .fail(function() {
-        // エラーがあった時
-        console.log('error');
-    });
-    document.getElementById(ringo).style.display="none";
 }
 
 //移動判定
