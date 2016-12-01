@@ -34,11 +34,22 @@ function shoki(ringonum,pointnum){
 //問題移動処理
 //難易度難しい完了
 function idoushori(ibasho,basho,ringo){
+    // 要素の位置を取得する
+	var element = document.getElementById("point"+basho) ;
+	var rect = element.getBoundingClientRect() ;
+
+	// 座標を計算する
+	var positionX = rect.left + window.pageXOffset ;// 要素のX座標
+	var positionY = rect.top + window.pageYOffset ;	// 要素のY座標
+
+    document.write(positionX+"<br>");
+    document.write(positionY);
     //アニメーション
     $(function() {
         $.when(
             $('#chara').animate({
-                left: 50
+                "top":positionX,
+                "left":positionY
             }, 3000 )
         )
         .done(function(data_a, data_b) {

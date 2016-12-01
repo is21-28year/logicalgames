@@ -26,7 +26,7 @@
     }
 /*アルファベットの場所手動配置部分*/
 /*アルファベットの場所手動配置部分*/
-    #easyA{
+    #point0{
         margin:0;
         padding:0;
         top: 0;
@@ -35,7 +35,7 @@
         right: 20vw;
         position: absolute;
     }
-    #easyB{
+    #point1{
         margin:0;
         padding:0;
         top: 30vh;
@@ -44,7 +44,7 @@
         right: 20vw;
         position: absolute;
     }
-    #easyC{
+    #point2{
         margin:0;
         padding:0;
         top: 0;
@@ -54,7 +54,7 @@
         position: absolute;
         
     }
-    #easyD{
+    #point3{
         margin:0;
         padding:0;
         top: 0;
@@ -64,7 +64,7 @@
         position: absolute;
         
     }
-    #easyE{
+    #point4{
         margin:0;
         padding:0;
         top: 30vh;
@@ -73,7 +73,7 @@
         right: 0;
         position: absolute;
     }
-    #easyF{
+    #point5{
         margin:0;
         padding:0;
         top: 0;
