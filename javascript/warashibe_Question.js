@@ -159,11 +159,11 @@ function koukan(disp){
 //表示更新処理
 function renewal(){
     //目標のアイテム
-    document.getElementById("gitem").innerHTML="<img src='../image/"+img[gitem]+".png'>";
-    document.getElementById("gitem").innerHTML+="ほしいもの";
+    document.getElementById("gitem").innerHTML="<img id='gimg'src='../image/"+img[gitem]+".png'>";
+    document.getElementById("gitem").innerHTML+="<img src='../image/moji_blue.png'>";
     //自分が持っているアイテム
-    document.getElementById("myitem").innerHTML="<img src='../image/"+img[myitem]+".png'>";
-    document.getElementById("myitem").innerHTML+="もちもの";
+    document.getElementById("myitem").innerHTML="<img id='myimg'src='../image/"+img[myitem]+".png'>";
+    document.getElementById("myitem").innerHTML+="<img src='../image/moji_red.png'>";
     
     for(var i=0;i<(maxloop+1);i++){
         //キャラクターが現在持っているアイテム
@@ -172,21 +172,24 @@ function renewal(){
         //キャラクターが欲しがっているアイテム
         //まだ取得していないなら
         if(done[i] == 0){
-            document.getElementById("c"+i).innerHTML="<div class='item'><img class='chitem' src='../image/"+img[haveitem[i]]+".png'><img class='cwitem' src='../image/"+img[wantitem[i]]+".png'></div>";
+            document.getElementById("c"+i).innerHTML="<div class='charachild'><div class='item'><img class='chitem' src='../image/"+img[haveitem[i]]+".png'><img class='cwitem' src='../image/"+img[wantitem[i]]+".png'></div><img class='arrow' src='../image/arrow.png'><img class='chrimg' src='../image/"+chrimg[i]+"_1.png'></div>";
             //document.getElementById("c"+i).innerHTML+="<img src='../image/"+img[wantitem[i]]+".png'>";
             //document.getElementById("c"+i).innerHTML+=wantitem[i];
         }else{
-            document.getElementById("c"+i).innerHTML="<div class='item'><img class='cgitem' src='../image/"+img[haveitem[i]]+".png'></div>";
+            document.getElementById("c"+i).innerHTML="<div class='charachild'><div class='item'><img class='cgitem' src='../image/"+img[haveitem[i]]+".png'></div><img class='chrimg' src='../image/"+chrimg[i]+"_2.png'></div>";
         }
         //場所
         //document.getElementById("c"+i).innerHTML+="<br>場所";
         //document.getElementById("c"+i).innerHTML+=place[i];
+        /*
         if(done[i] == 0){
-            document.getElementById("c"+i).innerHTML+="<img class='arrow' src='../image/hidari.png'>";
+            document.getElementById("c"+i).innerHTML+="<img class='arrow' src='../image/arrow.png'>";
             document.getElementById("c"+i).innerHTML+="<img class='chrimg' src='../image/"+chrimg[i]+"_1.png'>";
         }else{
             document.getElementById("c"+i).innerHTML+="<img class='chrimg' src='../image/"+chrimg[i]+"_2.png'>";
         }
+        document.getElementById("c"+i).innerHTML+="</div>";
+        */
     }
 }
 

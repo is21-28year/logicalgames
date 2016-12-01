@@ -10,9 +10,12 @@
     <link rel="stylesheet" type="text/css" href="../css/warashibe_Question.css">
     <style>
         .box{
-            //border:2px solid green;
-            width: 70vw;
-            height: 23vw;
+            //border:0.2vw solid green;
+            width: 69vw;
+            height: 42vh;
+            max-width:97%;
+            max-height:80%;
+            
         }
         #box2{
             position:absolute;
@@ -21,36 +24,52 @@
         .chara{
             float:left;
             width: 13vw;
+            height: 34vw;
             border:0.2vw solid black;
             border-radius:8px;
-            padding:1vw 1vh;
+            padding:0.5vw 0.5vh;
+            max-height:90%;
+            position:relative;
         }
         .chara:hover{
             background-color:#aaa;
         }
+        .charachild{
+            width: 100%;
+            height: auto;
+            /*上下左右中央揃え用*/
+            position:absolute;
+            top:50%;
+            left:50%;
+            -webkit-transform: translate(-50%, -50%); /* Safari用 */
+            transform: translate(-50%, -50%);
+        }
         .item{
             clear:left;
-            //border:2px solid yellow;
-            width:13.5vw;
+            //border:0.2vw solid yellow;
+            width:13vw;
             text-align:center;
-            margin-left:auto;
-            margin-right:auto;
+            margin:auto;
+            
+            z-index:1;
         }
-        .chara img,.item img{
+        .charachild img,.item img{
             clear:left;
             width:auto;
             height:auto;
             max-width:45%;
             max-height:45%;
+
+
         }
         #gitem,#myitem{
             float:left;
-            width: 9vw;
+            width: 8vw;
             position:relative;
-            top:8vw;
-
+            top:12vh;
+            margin-right: 1vw; 
         }
-        #gitem img,#myitem img{
+        #gimg,#myimg{
             width: 8vw;
             border-radius:10px;
             background-color:#fff;
@@ -59,11 +78,17 @@
             border-radius:10px;
             background-color:#fff;
         }
-        #gitem img,.cwitem{
-            border:0.3vw solid blue;
+        #gimg,.cwitem{
+            border:0.3vw solid #68c2b7;
         }
-        #myitem img,.chitem{
+        #myimg,.chitem{
             border:0.3vw solid red;
+        }
+        .chitem{
+            //float:left;
+        }
+        .cwitem{
+            //float:right;
         }
         .cgitem{
             border:0.3vw solid purple;
@@ -74,18 +99,24 @@
             margin-left: auto;
             margin-right: auto;
             max-width:85%;
+            padding:1vw 1vh;
         }
         .arrow{
+            width:100px;
             display:block;
             margin-left:auto;
             margin-right:auto;
-            position:relative;
-            top:-5vw;
+            position:absolute;
+            top:5%;
+            left:25%;
+            z-index:1;
         }
         .chrimg{
             display: block;
             margin-left: auto;
             margin-right: auto;
+            position:relative;
+            //top:-5vh;
         }
         
 .clearfix:after{
