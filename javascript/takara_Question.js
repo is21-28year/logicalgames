@@ -10,6 +10,7 @@ var flag3 = [0,0,0,0,0];
 var flag4 = [0,0,0,0,0];
 var flag5 = [0,0,0,0,0];
 var fl = 0;
+var flog = 0;
 function s(x,y,k_s){//初期
 s_x = x;
 s_y = y;
@@ -25,6 +26,7 @@ flag4 = [0,0,0,0,0];
 flag5 = [0,0,0,0,0];
 }
 function hantei(c_x,c_y){
+if(flog==1){}else{
 switch (c_x){
   case 1:
     if(flag1[c_y] == 1){
@@ -54,14 +56,7 @@ switch (c_x){
 }
  if(fl == 1){
     }else{
-            //弾数減らす
-        k += -1;
-        tama();
-        //弾数0以下なら
-            if(k < 1){
-                //ゲームオーバー
-                modal(3);
-            }
+        
 switch (c_x){
   case 1:
     flag1[c_y] = 1
@@ -79,12 +74,27 @@ switch (c_x){
     flag5[c_y] = 1
     break;
 }
-document.getElementById(c_x+"_"+c_y).innerHTML="<img id='ten' src='../image/pick.png'>";
-$("#ten").rotate({
-      duration:1000,
-      angle: 0,
-      animateTo:-100
-      });
+document.getElementById(c_x+"_"+c_y).innerHTML="<img id='ten' src='../image/pick.png 'width='50%' height='100%'>";
+$(function() {
+flog=1;
+        $.when(
+		$({deg:50}).animate({deg:-50}, {
+			duration:500,
+			progress:function() {
+				$("#ten").css({
+					transform:'rotate(' + this.deg + 'deg)'
+				})
+			}
+		})
+      )
+        .done(function() {
+        k += -1;
+        tama();
+                    if(k < 1){
+                //ゲームオーバー
+                modal(3);
+            }
+flog=0;
         if(x_z < c_x){
         	if(y_z < c_y){
             	document.getElementById(c_x+"_"+c_y).innerHTML="<img src='../image/hidariue.png'>";
@@ -110,13 +120,22 @@ $("#ten").rotate({
             	modal(2);
             	}
         }
-        
+        })
+        .fail(function() {
+            // エラーがあった時
+            console.log('error');
+        }); 
+    });
+}
+        }
 
-    }
+    
     fl = 0;
 }
 function tama(){
-    document.getElementById("kaisuu").innerHTML=k;
+var kai="<img src='../image/s_pick";
+var suu=".png'>";
+    document.getElementById("kaisuu").innerHTML=kai+k+suu;
 }
 function reset(){
     tama();
