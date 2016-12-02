@@ -57,16 +57,7 @@
             
             z-index:1;
         }
-        .chrimg,.cwitem,.chitem{
-            width:5vw;
-            height:5vh;
-            max-width:85%;
-            max-height:85%;
-            clear:left;
-            width:auto;
-            height:auto;
-            
-        }
+
         #gitem,#myitem{
             float:left;
             width: 8vw;
@@ -94,12 +85,6 @@
         #myimg,.chitem{
             border:0.3vw solid red;
         }
-        .chitem{
-            //float:left;
-        }
-        .cwitem{
-            //float:right;
-        }
         .cgitem{
             border:0.3vw solid purple;
         }
@@ -111,6 +96,7 @@
             max-width:85%;
             padding:1vw 1vh;
         }
+
         .arrow{
             width:4vw;
             display:block;
@@ -122,11 +108,14 @@
             z-index:1;
         }
         .chrimg{
-            max-width:45%;
-            max-height:45%;
+            width:10vw;
+            height:20vh;
+            max-width:100%;
+            max-height:100%;
             display: block;
             margin-left: auto;
             margin-right: auto;
+            margin-top:15%;
             position:relative;
         }
         
@@ -168,7 +157,7 @@
     <!--リセットボタン配置-->
     
     <div id="reset">
-        <input type="button" class="migi" value="リセット">
+        <input type="button" class="migi" value="リセット" onclick="shoki('hard');shuffle();renewal()">
     </div>
     
     </div>

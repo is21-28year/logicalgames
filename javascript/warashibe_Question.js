@@ -77,8 +77,9 @@ var gitem = 7;
 //拡張子抜きの画像名が入る(png)
 var img = ["burger","chicken","momo","sakana","ame","kani","oniku","orange"];
 //キャラの画像
-//拡張子抜きの画像名が入る(png)
-var chrimg = ["cat","dog","gagi","girl","okan","ossan","shadow","work"];
+//_（数字）と拡張子抜きの画像名が入る(png)
+//var chrimg = ["shisaku","dog","gagi","girl","okan","ossan","shadow","work"];
+var chrimg = ["shisaku","shisaku","shisaku","shisaku","shisaku","shisaku","shisaku","shisaku"];
 //交換用変数
 var item;
 var tmpA;
@@ -172,11 +173,11 @@ function renewal(){
         //キャラクターが欲しがっているアイテム
         //まだ取得していないなら
         if(done[i] == 0){
-            document.getElementById("c"+i).innerHTML="<div class='charachild'><div class='item'><img class='chitem' src='../image/"+img[haveitem[i]]+".png'><img class='cwitem' src='../image/"+img[wantitem[i]]+".png'></div><img class='arrow' src='../image/arrow.png'><img class='chrimg' src='../image/"+chrimg[i]+"_1.png'></div>";
+            document.getElementById("c"+i).innerHTML="<div class='charachild'><div class='item'><img class='chitem' src='../image/"+img[haveitem[i]]+".png'><img class='cwitem' src='../image/"+img[wantitem[i]]+".png'></div><img class='arrow' src='../image/arrow.png'><img class='chrimg' src='../image/"+chrimg[i]+".png'></div>";
             //document.getElementById("c"+i).innerHTML+="<img src='../image/"+img[wantitem[i]]+".png'>";
             //document.getElementById("c"+i).innerHTML+=wantitem[i];
         }else{
-            document.getElementById("c"+i).innerHTML="<div class='charachild'><div class='item'><img class='cgitem' src='../image/"+img[haveitem[i]]+".png'></div><img class='chrimg' src='../image/"+chrimg[i]+"_2.png'></div>";
+            document.getElementById("c"+i).innerHTML="<div class='charachild'><div class='item'><img class='cgitem' src='../image/"+img[haveitem[i]]+".png'></div><img class='chrimg' src='../image/"+chrimg[i]+".png'></div>";
         }
         //場所
         //document.getElementById("c"+i).innerHTML+="<br>場所";
