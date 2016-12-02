@@ -1,5 +1,4 @@
 //初期変数宣言
-
 var ringo;
 var point;
 var kaisuu;
@@ -18,41 +17,54 @@ function shoki(ringonum,pointnum){
     //画像の初期化
 }
 //問題クリア判定    
- function ans(){
-     for(var i in ringo){
-         //判定エラーでゲームオーバーモーダル+フラグ＝false
-         if(i==null){
-             //ゲームおーばーモーダル
-             gameflag=flase;
-         }
-     }
-    //判定通るとゲームクリア表示
-    if(gameflag==true){
-        modal(1);
-    }else{
-        modal(0);
+ function answer(){
+     //アニメーション処理を行う
+        //キャラクター移動とリンゴが消える処理
+        //自分の場所から移動できるかの判定出来ないなら正解判定
+        if(point[0]==true){
+            if(ringo[0]==true && ringo[1]==true && ringo[2]==true){
+                ans();
+            }
+        }else if(point[1]==true){
+            if(ringo[0]==true && ringo[4]==true && ringo[6]==true){
+                ans();
+            }
+        }else  if(point[2]==true){
+            if(ringo[2]==true && ringo[3]==true && ringo[4]==true && ringo[5]==true){
+                ans();
+            }
+        }else  if(point[3]==true){
+            if(ringo[1]==true && ringo[3]==true && ringo[7]==true && ringo [8]==true){
+                ans();
+            }
+        }else  if(point[4]==true){
+            if(ringo[5]==true && ringo[6]==true && ringo[7]==true && ringo [9]==true){
+                ans();
+            }
+        }else  if(point[5]==true){
+            if(ringo[8]==true && ringo[9]==true){
+                ans();
+            }
+        }
+    function ans(){
+        for(var i in ringo){
+            //判定エラーでゲームオーバーモーダル+フラグ＝false
+            if(i==null){
+                //ゲームおーばーモーダル
+                gameflag=flase;
+            }
+        }
+        //判定通るとゲームクリア表示
+        if(gameflag==true){
+            modal(1);
+        }else{
+            modal(0);
+        }
     }
  }   
 //問題移動処理
 //難易度難しい完了
 function idoushori(ibasho,basho,ringo){
-    /*座標の取得が行えない
-    // 要素の位置を取得する
-	var element1 = document.getElementById("point"+basho) ;
-    var element2 = document.getElementById("point"+ibasho) ;
-	var zahyou1 = element1.getBoundingClientRect() ;
-	var zahyou2 = element2.getBoundingClientRect() ;
-
-	// 座標を計算する
-	var zahyou1X = zahyou1.left + window.pageXOffset ;// 要素のX座標
-    var zahyou1Y = zahyou1.top + window.pageYOffset ;// 要素のX座標
-    var zahyou2X = zahyou2.left + window.pageXOffset ;// 要素のX座標
-    var zahyou2Y = zahyou2.top + window.pageYOffset ;// 要素のX座標
-
-    //idousakiX,Yが移動する数値
-    var idousakiX =zahyou1X-zahyou2X;
-    var idousakiY =zahyou1Y-zahyou2Y;
-    */
     var bashoL=0;
     var bashoR=0;
     var bashoT=0;
@@ -64,22 +76,31 @@ function idoushori(ibasho,basho,ringo){
     bashoR = parseInt($('#point'+basho).css('right'));
     bashoT = parseInt($('#point'+basho).css('top'));
     bashoB = parseInt($('#point'+basho).css('bottom'));
-    
+
     X=bashoL-bashoR;
     Y=bashoT-bashoB;
-    
 
+    ibashoL = parseInt($('#point'+ibasho).css('left'));
+    ibashoR = parseInt($('#point'+ibasho).css('right'));
+    ibashoT = parseInt($('#point'+ibasho).css('top'));
+    ibashoB = parseInt($('#point'+ibasho).css('bottom'));
+    
+    ringoX=((bashoL-bashoR)+(ibashoL-ibashoR))/2;
+    ringoY=((bashoT-bashoB)+(ibashoT-ibashoB))/2;
     //アニメーション
     $(function() {
         $.when(
             $('#chara').animate({
-                left:X,
-                top:Y
-            }, 3000 )
+                left:ringoX,
+                top:ringoY,
+            }, 1500 )
         )
-        .done(function(data_a, data_b) {
-            // すべて成功した時の処理
+        .done(function() {
             document.getElementById(ringo).style.display="none";
+            $('#chara').animate({
+                left:X,
+                top:Y,
+            }, 1500 )
         })
         .fail(function() {
             // エラーがあった時
@@ -99,31 +120,27 @@ function charaset(basho){
     var X=bashoL-bashoR;
     var Y=bashoT-bashoB;
 
-    document.getElementById("chara").style.right=X;
-    document.getElementById("chara").style.bottom=Y;
-    document.getElementById("chara").style.display="block";
+
+     $.when(
+            $('#chara').animate({
+                left:X,
+                top:Y
+            },10 )
+        )
+        .done(function() {
+            // すべて成功した時の処理
+            document.getElementById("chara").style.display="block";
+        })
+        .fail(function() {
+            // エラーがあった時
+            console.log('error');
+        }); 
     
 
 }
 //移動判定
-//引数で自分の場所を確認
-function idou(basho){
-    //今のtrueフラグがどこか取得
-    for(var i=0;i<point.length;i++){
-         //判定エラーでゲームオーバーモーダル+フラグ＝false
-         if(point[i]==true){
-             //ゲームおーばーモーダル
-             ibasho=i;
-         }
-     }
-     //ibashoに今現在の場所がある
-     //bashoから判定へ移動判定処理
-     if(ibasho==10){
-         //初期位置置き場
-         point[basho]=true;
-         charaset(basho);
-     }else{
-        if(ibasho==0 && basho==1 || ibasho==1 && basho==0){
+function idouhantei(basho){
+    if(ibasho==0 && basho==1 || ibasho==1 && basho==0){
             //間のリンゴの判定
             if(ringo[0]==true){
                
@@ -244,37 +261,27 @@ function idou(basho){
                 idoushori(ibasho,basho,"ringo9");
             }
         }
-        //アニメーション処理を行う
-        //キャラクター移動とリンゴが消える処理
-        //自分の場所から移動できるかの判定出来ないなら正解判定
-        if(point[0]==true){
-            if(ringo[0]==true && ringo[1]==true && ringo[2]==true){
-                ans();
-            }
-        }else if(point[1]==true){
-            if(ringo[0]==true && ringo[4]==true && ringo[6]==true){
-                ans();
-            }
-        }else  if(point[2]==true){
-            if(ringo[2]==true && ringo[3]==true && ringo[4]==true && ringo[5]==true){
-                ans();
-            }
-        }else  if(point[3]==true){
-            if(ringo[1]==true && ringo[3]==true && ringo[7]==true && ringo [8]==true){
-                ans();
-            }
-        }else  if(point[4]==true){
-            if(ringo[5]==true && ringo[6]==true && ringo[7]==true && ringo [9]==true){
-                ans();
-            }
-        }else  if(point[5]==true){
-            if(ringo[8]==true && ringo[9]==true){
-                ans();
-            }
-        }
-        //test処理
-        alert("場所"+point);
-        alert("取得リンゴ"+ringo);
+}
+//引数で自分の場所を確認
+function idou(basho){
+    //今のtrueフラグがどこか取得
+    for(var i=0;i<point.length;i++){
+         //判定エラーでゲームオーバーモーダル+フラグ＝false
+         if(point[i]==true){
+             //ゲームおーばーモーダル
+             ibasho=i;
+         }
+     }
+     
+     if(ibasho==10){
+         //初期位置置き場
+         point[basho]=true;
+         charaset(basho);
+     }else{
+         //順次処理を行うようにする
+        idouhantei(basho);
+        //  ちょっと判定を待ってもらう
+        setTimeout("answer()", 3000);
      }
 }
 

@@ -187,8 +187,8 @@
         display:none;
         right:0;
         bottom:0;
-        left:0;
-        top:0;
+        left:-800;
+        top:-500;
         width:50px;
         height:100px;
         z-index:4;
