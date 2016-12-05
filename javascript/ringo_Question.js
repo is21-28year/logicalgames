@@ -1,22 +1,36 @@
 //初期変数宣言
 var ringo;
 var point;
-var kaisuu;
 var basho;
-var ibasho=10;
-var gameflag=true;
-var idousakiX=0;
-var idousakiY=0;
-var idouflag=0;
-
+var ibasho;
+var gameflag;
+var idousakiX;
+var idousakiY;
+var idouflag;
+var diff;
 
 //初期判定
 //リンゴの数、ポイントの数、回数制限の数の指定
-function shoki(ringonum,pointnum){
-    alert("初期変数セット");
-    ringo =new Array(ringonum);
-    point =new Array(pointnum);
-    //画像の初期化
+function shoki(ringonum,pointnum,diff){
+    //難易度セット
+    diff=diff;
+    if(diff==2){
+         alert("初期判定");
+        ringo =[0,0,0,0,0,0,0,0,0,0];
+        point =[0,0,0,0,0,0];
+        //初期変数の決定
+        ibasho=10;
+        gameflag=true;
+        idousakiX=0;
+        idousakiY=0;
+        idouflag=0;
+        //画像の初期化
+        document.getElementById("chara").style.display="none";
+        for(var i=0;i<ringonum;i++){
+            document.getElementById("ringo"+i).style.display="";
+        }
+    }
+
 }
 //問題クリア判定    
  function answer(){
@@ -294,7 +308,6 @@ function idou(basho){
         setTimeout("answer()", 3000);
      }
     }
-    
 }
 
 /*画面の縦横判定共通部分前頁共通*/
