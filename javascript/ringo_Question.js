@@ -15,7 +15,34 @@ function shoki(ringonum,pointnum,diff){
     //難易度セット
     diff=diff;
     if(diff==2){
-         alert("初期判定");
+        ringo =[0,0,0,0,0,0,0,0,0,0];
+        point =[0,0,0,0,0,0];
+        //初期変数の決定
+        ibasho=10;
+        gameflag=true;
+        idousakiX=0;
+        idousakiY=0;
+        idouflag=0;
+        //画像の初期化
+        document.getElementById("chara").style.display="none";
+        for(var i=0;i<ringonum;i++){
+            document.getElementById("ringo"+i).style.display="";
+        }
+    }else if(diff==1){
+        ringo =[0,0,0,0,0,0,0,0,0,0];
+        point =[0,0,0,0,0,0];
+        //初期変数の決定
+        ibasho=10;
+        gameflag=true;
+        idousakiX=0;
+        idousakiY=0;
+        idouflag=0;
+        //画像の初期化
+        document.getElementById("chara").style.display="none";
+        for(var i=0;i<ringonum;i++){
+            document.getElementById("ringo"+i).style.display="";
+        }
+    }else{
         ringo =[0,0,0,0,0,0,0,0,0,0];
         point =[0,0,0,0,0,0];
         //初期変数の決定
