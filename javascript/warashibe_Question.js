@@ -127,33 +127,64 @@ function koukan(disp){
     if(done[disp] != 1){
         //持っているアイテムが相手の欲しがっているアイテムなら
         if(myitem == wantitem[disp]){
-            //交換する
-            item = myitem;
-            myitem = haveitem[disp];
-            haveitem[disp] = item;
-            //交換済フラグ更新
-            done[disp] = 1;
-            //更新
-            renewal();
-            //自分が持っているアイテムが目標のアイテムなら
-            if(myitem == gitem){
-                //クリアする
-                modal(2);
-            }else{
-                //ゲームオーバー判定
-                var goflag = 1;
-                for(var s=0;s<(maxloop+1);s++){
-                    //自分のアイテムを欲しがっている人がいる かつ その人物が交換済みでないなら
-                    if(myitem == wantitem[s] && done[s] != 1){
-                        //ゲームオーバーフラグをオフ
-                        var goflag = 0;
+            //座標を取得する
+            var element = document.getElementById( "c"+disp ) ;
+            var rect = element.getBoundingClientRect() ;
+            // 座標を計算する
+            var positionX = rect.left + window.pageXOffset ;	// 要素のX座標
+            var positionY = rect.top + window.pageYOffset ;	// 要素のY座標
+            
+
+            $(function() {
+                //アニメーションに必要な座標取得が難しいので後回し
+                //座標のためにcssを変更する必要性大
+                $.when(
+                    //自分のアイテム移動
+                    $('#myimg').animate({
+                        marginleft:positionX,
+                        margintop:positionY
+                    }, 2000 ),
+                    //交換先のアイテム移動
+                    $('c'+disp+" img").animate({
+                        marginleft:positionX,
+                        margintop:positionY
+                    }, 2000 )
+                )
+                .done(function() {
+                    //画像交換処理
+                    //交換する
+                    item = myitem;
+                    myitem = haveitem[disp];
+                    haveitem[disp] = item;
+                    //交換済フラグ更新
+                    done[disp] = 1;
+                    //更新
+                    renewal();
+                    //自分が持っているアイテムが目標のアイテムなら
+                    if(myitem == gitem){
+                        //クリアする
+                        modal(2);
+                    }else{
+                        //ゲームオーバー判定
+                        var goflag = 1;
+                        for(var s=0;s<(maxloop+1);s++){
+                            //自分のアイテムを欲しがっている人がいる かつ その人物が交換済みでないなら
+                            if(myitem == wantitem[s] && done[s] != 1){
+                                //ゲームオーバーフラグをオフ
+                                var goflag = 0;
+                            }
+                        }
+                        if(goflag == 1){
+                            //ゲームオーバー
+                            modal(3);
+                        }
                     }
-                }
-                if(goflag == 1){
-                    //ゲームオーバー
-                    modal(3);
-                }
-            }
+                })
+                .fail(function() {
+                    // エラーがあった時
+                    console.log('error');
+                }); 
+            });
         }
     }
 }

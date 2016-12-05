@@ -7,6 +7,8 @@ var ibasho=10;
 var gameflag=true;
 var idousakiX=0;
 var idousakiY=0;
+var idouflag=0;
+
 
 //初期判定
 //リンゴの数、ポイントの数、回数制限の数の指定
@@ -54,11 +56,11 @@ function shoki(ringonum,pointnum){
                 gameflag=flase;
             }
         }
-        //判定通るとゲームクリア表示
+//判定通るとゲームクリア表示
         if(gameflag==true){
-            modal(1);
+            modal(3);
         }else{
-            modal(0);
+            modal(2);
         }
     }
  }   
@@ -71,6 +73,9 @@ function idoushori(ibasho,basho,ringo){
     var bashoB=0;
     var X=0;
     var Y=0;
+    var flagchange=function(){
+        idouflag=0;
+    }
 
     bashoL = parseInt($('#point'+basho).css('left'));
     bashoR = parseInt($('#point'+basho).css('right'));
@@ -87,20 +92,24 @@ function idoushori(ibasho,basho,ringo){
     
     ringoX=((bashoL-bashoR)+(ibashoL-ibashoR))/2;
     ringoY=((bashoT-bashoB)+(ibashoT-ibashoB))/2;
+
+
     //アニメーション
     $(function() {
+        idouflag=1;
         $.when(
             $('#chara').animate({
                 left:ringoX,
                 top:ringoY,
-            }, 1500 )
+            }, 1000 )
         )
         .done(function() {
             document.getElementById(ringo).style.display="none";
+            setTimeout(flagchange,1000);
             $('#chara').animate({
                 left:X,
                 top:Y,
-            }, 1500 )
+            }, 1000 )
         })
         .fail(function() {
             // エラーがあった時
@@ -265,10 +274,11 @@ function idouhantei(basho){
 //引数で自分の場所を確認
 function idou(basho){
     //今のtrueフラグがどこか取得
-    for(var i=0;i<point.length;i++){
-         //判定エラーでゲームオーバーモーダル+フラグ＝false
+    if(idouflag==1){
+        //フラグがないため移動処理ができない部分
+    }else{
+        for(var i=0;i<point.length;i++){
          if(point[i]==true){
-             //ゲームおーばーモーダル
              ibasho=i;
          }
      }
@@ -283,6 +293,8 @@ function idou(basho){
         //  ちょっと判定を待ってもらう
         setTimeout("answer()", 3000);
      }
+    }
+    
 }
 
 /*画面の縦横判定共通部分前頁共通*/
