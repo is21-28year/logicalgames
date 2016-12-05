@@ -144,8 +144,8 @@ flag2 = [0,0,0,0,0];
 flag3 = [0,0,0,0,0];
 flag4 = [0,0,0,0,0];
 flag5 = [0,0,0,0,0];
-    for(var i=1;i<6;i++){
-    	for(var d=1;d<6;d++){
+    for(var i=1;i<s_x+1;i++){
+    	for(var d=1;d<s_y+1;d++){
         document.getElementById(i+"_"+d).innerHTML="";
     	}
     }
