@@ -26,7 +26,7 @@
     }
 /*アルファベットの場所手動配置部分*/
 /*アルファベットの場所手動配置部分*/
-    #point0{
+    #point0.hard{
         margin:0;
         padding:0;
         top: 0;
@@ -35,7 +35,7 @@
         right: 20vw;
         position: absolute;
     }
-    #point1{
+    #point1.hard{
         margin:0;
         padding:0;
         top: 30vh;
@@ -44,7 +44,7 @@
         right: 20vw;
         position: absolute;
     }
-    #point2{
+    #point2.hard{
         margin:0;
         padding:0;
         top: 0;
@@ -54,7 +54,7 @@
         position: absolute;
         
     }
-    #point3{
+    #point3.hard{
         margin:0;
         padding:0;
         top: 0;
@@ -64,7 +64,7 @@
         position: absolute;
         
     }
-    #point4{
+    #point4.hard{
         margin:0;
         padding:0;
         top: 30vh;
@@ -73,7 +73,7 @@
         right: 0;
         position: absolute;
     }
-    #point5{
+    #point5.hard{
         margin:0;
         padding:0;
         top: 0;
@@ -90,7 +90,7 @@
         height:5vh;
     }
 
-    #ringo0{
+    #ringo0.hard{
         margin:0;
         padding:0;
         top: 0;
@@ -99,7 +99,7 @@
         right: 20vw;
         position: absolute;
     }
-    #ringo1{
+    #ringo1.hard{
         margin:0;
         padding:0;
         top: 0;
@@ -108,7 +108,7 @@
         right: 0;
         position: absolute;
     }
-    #ringo2{
+    #ringo2.hard{
         margin:0;
         padding:0;
         top: 0;
@@ -117,7 +117,7 @@
         right: 10vw;
         position: absolute;
     }
-    #ringo3{
+    #ringo3.hard{
         margin:0;
         padding:0;
         top: 0;
@@ -126,7 +126,7 @@
         right: 0;
         position: absolute;
     }
-    #ringo4{
+    #ringo4.hard{
         margin:0;
         padding:0;
         top: 15vh;
@@ -135,7 +135,7 @@
         right: 10vw;
         position: absolute;
     }
-    #ringo5{
+    #ringo5.hard{
         margin:0;
         padding:0;
         top: 15vh;
@@ -144,7 +144,7 @@
         right: 0;
         position: absolute;
     }
-    #ringo6{
+    #ringo6.hard{
         margin:0;
         padding:0;
         top: 30vh;
@@ -153,7 +153,7 @@
         right: 0;
         position: absolute;
     }
-    #ringo7{
+    #ringo7.hard{
         margin:0;
         padding:0;
         top: 0;
@@ -162,7 +162,7 @@
         right: 0;
         position: absolute;
     }
-    #ringo8{
+    #ringo8.hard{
         margin:0;
         padding:0;
         top: 0;
@@ -171,7 +171,7 @@
         right: 0;
         position: absolute;
     }
-    #ringo9{
+    #ringo9.hard{
         margin:0;
         padding:0;
         top: 15vh;
