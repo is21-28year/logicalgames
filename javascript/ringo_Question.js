@@ -7,13 +7,14 @@ var gameflag;
 var idousakiX;
 var idousakiY;
 var idouflag;
+//難易度の判定
 var diff;
 
 //初期判定
 //リンゴの数、ポイントの数、回数制限の数の指定
-function shoki(ringonum,pointnum,diff){
+function shoki(diffnum){
     //難易度セット
-    diff=diff;
+    diff=diffnum;
     if(diff==2){
         ringo =[0,0,0,0,0,0,0,0,0,0];
         point =[0,0,0,0,0,0];
@@ -25,7 +26,7 @@ function shoki(ringonum,pointnum,diff){
         idouflag=0;
         //画像の初期化
         document.getElementById("chara").style.display="none";
-        for(var i=0;i<ringonum;i++){
+        for(var i=0;i<ringo.length;i++){
             document.getElementById("ringo"+i).style.display="";
         }
     }else if(diff==1){
@@ -39,7 +40,7 @@ function shoki(ringonum,pointnum,diff){
         idouflag=0;
         //画像の初期化
         document.getElementById("chara").style.display="none";
-        for(var i=0;i<ringonum;i++){
+        for(var i=0;i<ringo.length;i++){
             document.getElementById("ringo"+i).style.display="";
         }
     }else{
@@ -53,7 +54,7 @@ function shoki(ringonum,pointnum,diff){
         idouflag=0;
         //画像の初期化
         document.getElementById("chara").style.display="none";
-        for(var i=0;i<ringonum;i++){
+        for(var i=0;i<ringo.length;i++){
             document.getElementById("ringo"+i).style.display="";
         }
     }
