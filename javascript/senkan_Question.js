@@ -12,6 +12,8 @@ function senkan_hantei(click_num){
         //クリック済なら何もしない
     }else{
         ship_flag[click_num] = 1;
+        //砲弾発射
+        document.getElementById("cannon").src="../image/cannon_2.png";
         //船爆破
         document.getElementById("ship"+click_num).src="../image/explosion.png";
         setTimeout(function(){
@@ -20,7 +22,11 @@ function senkan_hantei(click_num){
             }else{
             document.getElementById("ship"+click_num).src="../image/senkan_teki_4.png";
             }
+            document.getElementById("cannon").src="../image/cannon_3.png";
         },500);
+        setTimeout(function(){
+            document.getElementById("cannon").src="../image/cannon_1.png";
+        },1000);
         //弾数減らす
         ship_zan += -1;
         tama();
@@ -45,6 +51,7 @@ function reset(){
     for(var i=0;i<9;i++){
         document.getElementById("ship"+i).src="../image/senkan_teki.png";
     }
+    document.getElementById("cannon").src="../image/cannon_1.png";
 }
 function cleartrue(clearnum){
     window.localStorage.setItem(clearnum,true);

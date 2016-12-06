@@ -7,7 +7,9 @@
      <script type="text/javascript" src="../javascript/senkan_Question.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/Question.css">
     <style>
-    #wrap{
+    .wrap{
+        margin-left:auto;
+        margin-right:auto;
         width:65vw;
         height:10vw;
         display:flex;
@@ -15,6 +17,9 @@
         padding:0;list-style: none;
         text-align:center;
         }
+    #w1{
+        margin-top:10%;
+    }
     .box1{
         width:calc(100% / 5);
         margin:2px;
@@ -54,6 +59,16 @@ img[id^="ship"]
     {
         background-image: url("../image/senkan_haikei.png");
         background-size:100% 100%;
+        position:relative;
+    }
+    #cannon{
+        width:14vw;
+        height:40vh;
+        position:absolute;
+        left:0;
+        right:0;
+        bottom:0;
+        margin:auto;
     }
     </style>
 </head>
@@ -87,19 +102,20 @@ img[id^="ship"]
     </div>
     <div class="clam_right">
         <!--問題動作div-->
- <ul id="wrap">
-    <li class="box1"><a href="#" onclick="senkan_hantei(0)"><img id="ship0" src="../image/senkan_teki.png"></a></li>
-    <li class="box1"><a href="#" onclick="senkan_hantei(2)"><img id="ship2" src="../image/senkan_teki.png"></a></li>
-    <li class="box1"><a href="#" onclick="senkan_hantei(4)"><img id="ship4" src="../image/senkan_teki.png"></a></li>
-    <li class="box1"><a href="#" onclick="senkan_hantei(6)"><img id="ship6" src="../image/senkan_teki.png"></a></li>
-    <li class="box1"><a href="#" onclick="senkan_hantei(8)"><img id="ship8" src="../image/senkan_teki.png"></a></li>
-</ul>
-<ul id="wrap">
-    <li class="box2"><a href="#" onclick="senkan_hantei(1)"><img id="ship1" src="../image/senkan_teki.png"></a></li>
-    <li class="box2"><a href="#" onclick="senkan_hantei(3)"><img id="ship3" src="../image/senkan_teki.png"></a></li>
-    <li class="box2"><a href="#" onclick="senkan_hantei(5)"><img id="ship5" src="../image/senkan_teki.png"></a></li>
-    <li class="box2"><a href="#" onclick="senkan_hantei(7)"><img id="ship7" src="../image/senkan_teki.png"></a></li>
-</ul>
+        <ul class="wrap" id="w1">
+            <li class="box1"><a href="#" onclick="senkan_hantei(0)"><img id="ship0" src="../image/senkan_teki.png"></a></li>
+            <li class="box1"><a href="#" onclick="senkan_hantei(2)"><img id="ship2" src="../image/senkan_teki.png"></a></li>
+            <li class="box1"><a href="#" onclick="senkan_hantei(4)"><img id="ship4" src="../image/senkan_teki.png"></a></li>
+            <li class="box1"><a href="#" onclick="senkan_hantei(6)"><img id="ship6" src="../image/senkan_teki.png"></a></li>
+            <li class="box1"><a href="#" onclick="senkan_hantei(8)"><img id="ship8" src="../image/senkan_teki.png"></a></li>
+        </ul>
+        <ul class="wrap">
+            <li class="box2"><a href="#" onclick="senkan_hantei(1)"><img id="ship1" src="../image/senkan_teki.png"></a></li>
+            <li class="box2"><a href="#" onclick="senkan_hantei(3)"><img id="ship3" src="../image/senkan_teki.png"></a></li>
+            <li class="box2"><a href="#" onclick="senkan_hantei(5)"><img id="ship5" src="../image/senkan_teki.png"></a></li>
+            <li class="box2"><a href="#" onclick="senkan_hantei(7)"><img id="ship7" src="../image/senkan_teki.png"></a></li>
+        </ul>
+        <img id="cannon" src="../image/cannon_1.png" alt="">
         <div id="zan_tama"></div>
     </div>
 </body>
