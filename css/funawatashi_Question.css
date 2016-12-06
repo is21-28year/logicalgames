@@ -1,0 +1,37 @@
+.clam_right{
+        background-image: url("../image/waraba.png");
+    }
+    .box{
+        border:2px solid black;
+        border-radius:5px;
+    }
+    #lbox{
+        float:left;
+        width:20vw;
+        height:60vh;
+        display: inline-block;
+        position:relative;
+    }
+    #rbox{
+        float:right;
+        width:20vw;
+        height:60vh;
+        display: inline-block;
+        position:relative;
+    }
+    .box img{
+        width: 30%;
+        border:2px solid black;
+        position:absolute;
+    }
+    #ue{
+         margin:0;
+    }
+    #naka{
+        margin:0;
+        top:20vh;
+    }
+    #shita{
+         margin:0;
+         top:40vh;
+    }

@@ -8,27 +8,6 @@
     <script type="text/javascript" src="../javascript/funawatashi_Question.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/Question.css">
     <link rel="stylesheet" type="text/css" href="../css/funawatashi_Question.css">
-    <style>
-    .clam_right{
-        background-image: url("../image/waraba.png");
-    }
-    .box{
-        width: 15%;
-        border:2px solid black;
-        border-radius:5px;
-    }
-    #lbox{
-        float:left;
-    }
-    #rbox{
-        float:right;
-    }
-    .box img{
-        width: 90%;
-        border:2px solid black;
-    }
-    
-    </style>
 </head>
 <body onload="viewhantei();viewchange();modal(0);questionrand(72);shoki('hard');shuffle();renewal()">
     <!-- ここからモーダルウィンドウ -->
@@ -60,7 +39,7 @@
     <!--リセットボタン配置-->
     
     <div id="reset">
-        <input type="button" class="migi" value="リセット" onclick="shoki('hard');shuffle();renewal()">
+        <input type="button" class="migi" value="リセット" onclick="">
     </div>
     
     </div>
@@ -68,14 +47,14 @@
         <!--問題動作div-->
         <!--<h1><ruby><rb>問題</rb><rp>(</rp><rt>もんだい</rt><rp>)</rp></ruby></h1>-->
         <div id="lbox" class="box">
-            <img src="../image/burger.png" alt="">
-            <img src="../image/burger.png" alt="">
-            <img src="../image/burger.png" alt="">
+            <img id="ue" src="../image/burger.png" alt="">
+            <img id="naka" src="../image/burger.png" alt="">
+            <img id="shita" src="../image/burger.png" alt="">
         </div>
         <div id="rbox" class="box">
             <img src="../image/burger.png" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
+            <img src="../image/burger.png" alt="">
+            <img src="../image/burger.png" alt="">
         </div>
         <!-- デバッグ用 -->
         <!--

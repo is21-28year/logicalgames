@@ -30,7 +30,7 @@ function shoki(diffnum){
             document.getElementById("ringo"+i).style.display="";
         }
     }else if(diff==1){
-        ringo =[0,0,0,0,0,0,0,0,0,0];
+        ringo =[0,0,0,0,0,0,0,0];
         point =[0,0,0,0,0,0];
         //初期変数の決定
         ibasho=10;

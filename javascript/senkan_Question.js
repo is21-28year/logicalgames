@@ -43,7 +43,8 @@ function senkan_hantei(click_num){
     }
 }
 function tama(){
-    document.getElementById("zan_tama").innerHTML=ship_zan;
+    //document.getElementById("zan_tama").innerHTML=ship_zan;
+    document.getElementById("zan_tama").src="../image/s_tama"+ship_zan+".png";
 }
 function reset(){
     tama();
