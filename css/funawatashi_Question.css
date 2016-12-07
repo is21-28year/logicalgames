@@ -1,5 +1,6 @@
 .clam_right{
-        background-image: url("../image/waraba.png");
+        background-image: url("../image/waraback.png");
+        background-size:100% 100%;
     }
     .box{
         border:2px solid black;
@@ -24,6 +25,7 @@
         border:2px solid black;
         position:absolute;
     }
+/*各動物などの画像部分の配置*/
     #ue{
          margin:0;
     }
@@ -35,3 +37,4 @@
          margin:0;
          top:40vh;
     }
+/*各動物などの画像部分の配置*/
