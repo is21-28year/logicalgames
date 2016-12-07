@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../css/Question.css">
     <link rel="stylesheet" type="text/css" href="../css/funawatashi_Question.css">
 </head>
-<body onload="viewhantei();viewchange();modal(0);questionrand(72);shoki('hard');shuffle();renewal()">
+<body onload="shoki(2);viewhantei();viewchange();modal(0);">
     <!-- ここからモーダルウィンドウ -->
     <div id="modal-content">
 	    <!-- モーダルウィンドウのコンテンツ開始 -->
@@ -47,14 +47,17 @@
         <!--問題動作div-->
         <!--<h1><ruby><rb>問題</rb><rp>(</rp><rt>もんだい</rt><rp>)</rp></ruby></h1>-->
         <div id="lbox" class="box">
-            <img id="ue" src="../image/burger.png" alt="">
-            <img id="naka" src="../image/burger.png" alt="">
-            <img id="shita" src="../image/burger.png" alt="">
+            <img onclick="animeidou('lue')" id="lue" src="../image/burger.png" alt="">
+            <img onclick="animeidou('lnaka')" id="lnaka" src="../image/burger.png" alt="">
+            <img onclick="animeidou('lshita')" id="lshita" src="../image/burger.png" alt="">
+        </div>
+        <div id="fune">
+            <img src="../image/senkan_teki.png" alt="">
         </div>
         <div id="rbox" class="box">
-            <img src="../image/burger.png" alt="">
-            <img src="../image/burger.png" alt="">
-            <img src="../image/burger.png" alt="">
+            <img onclick="animeidou('rue')" id="rue" src="../image/burger.png" alt="">
+            <img onclick="animeidou('rnaka')" id="rnaka" src="../image/burger.png" alt="">
+            <img onclick="animeidou('rshita')" id="rshita" src="../image/burger.png" alt="">
         </div>
         <!-- デバッグ用 -->
         <!--

@@ -26,15 +26,37 @@
         position:absolute;
     }
 /*各動物などの画像部分の配置*/
-    #ue{
+    #lue{
          margin:0;
     }
-    #naka{
+    #lnaka{
         margin:0;
         top:20vh;
     }
-    #shita{
+    #lshita{
          margin:0;
          top:40vh;
+    }
+
+    #rue{
+         margin:0;
+    }
+    #rnaka{
+        margin:0;
+        top:20vh;
+    }
+    #rshita{
+         margin:0;
+         top:40vh;
+    }
+
+    #fune{
+        position:absolute;
+        left:16vw;
+        top:40vh;
+    }
+    #fune img{
+        width:5vw;
+        height:8vh;
     }
 /*各動物などの画像部分の配置*/
