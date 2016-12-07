@@ -1,45 +1,53 @@
 var ship_ans = 0;
 var ship_zan = 0;
 var ship_flag = [0,0,0,0,0,0,0,0,0];
+var run_flag = false;
 function senkan_s(seki,zan){//初期
 ship_ans = Math.floor( Math.random() * seki+1 ) ;
 ship_zan = zan;
 }
 
 function senkan_hantei(click_num){
-    //クリック済かどうかの判定
-    if(ship_flag[click_num] == 1){
-        //クリック済なら何もしない
-    }else{
-        ship_flag[click_num] = 1;
-        //砲弾発射
-        document.getElementById("cannon").src="../image/cannon_2.png";
-        //船爆破
-        document.getElementById("ship"+click_num).src="../image/explosion.png";
-        setTimeout(function(){
-        	if(ship_ans <= click_num){
-            document.getElementById("ship"+click_num).src="../image/senkan_teki_3.png";
-            }else{
-            document.getElementById("ship"+click_num).src="../image/senkan_teki_4.png";
-            }
-            document.getElementById("cannon").src="../image/cannon_3.png";
-        },500);
-        setTimeout(function(){
-            document.getElementById("cannon").src="../image/cannon_1.png";
-        },1000);
-        //弾数減らす
-        ship_zan += -1;
-        tama();
-        //弾数0以下なら
-        if(ship_ans == click_num){
-            //ゲームクリア
-            modal(2);
+    //実行中かどうかの判定
+    if(run_flag == false){
+        run_flag = true;
+        //クリック済かどうかの判定
+        if(ship_flag[click_num] == 1){
+            //クリック済なら何もしない
         }else{
-            if(ship_zan < 1){
-                //ゲームオーバー
-                modal(3);
+            ship_flag[click_num] = 1;
+            //砲弾発射
+            document.getElementById("cannon").src="../image/cannon_2.png";
+            //船爆破
+            document.getElementById("ship"+click_num).src="../image/explosion.png";
+            setTimeout(function(){
+        	    if(ship_ans <= click_num){
+                document.getElementById("ship"+click_num).src="../image/senkan_teki_3.png";
+                }else{
+                document.getElementById("ship"+click_num).src="../image/senkan_teki_4.png";
+                }
+                document.getElementById("cannon").src="../image/cannon_3.png";
+            },500);
+            setTimeout(function(){
+                document.getElementById("cannon").src="../image/cannon_1.png";
+            },1000);
+            //弾数減らす
+            ship_zan += -1;
+            tama();
+            //弾数0以下なら
+            if(ship_ans == click_num){
+                //ゲームクリア
+                modal(2);
+            }else{
+                if(ship_zan < 1){
+                    //ゲームオーバー
+                    modal(3);
+                }
             }
         }
+        setTimeout(function(){
+            run_flag = false;
+        },1500);
     }
 }
 function tama(){

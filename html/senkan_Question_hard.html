@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>問題ページ 海賊ゲーム</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+     <script type="text/javascript" src="../javascript/senkan_Question.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/Question.css">
+    <style>
+    .wrap{
+        margin-left:auto;
+        margin-right:auto;
+        width:65vw;
+        height:10vw;
+        display:flex;
+        justify-content: center;
+        padding:0;list-style: none;
+        text-align:center;
+        }
+    #w1{
+        margin-top:10%;
+    }
+    .box1{
+        width:calc(100% / 5);
+        margin:2px;
+        }
+    .box2{
+        width:calc(100% / 5);
+        margin:2px;
+        }
+    li img{
+        width:125px;
+    }
+    #zan_tama{
+        //font-size:72px;
+        padding:50px;
+        position:absolute;
+        right:0;
+        bottom:0;
+    }
+    .b{background-color:#fff;}
+#bunsho
+    {
+        width:30vw;
+        height:40vh;
+        position : relative ;
+    }
+img[id^="ship"]
+	{
+	width:8vw;
+	height:21vh;
+	}    body	
+    {
+        font-family:'メイリオ','Hiragino kaku gothic Pro',sans-serif;
+        background-color: #edede3;
+        margin: 0;
+    }
+   .clam_right
+    {
+        background-image: url("../image/senkan_haikei.png");
+        background-size:100% 100%;
+        position:relative;
+    }
+    #cannon{
+        width:14vw;
+        height:40vh;
+        position:absolute;
+        left:0;
+        right:0;
+        bottom:0;
+        margin:auto;
+    }
+    </style>
+</head>
+<body onload="senkan_s(8,8);modal(0),tama()">
+    <!-- ここからモーダルウィンドウ -->
+    <div id="modal-content">
+	    <!-- モーダルウィンドウのコンテンツ開始 -->
+	    <!-- ここの内容はQuestion.jsで表記しています -->
+	    <!-- モーダルウィンドウのコンテンツ終了 -->
+    </div>
+
+    <header>
+        <!--前の画面へ戻るボタン-->
+        <input type="button" class="hidari modoru" onclick="location.href='Difficulty_senkan.html'">
+        <img style="width:12vw; height:8vh; margin-top:1vh; foat:left;" src="../image/senkan_title.png" alt="">
+        <input type="button" class="migi hint" onclick="modal(1)">
+    </header>
+    <div class="clam_left">
+    <!--問題文章div-->
+    <div id="bunsho" class="b">
+        <img id="M_T" src="../image/M_T.png">
+    <img style="width:25vw; height:10vh;" src="../image/senkan_bunsho.png">   
+    </div>
+    
+    <!--リセットボタン配置-->
+    
+    <div id="reset">
+        <input type="button" class="migi reset" onclick="senkan_s(11,4);reset()">
+    </div>
+    
+    </div>
+    <div class="clam_right">
+        <!--問題動作div-->
+        <ul class="wrap" id="w1">
+            <li class="box1"><a href="#" onclick="senkan_hantei(0)"><img id="ship0" src="../image/senkan_teki.png"></a></li>
+            <li class="box1"><a href="#" onclick="senkan_hantei(2)"><img id="ship2" src="../image/senkan_teki.png"></a></li>
+            <li class="box1"><a href="#" onclick="senkan_hantei(4)"><img id="ship4" src="../image/senkan_teki.png"></a></li>
+            <li class="box1"><a href="#" onclick="senkan_hantei(6)"><img id="ship6" src="../image/senkan_teki.png"></a></li>
+            <li class="box1"><a href="#" onclick="senkan_hantei(8)"><img id="ship8" src="../image/senkan_teki.png"></a></li>
+            <li class="box1"><a href="#" onclick="senkan_hantei(10)"><img id="ship10" src="../image/senkan_teki.png"></a></li>
+        </ul>
+        <ul class="wrap">
+            <li class="box2"><a href="#" onclick="senkan_hantei(1)"><img id="ship1" src="../image/senkan_teki.png"></a></li>
+            <li class="box2"><a href="#" onclick="senkan_hantei(3)"><img id="ship3" src="../image/senkan_teki.png"></a></li>
+            <li class="box2"><a href="#" onclick="senkan_hantei(5)"><img id="ship5" src="../image/senkan_teki.png"></a></li>
+            <li class="box2"><a href="#" onclick="senkan_hantei(7)"><img id="ship7" src="../image/senkan_teki.png"></a></li>
+            <li class="box2"><a href="#" onclick="senkan_hantei(9)"><img id="ship9" src="../image/senkan_teki.png"></a></li>
+        </ul>
+        <img id="cannon" src="../image/cannon_1.png" alt="">
+        <img id="zan_tama" src="" alt="">
+    </div>
+</body>
+</html>
