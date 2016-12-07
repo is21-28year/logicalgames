@@ -10,7 +10,7 @@
         //チュートリアル閲覧フラグ取得
         takara_tutorial=window.localStorage.getItem("takara_tutorial");
         //船渡し各問題クリアフラグ取得
-        /*テスト用clear_1=window.localStorage.getItem("takara_1");*/
+        clear_1=window.localStorage.getItem("takara_1");
         clear_2=window.localStorage.getItem("takara_2");
         clear_3=window.localStorage.getItem("takara_3");
 }   

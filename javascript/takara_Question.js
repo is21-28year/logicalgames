@@ -146,7 +146,7 @@ flag4 = [0,0,0,0,0];
 flag5 = [0,0,0,0,0];
     for(var i=1;i<s_x+1;i++){
     	for(var d=1;d<s_y+1;d++){
-        document.getElementById(i+"_"+d).innerHTML="";
+        document.getElementById(i+"_"+d).innerHTML="<img src='../image/kiretsu.png'>";
     	}
     }
 }
@@ -162,11 +162,11 @@ function modal(modal_content){
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' class='tojiru'></div>";
             break;
         case 1:
-            document.getElementById("modal-content").innerHTML="<p style='margin-top:300px;'></p>";
+            document.getElementById("modal-content").innerHTML="<p style='margin-top:50px;'><img src='../image/H_T.png'></p>";
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' class='tojiru'></div>";
             break;
         case 2:
-            window.localStorage.setItem("senkan_3",true);
+            window.localStorage.setItem("takara_3",true);
             document.getElementById("modal-content").innerHTML="<p style='margin-top:300px;'>おめでとう！ステージクリア！</p>";
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' class='mapback' onclick='mapjump()'></div>";
             break;
