@@ -79,14 +79,17 @@ function animefune(){
         if(funebasho==0){
             //船にものがあるアニメとないあにめ
             $(function() {
+            funeanime=true;
             $.when(
                 $("#fune").animate({
                     left:'+=30vw',
                 }, 2000 )
             )
             .done(function() {
-            funebasho=1;
                 //if文で入るものの数値を入れる処理
+                funebasho=1;
+                funeanime=false;
+                
             })
             .fail(function() {
                 // エラーがあった時
