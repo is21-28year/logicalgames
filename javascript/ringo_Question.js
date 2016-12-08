@@ -120,19 +120,19 @@ function answer(){
         }
     }else{
         if(point[0]==true){
-            if(ringo[0]==true && ringo[1]==true){
+            if(ringo[0]==true && ringo[1]==true && ringo[2]==true){
                 ans();
             }
         }else if(point[1]==true){
-            if(ringo[0]==true && ringo[2]==true && ringo[3]==true){
+            if(ringo[0]==true && ringo[3]==true){
                 ans();
             }
         }else  if(point[2]==true){
-            if(ringo[1]==true && ringo[2]==true && ringo[4]==true){
+            if(ringo[1]==true && ringo[4]==true){
                 ans();
             }
         }else  if(point[3]==true){
-            if(ringo[3]==true && ringo[4]==true){
+            if(ringo[2]==true && ringo[3]==true && ringo[4]==true){
                 ans();
             }
         }
