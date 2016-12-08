@@ -1,12 +1,11 @@
 //初期変数宣言
 var basho;
 var diff;
-var gameflag=flase;
-var migi;
-var hidari;
+var gameflag=false;
 var fune;
 var funebasho;
 var funeanime=false;
+var idouanime=false;
 
 //問題初期化部分
 function shoki(diffnum){
@@ -14,8 +13,7 @@ function shoki(diffnum){
     diff=diffnum;
     if(diff==2){
         //動物が入る場所の変数
-        hidari=[1,1,1];
-        migi=[0,0,0];
+        basho=[0,0,0];
         //船がいる場所の判定 0=左 1=右
         funebasho=0;
 
@@ -28,58 +26,69 @@ function shoki(diffnum){
 }
 //枠内のアイテムを船へ移動させる処理
 function animeidou(saki){
-
-    //船の場所によって移動先座標編変更
-    //アニメーション処理　船にあるアイテムの変数が必要
-    if(funebasho==0){
-        //船にものがあるアニメとないあにめ
-        $(function() {
-        $.when(
-            $("#"+saki).animate({
-                left:'16vw',
-                top:'42vh',
-                width:-0.05,
-                height:-0.05,
-            }, 2000 )
-        )
-        .done(function() {
-            document.getElementById(saki).style.display="none";
-            //if文で入るものの数値を入れる処理
-        })
-        .fail(function() {
-            // エラーがあった時
-            console.log('error');
-        }); 
-    });
-    }else{
-        $(function() {
-        $.when(
-            $("#"+saki+".img").animate({
-                left:'-8vw',
-                top:'42vh',
-                width:-0.05,
-                height:-0.05,
-            }, 2000 )
-        )
-        .done(function() {
-            document.getElementById(saki).style.display="none";
-            //if文で入るものの数値を入れる処理
-        })
-        .fail(function() {
-            // エラーがあった時
-            console.log('error');
-        }); 
-    });
+    //アニメ処理中は動けない
+    if(idouanime==false){
+        //船の場所によって移動先座標編変更
+        //アニメーション処理　船にあるアイテムの変数が必要
+        idouanime=true;
+        funeanime=true;
+        if(funebasho==0){
+            //船にものがあるアニメとないあにめ
+            $(function() {
+                $.when(
+                    $("#"+saki).animate({
+                        left:'16vw',
+                        top:'42vh',
+                        width:-0.05,
+                        height:-0.05,
+                    }, 2000 )
+                )
+                .done(function() {
+                    document.getElementById(saki).style.display="none";
+                    //if文で入るものの数値を入れる処理
+                    idouanime=false;
+                    funeanime=false;
+                })
+                .fail(function() {
+                    // エラーがあった時
+                    console.log('error');
+                }); 
+            });
+        }else{
+            $(function() {
+                $.when(
+                    $("#"+saki).animate({
+                        left:'-8vw',
+                        top:'42vh',
+                        width:-0.05,
+                        height:-0.05,
+                    }, 2000 )
+                )
+                .done(function() {
+                    document.getElementById(saki).style.display="none";
+                    //if文で入るものの数値を入れる処理
+                    idouanime=false;
+                    funeanime=false;
+                })
+                .fail(function() {
+                    // エラーがあった時
+                    console.log('error');
+                }); 
+            });
+        }
     }
+
+    
 }
 //船を向こう岸へ移動させる処理
 function animefune(){
     if(funeanime==false){
         //animetion処理の後にクリア判定
+        funeanime=true;
+        idouanime=true;
         if(funebasho==0){
             //船にものがあるアニメとないあにめ
             $(function() {
-            funeanime=true;
             $.when(
                 $("#fune").animate({
                     left:'+=30vw',
@@ -89,6 +98,7 @@ function animefune(){
                 //if文で入るものの数値を入れる処理
                 funebasho=1;
                 funeanime=false;
+                idouanime=false;
                 
             })
             .fail(function() {
@@ -105,8 +115,10 @@ function animefune(){
                     }, 2000 )
                 )
                 .done(function() {
-                funebasho=0;
+                    funebasho=0;
                     //if文で入るものの数値を入れる処理
+                    funeanime=false;
+                    idouanime=false;
                 })
                 .fail(function() {
                     // エラーがあった時
