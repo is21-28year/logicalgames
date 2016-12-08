@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../css/Question.css">
     <link rel="stylesheet" type="text/css" href="../css/ringo_Question.css">
 </head>
-<body onload="viewhantei();viewchange();modal(0);shoki(2);">
+<body onload="viewhantei();viewchange();modal(0);shoki(1);">
     <!-- ここからモーダルウィンドウ -->
     <div id="modal-content">
 	    <!-- モーダルウィンドウのコンテンツ開始 -->
@@ -25,8 +25,8 @@
 
     <header>
         <!--前の画面へ戻るボタン-->
-        <input type="button" class="hidari modoru" onclick="location.href='Difficulty_kaiten.html'">
-        <img id="title" src="../image/kaiten_title.png" alt="">
+        <input type="button" class="hidari modoru" onclick="location.href='Difficulty_ringo.html'">
+        <img id="title" src="../image/ringo_title.png" alt="">
         <input type="button" class="migi hint" onclick="modal(1)">
     </header>
     <div class="clam_left">
@@ -39,7 +39,7 @@
     
     <div id="reset">
         
-        <input type="button" onclick="shoki(2)" class="migi" value="リセット">
+        <input type="button" onclick="shoki(1)" class="migi" value="リセット">
         
     </div>
     
@@ -49,25 +49,24 @@
         <!--リンゴ拾いz-indexを使用してレイヤーの配置を重ならないようにする-->
         <!--道やpointのレイヤー-->
         <div id="road">
-            <img src="../image/dammy.png" alt="">
+            <img src="../image/miti_2.png" alt="">
             <div id="point">
-                <div id="point0" class="nomal" onclick="idou(0)"><img src="../image/dammy.png" alt=""></div>
-                <div id="point1" class="nomal" onclick="idou(1)"><img src="../image/dammy.png" alt=""></div>
-                <div id="point2" class="nomal" onclick="idou(2)"><img src="../image/dammy.png" alt=""></div>
-                <div id="point3" class="nomal" onclick="idou(3)"><img src="../image/dammy.png" alt=""></div>
-                <div id="point4" class="nomal" onclick="idou(4)"><img src="../image/dammy.png" alt=""></div>
-                <div id="point5" class="nomal" onclick="idou(5)"><img src="../image/dammy.png" alt=""></div>
+                <div id="point0" class="normal" onclick="idou(0)"><img src="../image/point.png" alt=""></div>
+                <div id="point1" class="normal" onclick="idou(1)"><img src="../image/point.png" alt=""></div>
+                <div id="point2" class="normal" onclick="idou(2)"><img src="../image/point.png" alt=""></div>
+                <div id="point3" class="normal" onclick="idou(3)"><img src="../image/point.png" alt=""></div>
+                <div id="point4" class="normal" onclick="idou(4)"><img src="../image/point.png" alt=""></div>
+                <div id="point5" class="normal" onclick="idou(5)"><img src="../image/point.png" alt=""></div>
             </div>
             <div id="ringo">
-                <div id="ringo0" class="nomal"><img src="../image/ringo.png" alt=""></div>
-                <div id="ringo1" class="nomal"><img src="../image/ringo.png" alt=""></div>
-                <div id="ringo2" class="nomal"><img src="../image/ringo.png" alt=""></div>
-                <div id="ringo3" class="nomal"><img src="../image/ringo.png" alt=""></div>
-                <div id="ringo4" class="nomal"><img src="../image/ringo.png" alt=""></div>
-                <div id="ringo5" class="nomal"><img src="../image/ringo.png" alt=""></div>
-                <div id="ringo6" class="nomal"><img src="../image/ringo.png" alt=""></div>
-                <div id="ringo7" class="nomal"><img src="../image/ringo.png" alt=""></div>
-                <div id="ringo8" class="nomal"><img src="../image/ringo.png" alt=""></div>
+                <div id="ringo0" class="normal"><img src="../image/ringo.png" alt=""></div>
+                <div id="ringo1" class="normal"><img src="../image/ringo.png" alt=""></div>
+                <div id="ringo2" class="normal"><img src="../image/ringo.png" alt=""></div>
+                <div id="ringo3" class="normal"><img src="../image/ringo.png" alt=""></div>
+                <div id="ringo4" class="normal"><img src="../image/ringo.png" alt=""></div>
+                <div id="ringo5" class="normal"><img src="../image/ringo.png" alt=""></div>
+                <div id="ringo6" class="normal"><img src="../image/ringo.png" alt=""></div>
+                <div id="ringo7" class="normal"><img src="../image/ringo.png" alt=""></div>
             </div>
                 <div>
                     <img id="chara" src="../image/ringo.png" alt="">

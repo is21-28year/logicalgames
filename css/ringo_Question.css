@@ -45,18 +45,18 @@
         margin:0;
         padding:0;
         top: 0;
-        bottom: 30vh;
+        bottom: 57vh;
         left: 0;
-        right: 20vw;
+        right: 48vw;
         position: absolute;
     }
     #point1.hard{
         margin:0;
         padding:0;
-        top: 30vh;
+        top: 57vh;
         bottom: 0;
         left: 0;
-        right: 20vw;
+        right: 48vw;
         position: absolute;
     }
     #point2.hard{
@@ -65,7 +65,7 @@
         top: 0;
         bottom: 0;
         left: 0;
-        right: 0;
+        right: 17vw;
         position: absolute;
         
     }
@@ -73,8 +73,8 @@
         margin:0;
         padding:0;
         top: 0;
-        bottom: 30vh;
-        left: 20vw;
+        bottom: 57vh;
+        left: 16vw;
         right: 0;
         position: absolute;
         
@@ -82,9 +82,9 @@
     #point4.hard{
         margin:0;
         padding:0;
-        top: 30vh;
+        top: 57vh;
         bottom: 0;
-        left: 20vw;
+        left: 16vw;
         right: 0;
         position: absolute;
     }
@@ -93,7 +93,7 @@
         padding:0;
         top: 0;
         bottom: 0;
-        left: 40vw;
+        left: 47vw;
         right: 0;
         position: absolute;
     }
@@ -111,61 +111,61 @@
         top: 0;
         bottom: 0;
         left: 0;
-        right: 20vw;
+        right: 48vw;
         position: absolute;
     }
     #ringo1.hard{
         margin:0;
         padding:0;
         top: 0;
-        bottom: 30vh;
+        bottom: 57vh;
         left: 0;
-        right: 0;
+        right: 17vw;
         position: absolute;
     }
     #ringo2.hard{
         margin:0;
         padding:0;
         top: 0;
-        bottom: 15vh;
+        bottom: 31vh;
         left: 0;
-        right: 10vw;
+        right: 32vw;
         position: absolute;
     }
     #ringo3.hard{
         margin:0;
         padding:0;
         top: 0;
-        bottom: 15vh;
-        left: 10vw;
-        right: 0;
+        bottom: 30vh;
+        left: 0vw;
+        right: 1vw;
         position: absolute;
     }
     #ringo4.hard{
         margin:0;
         padding:0;
-        top: 15vh;
+        top: 29vh;
         bottom: 0;
         left: 0;
-        right: 10vw;
+        right: 32vw;
         position: absolute;
     }
     #ringo5.hard{
         margin:0;
         padding:0;
-        top: 15vh;
+        top: 30vh;
         bottom: 0;
-        left: 10vw;
-        right: 0;
+        left: 0vw;
+        right: 0vw;
         position: absolute;
     }
     #ringo6.hard{
         margin:0;
         padding:0;
-        top: 30vh;
+        top: 55vh;
         bottom: 0;
         left: 0;
-        right: 0;
+        right: 16vw;
         position: absolute;
     }
     #ringo7.hard{
@@ -173,7 +173,7 @@
         padding:0;
         top: 0;
         bottom: 0;
-        left: 20vw;
+        left: 16vw;
         right: 0;
         position: absolute;
     }
@@ -181,21 +181,157 @@
         margin:0;
         padding:0;
         top: 0;
-        bottom: 15vh;
-        left: 30vw;
+        bottom: 33vh;
+        left: 32vw;
         right: 0;
         position: absolute;
     }
     #ringo9.hard{
         margin:0;
         padding:0;
-        top: 15vh;
+        top: 30vh;
         bottom: 0;
-        left: 30vw;
+        left: 32vw;
         right: 0;
         position: absolute;
     }
 /*リンゴ表示サイズや位置の指定*/
+
+/*アルファベットの場所手動配置部分*/
+    #point0.normal{
+        margin:0;
+        padding:0;
+        top: 0;
+        bottom: 0vh;
+        left: 0;
+        right: 40vw;
+        position: absolute;
+    }
+    #point1.normal{
+        margin:0;
+        padding:0;
+        top: 0vh;
+        bottom: 50vh;
+        left: 0vw;
+        right: 13vw;
+        position: absolute;
+    }
+    #point2.normal{
+        margin:0;
+        padding:0;
+        top: 50vh;
+        bottom: 0;
+        left: 0vw;
+        right: 13vw;
+        position: absolute;
+        
+    }
+    #point3.normal{
+        margin:0;
+        padding:0;
+        top: 0vh;
+        bottom: 0;
+        left: 14vw;
+        right: 0;
+        position: absolute;
+        
+    }
+    #point4.normal{
+        margin:0;
+        padding:0;
+        top: 0vh;
+        bottom: 50vh;
+        left: 44vw;
+        right: 0;
+        position: absolute;
+        
+    }
+    #point5.normal{
+        margin:0;
+        padding:0;
+        top: 50vh;
+        bottom: 0;
+        left: 44vw;
+        right: 0;
+        position: absolute;
+        
+    }
+/*アルファベットの場所手動配置部分*/
+/*リンゴ表示サイズや位置の指定*/
+    #ringo0.normal{
+        margin:0;
+        padding:0;
+        top: 0;
+        bottom: 29vh;
+        left: 0;
+        right: 27vw;
+        position: absolute;
+    }
+    #ringo1.normal{
+        margin:0;
+        padding:0;
+        top: 29vh;
+        bottom: 0;
+        left: 0;
+        right: 27vw;
+        position: absolute;
+    }
+    #ringo2.normal{
+        margin:0;
+        padding:0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 13vw;
+        position: absolute;
+    }
+    #ringo3.normal{
+        margin:0;
+        padding:0;
+        top: 0vh;
+        bottom: 30vh;
+        left: 0;
+        right: 0;
+        position: absolute;
+    }
+    #ringo4.normal{
+        margin:0;
+        padding:0;
+        top: 28vh;
+        bottom: 0;
+        left: 0vw;
+        right: 0vw;
+        position: absolute;
+    }
+    #ringo5.normal{
+        margin:0;
+        padding:0;
+        top: 0vh;
+        bottom: 24vh;
+        left: 27vw;
+        right: 0vw;
+        position: absolute;
+    }
+    #ringo6.normal{
+        margin:0;
+        padding:0;
+        top: 24vh;
+        bottom: 0;
+        left: 27vw;
+        right: 0vw;
+        position: absolute;
+    }
+    #ringo7.normal{
+        margin:0;
+        padding:0;
+        top: 0vh;
+        bottom: 0;
+        left: 44vw;
+        right: 0vw;
+        position: absolute;
+    }
+/*リンゴ表示サイズや位置の指定*/
+
 /*アルファベットの場所手動配置部分*/
     #point0.easy{
         margin:0;
