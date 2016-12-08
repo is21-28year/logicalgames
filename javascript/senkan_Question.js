@@ -89,8 +89,11 @@ function modal(modal_content){
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' class='tojiru'></div>";
             break;
         case 1:
+            /*
             document.getElementById("modal-content").innerHTML="<p style='margin-top:300px;'>ふねの色に注目しよう！（仮）</p>";
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' class='tojiru'></div>";
+            */
+            document.getElementById("modal-content").innerHTML="<?={$data['hint_senkan']}?>";
             break;
         case 2:
             window.localStorage.setItem("senkan_3",true);
@@ -98,8 +101,11 @@ function modal(modal_content){
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' class='mapback' onclick='mapjump()'></div>";
             break;
         case 3:
+            /*
             document.getElementById("modal-content").innerHTML="<p style='margin-top:300px;'>ゲームオーバー</p>";
             document.getElementById("modal-content").innerHTML+="<div><input type='button' class='leftbtn mapback'  onclick='mapjump()'><input type='button' class='rightbtn yarinaosi' onclick='reset()' id='modal-close'></div>";
+            */
+            document.getElementById("modal-content").innerHTML="<?={$data['gameover_senkan']}?>";
     }
     $(function(){
 
