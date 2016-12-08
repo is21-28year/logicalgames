@@ -13,7 +13,6 @@ function shoki(diffnum){
     //難易度セット
     diff=diffnum;
     if(diff==2){
-        alert("a");
         //動物が入る場所の変数
         hidari=[1,1,1];
         migi=[0,0,0];
@@ -53,12 +52,64 @@ function animeidou(saki){
         }); 
     });
     }else{
-
+        $(function() {
+        $.when(
+            $("#"+saki).animate({
+                left:'-8vw',
+                top:'42vh',
+                width:-0.05,
+                height:-0.05,
+            }, 2000 )
+        )
+        .done(function() {
+            document.getElementById(saki).style.display="none";
+            //if文で入るものの数値を入れる処理
+        })
+        .fail(function() {
+            // エラーがあった時
+            console.log('error');
+        }); 
+    });
     }
 }
 //船を向こう岸へ移動させる処理
 function animefune(){
     //animetion処理の後にクリア判定
+    if(funebasho==0){
+        //船にものがあるアニメとないあにめ
+        $(function() {
+        $.when(
+            $("#fune").animate({
+                left:'+=30vw',
+            }, 2000 )
+        )
+        .done(function() {
+           funebasho=1;
+            //if文で入るものの数値を入れる処理
+        })
+        .fail(function() {
+            // エラーがあった時
+            console.log('error');
+        }); 
+    });
+    }else{
+        //船にものがあるアニメとないあにめ
+        $(function() {
+        $.when(
+            $("#fune").animate({
+                left:'-=30vw',
+            }, 2000 )
+        )
+        .done(function() {
+           funebasho=0;
+            //if文で入るものの数値を入れる処理
+        })
+        .fail(function() {
+            // エラーがあった時
+            console.log('error');
+        }); 
+    });
+    }
 
 }
 
