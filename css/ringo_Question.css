@@ -181,6 +181,93 @@
         position: absolute;
     }
 /*リンゴ表示サイズや位置の指定*/
+/*アルファベットの場所手動配置部分*/
+    #point0.easy{
+        margin:0;
+        padding:0;
+        top: 0;
+        bottom: 54vh;
+        left: 0;
+        right: 44vw;
+        position: absolute;
+    }
+    #point1.easy{
+        margin:0;
+        padding:0;
+        top: 54vh;
+        bottom: 0;
+        left: 0;
+        right: 44vw;
+        position: absolute;
+    }
+    #point2.easy{
+        margin:0;
+        padding:0;
+        top: 0;
+        bottom: 54vh;
+        left: 44vw;
+        right: 0;
+        position: absolute;
+        
+    }
+    #point3.easy{
+        margin:0;
+        padding:0;
+        top: 54vh;
+        bottom: 0;
+        left: 44vw;
+        right: 0;
+        position: absolute;
+        
+    }
+/*アルファベットの場所手動配置部分*/
+/*リンゴ表示サイズや位置の指定*/
+    #ringo0.easy{
+        margin:0;
+        padding:0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 44vw;
+        position: absolute;
+    }
+    #ringo1.easy{
+        margin:0;
+        padding:0;
+        top: 0;
+        bottom: 54vh;
+        left: 0;
+        right: 0;
+        position: absolute;
+    }
+    #ringo2.easy{
+        margin:0;
+        padding:0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+    }
+    #ringo3.easy{
+        margin:0;
+        padding:0;
+        top: 54vh;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+    }
+    #ringo4.easy{
+        margin:0;
+        padding:0;
+        top: 0vh;
+        bottom: 0;
+        left: 44vw;
+        right: 0vw;
+        position: absolute;
+    }
+/*リンゴ表示サイズや位置の指定*/
 /*キャラクター表示サイズや位置指定*/
     img#chara{
         position:absolute;

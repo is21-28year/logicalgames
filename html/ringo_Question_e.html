@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>問題ページ 回転命令</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="../javascript/jQueryRotate.js"></script>
+    <script type="text/javascript" src="../javascript/ringo_Question.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/Question.css">
+    <link rel="stylesheet" type="text/css" href="../css/ringo_Question.css">
+</head>
+<body onload="viewhantei();viewchange();modal(0);shoki(0);">
+    <!-- ここからモーダルウィンドウ -->
+    <div id="modal-content">
+	    <!-- モーダルウィンドウのコンテンツ開始 -->
+	    <!-- ここの内容はQuestion.jsで表記しています -->
+	    <!-- モーダルウィンドウのコンテンツ終了 -->
+    </div>
+
+    <div id="viewchange">
+        <!-- モーダルウィンドウのコンテンツ開始 -->
+        <img src="../image/view_text.png" id="deltext" alt="">
+        <!-- モーダルウィンドウのコンテンツ終了 -->
+    </div>
+
+    <header>
+        <!--前の画面へ戻るボタン-->
+        <input type="button" class="hidari modoru" onclick="location.href='Difficulty_kaiten.html'">
+        <img id="title" src="../image/kaiten_title.png" alt="">
+        <input type="button" class="migi hint" onclick="modal(1)">
+    </header>
+    <div class="clam_left">
+    <!--問題文章div-->
+    <div id="bunsho" class="b">
+
+    </div>
+    
+    <!--リセットボタン配置-->
+    
+    <div id="reset">
+        
+        <input type="button" onclick="shoki(2)" class="migi" value="リセット">
+        
+    </div>
+    
+    </div>
+    <div class="clam_right">
+        <!--リンゴ拾い問題部分-->
+        <!--リンゴ拾いz-indexを使用してレイヤーの配置を重ならないようにする-->
+        <!--道やpointのレイヤー-->
+        <div id="road">
+            <img src="../image/miti_1.png" alt="">
+            <div id="point">
+                <div id="point0" class="easy" onclick="idou(0)"><img src="../image/dammy.png" alt=""></div>
+                <div id="point1" class="easy" onclick="idou(1)"><img src="../image/dammy.png" alt=""></div>
+                <div id="point2" class="easy" onclick="idou(2)"><img src="../image/dammy.png" alt=""></div>
+                <div id="point3" class="easy" onclick="idou(3)"><img src="../image/dammy.png" alt=""></div>
+            </div>
+            <div id="ringo">
+                <div id="ringo0" class="easy"><img src="../image/ringo.png" alt=""></div>
+                <div id="ringo1" class="easy"><img src="../image/ringo.png" alt=""></div>
+                <div id="ringo2" class="easy"><img src="../image/ringo.png" alt=""></div>
+                <div id="ringo3" class="easy"><img src="../image/ringo.png" alt=""></div>
+                <div id="ringo4" class="easy"><img src="../image/ringo.png" alt=""></div>
+            </div>
+                <div>
+                    <img id="chara" src="../image/ringo.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
