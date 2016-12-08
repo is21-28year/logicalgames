@@ -8,20 +8,20 @@
     }
     #lbox{
         float:left;
-        width:20vw;
+        width:13vw;
         height:60vh;
         display: inline-block;
         position:relative;
     }
     #rbox{
         float:right;
-        width:20vw;
+        width:13vw;
         height:60vh;
         display: inline-block;
         position:relative;
     }
     .box img{
-        width: 30%;
+        width: 40%;
         border:2px solid black;
         position:absolute;
     }
@@ -56,7 +56,7 @@
         top:40vh;
     }
     #fune img{
-        width:5vw;
-        height:8vh;
+        width:7vw;
+        height:5vh;
     }
 /*各動物などの画像部分の配置*/
