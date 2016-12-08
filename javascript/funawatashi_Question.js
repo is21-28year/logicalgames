@@ -6,7 +6,7 @@ var migi;
 var hidari;
 var fune;
 var funebasho;
-
+var funeanime=false;
 
 //問題初期化部分
 function shoki(diffnum){
@@ -54,7 +54,7 @@ function animeidou(saki){
     }else{
         $(function() {
         $.when(
-            $("#"+saki).animate({
+            $("#"+saki+".img").animate({
                 left:'-8vw',
                 top:'42vh',
                 width:-0.05,
@@ -74,41 +74,43 @@ function animeidou(saki){
 }
 //船を向こう岸へ移動させる処理
 function animefune(){
-    //animetion処理の後にクリア判定
-    if(funebasho==0){
-        //船にものがあるアニメとないあにめ
-        $(function() {
-        $.when(
-            $("#fune").animate({
-                left:'+=30vw',
-            }, 2000 )
-        )
-        .done(function() {
-           funebasho=1;
-            //if文で入るものの数値を入れる処理
-        })
-        .fail(function() {
-            // エラーがあった時
-            console.log('error');
-        }); 
-    });
-    }else{
-        //船にものがあるアニメとないあにめ
-        $(function() {
-        $.when(
-            $("#fune").animate({
-                left:'-=30vw',
-            }, 2000 )
-        )
-        .done(function() {
-           funebasho=0;
-            //if文で入るものの数値を入れる処理
-        })
-        .fail(function() {
-            // エラーがあった時
-            console.log('error');
-        }); 
-    });
+    if(funeanime==false){
+        //animetion処理の後にクリア判定
+        if(funebasho==0){
+            //船にものがあるアニメとないあにめ
+            $(function() {
+            $.when(
+                $("#fune").animate({
+                    left:'+=30vw',
+                }, 2000 )
+            )
+            .done(function() {
+            funebasho=1;
+                //if文で入るものの数値を入れる処理
+            })
+            .fail(function() {
+                // エラーがあった時
+                console.log('error');
+            }); 
+        });
+        }else{
+            //船にものがあるアニメとないあにめ
+            $(function() {
+                $.when(
+                    $("#fune").animate({
+                        left:'-=30vw',
+                    }, 2000 )
+                )
+                .done(function() {
+                funebasho=0;
+                    //if文で入るものの数値を入れる処理
+                })
+                .fail(function() {
+                    // エラーがあった時
+                    console.log('error');
+                }); 
+            });
+        }
     }
 
 }
