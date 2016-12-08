@@ -14,11 +14,10 @@ var diff=0;
 //リンゴの数、ポイントの数、回数制限の数の指定
 function shoki(diffnum){
     //難易度セット
-    alert(diffnum);
     diff=diffnum;
     if(diff==2){
-        ringo =[0,0,0,0,0,0,0,0,0,0];
-        point =[0,0,0,0,0,0];
+        ringo=[0,0,0,0,0,0,0,0,0,0];
+        point=[0,0,0,0,0,0];
         //初期変数の決定
         ibasho=10;
         gameflag=true;
@@ -62,98 +61,99 @@ function shoki(diffnum){
 
 }
 //問題クリア判定    
- function answer(){
+function answer(){
      //アニメーション処理を行う
-        //キャラクター移動とリンゴが消える処理
-        //自分の場所から移動できるかの判定出来ないなら正解判定
-        //難易度難しいの判定
-        if(diff==2){
-            if(point[0]==true){
-                if(ringo[0]==true && ringo[1]==true && ringo[2]==true){
-                    ans();
-                }
-            }else if(point[1]==true){
-                if(ringo[0]==true && ringo[4]==true && ringo[6]==true){
-                    ans();
-                }
-            }else  if(point[2]==true){
-                if(ringo[2]==true && ringo[3]==true && ringo[4]==true && ringo[5]==true){
-                    ans();
-                }
-            }else  if(point[3]==true){
-                if(ringo[1]==true && ringo[3]==true && ringo[7]==true && ringo [8]==true){
-                    ans();
-                }
-            }else  if(point[4]==true){
-                if(ringo[5]==true && ringo[7]==true){
-                    ans();
-                }
-            }else  if(point[5]==true){
-                if(ringo[6]==true && ringo[7]==true){
-                    ans();
-                }
-        }else if(diff==1){
-            if(point[0]==true){
-                if(ringo[0]==true && ringo[1]==true){
-                    ans();
-                }
-            }else if(point[1]==true){
-                if(ringo[0]==true && ringo[2]==true && ringo[3]==true){
-                    ans();
-                }
-            }else  if(point[2]==true){
-                if(ringo[1]==true && ringo[2]==true && ringo[4]==true){
-                    ans();
-                }
-            }else  if(point[3]==true){
-                if(ringo[3]==true && ringo[4]==true && ringo[5]==true && ringo [6]==true){
-                    ans();
-                }
-            }else  if(point[4]==true){
-                if(ringo[5]==true && ringo[6]==true && ringo[7]==true && ringo [9]==true){
-                    ans();
-                }
-            }else  if(point[5]==true){
-                if(ringo[8]==true && ringo[9]==true){
-                    ans();
-                }
-        }else{
-            if(point[0]==true){
-                if(ringo[0]==true && ringo[1]==true){
-                    ans();
-                }
-            }else if(point[1]==true){
-                if(ringo[0]==true && ringo[2]==true && ringo[3]==true){
-                    ans();
-                }
-            }else  if(point[2]==true){
-                if(ringo[1]==true && ringo[2]==true && ringo[4]==true){
-                    ans();
-                }
-            }else  if(point[3]==true){
-                if(ringo[3]==true && ringo[4]==true){
-                    ans();
-                }
+    //キャラクター移動とリンゴが消える処理
+    //自分の場所から移動できるかの判定出来ないなら正解判定
+    //難易度難しいの判定
+    if(diff==2){
+        if(point[0]==true){
+            if(ringo[0]==true && ringo[1]==true && ringo[2]==true){
+                ans();
+            }
+        }else if(point[1]==true){
+            if(ringo[0]==true && ringo[4]==true && ringo[6]==true){
+                ans();
+            }
+        }else  if(point[2]==true){
+            if(ringo[2]==true && ringo[3]==true && ringo[4]==true && ringo[5]==true){
+                ans();
+            }
+        }else  if(point[3]==true){
+            if(ringo[1]==true && ringo[3]==true && ringo[7]==true && ringo [8]==true){
+                ans();
+            }
+        }else  if(point[4]==true){
+            if(ringo[5]==true && ringo[7]==true){
+                ans();
+            }
+        }else  if(point[5]==true){
+            if(ringo[6]==true && ringo[7]==true){
+                ans();
             }
         }
-        
-        }
-    function ans(){
-        for(var i in ringo){
-            //判定エラーでゲームオーバーモーダル+フラグ＝false
-            if(i==null){
-                //ゲームおーばーモーダル
-                gameflag=flase;
+    }else if(diff==1){
+        if(point[0]==true){
+            if(ringo[0]==true && ringo[1]==true){
+                ans();
+            }
+        }else if(point[1]==true){
+            if(ringo[0]==true && ringo[2]==true && ringo[3]==true){
+                ans();
+            }
+        }else  if(point[2]==true){
+            if(ringo[1]==true && ringo[2]==true && ringo[4]==true){
+                ans();
+            }
+        }else  if(point[3]==true){
+            if(ringo[3]==true && ringo[4]==true && ringo[5]==true && ringo [6]==true){
+                ans();
+            }
+        }else  if(point[4]==true){
+            if(ringo[5]==true && ringo[6]==true && ringo[7]==true && ringo [9]==true){
+                ans();
+            }
+        }else  if(point[5]==true){
+            if(ringo[8]==true && ringo[9]==true){
+                ans();
             }
         }
-//判定通るとゲームクリア表示
-        if(gameflag==true){
-            modal(3);
-        }else{
-            modal(2);
+    }else{
+        if(point[0]==true){
+            if(ringo[0]==true && ringo[1]==true){
+                ans();
+            }
+        }else if(point[1]==true){
+            if(ringo[0]==true && ringo[2]==true && ringo[3]==true){
+                ans();
+            }
+        }else  if(point[2]==true){
+            if(ringo[1]==true && ringo[2]==true && ringo[4]==true){
+                ans();
+            }
+        }else  if(point[3]==true){
+            if(ringo[3]==true && ringo[4]==true){
+                ans();
+            }
         }
     }
- }   
+        
+}
+function ans(){
+    for(var i in ringo){
+        //判定エラーでゲームオーバーモーダル+フラグ＝false
+        if(i==null){
+            //ゲームおーばーモーダル
+            gameflag=flase;
+        }
+    }
+//判定通るとゲームクリア表示
+    if(gameflag==true){
+        modal(3);
+    }else{
+        modal(2);
+    }
+}
 //問題移動処理
 //難易度難しい完了
 function idoushori(ibasho,basho,ringo){
