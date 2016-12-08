@@ -18,10 +18,25 @@
         z-index:-2;
     }
 /*問題の道などの背景*/
+/*問題の道などの背景*/
+    #road_easy img{
+        margin:0;
+        padding:0;
+        width:27vw;
+        height:60vh;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        margin: auto;
+        z-index:-2;
+    }
+/*問題の道などの背景*/
 /*アルファベットの場所のサイズとレイヤー指定*/
     #point img{
         z-index:2;
-        width:10vw;
+        width:5vw;
         height:10vh;
     }
 /*アルファベットの場所手動配置部分*/
@@ -86,7 +101,7 @@
 /*リンゴ表示サイズや位置の指定*/
     #ringo img{
         z-index:1;
-        width:5vw;
+        width:3vw;
         height:5vh;
     }
 
@@ -186,26 +201,26 @@
         margin:0;
         padding:0;
         top: 0;
-        bottom: 54vh;
+        bottom: 57vh;
         left: 0;
-        right: 44vw;
+        right: 26vw;
         position: absolute;
     }
     #point1.easy{
         margin:0;
         padding:0;
-        top: 54vh;
+        top: 57vh;
         bottom: 0;
         left: 0;
-        right: 44vw;
+        right: 26vw;
         position: absolute;
     }
     #point2.easy{
         margin:0;
         padding:0;
         top: 0;
-        bottom: 54vh;
-        left: 44vw;
+        bottom: 57vh;
+        left: 26vw;
         right: 0;
         position: absolute;
         
@@ -213,9 +228,9 @@
     #point3.easy{
         margin:0;
         padding:0;
-        top: 54vh;
+        top: 57vh;
         bottom: 0;
-        left: 44vw;
+        left: 26vw;
         right: 0;
         position: absolute;
         
@@ -228,14 +243,14 @@
         top: 0;
         bottom: 0;
         left: 0;
-        right: 44vw;
+        right: 26vw;
         position: absolute;
     }
     #ringo1.easy{
         margin:0;
         padding:0;
         top: 0;
-        bottom: 54vh;
+        bottom: 56vh;
         left: 0;
         right: 0;
         position: absolute;
@@ -252,7 +267,7 @@
     #ringo3.easy{
         margin:0;
         padding:0;
-        top: 54vh;
+        top: 56vh;
         bottom: 0;
         left: 0;
         right: 0;
@@ -263,7 +278,7 @@
         padding:0;
         top: 0vh;
         bottom: 0;
-        left: 44vw;
+        left: 26vw;
         right: 0vw;
         position: absolute;
     }
