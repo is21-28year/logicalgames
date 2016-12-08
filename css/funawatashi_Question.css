@@ -26,26 +26,26 @@
         position:absolute;
     }
 /*各動物などの画像部分の配置*/
-    #lue{
+    #l1{
          margin:0;
     }
-    #lnaka{
+    #l2{
         margin:0;
         top:20vh;
     }
-    #lshita{
+    #l3{
          margin:0;
          top:40vh;
     }
 
-    #rue{
+    #r1{
          margin:0;
     }
-    #rnaka{
+    #r2{
         margin:0;
         top:20vh;
     }
-    #rshita{
+    #r3{
          margin:0;
          top:40vh;
     }

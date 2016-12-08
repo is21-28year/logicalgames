@@ -4,10 +4,12 @@ var basho;
 //難易度数字
 var diff;
 var gameflag=false;
-var fune;
+var fune=null;
 var funebasho;
 var funeanime=false;
 var idouanime=false;
+var funeX;
+var funeY;
 
 //問題初期化部分
 function shoki(diffnum){
@@ -15,81 +17,108 @@ function shoki(diffnum){
     diff=diffnum;
     if(diff==2){
         //動物が入る場所の変数
-        basho=[0,0,0];
+        migi=[0,0,0];
+        hidari=[0,0,0];
         //船がいる場所の判定 0=左 1=右
         funebasho=0;
 
     }else if(diff==1){
-        basho=[0,0,0];
+        migi=[0,0,0];
+        hidari=[0,0,0];
         funebasho=0;
     }else{
-        basho=[0,0,0];
+        migi=[0,0,0];
+        hidari=[0,0,0];
         funebasho=0;
     }   
 
 }
 //枠内のアイテムを船へ移動させる処理
-function animeidou(saki){
+function animeidou(basho){
 
     //アニメ処理中は動けない
     if(idouanime==false){
-        //船の場所によって移動先座標編変更
         //アニメーション処理　船にあるアイテムの変数が必要
         idouanime=true;
         funeanime=true;
-        //左の時の処理
+        //左の時,右の時の処理の処理
         if(funebasho==0){
-            //船にものがないあにめ
-            if(isset(fune)){
-                 $(function() {
-                $.when(
-                    $("#"+saki).animate({
-                        left:'16vw',
-                        top:'42vh',
-                        width:-0.05,
-                        height:-0.05,
-                    }, 2000 )
-                )
-                .done(function() {
-                    document.getElementById(saki).style.display="none";
-                    //if文で入るものの数値を入れる処理
-                    idouanime=false;
-                    funeanime=false;
-                    //船にアイテムを入れる
+            //船の座標
+            funeX='16vw';
+            funeY='42vh';
 
+            //アニメーション処理
+            //船にものがないアニメーション処理
+            if(basho==r1 || basho==r2 || basho==r3){}else{
+                if(fune==null){
+                    $(function() {
+                        $.when(
+                            $("#"+basho).animate({
+                                left:funeX,
+                                top:funeY,
+                                width:-0.05,
+                                height:-0.05,
+                            }, 2000 )
+                        )
+                        .done(function() {
+                            //船の位置で消える
+                            document.getElementById(basho).style.display="none";
+                            //if文で入るものの数値を入れる処理
+                            idouanime=false;
+                            funeanime=false;
+                            //船にアイテムを入れる
+                            fune=basho;
+                            
+                        })
+                        .fail(function() {
+                            // エラーがあった時
+                            console.log('error');
+                        }); 
+                    });
+                }else{//船にものがあるときの処理
                     
-                })
-                .fail(function() {
-                    // エラーがあった時
-                    console.log('error');
-                }); 
-            });
-            }else{//船にものがあるときの処理
-
+                }
             }
-           
         }else{//右の時の処理
-            $(function() {
-                $.when(
-                    $("#"+saki).animate({
-                        left:'-8vw',
-                        top:'42vh',
-                        width:-0.05,
-                        height:-0.05,
-                    }, 2000 )
-                )
-                .done(function() {
-                    document.getElementById(saki).style.display="none";
-                    //if文で入るものの数値を入れる処理
-                    idouanime=false;
-                    funeanime=false;
-                })
-                .fail(function() {
-                    // エラーがあった時
-                    console.log('error');
-                }); 
-            });
+            //船の座標
+            funeX='-8vw';
+            funeY='42vh';
+            
+            //アニメーション処理
+            //船にものがないアニメーション処理
+            if(basho==l1 || basho==l2 || basho==l3){}else{
+                if(fune==null){
+                    $(function() {
+                        $.when(
+                            $("#"+basho).animate({
+                                left:funeX,
+                                top:funeY,
+                                width:-0.05,
+                                height:-0.05,
+                            }, 2000 )
+                        )
+                        .done(function() {
+                            //船の位置で消える
+                            document.getElementById(basho).style.display="none";
+                            //if文で入るものの数値を入れる処理
+                            idouanime=false;
+                            funeanime=false;
+                            //船にアイテムを入れる
+                            fune=basho;
+                            
+                        })
+                        .fail(function() {
+                            // エラーがあった時
+                            console.log('error');
+                        }); 
+                    });
+                }else{//船にものがあるときの処理
+                    
+                }
+            }
         }
+
+        
     }
 
     
