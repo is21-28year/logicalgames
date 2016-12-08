@@ -461,7 +461,68 @@ function idouhantei(basho){
             }
         }
     }else{
+         if(ibasho==0 && basho==1 || ibasho==1 && basho==0){
+            //間のリンゴの判定
+            if(ringo[0]==true){
+               
+            }else{
+                ringo[0]=true;
+                //pointで場所交換処理を追加
+                point[ibasho]=null;
+                point[basho]=true;
+                idoushori(ibasho,basho,"ringo0");
+            }
+        }
+        if(ibasho==0 && basho==2 || ibasho==2 && basho==0){
+            //間のリンゴの判定
+            if(ringo[1]==true){
 
+            }else{
+                ringo[1]=true;
+                //pointで場所交換処理を追加
+                point[ibasho]=null;
+                point[basho]=true;
+                idoushori(ibasho,basho,"ringo1");
+            }
+        }
+        if(ibasho==1 && basho==2 || ibasho==2 && basho==1){
+            //間のリンゴの判定
+            if(ringo[2]==true){
+
+    //問題移動処理
+            }else{
+                ringo[2]=true;
+                //pointで場所交換処理を追加
+                point[ibasho]=null;
+                point[basho]=true;
+                idoushori(ibasho,basho,"ringo2");
+            }//左下処理
+        }
+        if((ibasho==1 && basho==3) || (ibasho==3 && basho==1)){
+            //間のリンゴの判定
+            if(ringo[3]==true){
+
+            }else{
+                ringo[3]=true;
+                //pointで場所交換処理を追加
+                point[ibasho]=null;
+                point[basho]=true;
+                idoushori(ibasho,basho,"ringo3");
+            }
+        }
+        if((ibasho==3 && basho==2) || (ibasho==2 && basho==3)){
+            //間のリンゴの判定
+            if(ringo[4]==true){
+
+            }else{
+                ringo[4]=true;
+                //pointで場所交換処理を追加
+                point[ibasho]=null;
+                point[basho]=true;
+                idoushori(ibasho,basho,"ringo4");
+            }
+        }
+        
     }
         
 }
