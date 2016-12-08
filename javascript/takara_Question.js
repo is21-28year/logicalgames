@@ -12,6 +12,7 @@ var flag5 = [0,0,0,0,0];
 var fl = 0;
 var flog = 0;
 function s(x,y,k_s){//初期
+if(flog==1){}else{
 s_x = x;
 s_y = y;
 x_z = Math.floor( Math.random() * x+1 ) ;
@@ -24,6 +25,7 @@ flag2 = [0,0,0,0,0];
 flag3 = [0,0,0,0,0];
 flag4 = [0,0,0,0,0];
 flag5 = [0,0,0,0,0];
+}
 }
 function hantei(c_x,c_y){
 if(flog==1){}else{

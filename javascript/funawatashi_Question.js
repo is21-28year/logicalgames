@@ -1,5 +1,7 @@
 //初期変数宣言
+//アイテムがある位置左＝0　右＝1
 var basho;
+//難易度数字
 var diff;
 var gameflag=false;
 var fune;
@@ -19,22 +21,27 @@ function shoki(diffnum){
 
     }else if(diff==1){
         basho=[0,0,0];
+        funebasho=0;
     }else{
         basho=[0,0,0];
+        funebasho=0;
     }   
 
 }
 //枠内のアイテムを船へ移動させる処理
 function animeidou(saki){
+
     //アニメ処理中は動けない
     if(idouanime==false){
         //船の場所によって移動先座標編変更
         //アニメーション処理　船にあるアイテムの変数が必要
         idouanime=true;
         funeanime=true;
+        //左の時の処理
         if(funebasho==0){
-            //船にものがあるアニメとないあにめ
-            $(function() {
+            //船にものがないあにめ
+            if(isset(fune)){
+                 $(function() {
                 $.when(
                     $("#"+saki).animate({
                         left:'16vw',
@@ -48,13 +55,20 @@ function animeidou(saki){
                     //if文で入るものの数値を入れる処理
                     idouanime=false;
                     funeanime=false;
+                    //船にアイテムを入れる
+
+                    
                 })
                 .fail(function() {
                     // エラーがあった時
                     console.log('error');
                 }); 
             });
-        }else{
+            }else{//船にものがあるときの処理
+
+            }
+           
+        }else{//右の時の処理
             $(function() {
                 $.when(
                     $("#"+saki).animate({
