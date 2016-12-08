@@ -80,3 +80,8 @@ if(tutorial_view != "true"){
     tutorial_view = "true";
 }
 localput();
+
+function stop(){
+var v = document.getElementById("vid");
+v.pause();
+}

@@ -136,6 +136,11 @@ function main(){
     localput();
 }
 
+function stop(){
+var v = document.getElementById("vid");
+v.pause();
+}
+
 /*更新日：10/26
 　function meinを追加
 　ページを起動した際に動く関数をまとめたもの以後別ページにも共通

@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>海賊ゲーム-難易度選択</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="../javascript/Difficulty.js"></script>
 <script type="text/javascript" src="../javascript/Difficulty_senkan.js"></script>
 <style type="text/css">
 #modal-content {
@@ -198,8 +199,8 @@ p	{line-height:1.5;
 	<!-- モーダルウィンドウのコンテンツ開始 -->
 	<center><img style="width:18vw;height:8vh;" src="../image/asobikata.png"></center>
     <!--videoタグ実装予定部分-->
-    <center><video style="width:40vw;height:60vh;" src="../movie/テスト.mp4" controls></video></center>
-	<div class='center'><input type="button" id="modal-close"></div>
+    <center><video style="width:40vw;height:60vh;" src="../movie/海賊ゲーム＿動画.mp4" id="vid" controls></video></center>
+	<div class='center'><input type="button" id="modal-close" onclick="stop()"></div>
     <!-- モーダルウィンドウのコンテンツ終了 -->
 </div>
 
