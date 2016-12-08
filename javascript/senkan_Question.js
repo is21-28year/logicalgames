@@ -2,11 +2,14 @@ var ship_ans = 0;
 var ship_zan = 0;
 var ship_flag = [0,0,0,0,0,0,0,0,0];
 var run_flag = false;
+var mode;
 function senkan_s(seki,zan){//初期
 ship_ans = Math.floor( Math.random() * seki+1 ) ;
 ship_zan = zan;
 }
-
+function chmode(level){
+    mode = level;
+}
 function senkan_hantei(click_num){
     //実行中かどうかの判定
     if(run_flag == false){
@@ -55,12 +58,24 @@ function tama(){
     document.getElementById("zan_tama").src="../image/s_tama"+ship_zan+".png";
 }
 function reset(){
-    tama();
-    ship_flag = [0,0,0,0,0,0,0,0,0];
-    for(var i=0;i<9;i++){
-        document.getElementById("ship"+i).src="../image/senkan_teki.png";
+    if(run_flag == false){
+        if(mode == "easy"){
+            senkan_s(7,5);
+        }
+        if(mode == "normal"){
+            senkan_s(7,3);
+        }
+        if(mode == "hard"){
+            senkan_s(11,4);
+        }
+    
+        tama();
+        ship_flag = [0,0,0,0,0,0,0,0,0];
+        for(var i=0;i<9;i++){
+            document.getElementById("ship"+i).src="../image/senkan_teki.png";
+        }
+        document.getElementById("cannon").src="../image/cannon_1.png";
     }
-    document.getElementById("cannon").src="../image/cannon_1.png";
 }
 function cleartrue(clearnum){
     window.localStorage.setItem(clearnum,true);
@@ -84,7 +99,7 @@ function modal(modal_content){
             break;
         case 3:
             document.getElementById("modal-content").innerHTML="<p style='margin-top:300px;'>ゲームオーバー</p>";
-            document.getElementById("modal-content").innerHTML+="<div><input type='button' class='leftbtn mapback'  onclick='mapjump()'><input type='button' class='rightbtn yarinaosi' onclick='senkan_s(8,8);reset()' id='modal-close'></div>";
+            document.getElementById("modal-content").innerHTML+="<div><input type='button' class='leftbtn mapback'  onclick='mapjump()'><input type='button' class='rightbtn yarinaosi' onclick='reset()' id='modal-close'></div>";
     }
     $(function(){
 
