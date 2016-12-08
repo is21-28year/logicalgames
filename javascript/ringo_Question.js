@@ -67,7 +67,7 @@ function answer(){
     //自分の場所から移動できるかの判定出来ないなら正解判定
     //難易度難しいの判定
     if(diff==2){
-        if(point[0]==true){
+         if(point[0]==true){
             if(ringo[0]==true && ringo[1]==true && ringo[2]==true){
                 ans();
             }
@@ -84,29 +84,29 @@ function answer(){
                 ans();
             }
         }else  if(point[4]==true){
-            if(ringo[5]==true && ringo[7]==true){
+            if(ringo[5]==true && ringo[6]==true && ringo[7]==true && ringo [9]==true){
                 ans();
             }
         }else  if(point[5]==true){
-            if(ringo[6]==true && ringo[7]==true){
+            if(ringo[8]==true && ringo[9]==true){
                 ans();
             }
         }
     }else if(diff==1){
-        if(point[0]==true){
-            if(ringo[0]==true && ringo[1]==true){
+       if(point[0]==true){
+            if(ringo[0]==true && ringo[1]==true && ringo[2]==true){
                 ans();
             }
         }else if(point[1]==true){
-            if(ringo[0]==true && ringo[2]==true && ringo[3]==true){
+            if(ringo[0]==true && ringo[4]==true && ringo[6]==true){
                 ans();
             }
         }else  if(point[2]==true){
-            if(ringo[1]==true && ringo[2]==true && ringo[4]==true){
+            if(ringo[2]==true && ringo[3]==true && ringo[4]==true && ringo[5]==true){
                 ans();
             }
         }else  if(point[3]==true){
-            if(ringo[3]==true && ringo[4]==true && ringo[5]==true && ringo [6]==true){
+            if(ringo[1]==true && ringo[3]==true && ringo[7]==true && ringo [8]==true){
                 ans();
             }
         }else  if(point[4]==true){
@@ -200,6 +200,7 @@ function idoushori(ibasho,basho,ringo){
                 left:X,
                 top:Y,
             }, 1000 )
+            setTimeout("answer()", 1000);
         })
         .fail(function() {
             // エラーがあった時
@@ -485,7 +486,7 @@ function idouhantei(basho){
                 idoushori(ibasho,basho,"ringo1");
             }
         }
-        if(ibasho==1 && basho==2 || ibasho==2 && basho==1){
+        if(ibasho==0 && basho==3 || ibasho==3 && basho==0){
             //間のリンゴの判定
             if(ringo[2]==true){
 
@@ -546,7 +547,6 @@ function idou(basho){
          //順次処理を行うようにする
         idouhantei(basho);
         //  ちょっと判定を待ってもらう
-        setTimeout("answer()", 3000);
      }
     }
 }
