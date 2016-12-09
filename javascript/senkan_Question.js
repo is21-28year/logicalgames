@@ -1,6 +1,6 @@
 var ship_ans = 0;
 var ship_zan = 0;
-var ship_flag = [0,0,0,0,0,0,0,0,0];
+var ship_flag = [0,0,0,0,0,0,0,0,0,0,0];
 var run_flag = false;
 var mode;
 function senkan_s(seki,zan){//初期
@@ -59,19 +59,32 @@ function tama(){
 }
 function reset(){
     if(run_flag == false){
-        if(mode == "easy"){
+        switch(mode){
+            case 1:
+                senkan_s(7,5);
+                break;
+
+            case 2:
+                senkan_s(7,3);
+                break;
+
+            case 3:
+                senkan_s(11,4);
+        }
+        /*
+        if(mode == 1){
             senkan_s(7,5);
         }
-        if(mode == "normal"){
+        if(mode == 2){
             senkan_s(7,3);
         }
-        if(mode == "hard"){
+        if(mode == 3){
             senkan_s(11,4);
         }
-    
+        */
         tama();
-        ship_flag = [0,0,0,0,0,0,0,0,0];
-        for(var i=0;i<9;i++){
+        ship_flag = [0,0,0,0,0,0,0,0,0,0,0];
+        for(var i=0;i<11;i++){
             document.getElementById("ship"+i).src="../image/senkan_teki.png";
         }
         document.getElementById("cannon").src="../image/cannon_1.png";
@@ -93,7 +106,7 @@ function modal(modal_content){
             document.getElementById("modal-content").innerHTML="<p style='margin-top:300px;'>ふねの色に注目しよう！（仮）</p>";
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' class='tojiru'></div>";
             */
-            document.getElementById("modal-content").innerHTML="<?={$data['hint_senkan']}?>";
+            document.getElementById("modal-content").innerHTML="<?php echo={$data['hint_senkan']}?>";
             break;
         case 2:
             window.localStorage.setItem("senkan_3",true);
@@ -105,7 +118,7 @@ function modal(modal_content){
             document.getElementById("modal-content").innerHTML="<p style='margin-top:300px;'>ゲームオーバー</p>";
             document.getElementById("modal-content").innerHTML+="<div><input type='button' class='leftbtn mapback'  onclick='mapjump()'><input type='button' class='rightbtn yarinaosi' onclick='reset()' id='modal-close'></div>";
             */
-            document.getElementById("modal-content").innerHTML="<?={$data['gameover_senkan']}?>";
+            document.getElementById("modal-content").innerHTML="<?php echo={$data['gameover_senkan']}?>";
     }
     $(function(){
 
