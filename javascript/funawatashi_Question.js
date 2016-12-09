@@ -8,8 +8,12 @@ var fune=null;
 var funebasho;
 var funeanime=false;
 var idouanime=false;
+//座標部分
 var funeX;
 var funeY;
+var aitemX;
+var aitemY;
+
 
 //問題初期化部分
 function shoki(diffnum){
@@ -38,9 +42,6 @@ function animeidou(basho){
 
     //アニメ処理中は動けない
     if(idouanime==false){
-        //アニメーション処理　船にあるアイテムの変数が必要
-        idouanime=true;
-        funeanime=true;
         //左の時,右の時の処理の処理
         if(funebasho==0){
             //船の座標
@@ -49,9 +50,11 @@ function animeidou(basho){
 
             //アニメーション処理
             //船にものがないアニメーション処理
-            if(basho==r1 || basho==r2 || basho==r3){}else{
+            if(basho=='r1' || basho=='r2' || basho=='r3'){}else{
                 if(fune==null){
                     $(function() {
+                        idouanime=true;
+                        funeanime=true;
                         $.when(
                             $("#"+basho).animate({
                                 left:funeX,
@@ -59,6 +62,53 @@ function animeidou(basho){
                                 width:-0.05,
                                 height:-0.05,
                             }, 2000 )
+                        )
+                        .done(function() {
+                            //船の位置で消える
+                            document.getElementById(basho).style.display="none";
+
+                            idouanime=false;
+                            funeanime=false;
+                            //船にアイテムを入れる
+                            fune=basho;
+                            
+                        })
+                        .fail(function() {
+                            // エラーがあった時
+                            console.log('error');
+                        }); 
+                    });
+                }else{//船にものがあるときの処理
+                    //アイテムを戻す場所の座標設定
+                    if(fune=='l1'){
+                        aitemX='0vw';
+                        aitemY='0vh';
+                    }else if(fune=='l2'){
+                        aitemX='0vw';
+                        aitemY='20vh';
+                    }else if(fune=='l3'){
+                        aitemX='0vw';
+                        aitemY='40vh';
+                    }
+                     $(function() {
+                        idouanime=true;
+                        funeanime=true;
+                        $.when(
+                            $("#"+basho).animate({
+                                left:funeX,
+                                top:funeY,
+                                width:-0.05,
+                                height:-0.05,
+                            }, 2000,function(){
+                                document.getElementById(fune).style.display="block";
+		                         $("#"+fune).animate({
+                                    left:aitemX,
+                                    top:aitemY,
+                                    width:'40%',
+                                    height:'18%'
+                                }, 2000).dequeue();
+                            }
+                            )
                         )
                         .done(function() {
                             //船の位置で消える
@@ -75,8 +125,6 @@ function animeidou(basho){
                             console.log('error');
                         }); 
                     });
-                }else{//船にものがあるときの処理
-                    
                 }
             }
         }else{//右の時の処理
@@ -86,9 +134,11 @@ function animeidou(basho){
             
             //アニメーション処理
             //船にものがないアニメーション処理
-            if(basho==l1 || basho==l2 || basho==l3){}else{
+            if(basho=='l1' || basho=='l2' || basho=='l3'){}else{
                 if(fune==null){
                     $(function() {
+                        idouanime=true;
+                        funeanime=true;
                         $.when(
                             $("#"+basho).animate({
                                 left:funeX,
@@ -113,6 +163,52 @@ function animeidou(basho){
                         }); 
                     });
                 }else{//船にものがあるときの処理
+                    //アイテムを戻す場所の座標設定
+                    if(fune=='r1'){
+                        aitemX='0vw';
+                        aitemY='0vh';
+                    }else if(fune=='r2'){
+                        aitemX='0vw';
+                        aitemY='20vh';
+                    }else if(fune=='r3'){
+                        aitemX='0vw';
+                        aitemY='40vh';
+                    }
+                     $(function() {
+                        idouanime=true;
+                        funeanime=true;
+                        $.when(
+                            $("#"+basho).animate({
+                                left:funeX,
+                                top:funeY,
+                                width:-0.05,
+                                height:-0.05,
+                            }, 2000,function(){
+                                document.getElementById(fune).style.display="block";
+		                         $("#"+fune).animate({
+                                    left:aitemX,
+                                    top:aitemY,
+                                    width:'40%',
+                                    height:'18%'
+                                }, 2000).dequeue();
+                            }
+                            )
+                        )
+                        .done(function() {
+                            //船の位置で消える
+                            document.getElementById(basho).style.display="none";
+                            //if文で入るものの数値を入れる処理
+                            idouanime=false;
+                            funeanime=false;
+                            //船にアイテムを入れる
+                            fune=basho;
+                            
+                        })
+                        .fail(function() {
+                            // エラーがあった時
+                            console.log('error');
+                        }); 
+                    });//船にものがあるときの処理
                     
                 }
             }
