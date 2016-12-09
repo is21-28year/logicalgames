@@ -139,6 +139,7 @@ function animefune(){
             )
             .done(function() {
                 //if文で入るものの数値を入れる処理
+                //船の座標変更
                 funebasho=1;
                 funeanime=false;
                 idouanime=false;
