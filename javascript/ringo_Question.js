@@ -631,18 +631,18 @@ function modal(modal_content){
     switch (modal_content){
         case 0:
             /*styleタグ画面上のどこに置くかを指定している*/ 
-            document.getElementById("modal-content").innerHTML="<p style='margin-top:25vh;'><img src='../image/B_K2.png' style='width:40vw; height:25vh;'></p>";
+            document.getElementById("modal-content").innerHTML="<p style='margin-top:25vh;'><img src='../image/B_R.png' style='width:40vw; height:25vh;'></p>";
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' class='tojiru'></div>";
             break;
         case 1:
-            document.getElementById("modal-content").innerHTML="<?={$data['hint_kaiten']}?>";
+            document.getElementById("modal-content").innerHTML="<?={$data['hint_ringo']}?>";
             break;
         case 2:
-            document.getElementById("modal-content").innerHTML="<p style='margin-top:25vh;'><img src='../image/kaiten_clear.png' style='width:40vw; height:8vh;'></p>";
+            document.getElementById("modal-content").innerHTML="<p style='margin-top:25vh;'><img src='../image/ringo_clear.png' style='width:40vw; height:8vh;'></p>";
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' class='mapback' onclick='mapjump()'></div>";
             break;
         case 3:
-            document.getElementById("modal-content").innerHTML="<?={$data['gameover_kaiten']}?>";
+            document.getElementById("modal-content").innerHTML="<?={$data['gameover_ringo']}?>";
     }
     $(function(){
 
