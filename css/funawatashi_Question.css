@@ -27,7 +27,8 @@
         position:absolute;
     }
     .box img{
-        width:80%;
+        width:4vw;
+        height:8vh;
         position:absolute;
     }
 /*各動物などの画像部分の配置*/
@@ -63,5 +64,8 @@
     #fune img{
         width:7vw;
         height:5vh;
+    }
+    #r1 img{
+        display:none;
     }
 /*各動物などの画像部分の配置*/
