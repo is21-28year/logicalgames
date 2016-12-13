@@ -21,11 +21,21 @@ $nanido = $_POST["nanido"];
 </head>
 <body onload="viewhantei();viewchange();imgkaiten();modal(0);questionrand(90);">
     <!-- ここからモーダルウィンドウ -->
-    <div id="modal-content">
-	    <!-- モーダルウィンドウのコンテンツ開始 -->
-	    <!-- ここの内容はQuestion.jsで表記しています -->
-	    <!-- モーダルウィンドウのコンテンツ終了 -->
+    <div id="modal-content0">
+	    <p style='margin-top:25vh;'><img src='../image/B_K2.png' style='width:40vw; height:25vh;'></p>
+        <div class='center'><input type='button' id='modal-close' class='tojiru'></div>
     </div>
+    <div id="modal-content1">
+        <?=$data['hint_kaiten']?>
+    </div>
+    <div id="modal-content2">
+        <p style='margin-top:25vh;'><img src='../image/kaiten_clear.png' style='width:40vw; height:8vh;'></p>
+        <div class='center'><input type='button' class='mapback' onclick='mapjump()'></div>
+    </div>
+    <div id="modal-content3">
+        <?=$data['gameover_kaiten']?>
+    </div>
+
     <div id="viewchange">
         <!-- モーダルウィンドウのコンテンツ開始 -->
         <img src="../image/view_text.png" id="deltext" alt="">

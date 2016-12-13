@@ -137,7 +137,7 @@ div
     p{
         font-size:36px;
     }
-    #modal-content p{
+    #modal-content0 p,#modal-content1 p,#modal-content2 p,#modal-content3 p{
         text-align:center;
         font-size:36px;
     }
@@ -190,7 +190,7 @@ div
         bottom : 0 ;
     }
     /*モーダルウィンドウ*/
-    #modal-content {
+    #modal-content0,#modal-content1,#modal-content2,#modal-content3 {
 	    width: 80% ;
         height:80%;
 	    margin: 0 ;

@@ -31,11 +31,12 @@ function cleartrue(clearnum){
     window.localStorage.setItem(clearnum,true);
 }
 //モーダルダイアログの表示
-function modal(modal_content){
+function modal(mc){
     //モーダルダイアログに表示させる内容
+    /*
     switch (modal_content){
         case 0:
-            /*styleタグ画面上のどこに置くかを指定している*/ 
+            /*styleタグ画面上のどこに置くかを指定している 
             document.getElementById("modal-content").innerHTML="<p style='margin-top:25vh;'><img src='../image/B_K2.png' style='width:40vw; height:25vh;'></p>";
             document.getElementById("modal-content").innerHTML+="<div class='center'><input type='button' id='modal-close' class='tojiru'></div>";
             break;
@@ -49,6 +50,7 @@ function modal(modal_content){
         case 3:
             document.getElementById("modal-content").innerHTML="<?={$data['gameover_kaiten']}?>";
     }
+    */
     $(function(){
 
     //モーダルウィンドウを出現させるクリックイベント
@@ -67,14 +69,13 @@ function modal(modal_content){
         centeringModalSyncer() ;
 
         //コンテンツをフェードインする
-        $( "#modal-content" ).fadeIn( "slow" ) ;
-
-        if(modal_content == 2 || modal_content == 3){
+        $( "#modal-content"+mc ).fadeIn( "slow" ) ;
+        if(mc == 2 || mc == 3){
             //クリックしても閉じない
             $( "#modal-close" ).unbind().click( function(){
 
                 //[#modal-content]と[#modal-overlay]をフェードアウトした後に…
-                $( "#modal-content,#modal-overlay" ).fadeOut( "slow" , function(){
+                $( "#modal-overlay,#modal-content"+mc ).fadeOut( "slow" , function(){
 
                     //[#modal-overlay]を削除する
                     $('#modal-overlay').remove() ;
@@ -86,7 +87,7 @@ function modal(modal_content){
             $( "#modal-overlay,#modal-close" ).unbind().click( function(){
 
                 //[#modal-content]と[#modal-overlay]をフェードアウトした後に…
-                $( "#modal-content,#modal-overlay" ).fadeOut( "slow" , function(){
+                $( "#modal-overlay,#modal-content"+mc ).fadeOut( "slow" , function(){
 
                     //[#modal-overlay]を削除する
                     $('#modal-overlay').remove() ;
@@ -112,11 +113,11 @@ function modal(modal_content){
             // jQueryのバージョンによっては、引数[{margin:true}]を指定した時、不具合を起こします。
     //		var cw = $( "#modal-content" ).outerWidth( {margin:true} );
     //		var ch = $( "#modal-content" ).outerHeight( {margin:true} );
-            var cw = $( "#modal-content" ).outerWidth();
-            var ch = $( "#modal-content" ).outerHeight();
+            var cw = $( "#modal-content"+mc ).outerWidth();
+            var ch = $( "#modal-content"+mc ).outerHeight();
 
             //センタリングを実行する
-            $( "#modal-content" ).css( {"left": ((w - cw)/2) + "px","top": ((h - ch)/2) + "px"} ) ;
+            $( "#modal-content"+mc ).css( {"left": ((w - cw)/2) + "px","top": ((h - ch)/2) + "px"} ) ;
 
         }
 
