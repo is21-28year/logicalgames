@@ -20,16 +20,17 @@ function shoki(diffnum){
     if(diff==2){
         //動物が入る場所の変数
         migi=[0,0,0];
-        hidari=[0,0,0];
+        hidari=[1,1,1];
         //船がいる場所の判定 0=左 1=右
         funebasho=0;
+        //画像の初期位置判定
     }else if(diff==1){
         migi=[0,0,0];
-        hidari=[0,0,0];
+        hidari=[1,1,1];
         funebasho=0;
     }else{
         migi=[0,0,0];
-        hidari=[0,0,0];
+        hidari=[1,1,1];
         funebasho=0;
     }   
 
@@ -38,10 +39,6 @@ function shoki(diffnum){
 function animeidou(basho){
     //アニメ処理中は動けない
     if(idouanime==false || funeanime==false){
-         //click処理ができるかの判定
-         for(var i=0;i<migi.length;i++){
-             
-         }
         //左の時,右の時の処理の処理
         if(funebasho==0){
             //船の座標
@@ -58,6 +55,19 @@ function animeidou(basho){
             //アニメーション処理
             //船にものがないアニメーション処理
             if(basho=='r1' || basho=='r2' || basho=='r3'){}else{
+                if(basho=='l1'){
+                    if(hidari[0]==0){
+                        return;
+                    }
+                }if(basho=='l2'){
+                    if(hidari[1]==0){
+                        return;
+                    }
+                }else if(basho=='l3'){
+                    if(hidari[2]==0){
+                        return;
+                    }
+                }
                 if(fune==null){
                    
                     $(function() {
@@ -171,6 +181,20 @@ function animeidou(basho){
             //アニメーション処理
             //船にものがないアニメーション処理
             if(basho=='l1' || basho=='l2' || basho=='l3'){}else{
+                if(basho=='r1'){
+                    if(migi[0]==0){
+                        return;
+                    }
+                }else if(basho=='r2'){
+                    if(migi[1]==0){
+                        return;
+                    }
+                }else if(basho=='r3'){
+                    if(migi[2]==0){
+                        return;
+                    }
+                }
+
                 if(fune==null){
                     $(function() {
                         alert("普通に船へ");
@@ -283,8 +307,6 @@ function animefune(){
         idouanime=true;
         if(funebasho==0){//左から右へ移動する処理
             $(function() {
-                //テスト用
-                alert(fune);
             $.when(
                 //船の移動処理
                 $("#fune").animate({
@@ -320,7 +342,7 @@ function animefune(){
                                 //aitemuを除去
                                 fune=null;
                                 //左から右へ移動
-                                hidari[0]=1
+                                hidari[0]=0;
                                 migi[0]=1;
                                 
                             })
@@ -353,9 +375,8 @@ function animefune(){
                                 //aitemuを除去
                                 fune=null;
                                 //左から右へ移動
-                                hidari[0]=1
-                                migi[0]=1;
-                                
+                                hidari[1]=0;
+                                migi[1]=1;
                             })
                             .fail(function() {
                                 // エラーがあった時
@@ -385,9 +406,8 @@ function animefune(){
                                 //aitemuを除去
                                 fune=null;
                                 //左から右へ移動
-                                hidari[0]=1
-                                migi[0]=1;
-                                
+                                hidari[2]=0;
+                                migi[2]=1;
                             })
                             .fail(function() {
                                 // エラーがあった時
@@ -399,6 +419,8 @@ function animefune(){
                 //if文で入るものの数値を入れる処理
                 idouanime=false;
                 funeanime=false;
+                //ゲームクリア判定
+                clearhantei();
             })
             .fail(function() {
                 // エラーがあった時
@@ -440,7 +462,7 @@ function animefune(){
                                     fune=null;
                                     //左から右へ移動
                                     hidari[0]=1
-                                    migi[0]=1;
+                                    migi[0]=0;
                                     
                                 })
                                 .fail(function() {
@@ -472,8 +494,8 @@ function animefune(){
                                     //aitemuを除去
                                     fune=null;
                                     //左から右へ移動
-                                    hidari[0]=1
-                                    migi[0]=1;
+                                    hidari[1]=1
+                                    migi[1]=0;
                                     
                                 })
                                 .fail(function() {
@@ -504,8 +526,8 @@ function animefune(){
                                     //aitemuを除去
                                     fune=null;
                                     //左から右へ移動
-                                    hidari[0]=1
-                                    migi[0]=1;
+                                    hidari[2]=1
+                                    migi[2]=0;
                                     
                                 })
                                 .fail(function() {
@@ -518,6 +540,8 @@ function animefune(){
                     //if文で入るものの数値を入れる処理
                     funeanime=false;
                     idouanime=false;
+                    //ゲームクリア判定
+                    clearhantei();
                 })
                 .fail(function() {
                     // エラーがあった時
@@ -529,22 +553,6 @@ function animefune(){
 
 }
 
-function clearhantei(){
-    /*基本的なゲームクリア判定*/ 
-    overhantei();
-    gameflag=true
-    for(var i in basho){
-        if(i==0){
-            gameflag=false
-        }
-    }
-
-    if(gameflag==true){
-        modal(2);
-    }else{
-      overhantei();
-    }
-}
 //ゲームオーバーしたかの判定
 function overhantei(){
     if(diff==2){
@@ -553,27 +561,72 @@ function overhantei(){
         if(funebasho==0){
             //オオカミとヒツジの判定
             if(migi[0]==1 && migi[1]==1){
-                modal(3);
+                alert("ゲームオーバー");
+                modal(0);
             }
             //ヒツジとキャベツの判定
             if(migi[1]==1 && migi[2]==1){
-                modal(3);
+                alert("ゲームオーバー");
+                modal(0);
             }
         //船が右なら
         }else{
             //オオカミとヒツジの判定
-            if(hidari[0]==0 && hidari[1]==0){
-                modal(3);
+            if(hidari[0]==1 && hidari[1]==1){
+                alert("ゲームオーバー");
+                modal(0);
             }
             //ヒツジとキャベツの判定
-            if(hidari[1]==0 && hidari[2]==0){
-                modal(3);
+            if(hidari[1]==1 && hidari[2]==1){
+                alert("ゲームオーバー");
+                modal(0);
             }
         }
 
     }else if(diff==1){
-
+        if(funebasho==0){
+            //オオカミとヒツジの判定
+            if(migi[0]==1 && migi[2]==1){
+                alert("ゲームオーバー");
+                modal(0);
+            }
+            //ヒツジとキャベツの判定
+            if(migi[1]==1 && migi[2]==1){
+                alert("ゲームオーバー");
+                modal(0);
+            }
+        //船が右なら
+        }else{
+            //オオカミとヒツジの判定
+            if(hidari[0]==1 && hidari[2]==1){
+                alert("ゲームオーバー");
+                modal(0);
+            }
+            //ヒツジとキャベツの判定
+            if(hidari[1]==1 && hidari[2]==1){
+                alert("ゲームオーバー");
+                modal(0);
+            }
+        }
     }else{
 
+
+    }
+}
+
+function clearhantei(){
+    /*基本的なゲームクリア判定*/ 
+    gameflag=true;
+    for(var i　in migi){
+
+        if(i==0){
+            gameflag=false;
+        }
+    }
+    if(gameflag==true){
+        alert("ゲームクリア");
+        modal(2);
+    }else{
+      overhantei();
     }
 }
