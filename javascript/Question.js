@@ -20,15 +20,14 @@ function modal(mc){
 
         //コンテンツをセンタリングする
         centeringModalSyncer() ;
-        alert(mc);
         //コンテンツをフェードインする
         $( "#modal-content"+mc ).fadeIn( "slow" ) ;
+        
         if(mc == 3){
             //クリックしても閉じない
-            $( "#modal-close" ).unbind().click( function(){
+            $( "#modal-close3" ).unbind().click( function(){
                 //[#modal-content]と[#modal-overlay]をフェードアウトした後に…
                 $( "#modal-overlay,#modal-content3" ).fadeOut( "slow" , function(){
-
                     //[#modal-overlay]を削除する
                     $('#modal-overlay').remove() ;
                 } ) ;
@@ -36,11 +35,9 @@ function modal(mc){
             } ) ;
         }else{
             //[#modal-overlay]、または[#modal-close]をクリックしたら…
-            $( "#modal-overlay,#modal-close" ).unbind().click( function(){
-                alert(mc);
+            $( "#modal-overlay,#modal-close"+mc ).unbind().click( function(){
                 //[#modal-content]と[#modal-overlay]をフェードアウトした後に…
                 $( "#modal-overlay,#modal-content"+mc ).fadeOut( "slow" , function(){
-
                     //[#modal-overlay]を削除する
                     $('#modal-overlay').remove() ;
                 } ) ;
