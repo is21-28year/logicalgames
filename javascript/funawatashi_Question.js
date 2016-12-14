@@ -344,6 +344,8 @@ function animefune(){
                                 //左から右へ移動
                                 hidari[0]=0;
                                 migi[0]=1;
+                                //ゲームクリア判定
+                                clearhantei();
                                 
                             })
                             .fail(function() {
@@ -377,6 +379,8 @@ function animefune(){
                                 //左から右へ移動
                                 hidari[1]=0;
                                 migi[1]=1;
+                                //ゲームクリア判定
+                                clearhantei();
                             })
                             .fail(function() {
                                 // エラーがあった時
@@ -408,6 +412,8 @@ function animefune(){
                                 //左から右へ移動
                                 hidari[2]=0;
                                 migi[2]=1;
+                                //ゲームクリア判定
+                                 clearhantei();
                             })
                             .fail(function() {
                                 // エラーがあった時
@@ -419,8 +425,10 @@ function animefune(){
                 //if文で入るものの数値を入れる処理
                 idouanime=false;
                 funeanime=false;
-                //ゲームクリア判定
-                clearhantei();
+                if(fune==null){
+                    //ゲームクリア判定
+                    clearhantei();
+                }
             })
             .fail(function() {
                 // エラーがあった時
@@ -463,6 +471,8 @@ function animefune(){
                                     //左から右へ移動
                                     hidari[0]=1
                                     migi[0]=0;
+                                    //ゲームクリア判定
+                                    clearhantei();
                                     
                                 })
                                 .fail(function() {
@@ -496,6 +506,8 @@ function animefune(){
                                     //左から右へ移動
                                     hidari[1]=1
                                     migi[1]=0;
+                                     //ゲームクリア判定
+                                    clearhantei();
                                     
                                 })
                                 .fail(function() {
@@ -528,7 +540,8 @@ function animefune(){
                                     //左から右へ移動
                                     hidari[2]=1
                                     migi[2]=0;
-                                    
+                                    //ゲームクリア判定
+                                    clearhantei();
                                 })
                                 .fail(function() {
                                     // エラーがあった時
@@ -540,8 +553,10 @@ function animefune(){
                     //if文で入るものの数値を入れる処理
                     funeanime=false;
                     idouanime=false;
-                    //ゲームクリア判定
-                    clearhantei();
+                    if(fune==null){
+                        //ゲームクリア判定
+                        clearhantei();
+                    }
                 })
                 .fail(function() {
                     // エラーがあった時
@@ -563,9 +578,7 @@ function overhantei(){
             if(migi[0]==1 && migi[1]==1){
                 alert("ゲームオーバー");
                 modal(0);
-            }
-            //ヒツジとキャベツの判定
-            if(migi[1]==1 && migi[2]==1){
+            }else if(migi[1]==1 && migi[2]==1){
                 alert("ゲームオーバー");
                 modal(0);
             }
@@ -575,9 +588,7 @@ function overhantei(){
             if(hidari[0]==1 && hidari[1]==1){
                 alert("ゲームオーバー");
                 modal(0);
-            }
-            //ヒツジとキャベツの判定
-            if(hidari[1]==1 && hidari[2]==1){
+            }else if(hidari[1]==1 && hidari[2]==1){
                 alert("ゲームオーバー");
                 modal(0);
             }
@@ -589,9 +600,7 @@ function overhantei(){
             if(migi[0]==1 && migi[2]==1){
                 alert("ゲームオーバー");
                 modal(0);
-            }
-            //ヒツジとキャベツの判定
-            if(migi[1]==1 && migi[2]==1){
+            }else if(migi[1]==1 && migi[2]==1){
                 alert("ゲームオーバー");
                 modal(0);
             }
@@ -601,15 +610,13 @@ function overhantei(){
             if(hidari[0]==1 && hidari[2]==1){
                 alert("ゲームオーバー");
                 modal(0);
-            }
-            //ヒツジとキャベツの判定
-            if(hidari[1]==1 && hidari[2]==1){
+            }else if(hidari[1]==1 && hidari[2]==1){
                 alert("ゲームオーバー");
                 modal(0);
             }
         }
     }else{
-
+        //難易度easyの部分
 
     }
 }
@@ -617,11 +624,8 @@ function overhantei(){
 function clearhantei(){
     /*基本的なゲームクリア判定*/ 
     gameflag=true;
-    for(var i　in migi){
-
-        if(i==0){
-            gameflag=false;
-        }
+    if(migi[0]==0 || migi[1]==0 || migi[2]==0){
+        gameflag=false;
     }
     if(gameflag==true){
         alert("ゲームクリア");
