@@ -23,11 +23,11 @@ function modal(mc){
         //コンテンツをフェードインする
         $( "#modal-content"+mc ).fadeIn( "slow" ) ;
         
-        if(mc == 3){
+        if(mc == 2 || mc == 3){
             //クリックしても閉じない
-            $( "#modal-close3" ).unbind().click( function(){
+            $( "#modal-close"+mc ).unbind().click( function(){
                 //[#modal-content]と[#modal-overlay]をフェードアウトした後に…
-                $( "#modal-overlay,#modal-content3" ).fadeOut( "slow" , function(){
+                $( "#modal-overlay,#modal-content"+mc ).fadeOut( "slow" , function(){
                     //[#modal-overlay]を削除する
                     $('#modal-overlay').remove() ;
                 } ) ;
