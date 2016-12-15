@@ -1,21 +1,40 @@
+<?php
+$nanido = "";
+$nanido = $_POST["nanido"];
+//MySQLに接続
+    $con = mysqli_connect("localhost","root","","db_question");
+    //tbl_kaiinからすべてのレコード取得
+    $sql = "select * from tbl_kaiten where number_kaiten = '$nanido'";
+    $rst = mysqli_query($con,$sql) or die("失敗");
+    $data = mysqli_fetch_array($rst);
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <title>問題ページ 回転命令</title>
-    <script type="text/javascript" src="../javascript/Question.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript" src="../javascript/jQueryRotate.js"></script>
+    <script type="text/javascript" src="../javascript/Question.js"></script>
     <script type="text/javascript" src="../javascript/kaiten_Question.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/Question.css">
     <link rel="stylesheet" type="text/css" href="../css/kaiten_Question.css">
 </head>
-<body onload="viewhantei();viewchange();imgkaiten();modal(0);questionrand(72);">
+<body onload="viewhantei();viewchange();imgkaiten();modal(0);questionrand(90);">
     <!-- ここからモーダルウィンドウ -->
-    <div id="modal-content">
-	    <!-- モーダルウィンドウのコンテンツ開始 -->
-	    <!-- ここの内容はQuestion.jsで表記しています -->
-	    <!-- モーダルウィンドウのコンテンツ終了 -->
+    <div id="modal-content0">
+	    <p style='margin-top:25vh;'><img src='../image/B_K2.png' style='width:40vw; height:25vh;'></p>
+        <div class='center'><input type='button' id='modal-close0' class='tojiru'></div>
+    </div>
+    <div id="modal-content1">
+        <?=$data['hint_kaiten']?>
+    </div>
+    <div id="modal-content2">
+        <p style='margin-top:25vh;'><img src='../image/kaiten_clear.png' style='width:40vw; height:8vh;'></p>
+        <div class='center'><input type='button' class='mapback' onclick='mapjump()'></div>
+    </div>
+    <div id="modal-content3">
+        <?=$data['gameover_kaiten']?>
     </div>
 
     <div id="viewchange">
@@ -23,7 +42,6 @@
         <img src="../image/view_text.png" id="deltext" alt="">
         <!-- モーダルウィンドウのコンテンツ終了 -->
     </div>
-
     <header>
         <!--前の画面へ戻るボタン-->
         <input type="button" class="hidari modoru" onclick="location.href='Difficulty_kaiten.html'">
@@ -33,8 +51,9 @@
     <div class="clam_left">
     <!--問題文章div-->
     <div id="bunsho" class="b">
-    <img id="M_T" src="../image/M_T.png">
-    <img style="width:25vw; height:15vh;" src="../image/kaiten_bunsho.png">
+    <?php
+            echo "{$data['bunsho_kaiten']}";
+    ?>
     </div>
     
     <!--リセットボタン配置-->
@@ -49,22 +68,9 @@
     <div class="clam_right">
         <!--問題動作div-->
         <!--<h1><ruby><rb>問題</rb><rp>(</rp><rt>もんだい</rt><rp>)</rp></ruby></h1>-->
-        <div id="border"><img src="../image/Puzzle_b_3.1.png" alt="" id="kaiten"></div>
-        <div id="sentaku">
-            <div>
-                <img src="../image/Puzzle_3.1.png" alt="" onclick="modal(2);cleartrue('kaiten_3')">
-            </div>
-            <div>
-                <img src="../image/Puzzle_3.2.png" alt="" onclick="modal(3)">
-            </div>
-            <div>
-                <img src="../image/Puzzle_3.3.png" alt="" onclick="modal(3)">
-            </div>
-            <div>
-                <img src="../image/Puzzle_3.3.png" alt="" onclick="modal(3)">
-            </div>
-
-        </div>
+        <?php
+            echo "{$data['contents_kaiten']}";
+        ?>
         <!-- デバッグ用 -->
         <!--
         <input type="button" value="クリア" onclick="modal(2)">
