@@ -90,3 +90,12 @@ function reset(){
         document.getElementById("cannon").src="../image/cannon_1.png";
     }
 }
+function cleartrue(clearnum){
+    window.localStorage.setItem(clearnum,true);
+}
+
+    
+
+function mapjump(){
+    window.location.href = 'map.html';
+}
