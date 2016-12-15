@@ -92,10 +92,6 @@ flog=1;
         .done(function() {
         k += -1;
         tama();
-                    if(k < 1){
-                //ゲームオーバー
-                modal(3);
-            }
 flog=0;
         if(x_z < c_x){
         	if(y_z < c_y){
@@ -122,6 +118,10 @@ flog=0;
             	modal(2);
             	}
         }
+            if(k < 1){
+                //ゲームオーバー
+                modal(3);
+            }
         })
         .fail(function() {
             // エラーがあった時
