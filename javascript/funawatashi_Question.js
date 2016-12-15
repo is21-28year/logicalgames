@@ -13,6 +13,8 @@ var funeX;
 var funeY;
 var aitemX=0;
 var aitemY=0;
+//難易度初級の変数
+var count=0;
 //問題初期化部分
 function shoki(diffnum){
     //難易度セット
@@ -28,7 +30,7 @@ function shoki(diffnum){
         migi=[0,0,0];
         hidari=[1,1,1];
         funebasho=0;
-    }else{
+    }else if(diff==0){
         migi=[0,0,0];
         hidari=[1,1,1];
         funebasho=0;
@@ -436,133 +438,139 @@ function animefune(){
             }); 
         });
         }else{//右から左へ移動する処理
-            $(function() {
-                $.when(
-                    $("#fune").animate({
-                        left:'-=30vw',
-                    }, 2000 )
-                )
-                .done(function() {
-                    funebasho=0;
-                    //船にアイテムがあるのなら
-                    if(fune!=null){
-                        if(fune=='r1'){
-                            $(function() {
-                                $.when(
-                                    //船の場所から出現
-                                    $("#l1 img").css('left','16vw'),
-                                    $("#l1 img").css('top','42vh'),
-                                    $("#l1 img").css('width','0'),
-                                    $("#l1 img").css('height','0'),
-                                    $("#l1 img").css('display','block'),
-                                    $("#l1 img").animate({
-                                        left:0,
-                                        top:0,
-                                        width:'4vw',
-                                        height:'8vh'
-                                    }, 2000)
-                                )
-                                .done(function() {
-                                    //if文で入るものの数値を入れる処理
-                                    idouanime=false;
-                                    funeanime=false;
-                                    //aitemuを除去
-                                    fune=null;
-                                    //左から右へ移動
-                                    hidari[0]=1
-                                    migi[0]=0;
-                                    //ゲームクリア判定
-                                    clearhantei();
-                                    
-                                })
-                                .fail(function() {
-                                    // エラーがあった時
-                                    console.log('error');
-                                }); 
-                            });
-                            
-                        }else if(fune=='r2'){
-                            $(function() {
-                                $.when(
-                                    //船の場所から出現
-                                    $("#l2 img").css('left','16vw'),
-                                    $("#l2 img").css('top','22vh'),
-                                    $("#l2 img").css('width','0'),
-                                    $("#l2 img").css('height','0'),
-                                    $("#l2 img").css('display','block'),
-                                    $("#l2 img").animate({
-                                        left:0,
-                                        top:0,
-                                        width:'4vw',
-                                        height:'8vh'
-                                    }, 2000)
-                                )
-                                .done(function() {
-                                    //if文で入るものの数値を入れる処理
-                                    idouanime=false;
-                                    funeanime=false;
-                                    //aitemuを除去
-                                    fune=null;
-                                    //左から右へ移動
-                                    hidari[1]=1
-                                    migi[1]=0;
-                                     //ゲームクリア判定
-                                    clearhantei();
-                                    
-                                })
-                                .fail(function() {
-                                    // エラーがあった時
-                                    console.log('error');
-                                }); 
-                            });
-                        }else{
-                            $(function() {
-                                $.when(
-                                    //船の場所から出現
-                                    $("#l3 img").css('left','16vw'),
-                                    $("#l3 img").css('top','2vh'),
-                                    $("#l3 img").css('width','0'),
-                                    $("#l3 img").css('height','0'),
-                                    $("#l3 img").css('display','block'),
-                                    $("#l3 img").animate({
-                                        left:0,
-                                        top:0,
-                                        width:'4vw',
-                                        height:'8vh'
-                                    }, 2000)
-                                )
-                                .done(function() {
-                                    //if文で入るものの数値を入れる処理
-                                    idouanime=false;
-                                    funeanime=false;
-                                    //aitemuを除去
-                                    fune=null;
-                                    //左から右へ移動
-                                    hidari[2]=1
-                                    migi[2]=0;
-                                    //ゲームクリア判定
-                                    clearhantei();
-                                })
-                                .fail(function() {
-                                    // エラーがあった時
-                                    console.log('error');
-                                }); 
-                            });
+            if(diff==0 && fune!=null){
+                funeanime=false;
+                idouanime=false;
+                animeidou(fune);
+            }else{
+                $(function() {
+                    $.when(
+                        $("#fune").animate({
+                            left:'-=30vw',
+                        }, 2000 )
+                    )
+                    .done(function() {
+                        funebasho=0;
+                        //船にアイテムがあるのなら
+                        if(fune!=null){
+                            if(fune=='r1'){
+                                $(function() {
+                                    $.when(
+                                        //船の場所から出現
+                                        $("#l1 img").css('left','16vw'),
+                                        $("#l1 img").css('top','42vh'),
+                                        $("#l1 img").css('width','0'),
+                                        $("#l1 img").css('height','0'),
+                                        $("#l1 img").css('display','block'),
+                                        $("#l1 img").animate({
+                                            left:0,
+                                            top:0,
+                                            width:'4vw',
+                                            height:'8vh'
+                                        }, 2000)
+                                    )
+                                    .done(function() {
+                                        //if文で入るものの数値を入れる処理
+                                        idouanime=false;
+                                        funeanime=false;
+                                        //aitemuを除去
+                                        fune=null;
+                                        //左から右へ移動
+                                        hidari[0]=1
+                                        migi[0]=0;
+                                        //ゲームクリア判定
+                                        clearhantei();
+                                        
+                                    })
+                                    .fail(function() {
+                                        // エラーがあった時
+                                        console.log('error');
+                                    }); 
+                                });
+                                
+                            }else if(fune=='r2'){
+                                $(function() {
+                                    $.when(
+                                        //船の場所から出現
+                                        $("#l2 img").css('left','16vw'),
+                                        $("#l2 img").css('top','22vh'),
+                                        $("#l2 img").css('width','0'),
+                                        $("#l2 img").css('height','0'),
+                                        $("#l2 img").css('display','block'),
+                                        $("#l2 img").animate({
+                                            left:0,
+                                            top:0,
+                                            width:'4vw',
+                                            height:'8vh'
+                                        }, 2000)
+                                    )
+                                    .done(function() {
+                                        //if文で入るものの数値を入れる処理
+                                        idouanime=false;
+                                        funeanime=false;
+                                        //aitemuを除去
+                                        fune=null;
+                                        //左から右へ移動
+                                        hidari[1]=1
+                                        migi[1]=0;
+                                        //ゲームクリア判定
+                                        clearhantei();
+                                        
+                                    })
+                                    .fail(function() {
+                                        // エラーがあった時
+                                        console.log('error');
+                                    }); 
+                                });
+                            }else{
+                                $(function() {
+                                    $.when(
+                                        //船の場所から出現
+                                        $("#l3 img").css('left','16vw'),
+                                        $("#l3 img").css('top','2vh'),
+                                        $("#l3 img").css('width','0'),
+                                        $("#l3 img").css('height','0'),
+                                        $("#l3 img").css('display','block'),
+                                        $("#l3 img").animate({
+                                            left:0,
+                                            top:0,
+                                            width:'4vw',
+                                            height:'8vh'
+                                        }, 2000)
+                                    )
+                                    .done(function() {
+                                        //if文で入るものの数値を入れる処理
+                                        idouanime=false;
+                                        funeanime=false;
+                                        //aitemuを除去
+                                        fune=null;
+                                        //左から右へ移動
+                                        hidari[2]=1
+                                        migi[2]=0;
+                                        //ゲームクリア判定
+                                        clearhantei();
+                                    })
+                                    .fail(function() {
+                                        // エラーがあった時
+                                        console.log('error');
+                                    }); 
+                                });
+                            }
                         }
-                    }
-                    //if文で入るものの数値を入れる処理
-                    funeanime=false;
-                    idouanime=false;
-                    if(fune==null){
-                        //ゲームクリア判定
-                        clearhantei();
-                    }
-                })
-                .fail(function() {
-                    // エラーがあった時
-                    console.log('error');
-                }); 
-            });
+                        //if文で入るものの数値を入れる処理
+                        funeanime=false;
+                        idouanime=false;
+                        if(fune==null){
+                            //ゲームクリア判定
+                            clearhantei();
+                        }
+                    })
+                    .fail(function() {
+                        // エラーがあった時
+                        console.log('error');
+                    }); 
+                });
+            }
         }
     }
 
@@ -615,9 +623,37 @@ function overhantei(){
                 modal(0);
             }
         }
-    }else{
-        //難易度easyの部分
+    }else if(diff==0){
+        if(funebasho==0){
+            //船が左に移動した際
 
+        }else{
+            //難易度easyの部分
+            if(hidari[0]==1 && hidari[1]==1 && hidari[2]==1){
+                //最初の時の判定　移動をしていないとき
+            }else{
+                //一回目の移動
+                if(count==0){
+                     if(hidari[0]==1 && hidari[1]==0 && hidari[2]==1){
+                          count++;
+                    }else{
+                        alert("1");
+                        alert("ゲームオーバー");
+                        modal(0);
+                    }
+                }else if(count==1){
+                      if(hidari[0]==1 && hidari[1]==0 && hidari[2]==1){
+                    }else{
+                        if(hidari[0]==1 && hidari[1]==0 && hidari[2]==0){
+                        }else{
+                            alert("2");
+                            alert("ゲームオーバー");
+                            modal(0);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
