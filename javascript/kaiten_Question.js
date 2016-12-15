@@ -1,6 +1,11 @@
 //回転速度を一定に修正する
 //候補秒刊に複数回行う
 //ふつうにずっと回す
+var ans = 0;
+var kazu = 0;
+var dif = 0;
+var kaku = 0;
+var suu = 0;
 
 
 function imgkaiten(){
@@ -28,9 +33,33 @@ function imgkaiten(){
 
 
 //問題のランダム出力
-function questionrand(kakudo){
-    var rand = Math.floor( Math.random() * 4 )*kakudo;
-    $("#sentaku img").rotate(rand);
+//easy:1 normal:2 hard:3
+function questionrand(kakudo,kazu,diff){
+	ans = Math.floor( Math.random() * kazu )+1 ;
+	var min = kazu-1;
+	var max = 1;
+	for(var i=1 ; i<=kazu ; i++){
+	document.getElementById(i).innerHTML="<img src='../image/puzzle_"+diff+'.'+(Math.floor( Math.random() * min )+max)+".png'>";
+	var rand = Math.floor( Math.random() * 4 )*kakudo;
+	$("#"+i+" img").rotate(rand);
+	}
+	document.getElementById(ans).innerHTML="<img src='../image/puzzle_kotae"+diff+".png'>";
+	dif = diff;
+	kaku = kakudo;
+	suu = kazu;
+}
+
+function answer(cl){
+	if(ans == cl){
+	modal(2);
+	cleartrue('kaiten_'+dif);
+	}else{
+	modal(3);
+	}
+}
+
+function reset(){
+questionrand(kaku,suu,dif);
 }
 
 function  localput(kaiten){
