@@ -26,6 +26,14 @@
         border:2px solid black;
         position:absolute;
     }
+    .box div:hover{
+        width: 40%;
+        height:20%;
+        border:2px solid black;
+        position:absolute;
+        background-color:rgba(255,255,255,0.75);
+       
+    }
     .box img{
         width:4vw;
         height:8vh;
