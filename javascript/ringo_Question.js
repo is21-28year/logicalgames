@@ -140,18 +140,18 @@ function answer(){
         
 }
 function ans(){
-    for(var i in ringo){
+    for(var i=0;i<ringo.length;i++){
         //判定エラーでゲームオーバーモーダル+フラグ＝false
-        if(i==null){
+        if(ringo[i]==0){
             //ゲームおーばーモーダル
-            gameflag=flase;
+            gameflag=false;
         }
     }
 //判定通るとゲームクリア表示
     if(gameflag==true){
-        modal(3);
-    }else{
         modal(2);
+    }else{
+        modal(3);
     }
 }
 //問題移動処理

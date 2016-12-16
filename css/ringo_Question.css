@@ -39,6 +39,16 @@
         width:5vw;
         height:10vh;
     }
+    #point img:hover{
+        z-index:2;
+        width:5vw;
+        height:10vh;
+        -webkit-filter: brightness(0.4);
+        -moz-filter: brightness(0.4);
+        -o-filter: brightness(0.4);
+        -ms-filter: brightness(0.4);
+        filter: brightness(0.4);
+    }
 /*アルファベットの場所手動配置部分*/
 /*アルファベットの場所手動配置部分*/
     #point0.hard{
