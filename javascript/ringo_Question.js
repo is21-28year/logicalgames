@@ -551,57 +551,6 @@ function idou(basho){
     }
 }
 
-/*画面の縦横判定共通部分前頁共通*/
-function viewhantei(){
-
-    $(function(){
-		if($(window).height()<$(window).width()){
-			
-		}else{
-			 $(function(){
-
-
-    //リサイズされたら、センタリングをする関数[centeringModalSyncer()]を実行する
-    $( window ).resize( centeringModalSyncer ) ;
-
-        //センタリングを実行する関数
-        function centeringModalSyncer() {
-
-            //画面(ウィンドウ)の幅、高さを取得
-            var w = $( window ).width() ;
-            var h = $( window ).height() ;
-
-            // コンテンツ(#modal-content)の幅、高さを取得
-            // jQueryのバージョンによっては、引数[{margin:true}]を指定した時、不具合を起こします。
-    //		var cw = $( "#modal-content" ).outerWidth( {margin:true} );
-    //		var ch = $( "#modal-content" ).outerHeight( {margin:true} );
-            var cw = $( "#viewchange" ).outerWidth();
-            var ch = $( "#viewchange" ).outerHeight();
-
-            //センタリングを実行する
-            $( "#viewchange" ).css( {"left": ((w - cw)/2) + "px","top": ((h - ch)/2) + "px"} ) ;
-
-        }
-
-    } ) ;
-		}
-	})
-
-}
-
-function viewchange(){
-    $(window).bind("resize load",function(){
-        if($(window).height()<$(window).width()){
-            $( "#viewchange,#modal-overlay" ).fadeOut( "slow" , function(){
-
-                        //[#modal-overlay]を削除する
-                        $('#modal-overlay').remove() ;
-                    } ) ;
-        }else{
-        viewhantei();
-        }
-    } ) ;
-}
 function mapjump(){
     window.location.href = 'map.html';
 }
