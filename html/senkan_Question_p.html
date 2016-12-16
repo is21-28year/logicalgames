@@ -13,6 +13,7 @@ $nanido = $_POST["nanido"];
 <head>
     <meta charset="UTF-8">
     <title>問題ページ 海賊ゲーム</title>
+    <script type="text/javascript" src="../javascript/Question.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
      <script type="text/javascript" src="../javascript/senkan_Question.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/Question.css">
@@ -26,6 +27,7 @@ $nanido = $_POST["nanido"];
         justify-content: center;
         padding:0;list-style: none;
         text-align:center;
+        
         }
     #w1{
         margin-top:10%;
@@ -38,9 +40,6 @@ $nanido = $_POST["nanido"];
         width:calc(100% / 5);
         margin:2px;
         }
-    li img{
-        width:125px;
-    }
     #zan_tama{
         width:10%;
         padding:50px;
@@ -57,9 +56,19 @@ $nanido = $_POST["nanido"];
     }
 img[id^="ship"]
 	{
-	width:8vw;
-	height:21vh;
-	}    body	
+        position: relative;
+        z-index:1;
+	    width:8vw;
+	    height:21vh;
+	}
+    img[id^="ship"][src*="teki.png"]:hover{
+     -webkit-filter: brightness(0.4);
+     -moz-filter: brightness(0.4);
+     -o-filter: brightness(0.4);
+     -ms-filter: brightness(0.4);
+     filter: brightness(0.4);
+    }
+    body	
     {
         font-family:'メイリオ','Hiragino kaku gothic Pro',sans-serif;
         background-color: #edede3;
@@ -79,15 +88,31 @@ img[id^="ship"]
         right:0;
         bottom:0;
         margin:auto;
+        z-index:0;
     }
     </style>
 </head>
 <body onload=<?php echo '"'."modal(0);chmode(".$data{'number_senkan'}.");reset();tama()".'"';?>>
     <!-- ここからモーダルウィンドウ -->
-    <div id="modal-content">
-	    <!-- モーダルウィンドウのコンテンツ開始 -->
-	    <!-- ここの内容はQuestion.jsで表記しています -->
-	    <!-- モーダルウィンドウのコンテンツ終了 -->
+    <div id="modal-content0">
+	    <p style='margin-top:25vh;'><img src='../image/B_S.png' style='width:40vw; height:25vh;'></p>
+        <div class='center'><input type='button' id='modal-close0' class='tojiru'></div>
+    </div>
+    <div id="modal-content1">
+        <?=$data['hint_senkan']?>
+    </div>
+    <div id="modal-content2">
+        <p style='margin-top:25vh;'><img src='../image/senkan_clear.png' style='width:40vw; height:8vh;'></p>
+        <div class='center'><input type='button' class='mapback' onclick='mapjump()'></div>
+    </div>
+    <div id="modal-content3">
+        <?=$data['gameover_senkan']?>
+    </div>
+
+    <div id="viewchange">
+        <!-- モーダルウィンドウのコンテンツ開始 -->
+        <img src="../image/view_text.png" id="deltext" alt="">
+        <!-- モーダルウィンドウのコンテンツ終了 -->
     </div>
 
     <header>
@@ -107,7 +132,7 @@ img[id^="ship"]
     <!--リセットボタン配置-->
     
     <div id="reset">
-        <input type="button" class="migi reset" onclick="reset()">
+        <input type="button" class="migi reset" onclick="senkan_s(8,8);reset()">
     </div>
     
     </div>
