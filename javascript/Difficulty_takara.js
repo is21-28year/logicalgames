@@ -1,7 +1,7 @@
 /*変数の初期宣言+初回かどうかのフラグ*/ 
     var takara_tutorial;
     /*画像常時のための変数*/
-    var clear_1;/*test*/
+    var clear_1;
     var clear_2;
     var clear_3; 
     
