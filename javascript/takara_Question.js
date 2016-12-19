@@ -115,6 +115,15 @@ flog=0;
         	}else if(y_z > c_y){
             	document.getElementById(c_x+"_"+c_y).innerHTML="<img src='../image/migi.png'>";
         	}else if(y_z == c_y){
+        	if(s_x == 3){
+    		localStorage.setItem("takara_1",true);
+    		}
+    		if(s_x == 4){
+    		localStorage.setItem("takara_2",true);
+    		}
+    		if(s_x == 5){
+    		localStorage.setItem("takara_3",true);
+    		} 
             	modal(2);
             	}
         }
