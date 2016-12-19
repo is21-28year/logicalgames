@@ -11,8 +11,8 @@ var idouanime=false;
 //座標部分
 var funeX;
 var funeY;
-var aitemX=0;
-var aitemY=0;
+var aitemX='0.5vw';
+var aitemY='1vh';
 //難易度初級の変数
 var count=0;
 //問題初期化部分

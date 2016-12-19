@@ -8,26 +8,30 @@
     }
     #lbox{
         float:left;
-        width:13vw;
+        width:10vw;
         height:60vh;
         display: inline-block;
         position:relative;
+        margin-top:10vh;
+        background-color:RGBa(0,0,0,0.3);
     }
     #rbox{
         float:right;
-        width:13vw;
+        width:10vw;
         height:60vh;
         display: inline-block;
         position:relative;
+        margin-top:10vh;
+        background-color:RGBa(0,0,0,0.3);
     }
     .box div{
-        width: 40%;
+        width: 50%;
         height:20%;
         border:2px solid black;
         position:absolute;
     }
     .box div:hover{
-        width: 40%;
+        width: 50%;
         height:20%;
         border:2px solid black;
         position:absolute;
@@ -42,37 +46,58 @@
 /*各動物などの画像部分の配置*/
     #l1{
          margin:0;
+         left:2.5vw;
+         top:2.5vh;
     }
     #l2{
         margin:0;
-        top:20vh;
+        top:22.5vh;
+        left:2.5vw;
     }
     #l3{
          margin:0;
-         top:40vh;
+         top:42.5vh;
+        left:2.5vw;
     }
 
     #r1{
          margin:0;
+         left:2.5vw;
+         top:2.5vh;
     }
     #r2{
         margin:0;
-        top:20vh;
+        top:22.5vh;
+        left:2.5vw;
     }
     #r3{
-         margin:0;
-         top:40vh;
+          margin:0;
+         top:42.5vh;
+        left:2.5vw;
     }
 
     #fune{
         position:absolute;
-        left:16vw;
+        left:15vw;
         top:40vh;
     }
     #fune img{
-        width:7vw;
-        height:5vh;
+        width:8vw;
+        height:12vh;
     }
+    #l1 img{
+        left:0.5vw;
+        top:1vh;
+    }
+    #l2 img{
+        left:0.5vw;
+        top:1vh;
+    }
+    #l3 img{
+       left:0.5vw;
+        top:1vh;
+    }
+
     #r1 img{
         display:none;
     }
