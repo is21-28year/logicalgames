@@ -40,6 +40,7 @@ function senkan_hantei(click_num){
             //弾数0以下なら
             if(ship_ans == click_num){
                 //ゲームクリア
+                cleartrue('senkan_'+mode);
                 modal(2);
             }else{
                 if(ship_zan < 1){
@@ -90,12 +91,17 @@ function reset(){
         document.getElementById("cannon").src="../image/cannon_1.png";
     }
 }
-function cleartrue(clearnum){
-    window.localStorage.setItem(clearnum,true);
-}
 
-    
-
-function mapjump(){
-    window.location.href = 'map.html';
+function  localput(senkan){
+                                                    //どの難易度をクリアしたのかの判定をつける
+    //回転クリアフラグ
+    if(senkan == "senkan_1"){
+    window.localStorage.setItem("senkan_1",true);
+    }
+    if(senkan == "senkan_2"){
+    window.localStorage.setItem("senkan_2",true);
+    }
+    if(senkan == "senkan_3"){
+    window.localStorage.setItem("senkan_3",true);
+    } 
 }

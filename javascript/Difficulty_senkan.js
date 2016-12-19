@@ -10,7 +10,7 @@
         //チュートリアル閲覧フラグ取得
         senkan_tutorial=window.localStorage.getItem("senkan_tutorial");
         //船渡し各問題クリアフラグ取得
-        /*テスト用clear_1=window.localStorage.getItem("senkan_1");*/
+        clear_1=window.localStorage.getItem("senkan_1");
         clear_2=window.localStorage.getItem("senkan_2");
         clear_3=window.localStorage.getItem("senkan_3");
 }   
@@ -105,7 +105,7 @@ function tutorialhantei(){
 /*画像表示部分*/ 
 function clearhantei(clear,id){
     //クリア済みかの判定
-    if(clear==true){
+    if(clear=="true"){
         //指定位置に画像の表示
         document.getElementById(id).innerHTML="<img style='position:relative;z-index: 2;' src='../image/oukan.png' class='clearimage'>";
     }else{
