@@ -149,7 +149,7 @@ function ans(){
     }
 //判定通るとゲームクリア表示
     if(gameflag==true){
-        cleartrue('ringo_'+diff);
+        cleartrue('ringo_'+(diff+1));
         modal(2);
     }else{
         modal(3);
@@ -438,7 +438,7 @@ function idouhantei(basho){
                 idoushori(ibasho,basho,"ringo5");
             }
         }
-        if((ibasho==5 && basho==4) || (ibasho==4 && basho==5)){
+        if((ibasho==5 && basho==3) || (ibasho==3 && basho==5)){
             //間のリンゴの判定
             if(ringo[6]==true){
 

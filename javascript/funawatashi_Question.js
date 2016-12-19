@@ -664,7 +664,7 @@ function clearhantei(){
         gameflag=false;
     }
     if(gameflag==true){
-        cleartrue('funawatashi_'+diff);
+        cleartrue('funawatashi_'+(diff+1));
         modal(2);
     }else{
       overhantei();

@@ -61,17 +61,3 @@ function answer(cl){
 function reset(){
 questionrand(kaku,suu,dif);
 }
-
-function  localput(kaiten){
-                                                    //どの難易度をクリアしたのかの判定をつける
-    //回転クリアフラグ
-    if(kaiten == "kaiten_1"){
-    window.localStorage.setItem("kaiten_1",true);
-    }
-    if(kaiten == "kaiten_2"){
-    window.localStorage.setItem("kaiten_2",true);
-    }
-    if(kaiten == "kaiten_3"){
-    window.localStorage.setItem("kaiten_3",true);
-    } 
-}
