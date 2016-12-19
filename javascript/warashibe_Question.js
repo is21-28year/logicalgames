@@ -198,13 +198,6 @@ function renewal(){
     }
 }
 
-
-
-var modal_content;
-
-
-
-
 function  localput(warashibe){
                                                     //どの難易度をクリアしたのかの判定をつける
     //回転クリアフラグ
