@@ -149,6 +149,7 @@ function ans(){
     }
 //判定通るとゲームクリア表示
     if(gameflag==true){
+        cleartrue('ringo_'+diff);
         modal(2);
     }else{
         modal(3);

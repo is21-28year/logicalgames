@@ -664,7 +664,7 @@ function clearhantei(){
         gameflag=false;
     }
     if(gameflag==true){
-        alert("ゲームクリア");
+        cleartrue('funawatashi_'+diff);
         modal(2);
     }else{
       overhantei();
