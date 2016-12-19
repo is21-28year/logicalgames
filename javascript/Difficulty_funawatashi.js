@@ -10,7 +10,7 @@
         //チュートリアル閲覧フラグ取得
         funawatashi_tutorial=window.localStorage.getItem("funawatashi_tutorial");
         //船渡し各問題クリアフラグ取得
-        /*テスト用clear_1=window.localStorage.getItem("funawatashi_1");*/
+        clear_1=window.localStorage.getItem("funawatashi_1");
         clear_2=window.localStorage.getItem("funawatashi_2");
         clear_3=window.localStorage.getItem("funawatashi_3");
 }   
