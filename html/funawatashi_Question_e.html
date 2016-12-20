@@ -50,7 +50,7 @@
     <!--リセットボタン配置-->
     
     <div id="reset">
-        <input type="button" class="migi" value="リセット" onclick="">
+        <input type="button" class="migi" value="リセット" onclick="shoki(0)">
     </div>
     
     </div>
@@ -58,17 +58,17 @@
         <!--問題動作div-->
         <!--<h1><ruby><rb>問題</rb><rp>(</rp><rt>もんだい</rt><rp>)</rp></ruby></h1>-->
         <div id="lbox" class="box">
-            <div onclick="animeidou('l1')" id="l1"><img src="../image/sheep.png" alt=""></div>
-            <div onclick="animeidou('l2')" id="l2"><img src="../image/sheep.png" alt=""></div>
-            <div onclick="animeidou('l3')" id="l3"><img src="../image/sheep.png" alt=""></div>
+            <div class="easy" onclick="animeidou('l1')" id="l1"><img src="../image/sheep.png" alt=""></div>
+            <div class="easy" onclick="animeidou('l2')" id="l2"><img src="../image/sheep.png" alt=""></div>
+            <div class="easy" onclick="animeidou('l3')" id="l3"><img src="../image/sheep.png" alt=""></div>
         </div>
         <div id="fune" onclick="animefune()">
-            <img src="../image/fune_L.png" alt="">
+            <img id="funeimg" src="../image/fune_L.png" alt="">
         </div>
         <div id="rbox" class="box">
-            <div onclick="animeidou('r1')" id="r1"><img src="../image/sheep.png" alt=""></div>
-            <div onclick="animeidou('r2')" id="r2"><img src="../image/sheep.png" alt=""></div>
-            <div onclick="animeidou('r3')" id="r3"><img src="../image/sheep.png" alt=""></div>
+            <div class="easy" onclick="animeidou('r1')" id="r1"><img src="../image/sheep.png" alt=""></div>
+            <div class="easy" onclick="animeidou('r2')" id="r2"><img src="../image/sheep.png" alt=""></div>
+            <div class="easy" onclick="animeidou('r3')" id="r3"><img src="../image/sheep.png" alt=""></div>
         </div>
         <!-- デバッグ用 -->
         <!--

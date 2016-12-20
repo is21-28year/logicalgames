@@ -10,6 +10,7 @@
         float:left;
         width:10vw;
         height:60vh;
+         margin-left:2vw;
         display: inline-block;
         position:relative;
         margin-top:10vh;
@@ -19,6 +20,7 @@
         float:right;
         width:10vw;
         height:60vh;
+        margin-right:2vw;
         display: inline-block;
         position:relative;
         margin-top:10vh;
@@ -71,8 +73,8 @@
         left:2.5vw;
     }
     #r3{
-          margin:0;
-         top:42.5vh;
+        margin:0;
+        top:42.5vh;
         left:2.5vw;
     }
 
@@ -88,6 +90,7 @@
     #l1 img{
         left:0.5vw;
         top:1vh;
+        
     }
     #l2 img{
         left:0.5vw;
@@ -107,4 +110,25 @@
     #r3 img{
         display:none;
     }
+    /*easy用の画像*/
+     #l1.easy img{
+        left:0.5vw;
+        top:1vh;
+        width:4vw;
+        height:8vh;
+    }
+    #l2.easy img{
+        left:1.5vw;
+        top:3vh;
+        width:2vw;
+        height:4vh;
+        
+    }
+    #l3.easy img{
+       left:1vw;
+        top:2vh;
+        width:3vw;
+        height:6vh;
+    }
+
 /*各動物などの画像部分の配置*/

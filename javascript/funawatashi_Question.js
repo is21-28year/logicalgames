@@ -13,6 +13,8 @@ var funeX;
 var funeY;
 var aitemX='0.5vw';
 var aitemY='1vh';
+var sizeX='4vw';
+var sizeY='8vh';
 //難易度初級の変数
 var count=0;
 //問題初期化部分
@@ -26,14 +28,37 @@ function shoki(diffnum){
         //船がいる場所の判定 0=左 1=右
         funebasho=0;
         //画像の初期位置判定
+        $(function(){
+            $('#fune').css({'left':'15vw','top':'40vh'});
+            $('#fune img').css({'display':''});
+            $('#l1 img').css({'width':'4vw','height':'8vh', 'left':'0.5vw','top':'1vh','display':'block'});
+            $('#l2 img').css({'width':'4vw','height':'8vh', 'left':'0.5vw','top':'1vh','display':'block'});
+            $('#l3 img').css({'width':'4vw','height':'8vh', 'left':'0.5vw','top':'1vh','display':'block'});
+            $('#r1 img').css('display','none');
+            $('#r2 img').css('display','none');
+            $('#r3 img').css('display','none');
+        })
+
     }else if(diff==1){
         migi=[0,0,0];
         hidari=[1,1,1];
         funebasho=0;
+         for(var i=1;i<=migi.length;i++){
+            document.getElementById("r"+i+" img").style.display="none";
+        }
+        for(var i=1;i<=hidari.length;i++){
+            document.getElementById("l"+i+" img").style.display="";
+        }
     }else if(diff==0){
         migi=[0,0,0];
         hidari=[1,1,1];
         funebasho=0;
+        for(var i=1;i<=migi.length;i++){
+            document.getElementById("r"+i+" img").style.display="none";
+        }
+        for(var i=1;i<=hidari.length;i++){
+            document.getElementById("l"+i+" img").style.display="";
+        }
     }   
 
 }
@@ -43,17 +68,37 @@ function animeidou(basho){
     if(idouanime==false || funeanime==false){
         //左の時,右の時の処理の処理
         if(funebasho==0){
-            //船の座標
-             if(basho=='l1'){
-                funeX='16vw';
-                funeY='42vh';
-            }else if(basho=='l2'){
-                funeX='16vw';
-                funeY='22vh';
-            }else if(basho=='l3'){
-                funeX='16vw';
-                funeY='2vh';
+            if(diff==0){
+                if(fune=='l1'){
+                    sizeX='4vw';
+                    sizeY='8vh';
+                    aitemX='0.5vw';
+                    aitemY='1vh';
+                }else if(fune=='l2'){
+                    sizeX='2vw';
+                    sizeY='4vh';
+                    aitemX='1.5vw';
+                    aitemY='3vh';
+                }else if(fune=='l3'){
+                    sizeX='3vw';
+                    sizeY='6vh';
+                    aitemX='1vw';
+                    aitemY='2vh';
+                }
             }
+            //船の座標
+            if(basho=='l1'){
+                funeX='13vw';
+                funeY='36.5vh';
+            }else if(basho=='l2'){
+                funeX='13vw';
+                funeY='16.5vh';
+            }else if(basho=='l3'){
+                funeX='13vw';
+                funeY='-3.5vh';
+            }
+            
+            
             //アニメーション処理
             //船にものがないアニメーション処理
             if(basho=='r1' || basho=='r2' || basho=='r3'){}else{
@@ -61,7 +106,7 @@ function animeidou(basho){
                     if(hidari[0]==0){
                         return;
                     }
-                }if(basho=='l2'){
+                }else if(basho=='l2'){
                     if(hidari[1]==0){
                         return;
                     }
@@ -110,8 +155,8 @@ function animeidou(basho){
                                     $("#"+fune+" img").animate({
                                         left:aitemX,
                                         top:aitemY,
-                                        width:'4vw',
-                                        height:'8vh'
+                                        width:sizeX,
+                                        height:sizeY
                                     }, 2000)
                             )
                             .done(function() {
@@ -137,15 +182,15 @@ function animeidou(basho){
                                 $("#"+basho+" img").animate({
                                     left:funeX,
                                     top:funeY,
-                                    width:-0.05,
-                                    height:-0.05,
+                                    width:0,
+                                    height:0,
                                 }, 2000,function(){
                                     $('#'+fune+" img").css('display','block');
                                     $("#"+fune+" img").animate({
                                         left:aitemX,
                                         top:aitemY,
-                                         width:'4vw',
-                                        height:'8vh'
+                                        width:sizeX,
+                                        height:sizeY
                                     }, 2000).dequeue();
                                 }
                                 )
@@ -170,16 +215,37 @@ function animeidou(basho){
             }
         }else{//右の時の処理
             //船の座標
-            if(basho=='r1'){
-                    funeX='-8vw';
-                    funeY='42vh';
-                }else if(basho=='r2'){
-                    funeX='-8vw';
-                    funeY='22vh';
-                }else if(basho=='r3'){
-                    funeX='-8vw';
-                    funeY='2vh';
+            if(diff==0){
+                if(fune=='r1'){
+                    sizeX='4vw';
+                    sizeY='8vh';
+                    aitemX='0.5vw';
+                    aitemY='1vh';
+                }else if(fune=='r2'){
+                    sizeX='2vw';
+                    sizeY='4vh';
+                    aitemX='1.5vw';
+                    aitemY='3vh';
+                }else if(fune=='r3'){
+                    sizeX='3vw';
+                    sizeY='6vh';
+                    aitemX='1vw';
+                    aitemY='2vh';
+                }
             }
+            //船の座標
+            if(basho=='r1'){
+                funeX='-10vw';
+                funeY='36.5vhvh';
+            }else if(basho=='r2'){
+                funeX='-10vw';
+                funeY='16.5vh';
+            }else if(basho=='r3'){
+                funeX='-10vw';
+                funeY='-3.5vh';
+            }
+            
+            
             //アニメーション処理
             //船にものがないアニメーション処理
             if(basho=='l1' || basho=='l2' || basho=='l3'){}else{
@@ -206,8 +272,8 @@ function animeidou(basho){
                             $("#"+basho+" img").animate({
                                 left:funeX,
                                 top:funeY,
-                                width:-0.05,
-                                height:-0.05,
+                                width:0,
+                                height:0,
                             }, 2000 )
                         )
                         .done(function() {
@@ -237,8 +303,8 @@ function animeidou(basho){
                                     $("#"+fune+" img").animate({
                                         left:aitemX,
                                         top:aitemY,
-                                        width:'4vw',
-                                        height:'8vh'
+                                        width:sizeX,
+                                        height:sizeY
                                     }, 2000)
                             )
                             .done(function() {
@@ -262,15 +328,15 @@ function animeidou(basho){
                                 $("#"+basho+" img").animate({
                                     left:funeX,
                                     top:funeY,
-                                    width:-0.05,
-                                    height:-0.05,
+                                    width:0,
+                                    height:0,
                                 }, 2000,function(){
                                     $('#'+fune+" img").css('display','block');
                                     $("#"+fune+" img").animate({
                                         left:aitemX,
                                         top:aitemY,
-                                        width:'4vw',
-                                        height:'8vh'
+                                        width:sizeX,
+                                        height:sizeY
                                     }, 2000).dequeue();
                                 }
                                 )
@@ -308,6 +374,25 @@ function animefune(){
         funeanime=true;
         idouanime=true;
         if(funebasho==0){//左から右へ移動する処理
+            if(diff==0){
+                if(fune=='l1'){
+                    sizeX='4vw';
+                    sizeY='8vh';
+                    aitemX='0.5vw';
+                    aitemY='1vh';
+                }else if(fune=='l2'){
+                    sizeX='2vw';
+                    sizeY='4vh';
+                    aitemX='1.5vw';
+                    aitemY='3vh';
+                }else if(fune=='l3'){
+                    sizeX='3vw';
+                    sizeY='6vh';
+                    aitemX='1vw';
+                    aitemY='2vh';
+                }
+            }
+
             $(function() {
             $.when(
                 //船の移動処理
@@ -325,16 +410,16 @@ function animefune(){
                         $(function() {
                             $.when(
                                 //船の場所から出現
-                                $("#r1 img").css('left','-8vw'),
-                                $("#r1 img").css('top','42vh'),
+                                $("#r1 img").css('left','-10vw'),
+                                $("#r1 img").css('top','36.5vh'),
                                 $("#r1 img").css('width','0'),
                                 $("#r1 img").css('height','0'),
                                 $("#r1 img").css('display','block'),
                                 $("#r1 img").animate({
-                                    left:0,
-                                    top:0,
-                                    width:'4vw',
-                                    height:'8vh'
+                                    left:aitemX,
+                                    top:aitemY,
+                                    width:sizeX,
+                                    height:sizeY
                                 }, 2000)
                             )
                             .done(function() {
@@ -360,16 +445,16 @@ function animefune(){
                          $(function() {
                             $.when(
                                 //船の場所から出現
-                                $("#r2 img").css('left','-8vw'),
-                                $("#r2 img").css('top','22vh'),
+                                $("#r2 img").css('left','-10vw'),
+                                $("#r2 img").css('top','16.5vh'),
                                 $("#r2 img").css('width','0'),
                                 $("#r2 img").css('height','0'),
                                 $("#r2 img").css('display','block'),
                                 $("#r2 img").animate({
-                                    left:0,
-                                    top:0,
-                                    width:'4vw',
-                                    height:'8vh'
+                                    left:aitemX,
+                                    top:aitemY,
+                                    width:sizeX,
+                                    height:sizeY
                                 }, 2000)
                             )
                             .done(function() {
@@ -393,16 +478,16 @@ function animefune(){
                         $(function() {
                             $.when(
                                 //船の場所から出現
-                                $("#r3 img").css('left','-8vw'),
-                                $("#r3 img").css('top','2vh'),
+                                $("#r3 img").css('left','-10vw'),
+                                $("#r3 img").css('top','-3.5vh'),
                                 $("#r3 img").css('width','0'),
                                 $("#r3 img").css('height','0'),
                                 $("#r3 img").css('display','block'),
                                 $("#r3 img").animate({
-                                    left:0,
-                                    top:0,
-                                    width:'4vw',
-                                    height:'8vh'
+                                    left:aitemX,
+                                    top:aitemY,
+                                    width:sizeX,
+                                    height:sizeY
                                 }, 2000)
                             )
                             .done(function() {
@@ -457,16 +542,16 @@ function animefune(){
                                 $(function() {
                                     $.when(
                                         //船の場所から出現
-                                        $("#l1 img").css('left','16vw'),
-                                        $("#l1 img").css('top','42vh'),
+                                        $("#l1 img").css('left','13vw'),
+                                        $("#l1 img").css('top','36.5vh'),
                                         $("#l1 img").css('width','0'),
                                         $("#l1 img").css('height','0'),
                                         $("#l1 img").css('display','block'),
                                         $("#l1 img").animate({
-                                            left:0,
-                                            top:0,
-                                            width:'4vw',
-                                            height:'8vh'
+                                            left:aitemX,
+                                            top:aitemY,
+                                            width:sizeX,
+                                            height:sizeY
                                         }, 2000)
                                     )
                                     .done(function() {
@@ -492,16 +577,16 @@ function animefune(){
                                 $(function() {
                                     $.when(
                                         //船の場所から出現
-                                        $("#l2 img").css('left','16vw'),
-                                        $("#l2 img").css('top','22vh'),
+                                        $("#l2 img").css('left','13vw'),
+                                        $("#l2 img").css('top','16.5vh'),
                                         $("#l2 img").css('width','0'),
                                         $("#l2 img").css('height','0'),
                                         $("#l2 img").css('display','block'),
                                         $("#l2 img").animate({
-                                            left:0,
-                                            top:0,
-                                            width:'4vw',
-                                            height:'8vh'
+                                            left:aitemX,
+                                            top:aitemY,
+                                            width:sizeX,
+                                            height:sizeY
                                         }, 2000)
                                     )
                                     .done(function() {
@@ -526,16 +611,16 @@ function animefune(){
                                 $(function() {
                                     $.when(
                                         //船の場所から出現
-                                        $("#l3 img").css('left','16vw'),
-                                        $("#l3 img").css('top','2vh'),
+                                        $("#l3 img").css('left','13vw'),
+                                        $("#l3 img").css('top','-3.5vh'),
                                         $("#l3 img").css('width','0'),
                                         $("#l3 img").css('height','0'),
                                         $("#l3 img").css('display','block'),
                                         $("#l3 img").animate({
-                                            left:0,
-                                            top:0,
-                                            width:'4vw',
-                                            height:'8vh'
+                                            left:aitemX,
+                                            top:aitemY,
+                                            width:sizeX,
+                                            height:sizeY
                                         }, 2000)
                                     )
                                     .done(function() {
