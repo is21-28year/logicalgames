@@ -87,6 +87,11 @@
         width:8vw;
         height:12vh;
     }
+    #fune img:hover{
+        position:absolute;
+        opacity: 0.75 ;
+    }
+
     #l1 img{
         left:0.5vw;
         top:1vh;
