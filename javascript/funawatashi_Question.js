@@ -129,7 +129,6 @@ function animeidou(basho){
                 if(fune==null){
                    
                     $(function() {
-                        alert("普通に船へ");
                         idouanime=true;
                         funeanime=true;
                         $.when(
@@ -157,7 +156,6 @@ function animeidou(basho){
                     //アイテムを戻す場所の座標設定
                     //モノを戻す処理
                     if(basho==fune){
-                        alert("船から回収");
                          $(function() {
                             idouanime=true;
                             funeanime=true;
@@ -186,7 +184,6 @@ function animeidou(basho){
                     }else{
                         //モノを交換する処理
                         $(function() {
-                            alert("船から交換");
                             idouanime=true;
                             funeanime=true;
                             $.when(
@@ -276,7 +273,6 @@ function animeidou(basho){
 
                 if(fune==null){
                     $(function() {
-                        alert("普通に船へ");
                         idouanime=true;
                         funeanime=true;
                         $.when(
@@ -305,7 +301,6 @@ function animeidou(basho){
                 }else{//船にものがあるときの処理
                     //アイテムを戻す場所の座標設定
                     if(basho==fune){
-                        alert("船から回収");
                          $(function() {
                             idouanime=true;
                             funeanime=true;
@@ -682,21 +677,17 @@ function overhantei(){
         if(funebasho==0){
             //オオカミとヒツジの判定
             if(migi[0]==1 && migi[1]==1){
-                alert("ゲームオーバー");
-                modal(0);
+                modal(3);
             }else if(migi[1]==1 && migi[2]==1){
-                alert("ゲームオーバー");
-                modal(0);
+                modal(3);
             }
         //船が右なら
         }else{
             //オオカミとヒツジの判定
             if(hidari[0]==1 && hidari[1]==1){
-                alert("ゲームオーバー");
-                modal(0);
+                modal(3);
             }else if(hidari[1]==1 && hidari[2]==1){
-                alert("ゲームオーバー");
-                modal(0);
+                modal();
             }
         }
 
@@ -704,21 +695,17 @@ function overhantei(){
         if(funebasho==0){
             //オオカミとヒツジの判定
             if(migi[0]==1 && migi[2]==1){
-                alert("ゲームオーバー");
-                modal(0);
+                modal(3);
             }else if(migi[1]==1 && migi[2]==1){
-                alert("ゲームオーバー");
-                modal(0);
+                modal(3);
             }
         //船が右なら
         }else{
             //オオカミとヒツジの判定
             if(hidari[0]==1 && hidari[2]==1){
-                alert("ゲームオーバー");
-                modal(0);
+                modal(3);
             }else if(hidari[1]==1 && hidari[2]==1){
-                alert("ゲームオーバー");
-                modal(0);
+                modal(3);
             }
         }
     }else if(diff==0){
@@ -735,18 +722,14 @@ function overhantei(){
                      if(hidari[0]==1 && hidari[1]==0 && hidari[2]==1){
                           count++;
                     }else{
-                        alert("1");
-                        alert("ゲームオーバー");
-                        modal(0);
+                        modal(3);
                     }
                 }else if(count==1){
                       if(hidari[0]==1 && hidari[1]==0 && hidari[2]==1){
                     }else{
                         if(hidari[0]==1 && hidari[1]==0 && hidari[2]==0){
                         }else{
-                            alert("2");
-                            alert("ゲームオーバー");
-                            modal(0);
+                            modal(3);
                         }
                     }
                 }
