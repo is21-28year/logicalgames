@@ -30,6 +30,7 @@ function shoki(diffnum){
         //画像の初期位置判定
         $(function(){
             $('#fune').css({'left':'15vw','top':'40vh'});
+            $("#fune img").attr('src', '../image/fune_L.png');
             $('#fune img').css({'display':''});
             $('#l1 img').css({'width':'4vw','height':'8vh', 'left':'0.5vw','top':'1vh','display':'block'});
             $('#l2 img').css({'width':'4vw','height':'8vh', 'left':'0.5vw','top':'1vh','display':'block'});
@@ -43,22 +44,32 @@ function shoki(diffnum){
         migi=[0,0,0];
         hidari=[1,1,1];
         funebasho=0;
-         for(var i=1;i<=migi.length;i++){
-            document.getElementById("r"+i+" img").style.display="none";
-        }
-        for(var i=1;i<=hidari.length;i++){
-            document.getElementById("l"+i+" img").style.display="";
-        }
+         $(function(){
+            $('#fune').css({'left':'15vw','top':'40vh'});
+            $("#fune img").attr('src', '../image/fune_L.png');
+            $('#fune img').css({'display':''});
+            $('#l1 img').css({'width':'4vw','height':'8vh', 'left':'0.5vw','top':'1vh','display':'block'});
+            $('#l2 img').css({'width':'4vw','height':'8vh', 'left':'0.5vw','top':'1vh','display':'block'});
+            $('#l3 img').css({'width':'4vw','height':'8vh', 'left':'0.5vw','top':'1vh','display':'block'});
+            $('#r1 img').css('display','none');
+            $('#r2 img').css('display','none');
+            $('#r3 img').css('display','none');
+        })
     }else if(diff==0){
         migi=[0,0,0];
         hidari=[1,1,1];
         funebasho=0;
-        for(var i=1;i<=migi.length;i++){
-            document.getElementById("r"+i+" img").style.display="none";
-        }
-        for(var i=1;i<=hidari.length;i++){
-            document.getElementById("l"+i+" img").style.display="";
-        }
+         $(function(){
+            $('#fune').css({'left':'15vw','top':'40vh'});
+            $("#fune img").attr('src', '../image/fune_L.png');
+            $('#fune img').css({'display':''});
+            $('#l1 img').css({'width':'4vw','height':'8vh', 'left':'0.5vw','top':'1vh','display':'block'});
+            $('#l2 img').css({'width':'2vw','height':'4vh', 'left':'1.5vw','top':'3vh','display':'block'});
+            $('#l3 img').css({'width':'3vw','height':'6vh', 'left':'1vw','top':'2vh','display':'block'});
+            $('#r1 img').css('display','none');
+            $('#r2 img').css('display','none');
+            $('#r3 img').css('display','none');
+        })
     }   
 
 }
@@ -374,6 +385,7 @@ function animefune(){
         funeanime=true;
         idouanime=true;
         if(funebasho==0){//左から右へ移動する処理
+            $("#fune img").attr('src', '../image/fune_L.png');
             if(diff==0){
                 if(fune=='l1'){
                     sizeX='4vw';
@@ -528,6 +540,7 @@ function animefune(){
                 idouanime=false;
                 animeidou(fune);
             }else{
+                $("#fune img").attr('src', '../image/fune_R.png');
                 $(function() {
                     $.when(
                         $("#fune").animate({
