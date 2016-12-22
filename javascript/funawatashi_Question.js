@@ -63,9 +63,9 @@ function shoki(diffnum){
             $('#fune').css({'left':'15vw','top':'40vh'});
             $("#fune img").attr('src', '../image/fune_L.png');
             $('#fune img').css({'display':''});
-            $('#l1 img').css({'width':'4vw','height':'8vh', 'left':'0.5vw','top':'1vh','display':'block'});
-            $('#l2 img').css({'width':'2vw','height':'4vh', 'left':'1.5vw','top':'3vh','display':'block'});
-            $('#l3 img').css({'width':'3vw','height':'6vh', 'left':'1vw','top':'2vh','display':'block'});
+            $('#l1 img').css({'width':'4vw','height':'8vh', 'left':'0.5vw','top':'1vh','display':''});
+            $('#l2 img').css({'width':'2vw','height':'4vh', 'left':'1.5vw','top':'3vh','display':''});
+            $('#l3 img').css({'width':'3vw','height':'6vh', 'left':'1vw','top':'2vh','display':''});
             $('#r1 img').css('display','none');
             $('#r2 img').css('display','none');
             $('#r3 img').css('display','none');

@@ -1,13 +1,17 @@
 <?php
     $nanido = "";
     $onload;
+    $reset;
     $nanido = $_POST["nanido"];
     if($nanido=='1'){
-        $onload="'shoki(0);viewhantei();viewchange();modal(0);'";
+        $onload='shoki(0);viewhantei();viewchange();modal(0);';
+        $reset='shoki(0)';
     }else if($nanido=='2'){
-        $onload="'shoki(1);viewhantei();viewchange();modal(0);'";
+        $onload='shoki(1);viewhantei();viewchange();modal(0);';
+        $reset='shoki(1)';
     }else if($nanido=='3'){
-        $onload="'shoki(2);viewhantei();viewchange();modal(0);'";
+        $onload='shoki(2);viewhantei();viewchange();modal(0);';
+        $reset='shoki(2)';
     }
     //MySQLに接続
     $con = mysqli_connect("localhost","root","","db_question");
@@ -28,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../css/Question.css">
     <link rel="stylesheet" type="text/css" href="../css/funawatashi_Question.css">
 </head>
-<body onload=<?php $onload ?>>
+<body onload=<?php echo '"'.$onload.'"';?>>
     <!-- ここからモーダルウィンドウ -->
     <div id="modal-content0">
 	    <p style='margin-top:25vh;'><img src='../image/B_F2.png' style='width:40vw; height:30vh;'></p>
@@ -67,7 +71,7 @@
     <!--リセットボタン配置-->
     
     <div id="reset">
-        <input type="button" class="migi" value="リセット" onclick="shoki(2)">
+        <input type="button" class="migi" value="リセット" onclick=<?php echo '"'.$reset.'"';?>>
     </div>
     
     </div>
