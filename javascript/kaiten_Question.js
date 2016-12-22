@@ -35,15 +35,17 @@ function imgkaiten(){
 //問題のランダム出力
 //easy:1 normal:2 hard:3
 function questionrand(kakudo,kazu,diff){
-	ans = Math.floor( Math.random() * kazu )+1 ;
-	var min = kazu-1;
-	var max = 1;
-	for(var i=1 ; i<=kazu ; i++){
+	ans = Math.floor( Math.random() * kazu )+1 ;//1~4
+	var min = kazu-1;//3
+	var max = 1;//1
+	for(var i=1;i<kazu;i++){
 	document.getElementById(i).innerHTML="<img src='../image/puzzle_"+diff+'.'+(Math.floor( Math.random() * min )+max)+".png'>";
 	var rand = Math.floor( Math.random() * 4 )*kakudo;
 	$("#"+i+" img").rotate(rand);
 	}
 	document.getElementById(ans).innerHTML="<img src='../image/puzzle_kotae"+diff+".png'>";
+    var rand = Math.floor( Math.random() * 4 )*kakudo;
+	$("#"+ans+" img").rotate(rand);
 	dif = diff;
 	kaku = kakudo;
 	suu = kazu;
