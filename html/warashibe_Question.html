@@ -11,7 +11,7 @@
         $reset="shoki(2);shuffle();renewal()";
     }else if($nanido=='3'){
         $onload='viewhantei();viewchange();modal(0);shoki(3);shuffle();renewal();';
-         $reset="shoki(3);shuffle();renewal()";
+        $reset="shoki(3);shuffle();renewal()";
     }
     //MySQLに接続
     $con = mysqli_connect("localhost","root","","db_question");
@@ -31,125 +31,6 @@
     <script type="text/javascript" src="../javascript/warashibe_Question.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/Question.css">
     <link rel="stylesheet" type="text/css" href="../css/warashibe_Question.css">
-    <style>
-    .clam_right{
-        background-image: url("../image/waraba.png");
-    }
-        .box{
-            //border:0.2vw solid green;
-            width: 69vw;
-            height: 42vh;
-            max-width:97%;
-            max-height:80%;
-            
-        }
-        #box2{
-            position:absolute;
-            bottom:2%;
-        }
-        .chara{
-            float:left;
-            width: 13vw;
-            height: 34vw;
-            border:0.2vw solid black;
-            border-radius:8px;
-            padding:0.5vw 0.5vh;
-            max-height:90%;
-            position:relative;
-        }
-        .chara:hover{
-            background-color:#aaa;
-        }
-        .charachild{
-            width: 100%;
-            height: auto;
-            /*上下左右中央揃え用*/
-            position:absolute;
-            top:50%;
-            left:50%;
-            -webkit-transform: translate(-50%, -50%); /* Safari用 */
-            transform: translate(-50%, -50%);
-        }
-        .item{
-            clear:left;
-            //border:0.2vw solid yellow;
-            width:13vw;
-            height:10vh;
-            text-align:center;
-            margin:auto;
-            
-            z-index:1;
-        }
-
-        #gitem,#myitem{
-            float:left;
-            width: 8vw;
-            position:relative;
-            top:12vh;
-            margin-right: 1vw; 
-        }
-        #gimg,#myimg{
-            width: 8vw;
-            height: 12vh;
-            border-radius:10px;
-            background-color:#fff;
-        }
-        .cwitem,.chitem,.cgitem{
-            width:8vw;
-            height:15vh;
-            max-width:45%;
-            max-height:120%;
-            border-radius:10px;
-            background-color:#fff;
-        }
-        #gimg,.cwitem{
-            border:0.3vw solid #68c2b7;
-        }
-        #myimg,.chitem{
-            border:0.3vw solid red;
-        }
-        .cgitem{
-            border:0.3vw solid purple;
-        }
-        #gitem img,#myitem img{
-            clear:left;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            max-width:85%;
-            padding:1vw 1vh;
-        }
-
-        .arrow{
-            width:4vw;
-            display:block;
-            margin-left:auto;
-            margin-right:auto;
-            position:absolute;
-            top:10%;
-            left:35%;
-            z-index:1;
-        }
-        .chrimg{
-            width:10vw;
-            height:20vh;
-            max-width:100%;
-            max-height:100%;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top:15%;
-            position:relative;
-        }
-        
-.clearfix:after{
-	content: "";
-	clear: both;
-	display: block;
-}
-        
-        
-    </style>
 </head>
 <body onload=<?php echo '"'.$onload.'"';?>>
     <!-- ここからモーダルウィンドウ -->
