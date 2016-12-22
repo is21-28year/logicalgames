@@ -42,9 +42,9 @@ function questionrand(kakudo,kazu,diff){
 	for(var i=1;i<5;i++){
         rand = Math.floor( Math.random() * 4 )*kakudo;
         if(i==ans){
-            document.getElementById(i).innerHTML="<img src='../image/puzzle_kotae"+diff+".png'>";
+            document.getElementById(i).innerHTML="<img src='../image/Puzzle_kotae"+diff+".png'>";
         }else{
-           document.getElementById(i).innerHTML="<img src='../image/puzzle_"+diff+'.'+(Math.floor( Math.random() * min )+max)+".png'>";
+           document.getElementById(i).innerHTML="<img src='../image/Puzzle_"+diff+'.'+(Math.floor( Math.random() * min )+max)+".png'>";
         }
         $("#"+i+" img").rotate(rand);
 	}
