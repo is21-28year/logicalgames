@@ -94,27 +94,27 @@ function answer(){
         }
     }else if(diff==1){
        if(point[0]==true){
-            if(ringo[0]==true && ringo[1]==true && ringo[2]==true){
+            if(ringo[0]==true && ringo[1]==true){
                 ans();
             }
         }else if(point[1]==true){
-            if(ringo[0]==true && ringo[4]==true && ringo[6]==true){
+            if(ringo[0]==true && ringo[2]==true && ringo[3]==true){
                 ans();
             }
         }else  if(point[2]==true){
-            if(ringo[2]==true && ringo[3]==true && ringo[4]==true && ringo[5]==true){
+            if(ringo[1]==true && ringo[2]==true && ringo[4]==true){
                 ans();
             }
         }else  if(point[3]==true){
-            if(ringo[1]==true && ringo[3]==true && ringo[7]==true && ringo [8]==true){
+            if(ringo[3]==true && ringo[4]==true && ringo[5]==true && ringo [6]==true){
                 ans();
             }
         }else  if(point[4]==true){
-            if(ringo[5]==true && ringo[6]==true && ringo[7]==true && ringo [9]==true){
+            if(ringo[5]==true && ringo[7]==true){
                 ans();
             }
         }else  if(point[5]==true){
-            if(ringo[8]==true && ringo[9]==true){
+            if(ringo[6]==true && ringo[7]==true){
                 ans();
             }
         }
