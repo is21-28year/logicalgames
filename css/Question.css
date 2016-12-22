@@ -79,6 +79,7 @@ input[type="button"].reset{
             background-size:7vw 4vh;
             background-repeat:no-repeat;
             background-position:center;
+            float:right;
     }
 /*ボタン共通基本デザイン部分*/
 .hidari{
