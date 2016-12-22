@@ -1,8 +1,11 @@
 <?php
+$nanido = "";
+//$nanido = $_POST["nanido"]-1;
+$nanido = "2";
 //MySQLに接続
     $con = mysqli_connect("localhost","root","","db_question");
     //tbl_kaiinからすべてのレコード取得
-    $sql = "select * from tbl_ringo";
+    $sql = "select * from tbl_ringo where number_ringo = '$nanido'";
     $rst = mysqli_query($con,$sql) or die("失敗");
     $data = mysqli_fetch_array($rst);
 ?>
@@ -11,23 +14,28 @@
 <head>
     <meta charset="UTF-8">
     <title>問題ページ リンゴ拾い</title>
+    <script type="text/javascript" src="../javascript/Question.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript" src="../javascript/jQueryRotate.js"></script>
     <script type="text/javascript" src="../javascript/ringo_Question.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/Question.css">
     <link rel="stylesheet" type="text/css" href="../css/ringo_Question.css">
 </head>
-<body onload="shoki(2);viewhantei();viewchange();modal(0);">
+<body onload="shoki(<?php echo $nanido?>);viewhantei();viewchange();modal(0);">
     <!-- ここからモーダルウィンドウ -->
-    <div id="modal-content">
-	    <!-- モーダルウィンドウのコンテンツ開始 -->
-	    <!-- ここの内容はQuestion.jsで表記しています -->
-	    <!-- モーダルウィンドウのコンテンツ終了 -->
+    <div id="modal-content0">
+	    <p style='margin-top:25vh;'><img src='../image/B_R.png' style='width:40vw; height:25vh;'></p>
+        <div class='center'><input type='button' id='modal-close0' class='tojiru'></div>
     </div>
-    <div id="viewchange">
-        <!-- モーダルウィンドウのコンテンツ開始 -->
-        <img src="../image/view_text.png" id="deltext" alt="">
-        <!-- モーダルウィンドウのコンテンツ終了 -->
+    <div id="modal-content1">
+        <?=$data['hint_ringo']?>
+    </div>
+    <div id="modal-content2">
+        <p style='margin-top:25vh;'><img src='../image/ringo_clear.png' style='width:40vw; height:8vh;'></p>
+        <div class='center'><input type='button' class='mapback' onclick='mapjump()'></div>
+    </div>
+    <div id="modal-content3">
+        <?=$data['kotae_ringo']?>
     </div>
     <header>
         <!--前の画面へ戻るボタン-->
@@ -38,6 +46,7 @@
     <div class="clam_left">
     <!--問題文章div-->
     <div id="bunsho" class="b">
+    <img id="M_T" src="../image/M_T.png">
     <?php
             echo "{$data['bunsho_ringo']}";
         ?>
@@ -46,9 +55,9 @@
     <!--リセットボタン配置-->
     
     <div id="reset">
-        <!--
-        <input type="button" class="migi" value="リセット">
-        -->
+        
+         <input type="button" onclick="shoki(<?php echo $nanido?>)" class="migi" value="リセット">
+        
     </div>
     
     </div>
