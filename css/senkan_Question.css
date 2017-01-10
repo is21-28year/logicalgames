@@ -1,0 +1,72 @@
+﻿    .wrap{
+        margin-left:auto;
+        margin-right:auto;
+        width:65vw;
+        height:10vw;
+        display:flex;
+        justify-content: center;
+        padding:0;list-style: none;
+        text-align:center;
+        
+        }
+    #w1{
+        margin-top:10%;
+    }
+    .box1{
+        width:calc(100% / 5);
+        margin:2px;
+        }
+    .box2{
+        width:calc(100% / 5);
+        margin:2px;
+        }
+    #zan_tama{
+        width:10%;
+        padding:50px;
+        position:absolute;
+        right:0;
+        bottom:0;
+    }
+    .b{background-color:#fff;}
+#bunsho
+    {
+        width:30vw;
+        height:40vh;
+        position : relative ;
+    }
+img[id^="ship"]
+	{
+        position: relative;
+        z-index:1;
+	    width:8vw;
+	    height:21vh;
+	}
+    img[id^="ship"][src*="teki.png"]:hover{
+     -webkit-filter: brightness(0.4);
+     -moz-filter: brightness(0.4);
+     -o-filter: brightness(0.4);
+     -ms-filter: brightness(0.4);
+     filter: brightness(0.4);
+    }
+    body	
+    {
+        font-family:'メイリオ','Hiragino kaku gothic Pro',sans-serif;
+        background-color: #edede3;
+        margin: 0;
+    }
+   .clam_right
+    {
+        background-image: url("../image/senkan_haikei.png");
+        background-size:100% 100%;
+        position:relative;
+    }
+    #cannon{
+        width:14vw;
+        height:40vh;
+        position:absolute;
+        left:0;
+        right:0;
+        bottom:0;
+        margin:auto;
+        z-index:0;
+    }

@@ -1,0 +1,27 @@
+﻿/*中央*/
+.a{
+    margin:auto;
+    <?php
+    echo $css;
+    ?>
+    }
+
+.w{
+float:left;
+width:7vw;
+height:12vh;}
+
+.w img{
+width:7vw;
+height:12vh;
+}
+
+.clam_right{
+        background-image: url("../image/takara_haikei.png");
+    }
+#kaisuu{
+        padding:50px;
+        position:absolute;
+        right:0;
+        bottom:0;
+    }
