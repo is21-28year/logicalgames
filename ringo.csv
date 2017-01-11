@@ -1,0 +1,96 @@
+0,"<img style=""width:28vw; height:17vh;"" src=""../image/ringo_bunsho.png"">","        <!--リンゴ拾い問題部分-->
+        <!--リンゴ拾いz-indexを使用してレイヤーの配置を重ならないようにする-->
+        <!--道やpointのレイヤー-->
+        <div id=""road_easy"">
+            <img src=""../image/miti_1.png"" alt="""">
+            <div id=""point"">
+                <div id=""point0"" class=""easy"" onclick=""idou(0)""><img src=""../image/point.png"" alt=""""></div>
+                <div id=""point1"" class=""easy"" onclick=""idou(1)""><img src=""../image/point.png"" alt=""""></div>
+                <div id=""point2"" class=""easy"" onclick=""idou(2)""><img src=""../image/point.png"" alt=""""></div>
+                <div id=""point3"" class=""easy"" onclick=""idou(3)""><img src=""../image/point.png"" alt=""""></div>
+            </div>
+            <div id=""ringo"">
+                <div id=""ringo0"" class=""easy""><img src=""../image/ringo.png"" alt=""""></div>
+                <div id=""ringo1"" class=""easy""><img src=""../image/ringo.png"" alt=""""></div>
+                <div id=""ringo2"" class=""easy""><img src=""../image/ringo.png"" alt=""""></div>
+                <div id=""ringo3"" class=""easy""><img src=""../image/ringo.png"" alt=""""></div>
+                <div id=""ringo4"" class=""easy""><img src=""../image/ringo.png"" alt=""""></div>
+            </div>
+                <div>
+                    <img id=""chara"" src=""../image/chara.png"" alt="""">
+                </div>
+            </div>
+        </div>
+","        <p style='margin-top:25vh;'><img src='../image/H_R1.png' style='width:25vw; height:10vh;'></p>
+        <div class='center'><input type='button' id='modal-close1' class='tojiru'></div>
+","        <p style='margin-top:25vh;'><img src='../image/ringo_gameover.png' style='width:35vw; height:12.5vh;'></p>
+        <div><input type='button' class='leftbtn mapback'  onclick='mapjump()'><input type='button' onclick=""shoki(0)"" id='modal-close3' class='rightbtn yarinaosi'></div>
+"
+1,"<img style=""width:28vw; height:17vh;"" src=""../image/ringo_bunsho.png"">","        <!--リンゴ拾い問題部分-->
+        <!--リンゴ拾いz-indexを使用してレイヤーの配置を重ならないようにする-->
+        <!--道やpointのレイヤー-->
+        <div id=""road"">
+            <img src=""../image/miti_2.png"" alt="""">
+            <div id=""point"">
+                <div id=""point0"" class=""normal"" onclick=""idou(0)""><img src=""../image/point.png"" alt=""""></div>
+                <div id=""point1"" class=""normal"" onclick=""idou(1)""><img src=""../image/point.png"" alt=""""></div>
+                <div id=""point2"" class=""normal"" onclick=""idou(2)""><img src=""../image/point.png"" alt=""""></div>
+                <div id=""point3"" class=""normal"" onclick=""idou(3)""><img src=""../image/point.png"" alt=""""></div>
+                <div id=""point4"" class=""normal"" onclick=""idou(4)""><img src=""../image/point.png"" alt=""""></div>
+                <div id=""point5"" class=""normal"" onclick=""idou(5)""><img src=""../image/point.png"" alt=""""></div>
+            </div>
+            <div id=""ringo"">
+                <div id=""ringo0"" class=""normal""><img src=""../image/ringo.png"" alt=""""></div>
+                <div id=""ringo1"" class=""normal""><img src=""../image/ringo.png"" alt=""""></div>
+                <div id=""ringo2"" class=""normal""><img src=""../image/ringo.png"" alt=""""></div>
+                <div id=""ringo3"" class=""normal""><img src=""../image/ringo.png"" alt=""""></div>
+                <div id=""ringo4"" class=""normal""><img src=""../image/ringo.png"" alt=""""></div>
+                <div id=""ringo5"" class=""normal""><img src=""../image/ringo.png"" alt=""""></div>
+                <div id=""ringo6"" class=""normal""><img src=""../image/ringo.png"" alt=""""></div>
+                <div id=""ringo7"" class=""normal""><img src=""../image/ringo.png"" alt=""""></div>
+            </div>
+                <div>
+                    <img id=""chara"" src=""../image/chara.png"" alt="""">
+                </div>
+            </div>
+        </div>
+","        <p style='margin-top:25vh;'><img src='../image/H_R2.png' style='width:50vw; height:12vh;'></p>
+        <div class='center'><input type='button' id='modal-close1' class='tojiru'></div>
+","        <p style='margin-top:25vh;'><img src='../image/ringo_gameover.png' style='width:35vw; height:12.5vh;'></p>
+        <div><input type='button' class='leftbtn mapback'  onclick='mapjump()'><input type='button' onclick=""shoki(1)"" id='modal-close3' class='rightbtn yarinaosi'></div>
+"
+2,"<img style=""width:28vw; height:17vh;"" src=""../image/ringo_bunsho.png"">","        <!--リンゴ拾い問題部分-->
+        <!--リンゴ拾いz-indexを使用してレイヤーの配置を重ならないようにする-->
+        <!--道やpointのレイヤー-->
+        <div id=""road"">
+            <img src=""../image/miti_3.png"" alt="""">
+            <div id=""point"">
+                <div id=""point0"" class=""hard"" onclick=""idou(0)""><img src=""../image/point.png"" alt=""""></div>
+                <div id=""point1"" class=""hard"" onclick=""idou(1)""><img src=""../image/point.png"" alt=""""></div>
+                <div id=""point2"" class=""hard"" onclick=""idou(2)""><img src=""../image/point.png"" alt=""""></div>
+                <div id=""point3"" class=""hard"" onclick=""idou(3)""><img src=""../image/point.png"" alt=""""></div>
+                <div id=""point4"" class=""hard"" onclick=""idou(4)""><img src=""../image/point.png"" alt=""""></div>
+                <div id=""point5"" class=""hard"" onclick=""idou(5)""><img src=""../image/point.png"" alt=""""></div>
+            </div>
+            <div id=""ringo"">
+                <div id=""ringo0"" class=""hard""><img src=""../image/ringo.png"" alt=""""></div>
+                <div id=""ringo1"" class=""hard""><img src=""../image/ringo.png"" alt=""""></div>
+                <div id=""ringo2"" class=""hard""><img src=""../image/ringo.png"" alt=""""></div>
+                <div id=""ringo3"" class=""hard""><img src=""../image/ringo.png"" alt=""""></div>
+                <div id=""ringo4"" class=""hard""><img src=""../image/ringo.png"" alt=""""></div>
+                <div id=""ringo5"" class=""hard""><img src=""../image/ringo.png"" alt=""""></div>
+                <div id=""ringo6"" class=""hard""><img src=""../image/ringo.png"" alt=""""></div>
+                <div id=""ringo7"" class=""hard""><img src=""../image/ringo.png"" alt=""""></div>
+                <div id=""ringo8"" class=""hard""><img src=""../image/ringo.png"" alt=""""></div>
+                <div id=""ringo9"" class=""hard""><img src=""../image/ringo.png"" alt=""""></div>
+            </div>
+                <div>
+                    <img id=""chara"" src=""../image/chara.png"" alt="""">
+                </div>
+            </div>
+        </div>
+","        <p style='margin-top:25vh;'><img src='../image/H_R3.png' style='width:50vw; height:12vh;'></p>
+        <div class='center'><input type='button' id='modal-close1' class='tojiru'></div>
+","        <p style='margin-top:25vh;'><img src='../image/ringo_gameover.png' style='width:35vw; height:12.5vh;'></p>
+        <div><input type='button' class='leftbtn mapback'  onclick='mapjump()'><input type='button' onclick=""shoki(2)"" id='modal-close3' class='rightbtn yarinaosi'></div>
+"
