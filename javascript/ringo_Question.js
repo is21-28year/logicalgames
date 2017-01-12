@@ -13,49 +13,51 @@ var diff=0;
 //初期判定
 //リンゴの数、ポイントの数、回数制限の数の指定
 function shoki(diffnum){
-    //難易度セット
-    diff=diffnum;
-    if(diff==2){
-        ringo=[0,0,0,0,0,0,0,0,0,0];
-        point=[0,0,0,0,0,0];
-        //初期変数の決定
-        ibasho=10;
-        gameflag=true;
-        idousakiX=0;
-        idousakiY=0;
-        idouflag=0;
-        //画像の初期化
-        document.getElementById("chara").style.display="none";
-        for(var i=0;i<ringo.length;i++){
-            document.getElementById("ringo"+i).style.display="";
-        }
-    }else if(diff==1){
-        ringo =[0,0,0,0,0,0,0,0];
-        point =[0,0,0,0,0,0];
-        //初期変数の決定
-        ibasho=10;
-        gameflag=true;
-        idousakiX=0;
-        idousakiY=0;
-        idouflag=0;
-        //画像の初期化
-        document.getElementById("chara").style.display="none";
-        for(var i=0;i<ringo.length;i++){
-            document.getElementById("ringo"+i).style.display="";
-        }
-    }else{
-        ringo =[0,0,0,0,0];
-        point =[0,0,0,0];
-        //初期変数の決定
-        ibasho=10;
-        gameflag=true;
-        idousakiX=0;
-        idousakiY=0;
-        idouflag=0;
-        //画像の初期化
-        document.getElementById("chara").style.display="none";
-        for(var i=0;i<ringo.length;i++){
-            document.getElementById("ringo"+i).style.display="";
+    if(idouflag==1){}else{
+        //難易度セット
+        diff=diffnum;
+        if(diff==2){
+            ringo=[0,0,0,0,0,0,0,0,0,0];
+            point=[0,0,0,0,0,0];
+            //初期変数の決定
+            ibasho=10;
+            gameflag=true;
+            idousakiX=0;
+            idousakiY=0;
+            idouflag=0;
+            //画像の初期化
+            document.getElementById("chara").style.display="none";
+            for(var i=0;i<ringo.length;i++){
+                document.getElementById("ringo"+i).style.display="";
+            }
+        }else if(diff==1){
+            ringo =[0,0,0,0,0,0,0,0];
+            point =[0,0,0,0,0,0];
+            //初期変数の決定
+            ibasho=10;
+            gameflag=true;
+            idousakiX=0;
+            idousakiY=0;
+            idouflag=0;
+            //画像の初期化
+            document.getElementById("chara").style.display="none";
+            for(var i=0;i<ringo.length;i++){
+                document.getElementById("ringo"+i).style.display="";
+            }
+        }else{
+            ringo =[0,0,0,0,0];
+            point =[0,0,0,0];
+            //初期変数の決定
+            ibasho=10;
+            gameflag=true;
+            idousakiX=0;
+            idousakiY=0;
+            idouflag=0;
+            //画像の初期化
+            document.getElementById("chara").style.display="none";
+            for(var i=0;i<ringo.length;i++){
+                document.getElementById("ringo"+i).style.display="";
+            }
         }
     }
 
