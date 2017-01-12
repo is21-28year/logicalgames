@@ -35,6 +35,9 @@ function imgkaiten(){
 //問題のランダム出力
 //easy:1 normal:2 hard:3
 function questionrand(kakudo,kazu,diff){
+	dif = diff;
+	kaku = kakudo;
+	suu = kazu;
     var rand = 0;
 	ans = Math.floor( Math.random() * kazu )+1 ;
 	var min = kazu-1;
@@ -48,9 +51,6 @@ function questionrand(kakudo,kazu,diff){
         }
         $("#"+i+" img").rotate(rand);
 	}
-	dif = diff;
-	kaku = kakudo;
-	suu = kazu;
 }
 
 function answer(cl){
