@@ -5,13 +5,13 @@ header('Location: map.html');
 $nanido = "";
 $nanido = $_POST["nanido"];
 if($nanido == 1){
-    $mode = "s(3,3,2);modal(0)";
+    $mode = "viewhantei();viewchange();s(3,3,2);modal(0)";
     $css = "width:25vw;height:51vh;margin-top:20vh;";
 }else if($nanido == 2){
-    $mode = "s(4,4,3);modal(0)";
+    $mode = "viewhantei();viewchange();s(4,4,3);modal(0)";
      $css ="width:30vw;height:51vh;margin-top:15vh;";
 }else{
-    $mode = "s(5,5,3);modal(0)";
+    $mode = "viewhantei();viewchange();s(5,5,3);modal(0)";
      $css = "width:35vw;height:50vh;margin-top:10vh;";
 }
 //MySQLに接続

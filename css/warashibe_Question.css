@@ -1,4 +1,4 @@
-.clam_right{
+﻿.clam_right{
     background-image: url("../image/waraba.png");
 }
     .box{
@@ -45,7 +45,13 @@
         max-height:90%;
         position:relative;
     }
-    .chara:hover{
+    .chara1:hover{
+        background-color:#aaa;
+    }
+    .chara2:hover{
+        background-color:#aaa;
+    }
+    .chara3:hover{
         background-color:#aaa;
     }
     .charachild{
