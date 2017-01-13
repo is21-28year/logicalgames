@@ -1,10 +1,10 @@
 var ship_ans = 0;
 var ship_zan = 0;
-var ship_flag = [0,0,0,0,0,0,0,0,0,0,0];
+var ship_flag;
 var run_flag = false;
 var mode;
 function senkan_s(seki,zan){//初期
-ship_ans = Math.floor( Math.random() * seki+1 ) ;
+ship_ans = Math.floor( Math.random() * seki ) ;
 ship_zan = zan;
 }
 function chmode(level){
