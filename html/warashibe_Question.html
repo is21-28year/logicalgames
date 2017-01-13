@@ -51,7 +51,7 @@ header('Location: map.html');
     </div>
     <div id="modal-content3">
         <?= $data['gameover_warashibe'] ?>
-        <div><input type='button' class='leftbtn mapback'  onclick='mapjump()'><input type='button'  id='modal-close3' class='rightbtn yarinaosi'></div>
+        <div><input type='button' class='leftbtn mapback'  onclick='mapjump()'><input type='button'  id='modal-close3' class='rightbtn yarinaosi' onclick=<?php echo '"'.$reset.'"';?>></div>
     </div>
 
     <div id="viewchange">
