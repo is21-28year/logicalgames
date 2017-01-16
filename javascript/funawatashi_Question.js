@@ -19,58 +19,63 @@ var sizeY='8vh';
 var count=0;
 //問題初期化部分
 function shoki(diffnum){
-    //難易度セット
-    diff=diffnum;
-    if(diff==2){
-        //動物が入る場所の変数
-        migi=[0,0,0];
-        hidari=[1,1,1];
-        //船がいる場所の判定 0=左 1=右
-        funebasho=0;
-        //画像の初期位置判定
-        $(function(){
-            $('#fune').css({'left':'15vw','top':'40vh'});
-            $("#fune img").attr('src', '../image/fune_L.png');
-            $('#fune img').css({'display':''});
-            $('#l1 img').css({'width':'4vw','height':'8vh', 'left':'0.5vw','top':'1vh','display':'block'});
-            $('#l2 img').css({'width':'4vw','height':'8vh', 'left':'0.5vw','top':'1vh','display':'block'});
-            $('#l3 img').css({'width':'4vw','height':'8vh', 'left':'0.5vw','top':'1vh','display':'block'});
-            $('#r1 img').css('display','none');
-            $('#r2 img').css('display','none');
-            $('#r3 img').css('display','none');
-        })
+    if(idouanime==false || funeanime==false){
+        //難易度セット
+        diff=diffnum;
+        if(diff==2){
+            //動物が入る場所の変数
+            migi=[0,0,0];
+            hidari=[1,1,1];
+            //船がいる場所の判定 0=左 1=右
+            funebasho=0;
+            fune=null;
+            //画像の初期位置判定
+            $(function(){
+                $('#fune').css({'left':'15vw','top':'40vh'});
+                $("#fune img").attr('src', '../image/fune_L.png');
+                $('#fune img').css({'display':''});
+                $('#l1 img').css({'width':'4vw','height':'8vh', 'left':'0.5vw','top':'1vh','display':'block'});
+                $('#l2 img').css({'width':'4vw','height':'8vh', 'left':'0.5vw','top':'1vh','display':'block'});
+                $('#l3 img').css({'width':'4vw','height':'8vh', 'left':'0.5vw','top':'1vh','display':'block'});
+                $('#r1 img').css('display','none');
+                $('#r2 img').css('display','none');
+                $('#r3 img').css('display','none');
+            })
 
-    }else if(diff==1){
-        migi=[0,0,0];
-        hidari=[1,1,1];
-        funebasho=0;
-         $(function(){
-            $('#fune').css({'left':'15vw','top':'40vh'});
-            $("#fune img").attr('src', '../image/fune_L.png');
-            $('#fune img').css({'display':''});
-            $('#l1 img').css({'width':'4vw','height':'8vh', 'left':'0.5vw','top':'1vh','display':'block'});
-            $('#l2 img').css({'width':'4vw','height':'8vh', 'left':'0.5vw','top':'1vh','display':'block'});
-            $('#l3 img').css({'width':'4vw','height':'8vh', 'left':'0.5vw','top':'1vh','display':'block'});
-            $('#r1 img').css('display','none');
-            $('#r2 img').css('display','none');
-            $('#r3 img').css('display','none');
-        })
-    }else if(diff==0){
-        migi=[0,0,0];
-        hidari=[1,1,1];
-        funebasho=0;
-         $(function(){
-            $('#fune').css({'left':'15vw','top':'40vh'});
-            $("#fune img").attr('src', '../image/fune_L.png');
-            $('#fune img').css({'display':''});
-            $('#l1 img').css({'width':'4vw','height':'8vh', 'left':'0.5vw','top':'1vh','display':''});
-            $('#l2 img').css({'width':'2vw','height':'4vh', 'left':'1.5vw','top':'3vh','display':''});
-            $('#l3 img').css({'width':'3vw','height':'6vh', 'left':'1vw','top':'2vh','display':''});
-            $('#r1 img').css('display','none');
-            $('#r2 img').css('display','none');
-            $('#r3 img').css('display','none');
-        })
-    }   
+        }else if(diff==1){
+            migi=[0,0,0];
+            hidari=[1,1,1];
+            funebasho=0;
+            fune=null;
+            $(function(){
+                $('#fune').css({'left':'15vw','top':'40vh'});
+                $("#fune img").attr('src', '../image/fune_L.png');
+                $('#fune img').css({'display':''});
+                $('#l1 img').css({'width':'4vw','height':'8vh', 'left':'0.5vw','top':'1vh','display':'block'});
+                $('#l2 img').css({'width':'4vw','height':'8vh', 'left':'0.5vw','top':'1vh','display':'block'});
+                $('#l3 img').css({'width':'4vw','height':'8vh', 'left':'0.5vw','top':'1vh','display':'block'});
+                $('#r1 img').css('display','none');
+                $('#r2 img').css('display','none');
+                $('#r3 img').css('display','none');
+            })
+        }else if(diff==0){
+            migi=[0,0,0];
+            hidari=[1,1,1];
+            funebasho=0;
+            fune=null;
+            $(function(){
+                $('#fune').css({'left':'15vw','top':'40vh'});
+                $("#fune img").attr('src', '../image/fune_L.png');
+                $('#fune img').css({'display':''});
+                $('#l1 img').css({'width':'4vw','height':'8vh', 'left':'0.5vw','top':'1vh','display':''});
+                $('#l2 img').css({'width':'2vw','height':'4vh', 'left':'1.5vw','top':'3vh','display':''});
+                $('#l3 img').css({'width':'3vw','height':'6vh', 'left':'1vw','top':'2vh','display':''});
+                $('#r1 img').css('display','none');
+                $('#r2 img').css('display','none');
+                $('#r3 img').css('display','none');
+            })
+        }   
+    }
 
 }
 //枠内のアイテムを船へ移動させる処理
@@ -436,9 +441,6 @@ function animefune(){
                                 }, 2000)
                             )
                             .done(function() {
-                                //if文で入るものの数値を入れる処理
-                                idouanime=false;
-                                funeanime=false;
                                 //aitemuを除去
                                 fune=null;
                                 //左から右へ移動
@@ -446,6 +448,9 @@ function animefune(){
                                 migi[0]=1;
                                 //ゲームクリア判定
                                 clearhantei();
+                                //if文で入るものの数値を入れる処理
+                                idouanime=false;
+                                funeanime=false;
                                 
                             })
                             .fail(function() {
@@ -471,9 +476,6 @@ function animefune(){
                                 }, 2000)
                             )
                             .done(function() {
-                                //if文で入るものの数値を入れる処理
-                                idouanime=false;
-                                funeanime=false;
                                 //aitemuを除去
                                 fune=null;
                                 //左から右へ移動
@@ -481,6 +483,9 @@ function animefune(){
                                 migi[1]=1;
                                 //ゲームクリア判定
                                 clearhantei();
+                                //if文で入るものの数値を入れる処理
+                                idouanime=false;
+                                funeanime=false;
                             })
                             .fail(function() {
                                 // エラーがあった時
@@ -504,9 +509,6 @@ function animefune(){
                                 }, 2000)
                             )
                             .done(function() {
-                                //if文で入るものの数値を入れる処理
-                                idouanime=false;
-                                funeanime=false;
                                 //aitemuを除去
                                 fune=null;
                                 //左から右へ移動
@@ -514,6 +516,9 @@ function animefune(){
                                 migi[2]=1;
                                 //ゲームクリア判定
                                  clearhantei();
+                                  //if文で入るものの数値を入れる処理
+                                idouanime=false;
+                                funeanime=false;
                             })
                             .fail(function() {
                                 // エラーがあった時
@@ -522,13 +527,14 @@ function animefune(){
                         });
                     }
                 }
-                //if文で入るものの数値を入れる処理
-                idouanime=false;
-                funeanime=false;
                 if(fune==null){
                     //ゲームクリア判定
                     clearhantei();
+                    //if文で入るものの数値を入れる処理
+                    idouanime=false;
+                    funeanime=false;
                 }
+                
             })
             .fail(function() {
                 // エラーがあった時
@@ -569,9 +575,6 @@ function animefune(){
                                         }, 2000)
                                     )
                                     .done(function() {
-                                        //if文で入るものの数値を入れる処理
-                                        idouanime=false;
-                                        funeanime=false;
                                         //aitemuを除去
                                         fune=null;
                                         //左から右へ移動
@@ -579,6 +582,9 @@ function animefune(){
                                         migi[0]=0;
                                         //ゲームクリア判定
                                         clearhantei();
+                                        //if文で入るものの数値を入れる処理
+                                        idouanime=false;
+                                        funeanime=false;
                                         
                                     })
                                     .fail(function() {
@@ -604,9 +610,6 @@ function animefune(){
                                         }, 2000)
                                     )
                                     .done(function() {
-                                        //if文で入るものの数値を入れる処理
-                                        idouanime=false;
-                                        funeanime=false;
                                         //aitemuを除去
                                         fune=null;
                                         //左から右へ移動
@@ -614,7 +617,9 @@ function animefune(){
                                         migi[1]=0;
                                         //ゲームクリア判定
                                         clearhantei();
-                                        
+                                         //if文で入るものの数値を入れる処理
+                                        idouanime=false;
+                                        funeanime=false;
                                     })
                                     .fail(function() {
                                         // エラーがあった時
@@ -638,9 +643,6 @@ function animefune(){
                                         }, 2000)
                                     )
                                     .done(function() {
-                                        //if文で入るものの数値を入れる処理
-                                        idouanime=false;
-                                        funeanime=false;
                                         //aitemuを除去
                                         fune=null;
                                         //左から右へ移動
@@ -648,6 +650,9 @@ function animefune(){
                                         migi[2]=0;
                                         //ゲームクリア判定
                                         clearhantei();
+                                        //if文で入るものの数値を入れる処理
+                                        idouanime=false;
+                                        funeanime=false;
                                     })
                                     .fail(function() {
                                         // エラーがあった時
@@ -656,13 +661,14 @@ function animefune(){
                                 });
                             }
                         }
-                        //if文で入るものの数値を入れる処理
-                        funeanime=false;
-                        idouanime=false;
                         if(fune==null){
                             //ゲームクリア判定
                             clearhantei();
+                            //if文で入るものの数値を入れる処理
+                            funeanime=false;
+                            idouanime=false;
                         }
+                        
                     })
                     .fail(function() {
                         // エラーがあった時

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>問題ページ 船渡し</title>
+    <script type="text/javascript" src="../javascript/Question.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="../javascript/funawatashi_Question.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/Question.css">
+    <link rel="stylesheet" type="text/css" href="../css/funawatashi_Question.css">
+</head>
+<body onload="shoki(0);viewhantei();viewchange();modal(0);">
+    <!-- ここからモーダルウィンドウ -->
+    <div id="modal-content0">
+	    <p style='margin-top:25vh;'><img src='../image/B_F1.png' style='width:40vw; height:25vh;'></p>
+        <div class='center'><input type='button' id='modal-close0' class='tojiru'></div>
+    </div>
+    <div id="modal-content1">
+        <p style='margin-top:25vh;'><img src='../image/H_F.png' style='width:50vw; height:12vh;'></p>
+        <div class='center'><input type='button' id='modal-close1' class='tojiru'></div>
+    </div>
+    <div id="modal-content2">
+        <p style='margin-top:25vh;'><img src='../image/funawatashi_clear.png' style='width:40vw; height:8vh;'></p>
+        <div class='center'><input type='button' class='mapback' onclick='mapjump()'></div>
+    </div>
+    <div id="modal-content3">
+        <p style='margin-top:25vh;'><img src='../image/funawatashi_gameover.png' style='width:35vw; height:12.5vh;'></p>
+        <div><input type='button' class='leftbtn mapback'  onclick='mapjump()'><input type='button'  id='modal-close3' class='rightbtn yarinaosi'></div>
+    </div>
+
+    <div id="viewchange">
+        <!-- モーダルウィンドウのコンテンツ開始 -->
+        <img src="../image/view_text.png" id="deltext" alt="">
+        <!-- モーダルウィンドウのコンテンツ終了 -->
+    </div>
+
+    <header>
+        <!--前の画面へ戻るボタン-->
+        <input type="button" class="hidari modoru" onclick="location.href='Difficulty_funawatashi.html'">
+        <img id="title" src="../image/funawatashi_title.png" alt="">
+        <input type="button" class="migi hint" onclick="modal(1)">
+    </header>
+    <div class="clam_left">
+    <!--問題文章div-->
+    <div id="bunsho" class="b">
+    <img id="M_T" src="../image/M_T.png">
+    <img style="width:30vw; height:17vh;" src="../image/funawatashi_bunsho1.png">
+    </div>
+    
+    <!--リセットボタン配置-->
+    
+    <div id="reset">
+        <input type="button" class="migi" value="リセット" onclick="shoki(0)">
+    </div>
+    
+    </div>
+    <div class="clam_right">
+        <div id="lbox" class="box">
+            <div class="easy" onclick="animeidou('l1')" id="l1"><img src="../image/sheep.png" alt=""></div>
+            <div class="easy" onclick="animeidou('l2')" id="l2"><img src="../image/sheep.png" alt=""></div>
+            <div class="easy" onclick="animeidou('l3')" id="l3"><img src="../image/sheep.png" alt=""></div>
+        </div>
+        <div id="fune" onclick="animefune()">
+            <img id="funeimg" src="../image/fune_L.png" alt="">
+        </div>
+        <div id="rbox" class="box">
+            <div class="easy" onclick="animeidou('r1')" id="r1"><img src="../image/sheep.png" alt=""></div>
+            <div class="easy" onclick="animeidou('r2')" id="r2"><img src="../image/sheep.png" alt=""></div>
+            <div class="easy" onclick="animeidou('r3')" id="r3"><img src="../image/sheep.png" alt=""></div>
+        </div>
+    </div>
+</body>
+</html>
