@@ -252,13 +252,13 @@ function animeidou(basho){
             //船の座標
             if(basho=='r1'){
                 funeX='-10vw';
-                funeY='36.5vhvh';
+                funeY='36.5vh';
             }else if(basho=='r2'){
                 funeX='-10vw';
                 funeY='16.5vh';
             }else if(basho=='r3'){
                 funeX='-10vw';
-                funeY='-3.5vh';
+                funeY='3.5vh';
             }
             
             
