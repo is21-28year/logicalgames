@@ -699,7 +699,7 @@ function overhantei(){
             if(hidari[0]==1 && hidari[1]==1){
                 modal(3);
             }else if(hidari[1]==1 && hidari[2]==1){
-                modal();
+                modal(3);
             }
         }
 
