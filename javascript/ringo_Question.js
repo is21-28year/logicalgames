@@ -194,16 +194,16 @@ function idoushori(ibasho,basho,ringo){
             $('#chara').animate({
                 left:ringoX,
                 top:ringoY,
-            }, 1000 )
+            }, 500 )
         )
         .done(function() {
             document.getElementById(ringo).style.display="none";
-            setTimeout(flagchange,1000);
+            setTimeout(flagchange,500);
             $('#chara').animate({
                 left:X,
                 top:Y,
-            }, 1000 )
-            setTimeout("answer()", 1000);
+            }, 500 )
+            setTimeout("answer()", 500);
         })
         .fail(function() {
             // エラーがあった時

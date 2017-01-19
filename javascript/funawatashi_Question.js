@@ -142,7 +142,7 @@ function animeidou(basho){
                                 top:funeY,
                                 width:0,
                                 height:0,
-                            }, 2000 )
+                            }, 1000 )
                         )
                         .done(function() {
                             //船の位置で消える
@@ -171,7 +171,7 @@ function animeidou(basho){
                                         top:aitemY,
                                         width:sizeX,
                                         height:sizeY
-                                    }, 2000)
+                                    }, 1000)
                             )
                             .done(function() {
                                 //if文で入るものの数値を入れる処理
@@ -197,7 +197,7 @@ function animeidou(basho){
                                     top:funeY,
                                     width:0,
                                     height:0,
-                                }, 2000)
+                                }, 1000)
                             )
                             .done(function() {
                                     $.when(
@@ -207,7 +207,7 @@ function animeidou(basho){
                                             top:aitemY,
                                             width:sizeX,
                                             height:sizeY
-                                        }, 2000)
+                                        }, 1000)
                                     )
                                     .done(function(){
                                         //船の位置で消える
@@ -289,7 +289,7 @@ function animeidou(basho){
                                 top:funeY,
                                 width:0,
                                 height:0,
-                            }, 2000 )
+                            }, 1000 )
                         )
                         .done(function() {
                             //船の位置で消える
@@ -319,7 +319,7 @@ function animeidou(basho){
                                         top:aitemY,
                                         width:sizeX,
                                         height:sizeY
-                                    }, 2000)
+                                    }, 1000)
                             )
                             .done(function() {
                                 //if文で入るものの数値を入れる処理
@@ -344,7 +344,7 @@ function animeidou(basho){
                                     top:funeY,
                                     width:0,
                                     height:0,
-                                }, 2000)
+                                }, 1000)
                             )
                             .done(function() {
                                     $.when(
@@ -354,7 +354,7 @@ function animeidou(basho){
                                             top:aitemY,
                                             width:sizeX,
                                             height:sizeY
-                                        }, 2000)
+                                        }, 1000)
                                     )
                                     .done(function(){
                                         //船の位置で消える
@@ -416,7 +416,7 @@ function animefune(){
                 //船の移動処理
                 $("#fune").animate({
                     left:'+=30vw',
-                }, 2000 )
+                }, 1000 )
             )
             .done(function() {
                 //if文で入るものの数値を入れる処理
@@ -438,7 +438,7 @@ function animefune(){
                                     top:aitemY,
                                     width:sizeX,
                                     height:sizeY
-                                }, 2000)
+                                }, 1000)
                             )
                             .done(function() {
                                 //aitemuを除去
@@ -473,7 +473,7 @@ function animefune(){
                                     top:aitemY,
                                     width:sizeX,
                                     height:sizeY
-                                }, 2000)
+                                }, 1000)
                             )
                             .done(function() {
                                 //aitemuを除去
@@ -506,7 +506,7 @@ function animefune(){
                                     top:aitemY,
                                     width:sizeX,
                                     height:sizeY
-                                }, 2000)
+                                }, 1000)
                             )
                             .done(function() {
                                 //aitemuを除去
@@ -552,7 +552,7 @@ function animefune(){
                     $.when(
                         $("#fune").animate({
                             left:'-=30vw',
-                        }, 2000 )
+                        }, 1000 )
                     )
                     .done(function() {
                         funebasho=0;
@@ -572,7 +572,7 @@ function animefune(){
                                             top:aitemY,
                                             width:sizeX,
                                             height:sizeY
-                                        }, 2000)
+                                        }, 1000)
                                     )
                                     .done(function() {
                                         //aitemuを除去
@@ -607,7 +607,7 @@ function animefune(){
                                             top:aitemY,
                                             width:sizeX,
                                             height:sizeY
-                                        }, 2000)
+                                        }, 1000)
                                     )
                                     .done(function() {
                                         //aitemuを除去
@@ -640,7 +640,7 @@ function animefune(){
                                             top:aitemY,
                                             width:sizeX,
                                             height:sizeY
-                                        }, 2000)
+                                        }, 1000)
                                     )
                                     .done(function() {
                                         //aitemuを除去
