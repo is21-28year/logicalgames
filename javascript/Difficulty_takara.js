@@ -3,7 +3,8 @@
     /*画像常時のための変数*/
     var clear_1;
     var clear_2;
-    var clear_3; 
+    var clear_3;
+    var clear_4; 
     
 //ローカルデータの取得よう
     function localget(){
@@ -13,6 +14,7 @@
         clear_1=window.localStorage.getItem("takara_1");
         clear_2=window.localStorage.getItem("takara_2");
         clear_3=window.localStorage.getItem("takara_3");
+        clear_4=window.localStorage.getItem("takara_omake");
 }   
 
 //localstorageにデータを挿入
@@ -121,25 +123,22 @@ function cleardisp(){
     clearhantei(clear_2,"clear2");
     //クリア画像表示3
     clearhantei(clear_3,"clear3");
+    //クリア画像表示4
+    clearhantei(clear_omake,"clear4");
 }
 
-/*test*/
-function localdelete(){
-    window.localStorage.removeItem("takara_tutorial");
-} 
+function omakedisp(){
+    /*難易度3つクリア済みならおまけを表示 */
+    if(clear_1=="true" && clear_2=="true" && clear_3=="true"){
+        document.getElementById('omake').innerHTML=" <form action='takara_Question.html' method='post' name='frm4'><div style=' position: absolute; top: 70vh; left:42%;'><div id='clear4'></div><input type='button' id='e' class='difficlty_box' onclick='document.frm4.submit();'><input type='hidden' value='4' name='nanido'></div> </form>'";
+    }
+}
 
 //メイン動作部分に変更
 function main(){
     localget();
     cleardisp();
+    omakedisp();
     tutorialhantei();
     localput();
 }
-
-/*更新日：10/26
-　function meinを追加
-　ページを起動した際に動く関数をまとめたもの以後別ページにも共通
-　動画表示判定をfunction tutorialhanteiに変更
-　モーダルウィンドウのボタン配置変更
-　画像表示function追加clearhantei cleardisp
-  */ 
