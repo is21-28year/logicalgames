@@ -70,3 +70,6 @@ img[id^="ship"]
         margin:auto;
         z-index:0;
     }
+    @media all and (-ms-high-contrast:none){
+	*::-ms-backdrop, #cannon { bottom:-50vh; } /* IE11 */
+}
