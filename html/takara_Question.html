@@ -10,8 +10,11 @@ if($nanido == 1){
 }else if($nanido == 2){
     $mode = "viewhantei();viewchange();s(4,4,3);modal(0)";
      $css ="width:30vw;height:51vh;margin-top:15vh;";
-}else{
+}else if($nanido == 3){
     $mode = "viewhantei();viewchange();s(5,5,3);modal(0)";
+     $css = "width:35vw;height:50vh;margin-top:10vh;";
+}else{
+    $mode = "viewhantei();viewchange();s(6,6,4);modal(0)";
      $css = "width:35vw;height:50vh;margin-top:10vh;";
 }
 //MySQLに接続

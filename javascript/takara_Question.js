@@ -4,11 +4,12 @@ var s_x = 0;
 var s_y = 0;
 var s_k = 0;
 var k = 0;
-var flag1 = [0,0,0,0,0];
-var flag2 = [0,0,0,0,0];
-var flag3 = [0,0,0,0,0];
-var flag4 = [0,0,0,0,0];
-var flag5 = [0,0,0,0,0];
+var flag1 = [0,0,0,0,0,0];
+var flag2 = [0,0,0,0,0,0];
+var flag3 = [0,0,0,0,0,0];
+var flag4 = [0,0,0,0,0,0];
+var flag5 = [0,0,0,0,0,0];
+var flag6 = [0,0,0,0,0,0];
 var fl = 0;
 var flog = 0;
 function s(x,y,k_s){//初期
@@ -20,11 +21,12 @@ y_z = Math.floor( Math.random() * y+1 ) ;
 k = k_s;
 s_k = k_s;
 tama();
-flag1 = [0,0,0,0,0];
-flag2 = [0,0,0,0,0];
-flag3 = [0,0,0,0,0];
-flag4 = [0,0,0,0,0];
-flag5 = [0,0,0,0,0];
+var flag1 = [0,0,0,0,0,0];
+var flag2 = [0,0,0,0,0,0];
+var flag3 = [0,0,0,0,0,0];
+var flag4 = [0,0,0,0,0,0];
+var flag5 = [0,0,0,0,0,0];
+var flag6 = [0,0,0,0,0,0];
 }
 }
 function hantei(c_x,c_y){
@@ -55,6 +57,12 @@ switch (c_x){
     fl = 1;
     }
     break;
+  case 6:
+    if(flag6[c_y] == 1){
+    fl = 1;
+    }
+    break;
+
 }
  if(fl == 1){
     }else{
@@ -75,7 +83,11 @@ switch (c_x){
   case 5:
     flag5[c_y] = 1
     break;
+  case 6:
+    flag6[c_y] = 1
+    break;
 }
+
 document.getElementById(c_x+"_"+c_y).innerHTML="<img id='ten' src='../image/pick.png 'width='50%' height='100%'>";
 $(function() {
 flog=1;
@@ -124,6 +136,9 @@ flog=0;
     		if(s_x == 5){
     		localStorage.setItem("takara_3",true);
     		} 
+    		if(s_x == 6){
+    		localStorage.setItem("takara_omake",true);
+    		} 
             	modal(2);
             	}
         }
@@ -150,11 +165,12 @@ var suu=".png'>";
 }
 function reset(){
     tama();
-flag1 = [0,0,0,0,0];
-flag2 = [0,0,0,0,0];
-flag3 = [0,0,0,0,0];
-flag4 = [0,0,0,0,0];
-flag5 = [0,0,0,0,0];
+var flag1 = [0,0,0,0,0,0];
+var flag2 = [0,0,0,0,0,0];
+var flag3 = [0,0,0,0,0,0];
+var flag4 = [0,0,0,0,0,0];
+var flag5 = [0,0,0,0,0,0];
+var flag6 = [0,0,0,0,0,0];
     for(var i=1;i<s_x+1;i++){
     	for(var d=1;d<s_y+1;d++){
         document.getElementById(i+"_"+d).innerHTML="<img src='../image/kiretsu.png'>";
