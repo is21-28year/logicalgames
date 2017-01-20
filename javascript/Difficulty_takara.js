@@ -1,12 +1,14 @@
 /*変数の初期宣言+初回かどうかのフラグ*/ 
     var takara_tutorial;
     /*画像常時のための変数*/
+    /*てすと*/
     var clear_1;
     var clear_2;
     var clear_3;
-    var clear_4; 
+    var clear_omake; 
     
 //ローカルデータの取得よう
+
     function localget(){
         //チュートリアル閲覧フラグ取得
         takara_tutorial=window.localStorage.getItem("takara_tutorial");
@@ -14,8 +16,9 @@
         clear_1=window.localStorage.getItem("takara_1");
         clear_2=window.localStorage.getItem("takara_2");
         clear_3=window.localStorage.getItem("takara_3");
-        clear_4=window.localStorage.getItem("takara_omake");
+        clear_omake=window.localStorage.getItem("takara_omake");
 }   
+
 
 //localstorageにデータを挿入
     function  localput(){
@@ -127,19 +130,20 @@ function cleardisp(){
     clearhantei(clear_omake,"clear4");
 }
 
-function omakedisp(){
+function omake(){
     /*難易度3つクリア済みならおまけを表示 */
     if(clear_1=="true" && clear_2=="true" && clear_3=="true"){
         alert("テスト");
-        document.getElementById('omake').innerHTML=" <form action='takara_Question.html' method='post' name='frm4'><div style=' position: absolute; top: 70vh; left:42%;'><div id='clear4'></div><input type='button' id='e' class='difficlty_box' onclick='document.frm4.submit();'><input type='hidden' value='4' name='nanido'></div> </form>'";
+        document.getElementById('omake').innerHTML="<form action='takara_Question.html' method='post' name='frm4'><div style=' position: absolute; top: 70vh; left:42%;'><div id='clear4'></div><input type='button' id='e' class='difficlty_box' onclick='document.frm4.submit();'><input type='hidden' value='4' name='nanido'></div> </form>";
+    }else{
     }
 }
 
 //メイン動作部分に変更
 function main(){
     localget();
+    omake();
     cleardisp();
-    omakedisp();
     tutorialhantei();
     localput();
 }

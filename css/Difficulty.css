@@ -177,7 +177,7 @@ p	{line-height:1.5;
     }
 /*ダイアログ内ボタン表示*/
 /*クリア画像表示関連*/
-    div#clear1,div#clear2,div#clear3{
+    div#clear1,div#clear2,div#clear3,div#clear4{
         position: absolute;
         top: -4vh;
         right:0vw;
