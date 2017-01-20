@@ -130,6 +130,7 @@ function cleardisp(){
 function omakedisp(){
     /*難易度3つクリア済みならおまけを表示 */
     if(clear_1=="true" && clear_2=="true" && clear_3=="true"){
+        alert("テスト");
         document.getElementById('omake').innerHTML=" <form action='takara_Question.html' method='post' name='frm4'><div style=' position: absolute; top: 70vh; left:42%;'><div id='clear4'></div><input type='button' id='e' class='difficlty_box' onclick='document.frm4.submit();'><input type='hidden' value='4' name='nanido'></div> </form>'";
     }
 }
