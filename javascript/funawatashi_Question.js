@@ -258,7 +258,7 @@ function animeidou(basho){
                 funeY='16.5vh';
             }else if(basho=='r3'){
                 funeX='-10vw';
-                funeY='3.5vh';
+                funeY='-3.5vh';
             }
             
             
