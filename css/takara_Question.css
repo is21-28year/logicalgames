@@ -20,8 +20,12 @@ height:12vh;
         background-image: url("../image/takara_haikei.png");
     }
 #kaisuu{
-        padding:50px;
+        padding:0px 5vw 5vh 0px;
         position:absolute;
         right:0;
         bottom:0;
+    }
+#kaisuu img{
+	width:8vw;
+	height:6vh;
     }
