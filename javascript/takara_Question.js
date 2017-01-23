@@ -165,12 +165,12 @@ var suu=".png'>";
 }
 function reset(){
     tama();
-var flag1 = [0,0,0,0,0,0];
-var flag2 = [0,0,0,0,0,0];
-var flag3 = [0,0,0,0,0,0];
-var flag4 = [0,0,0,0,0,0];
-var flag5 = [0,0,0,0,0,0];
-var flag6 = [0,0,0,0,0,0];
+    flag1 = [0,0,0,0,0,0];
+    flag2 = [0,0,0,0,0,0];
+    flag3 = [0,0,0,0,0,0];
+    flag4 = [0,0,0,0,0,0];
+    flag5 = [0,0,0,0,0,0];
+    flag6 = [0,0,0,0,0,0];
     for(var i=1;i<s_x+1;i++){
     	for(var d=1;d<s_y+1;d++){
         document.getElementById(i+"_"+d).innerHTML="<img src='../image/kiretsu.png'>";
