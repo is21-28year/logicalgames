@@ -45,7 +45,8 @@ function modal(){
 
         //[#modal-overlay]、または[#modal-close]をクリックしたら…
         $( "#modal-overlay,#modal-close" ).unbind().click( function(){
-
+            //動画停止
+            stop();
             //[#modal-content]と[#modal-overlay]をフェードアウトした後に…
             $( "#modal-content,#modal-overlay" ).fadeOut( "slow" , function(){
 
