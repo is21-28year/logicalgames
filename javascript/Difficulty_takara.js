@@ -89,12 +89,6 @@ function modal(){
 }
 
 //難易度にセッションのデータを送るオンクリックイベント
-//引数で難易度+問題種類を取得
-function diffchange(ques_diff){
-    //難易度の設定問題ページphpで判定を作る
-    window.sessionStorage.setItem('ques_diff',ques_diff);
-    window.location.href = 'takara_Question.html';
-}
 
 //リンクを移動するよう
 function mapjump(){
@@ -104,9 +98,10 @@ function mapjump(){
 //遊び方動画の初回用判定
 function tutorialhantei(){
     if(takara_tutorial != "true"){
-    modal();
-    takara_tutorial = "true";
-}
+        modal();
+        takara_tutorial = "true";
+    }
+
 }
 /*画像表示部分*/ 
 function clearhantei(clear,id){
@@ -205,7 +200,7 @@ function viewchange(){
                         $('#modal-overlay').remove() ;
                     } ) ;
         }else{
-        viewhantei();
+            viewhantei();
         }
     } ) ;
 }
@@ -214,8 +209,8 @@ function main(){
     localget();
     omake();
     cleardisp();
-    tutorialhantei();
     localput();
     viewhantei();
     viewchange();
+    tutorialhantei();
 }
