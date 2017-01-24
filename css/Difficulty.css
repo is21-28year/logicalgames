@@ -181,11 +181,11 @@ p	{line-height:1.5;
         position: absolute;
         top: -4vh;
         right:0vw;
+	z-index: 1;		/*ここ追加しました*/
     }
     img.clearimage{
         width:4.5vw;
         height:8vh;
-	z-index: 2;		/*ここ追加しました、駄目だったらたぶん　0か、上のclear1234にいれるかだと思ふ*/
     }
 /*クリア画像表示関連*/
 /*view縦横判定共通部分*/
