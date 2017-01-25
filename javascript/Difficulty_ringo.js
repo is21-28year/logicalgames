@@ -192,6 +192,10 @@ function viewchange(){
         }
     } ) ;
 }
+function stop(){
+var v = document.getElementById("vid");
+v.pause();
+}
 //メイン動作部分に変更
 function main(){
     localget();
