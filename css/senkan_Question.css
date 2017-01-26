@@ -73,3 +73,5 @@ img[id^="ship"]
     @media all and (-ms-high-contrast:none){
 	*::-ms-backdrop, #cannon { bottom:-50vh; } /* IE11 */
 }
+/*エッジcssハック*/
+_:-ms-lang(x), _::-webkit-meter-bar,#cannon { bottom:-50vh; }
