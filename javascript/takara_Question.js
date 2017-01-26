@@ -177,8 +177,8 @@ if(flog==1){}else{
         document.getElementById(i+"_"+d).innerHTML="<img src='../image/kiretsu.png'>";
     	}
     }
-    s(s_x,s_y,s_k)
-};
+    s(s_x,s_y,s_k);
+}
 }
 function cleartrue(clearnum){
     window.localStorage.setItem(clearnum,true);
