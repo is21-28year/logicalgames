@@ -104,7 +104,6 @@ flog=1;
         .done(function() {
         k += -1;
         tama();
-flog=0;
         if(x_z < c_x){
         	if(y_z < c_y){
             	document.getElementById(c_x+"_"+c_y).innerHTML="<img src='../image/hidariue.png'>";
@@ -142,6 +141,7 @@ flog=0;
             	modal(2);
             	}
         }
+        flog=0;
             if(k < 1){
                 //ゲームオーバー
                 modal(3);
