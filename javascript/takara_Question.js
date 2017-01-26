@@ -164,6 +164,7 @@ var suu=".png'>";
     document.getElementById("kaisuu").innerHTML=kai+k+suu;
 }
 function reset(){
+if(flog==1){}else{
     tama();
     flag1 = [0,0,0,0,0,0];
     flag2 = [0,0,0,0,0,0];
@@ -176,7 +177,8 @@ function reset(){
         document.getElementById(i+"_"+d).innerHTML="<img src='../image/kiretsu.png'>";
     	}
     }
-    s(s_x,s_y,s_k);
+    s(s_x,s_y,s_k)
+};
 }
 function cleartrue(clearnum){
     window.localStorage.setItem(clearnum,true);
