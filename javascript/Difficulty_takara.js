@@ -136,7 +136,6 @@ function omake(){
 
 /*画面の縦横判定共通部分前頁共通*/
 function viewhantei(){
-
     $(function(){
 		if($(window).height()<$(window).width()){
 			
@@ -208,9 +207,14 @@ function viewchange(){
 function main(){
     localget();
     omake();
-    cleardisp();
+    tutorialhantei();
     localput();
     viewhantei();
     viewchange();
-    tutorialhantei();
+    cleardisp();
+}
+
+function stop(){
+var v = document.getElementById("vid");
+v.pause();
 }
