@@ -4,6 +4,7 @@
     var clear_1;
     var clear_2;
     var clear_3; 
+    var clear_omake; 
     
 //ローカルデータの取得よう
     function localget(){
@@ -13,6 +14,7 @@
         clear_1=window.localStorage.getItem("kaiten_1");
         clear_2=window.localStorage.getItem("kaiten_2");
         clear_3=window.localStorage.getItem("kaiten_3");
+        clear_omake=window.localStorage.getItem("kaiten_omake");
 }   
 
 //localstorageにデータを挿入
@@ -129,8 +131,16 @@ function cleardisp(){
     clearhantei(clear_2,"clear2");
     //クリア画像表示3
     clearhantei(clear_3,"clear3");
+    //クリア画像表示4
+    clearhantei(clear_omake,"clear4");
 }
-
+function omake(){
+    /*難易度3つクリア済みならおまけを表示 */
+    if(clear_1=="true" && clear_2=="true" && clear_3=="true"){
+        document.getElementById('omake').innerHTML="<form action='kaiten_Question.html' method='post' name='frm4'><div style=' position: absolute; top: 70vh; left:42%;'><div id='clear4'></div><input type='button' id='e' class='difficlty_box' onclick='document.frm4.submit();'><input type='hidden' value='4' name='nanido'></div> </form>";
+    }else{
+    }
+}
 /*test*/
 function localdelete(){
     window.localStorage.removeItem("kaiten_tutorial");
@@ -209,11 +219,12 @@ function viewchange(){
 //メイン動作部分に変更
 function main(){
     localget();
-    cleardisp();
+    omake();
     tutorialhantei();
     localput();
     viewhantei();
     viewchange();
+    cleardisp();
 }
 
 function stop(){
