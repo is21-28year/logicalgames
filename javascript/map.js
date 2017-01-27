@@ -75,6 +75,7 @@ function localdelete(){
     window.localStorage.removeItem("takara_1");
     window.localStorage.removeItem("takara_2");
     window.localStorage.removeItem("takara_3");
+    window.localStorage.removeItem("takara_omake");
      //戦艦ゲームフラグ削除
     window.localStorage.removeItem("funawatashi_1");
     window.localStorage.removeItem("funawatashi_2");
@@ -83,6 +84,7 @@ function localdelete(){
     window.localStorage.removeItem("kaiten_1");
     window.localStorage.removeItem("kaiten_2");
     window.localStorage.removeItem("kaiten_3");
+     window.localStorage.removeItem("kaiten_omake");
     //項目追記必要部分
     //チュートリアル削除
     window.localStorage.removeItem("funawatashi_tutorial");
