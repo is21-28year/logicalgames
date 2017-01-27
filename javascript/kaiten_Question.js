@@ -55,7 +55,11 @@ function questionrand(kakudo,kazu,diff){
 
 function answer(cl){
 	if(ans == cl){
-    cleartrue('kaiten_'+dif);
+	if(dif == 4){
+	cleartrue('kaiten_omake');
+	}else{
+  	cleartrue('kaiten_'+dif);
+    	}
 	modal(2);
 	}else{
 	modal(3);

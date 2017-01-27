@@ -87,18 +87,7 @@ function modal(){
 
 //難易度にセッションのデータを送るオンクリックイベント
 //引数で難易度+問題種類を取得
-function diffchange(ques_diff){
-    //難易度の設定問題ページphpで判定を作る
-    window.sessionStorage.setItem('ques_diff',ques_diff);
-    if (ques_diff == "easy"){
-	    window.location.href = 'kaiten_Question_easy.html';
-	}else if(ques_diff == "normal"){
-	    window.location.href = 'kaiten_Question_normal.html';
-	}else{
-	    window.location.href = 'kaiten_Question.html';
-	}
-    
-}
+
 
 //リンクを移動するよう
 function mapjump(){
