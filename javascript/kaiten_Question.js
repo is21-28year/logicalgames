@@ -42,7 +42,7 @@ function questionrand(kakudo,kazu,diff){
 	ans = Math.floor( Math.random() * kazu )+1 ;
 	var min = kazu-1;
 	var max = 1;
-	for(var i=1;i<5;i++){
+	for(var i=1;i<6;i++){
         rand = Math.floor( Math.random() * 4 )*kakudo;
         if(i==ans){
             document.getElementById(i).innerHTML="<img src='../image/Puzzle_kotae"+diff+".png'>";
