@@ -115,6 +115,22 @@
     #r3 img{
         display:none;
     }
+    #kankei1{
+        width:18vw;
+        height:18vh;
+        padding:0;
+        position:absolute;
+        right:0;
+        bottom:0;
+    }
+    #kankei2{
+        width:18vw;
+        height:18vh;
+        padding:0;
+        position:absolute;
+        right:0;
+        bottom:0;
+    }
     /*easy用の画像*/
      #l1.easy img{
         left:0.5vw;
