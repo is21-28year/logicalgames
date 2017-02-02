@@ -116,16 +116,20 @@
         display:none;
     }
     #kankei1{
-        width:18vw;
-        height:18vh;
+        margin-bottom:2vh;
+        margin-right:2vh;
+        width:12vw;
+        height:10vh;
         padding:0;
         position:absolute;
         right:0;
         bottom:0;
     }
     #kankei2{
-        width:18vw;
-        height:18vh;
+        margin-bottom:1vh;
+        margin-right:2vh;
+        width:13vw;
+        height:17vh;
         padding:0;
         position:absolute;
         right:0;
