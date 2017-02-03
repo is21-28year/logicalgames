@@ -7,11 +7,11 @@
 	background: #fff ;          /*背景は白に、そこに注意（警告）マーク（ぼやけ）を入れたいんですが…*/
 	position: fixed ;
 	display: none ;
-	z-index: 3 ;
+	z-index: 4 ;
 }
   
 #modal-overlay {
-	z-index: 1 ;
+	z-index: 3 ;
 	display: none ;
 	position: fixed ;
 	top: 0 ;
@@ -108,6 +108,7 @@ p	{line-height:1.5;
     margin-left: 1vw;
     margin-right: 1vw;;
     font-size: 50px;
+    z-index: 1;
 }
    input[type="button"]:hover   /*ボタンの沈む動作*/
     {
@@ -128,7 +129,7 @@ p	{line-height:1.5;
         margin-left: 1vw;
         margin-right: 1vw;;
         position:relative;
-        z-index:1;
+        z-index: 1;
     } 
     input[type="button"]#back{
             background-image: url("../image/button_modoru.png");
@@ -181,7 +182,7 @@ p	{line-height:1.5;
         position: absolute;
         top: -4vh;
         right:0vw;
-	z-index: 1;		/*ここ追加しました*/
+	    z-index: 2;		/*ここ追加しました*/
     }
     img.clearimage{
         width:4.5vw;
@@ -198,7 +199,7 @@ p	{line-height:1.5;
 	background: #fff ;          /*背景は白に、そこに注意（警告）マーク（ぼやけ）を入れたいんですが…*/
 	position: fixed ;
 	display: none ;
-	z-index: 3 ;
+	z-index: 4 ;
     text-align:center;
 }
 
