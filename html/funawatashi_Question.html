@@ -64,7 +64,7 @@ header('Location: map.html');
         <!--前の画面へ戻るボタン-->
         <input type="button" class="hidari modoru" onclick="location.href='Difficulty_funawatashi.html'">
         <img style="width:10vw; height:8vh; margin-top:1vh; foat:left;" id="title" src="../image/funawatashi_title.png" alt="">
-        <input type="button" class="migi hint" onclick="modal(1)">
+        
     </header>
     <div class="clam_left">
     <!--問題文章div-->
@@ -76,7 +76,8 @@ header('Location: map.html');
     <!--リセットボタン配置-->
     
     <div id="reset">
-        <input type="button" class="reset" onclick=<?php echo '"'.$reset.'"';?>>
+        <input type="button" class="migi hint" onclick="modal(1)">
+        <input type="button" class="reset" onclick=<?php echo '"'.$reset.'"';?>>      
     </div>
     
     </div>
