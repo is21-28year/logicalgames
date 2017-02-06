@@ -98,8 +98,11 @@ function mapjump(){
 //遊び方動画の初回用判定
 function tutorialhantei(){
     if(takara_tutorial != "true"){
-        modal();
-        takara_tutorial = "true";
+    document.getElementById('autovideo').innerHTML="<video style='width:40vw;height:60vh;' src='../movie/takara_movie.mp4'  id='vid' controls autoplay>";
+    modal();
+    takara_tutorial = "true";
+    }else{
+        document.getElementById('autovideo').innerHTML="<video style='width:40vw;height:60vh;' src='../movie/takara_movie.mp4'  id='vid' controls>";
     }
 
 }

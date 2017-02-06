@@ -97,9 +97,12 @@ function mapjump(){
 //遊び方動画の初回用判定
 function tutorialhantei(){
     if(kaiten_tutorial != "true"){
+    document.getElementById('autovideo').innerHTML="<video style='width:40vw;height:60vh;' src='../movie/kaiten_movie.mp4'  id='vid' controls autoplay>";
     modal();
     kaiten_tutorial = "true";
-}
+    }else{
+        document.getElementById('autovideo').innerHTML="<video style='width:40vw;height:60vh;' src='../movie/kaiten_movie.mp4'  id='vid' controls>";
+    }
 }
 /*画像表示部分*/ 
 function clearhantei(clear,id){

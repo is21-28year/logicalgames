@@ -93,8 +93,11 @@ function mapjump(){
 //遊び方動画の初回用判定
 function tutorialhantei(){
     if(ringo_tutorial != "true"){
-        modal();
-        ringo_tutorial = "true";
+    document.getElementById('autovideo').innerHTML="<video style='width:40vw;height:60vh;' src='../movie/ringo_movie.mp4'  id='vid' controls autoplay>";
+    modal();
+    ringo_tutorial = "true";
+    }else{
+        document.getElementById('autovideo').innerHTML="<video style='width:40vw;height:60vh;' src='../movie/ringo_movie.mp4'  id='vid' controls>";
     }
 }
 /*画像表示部分*/ 

@@ -99,9 +99,12 @@ function mapjump(){
 //遊び方動画の初回用判定
 function tutorialhantei(){
     if(senkan_tutorial != "true"){
+    document.getElementById('autovideo').innerHTML="<video style='width:40vw;height:60vh;' src='../movie/senkan_movie.mp4'  id='vid' controls autoplay>";
     modal();
     senkan_tutorial = "true";
-}
+    }else{
+        document.getElementById('autovideo').innerHTML="<video style='width:40vw;height:60vh;' src='../movie/senkan_movie.mp4'  id='vid' controls>";
+    }
 }
 /*画像表示部分*/ 
 function clearhantei(clear,id){
